@@ -11,10 +11,12 @@ public class CareGiverComment implements Serializable{
 
     private String messageTitle;
     private String message;
+    private Problem parentProblem;
 
-    public CareGiverComment(String title, String comment){
+    public CareGiverComment(String title, String comment, Problem problem){
         this.messageTitle = title;
         this.message = comment;
+        this.parentProblem = parentProblem;
     }
 
     public CareGiverComment(){

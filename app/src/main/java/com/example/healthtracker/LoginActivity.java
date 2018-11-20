@@ -58,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
      * @throws InterruptedException catch exception where ...
      */
     public void UserLogin(View view) throws ExecutionException, InterruptedException {
+        System.out.println("Made it here");
         if (ElasticsearchController.testConnection(context)) {
             String userID = UserID.getText().toString();
             if (isEmpty(UserID.getText().toString()) && isEmpty(Password.getText().toString())) {

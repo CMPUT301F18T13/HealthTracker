@@ -21,7 +21,7 @@ public class CareGiverCommentTest {
         title = "Rash";
         comment = "Get a rash after eating some seafood";
         parentProblem = new Problem(title, new Date(), comment);
-        careGiverComment = new CareGiverComment("Allergy", "Stay away from seafood", parentProblem);
+        careGiverComment = new CareGiverComment("Allergy", "Stay away from seafood");
     }
 
     @Test

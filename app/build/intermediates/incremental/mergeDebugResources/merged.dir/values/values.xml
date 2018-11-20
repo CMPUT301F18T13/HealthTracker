@@ -2425,6 +2425,7 @@
     <string name="mayo_clinic">Mayo Clinic</string>
     <string name="mtrl_chip_close_icon_content_description">Remove %1$s</string>
     <string name="name_hint">Name</string>
+    <string name="newUserID">User ID(min 8 characters)</string>
     <string name="password_hint">Password</string>
     <string name="password_login_hint">Password</string>
     <string name="password_toggle_content_description">Show password</string>

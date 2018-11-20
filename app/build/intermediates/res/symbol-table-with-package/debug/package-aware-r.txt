@@ -1618,6 +1618,7 @@ string max_title_length
 string mayo_clinic
 string mtrl_chip_close_icon_content_description
 string name_hint
+string newUserID
 string password_hint
 string password_login_hint
 string password_toggle_content_description
