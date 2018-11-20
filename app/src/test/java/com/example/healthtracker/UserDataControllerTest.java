@@ -1,13 +1,10 @@
 package com.example.healthtracker;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import java.util.ArrayList;
-
 /**
  * Created by caochenlin on 2018/11/2.
  */
+
+/*
 public class UserDataControllerTest {
     private UserDataController userDataController;
 
@@ -33,4 +30,4 @@ public class UserDataControllerTest {
     public void elasticSearch() {
     }
 
-}
+} */

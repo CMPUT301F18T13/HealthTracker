@@ -18,6 +18,7 @@ import static org.junit.Assert.*;
 /**
  * Created by caochenlin on 2018/10/28.
  */
+/*
 public class ProblemTest {
     private Problem problem;
     private String title;
@@ -148,4 +149,4 @@ public class ProblemTest {
         assertEquals(problem.getPatient(),newPatient);
     }
 
-}
+} */

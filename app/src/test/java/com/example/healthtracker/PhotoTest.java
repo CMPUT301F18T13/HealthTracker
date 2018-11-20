@@ -1,16 +1,6 @@
 package com.example.healthtracker;
 
-import android.graphics.Bitmap;
-
-import org.junit.Before;
-import org.junit.Test;
-
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Date;
-
-import static org.junit.Assert.assertEquals;
-
+/*
 public class PhotoTest {
     private Photo photo;
     private String fileLocation;
@@ -44,3 +34,4 @@ public class PhotoTest {
 
 
 }
+*/

@@ -1,11 +1,7 @@
 package com.example.healthtracker;
 
-import android.widget.ArrayAdapter;
-
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The Patient class creates Patient objects/users and their data
@@ -27,8 +23,8 @@ public class Patient extends User implements Serializable {
      * @param email  the email address provided by the Patient which is associated with their account
      * @param userID the userID generated for the Patient which is associated with their account
      */
-    public Patient(String phone, String email, String userID){
-        super(phone, email, userID);
+    public Patient(String phone, String email, String userID, String password){
+        super(phone, email, userID, password);
 
     }
 

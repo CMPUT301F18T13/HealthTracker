@@ -1,4 +1,4 @@
-package com.example.healthtracker;
+/* package com.example.healthtracker;
 
 import android.graphics.Bitmap;
 
@@ -125,4 +125,4 @@ public class CaretakerTest {
     }
 
 
-}
+}*/

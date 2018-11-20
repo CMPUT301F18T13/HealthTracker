@@ -1,16 +1,10 @@
 package com.example.healthtracker;
 
-import org.junit.Before;
-import org.junit.Test;
-
-
-import java.util.Date;
-
-import static org.junit.Assert.*;
-
 /**
  * Created by caochenlin on 2018/11/2.
  */
+
+/*
 public class CareGiverCommentTest {
     private String comment;
     private Problem parentProblem;
@@ -50,4 +44,4 @@ public class CareGiverCommentTest {
     }
 
 
-}
+*/

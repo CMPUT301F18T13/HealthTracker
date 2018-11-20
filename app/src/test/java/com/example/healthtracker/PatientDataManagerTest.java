@@ -1,4 +1,4 @@
-package com.example.healthtracker;
+/*package com.example.healthtracker;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +10,7 @@ import static org.junit.Assert.*;
 /**
  * Created by caochenlin on 2018/11/2.
  */
+/*
 public class PatientDataManagerTest {
     private PatientDataManager patientDataManager;
 
@@ -36,4 +37,4 @@ public class PatientDataManagerTest {
     public void elasticSearch() {
     }
 
-}
+}*/

@@ -151,12 +151,12 @@ public class CreateAccountActivity extends AppCompatActivity {
             // Save new user with elasticsearch
             if (checkBox.isChecked()) {
                 // save new care provider
-                CareProvider newCareProvider = new CareProvider(phone, email, userID);
+                CareProvider newCareProvider = new CareProvider(phone, email, userID, password);
                 ElasticsearchController.AddCareProvider addCareProviderTask = new ElasticsearchController.AddCareProvider();
                 addCareProviderTask.execute(newCareProvider);
             } else {
                 // save new patient
-                Patient newPatient = new Patient(phone, email, userID);
+                Patient newPatient = new Patient(phone, email, userID, password);
                 ElasticsearchController.AddPatient addPatientTask = new ElasticsearchController.AddPatient();
                 addPatientTask.execute(newPatient);
             }
