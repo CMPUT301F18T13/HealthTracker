@@ -16,9 +16,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc4ffb8a-b9aa-46b9-a9e8-9a76ee0ded93" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CareProviderDataManagerTest.java" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" />
@@ -26,12 +26,6 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/healthtracker/CareProvider.class" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/healthtracker/CareProvider.class" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/CareProvider.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/CareProvider.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CareProviderTest.java" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CareProviderTest.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CaretakerTest.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CaretakerTest.java~HEAD" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CaretakerTest.java~HEAD_0" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,16 +51,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CareProviderTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CareProviderTest.java">
+      <file leaf-file-name="CareProviderDataManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/CareProviderDataManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2227">
-              <caret line="131" column="33" lean-forward="false" selection-start-line="131" selection-start-column="33" selection-end-line="131" selection-end-column="33" />
+            <state relative-caret-position="-153">
+              <caret line="3" column="41" lean-forward="true" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CareProviderDataManagerTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CareProviderDataManagerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1887#1896#0" expanded="true" />
-                <element signature="e#2323#2332#0" expanded="true" />
-                <element signature="e#2839#2848#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,8 +76,18 @@
       <file leaf-file-name="CareProvider.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/CareProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="856">
-              <caret line="69" column="34" lean-forward="false" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
+            <state relative-caret-position="182">
+              <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="82" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CareGiverCommentTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CareGiverCommentTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -2398,9 +2409,10 @@
         <option value="$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/UserDataControllerTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/CreateAccountActivity.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/PatientRecordTest.java" />
-        <option value="$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CareGiverCommentTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/CareProvider.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CareProviderTest.java" />
+        <option value="$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CareGiverCommentTest.java" />
+        <option value="$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CareProviderDataManagerTest.java" />
       </list>
     </option>
   </component>
@@ -2553,32 +2565,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android JUnit.CareProviderTest">
-    <configuration name="BodyPhotoTest (2)" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.example.healthtracker.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="app" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.example.healthtracker" />
-      <option name="MAIN_CLASS_NAME" value="com.example.healthtracker.BodyPhotoTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/app" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
+  <component name="RunManager" selected="Android JUnit.CareProviderDataManagerTest">
     <configuration name="BodyPhotoTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -2643,6 +2630,31 @@
       <option name="MAIN_CLASS_NAME" value="com.example.healthtracker.CareGiverCommentTest" />
       <option name="METHOD_NAME" value="getComment" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/app" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="CareProviderDataManagerTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.example.healthtracker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="app" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.example.healthtracker" />
+      <option name="MAIN_CLASS_NAME" value="com.example.healthtracker.CareProviderDataManagerTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/app" />
@@ -2809,18 +2821,18 @@
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Android App.app" />
       <item index="1" class="java.lang.String" itemvalue="Android JUnit.BodyPhotoTest" />
-      <item index="2" class="java.lang.String" itemvalue="Android JUnit.BodyPhotoTest (2)" />
-      <item index="3" class="java.lang.String" itemvalue="Android JUnit.CareGiverCommentTest" />
-      <item index="4" class="java.lang.String" itemvalue="Android JUnit.CareGiverCommentTest.getComment" />
-      <item index="5" class="java.lang.String" itemvalue="Android JUnit.CareProviderTest" />
+      <item index="2" class="java.lang.String" itemvalue="Android JUnit.CareGiverCommentTest" />
+      <item index="3" class="java.lang.String" itemvalue="Android JUnit.CareGiverCommentTest.getComment" />
+      <item index="4" class="java.lang.String" itemvalue="Android JUnit.CareProviderTest" />
+      <item index="5" class="java.lang.String" itemvalue="Android JUnit.CareProviderDataManagerTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Android JUnit.CareProviderTest" />
-        <item index="1" class="java.lang.String" itemvalue="Android JUnit.CareGiverCommentTest" />
-        <item index="2" class="java.lang.String" itemvalue="Android JUnit.CareGiverCommentTest.getComment" />
-        <item index="3" class="java.lang.String" itemvalue="Android JUnit.BodyPhotoTest" />
-        <item index="4" class="java.lang.String" itemvalue="Android JUnit.BodyPhotoTest (2)" />
+        <item index="0" class="java.lang.String" itemvalue="Android JUnit.CareProviderDataManagerTest" />
+        <item index="1" class="java.lang.String" itemvalue="Android JUnit.CareProviderTest" />
+        <item index="2" class="java.lang.String" itemvalue="Android JUnit.CareGiverCommentTest" />
+        <item index="3" class="java.lang.String" itemvalue="Android JUnit.CareGiverCommentTest.getComment" />
+        <item index="4" class="java.lang.String" itemvalue="Android JUnit.BodyPhotoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -2841,12 +2853,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AddCareProviderComme___ - 2018.11.19 at 16h 23m 40s.xml">
-      <configuration name="AddCareProviderComme..." configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="AddCareProviderComme___ - 2018.11.19 at 17h 03m 32s.xml">
-      <configuration name="AddCareProviderComme..." configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
     <history-entry file="BodyPhotoTest - 2018.11.19 at 23h 00m 55s.xml">
       <configuration name="BodyPhotoTest" configurationId="AndroidJUnit" />
     </history-entry>
@@ -2858,6 +2864,12 @@
     </history-entry>
     <history-entry file="CareGiverCommentTest_getComment - 2018.11.19 at 23h 15m 20s.xml">
       <configuration name="CareGiverCommentTest.getComment" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="CareProviderDataManagerTest - 2018.11.20 at 00h 15m 48s.xml">
+      <configuration name="CareProviderDataManagerTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="CareProviderDataManagerTest - 2018.11.20 at 00h 18m 16s.xml">
+      <configuration name="CareProviderDataManagerTest" configurationId="AndroidJUnit" />
     </history-entry>
     <history-entry file="CareProviderTest - 2018.11.19 at 23h 53m 37s.xml">
       <configuration name="CareProviderTest" configurationId="AndroidJUnit" />
@@ -2925,26 +2937,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_care_provider_comment.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/my_menu.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_patient_problem_view.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
@@ -3296,25 +3288,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/CareGiverComment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CareGiverCommentTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding>
-            <element signature="e#713#714#0" expanded="false" />
-            <element signature="e#781#782#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/Problem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="454">
@@ -3327,14 +3300,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/CareProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="856">
-          <caret line="69" column="34" lean-forward="false" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -3357,13 +3322,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CareProviderTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2227">
-          <caret line="131" column="33" lean-forward="false" selection-start-line="131" selection-start-column="33" selection-end-line="131" selection-end-column="33" />
+        <state relative-caret-position="312">
+          <caret line="128" column="34" lean-forward="false" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1887#1896#0" expanded="false" />
+            <element signature="e#2323#2332#0" expanded="false" />
+            <element signature="e#2839#2848#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/CareGiverComment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CareGiverCommentTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/CareProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/CareProviderDataManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="3" column="41" lean-forward="true" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/example/healthtracker/CareProviderDataManagerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1887#1896#0" expanded="true" />
-            <element signature="e#2323#2332#0" expanded="true" />
-            <element signature="e#2839#2848#0" expanded="true" />
           </folding>
         </state>
       </provider>
