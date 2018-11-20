@@ -20,7 +20,7 @@ public class NotificationsController {
      * @param time When the user will be alerted.
      * @param repeatType How often the user will be alerted.
      */
-    public void NotificationsController (Date startDate,Time time, String repeatType ){
+    public NotificationsController (Date startDate,Time time, String repeatType ){
         this.startDate = startDate;
         this.time = time;
         this.repeatType = repeatType;
