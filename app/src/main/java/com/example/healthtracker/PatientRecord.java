@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class PatientRecord implements Serializable {
 
@@ -20,6 +19,8 @@ public class PatientRecord implements Serializable {
         this.RecordTitle = title;
         this.comment = comment;
         this.timestamp = new Timestamp(System.currentTimeMillis());
+        geoLocations = new ArrayList<Bitmap> ();
+        photos = new ArrayList<Photo> ();
     }
 
     public PatientRecord(){
@@ -36,9 +37,11 @@ public class PatientRecord implements Serializable {
         geoLocations.remove(geoLocation);
     }
 
+    public ArrayList<Bitmap> getGeoLocation() { return geoLocations;}
+
 
     public void addPhoto(Photo photo){
-        photos.add(photo);
+        this.photos.add(photo);
     }
 
     public void deletePhoto(int index){
@@ -63,6 +66,10 @@ public class PatientRecord implements Serializable {
 
     public void setComment(String comment){
         this.comment = comment;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
     }
 
     public void setTimestamp(){

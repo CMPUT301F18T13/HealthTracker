@@ -51,16 +51,16 @@ public class Problem implements Serializable {
         return description;
     }
 
-    private void setTitle(String newTitle){
+    public void setTitle(String newTitle){
         this.ProblemTitle = newTitle;
 
     }
 
-    private void setDate(Date newDate){
+    public void setDate(Date newDate){
         this.dateStarted = newDate;
     }
 
-    private void setDescription(String newDescription){
+    public void setDescription(String newDescription){
         this.description = newDescription;
     }
 
