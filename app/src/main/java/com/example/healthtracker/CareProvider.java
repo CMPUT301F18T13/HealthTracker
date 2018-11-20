@@ -62,10 +62,12 @@ public class CareProvider extends User implements Serializable {
      *
      * @param phone
      * @param email
+     * @param userName
      */
-    public void updateUserInfo(String phone, String email){
+    public void updateUserInfo(String phone, String email, String userName){
         super.setEmail(email);
         super.setPhone(phone);
+        super.setUserID(userName);
     }
 
     @Override

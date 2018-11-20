@@ -1,16 +1,13 @@
-/*package com.example.healthtracker;
-
-import android.graphics.Bitmap;
+package com.example.healthtracker;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 
 public class CareProviderTest {
@@ -35,6 +32,9 @@ public class CareProviderTest {
     String title2;
     Date date2;
     String description2;
+    Patient patient1;
+    Patient patient2;
+    Patient patient3;
 
     @Before
     public void setUp() {
@@ -60,16 +60,79 @@ public class CareProviderTest {
         password3 = "Dave123";
         phone3 = "780-777-777";
         email3 = "Dave@ualberta.ca";
+        patient1 = new Patient(phone, email, userName, password);
+        patient2 = new Patient(phone2, email2, userName2, password2);
+        patient3 = new Patient(phone3, email3, userName3, password3);
     }
+    @Test
+    public void addPatient(){
+        CareProvider c = new CareProvider(phone3, email3, userName3, password3);
+
+        c.addPatient(patient2);
+
+        ArrayList<Patient> arrayToTestAgainst = new ArrayList<Patient>();
+
+        arrayToTestAgainst.add(patient2);
+
+        assertArrayEquals(c.getPatientList().toArray(), arrayToTestAgainst.toArray());
+    }
+
+    @Test
+    public void getPatientList() {
+        CareProvider c = new CareProvider(phone3, email3, userName3, password3);
+
+        c.addPatient(patient2);
+        c.addPatient(patient1);
+        c.addPatient(patient3);
+
+        ArrayList<Patient> arrayToTestAgainst = new ArrayList<Patient>();
+
+        arrayToTestAgainst.add(patient2);
+        arrayToTestAgainst.add(patient1);
+        arrayToTestAgainst.add(patient3);
+
+        assertArrayEquals(c.getPatientList().toArray(), arrayToTestAgainst.toArray());
+
+    }
+
+    @Test
+    public void setPatient(){
+        CareProvider c = new CareProvider(phone3, email3, userName3, password3);
+
+        c.addPatient(patient2);
+        c.addPatient(patient1);
+        c.addPatient(patient3);
+
+        ArrayList<Patient> arrayToTestAgainst = new ArrayList<Patient>();
+
+        arrayToTestAgainst.add(patient2);
+        arrayToTestAgainst.add(patient3);
+        arrayToTestAgainst.add(patient3);
+
+        c.setPatient(patient3, 1);
+
+        assertArrayEquals(c.getPatientList().toArray(), arrayToTestAgainst.toArray());
+    }
+
+    @Test
+    public void updateUserInfo(){
+        CareProvider c = new CareProvider(phone3, email3, userName3, password3);
+        c.updateUserInfo(phone2, email2, userName2);
+
+        assertEquals(c.getPhone(), phone2);
+        assertEquals(c.getEmail(), email2);
+        assertEquals(c.getUserID(), userName2);
+    }
+
     @Test
     public void createAccountTest(){
         CareProvider c = new CareProvider(phone3, email3, userName3, password3);
-        assertEquals(userID, c.getUserID());
+        assertEquals(userName3, c.getUserID());
         //assertEquals(password, c.getPassword());
-        assertEquals(phone, c.getPhone());
-        assertEquals(email, c.getEmail());
+        assertEquals(phone3, c.getPhone());
+        assertEquals(email3, c.getEmail());
     }
-
+/*
     @Test
     public void editProfileTest(){
         CareProvider c = new CareProvider(phone3, email3, userName3, password3);
@@ -124,6 +187,5 @@ public class CareProviderTest {
         //assertEquals(filteredProblems.get(0), p1);
     }
 
-
-}
 */
+}
