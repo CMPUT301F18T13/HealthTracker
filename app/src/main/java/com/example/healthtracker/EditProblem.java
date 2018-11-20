@@ -148,7 +148,7 @@ public class EditProblem extends AppCompatActivity {
         dateText.setText(dateString);
     }
 
-    private static boolean testDate(String date) {
+    public static boolean testDate(String date) {
         // establish the date format and make the format non lenient, include a parse catch and try clause
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.CANADA);
         format.setLenient(false);
