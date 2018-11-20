@@ -1,5 +1,8 @@
 package com.example.healthtracker;
 
+/**
+ *
+ */
 public class BodyPhoto extends Photo {
     private String name;
     private int pinXLocation;

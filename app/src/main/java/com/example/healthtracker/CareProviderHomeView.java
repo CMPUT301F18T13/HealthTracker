@@ -73,18 +73,6 @@ public class CareProviderHomeView extends AppCompatActivity {
     }
 
     /**
-     * Method containing the new intent which will bring user to the view users activity layout
-     *
-     * @param view the view for the CareProvider home screen layout included for onClick methods in XML
-     */
-    public void ViewUsers(View view) {
-        // Create an intent object containing the bridge to between the two activities
-        Intent intent = new Intent(CareProviderHomeView.this, ViewUsers.class);
-        // Launch the browse emotions activity
-        startActivity(intent);
-    }
-
-    /**
      * Method containing the new intent which will bring user to the user settings activity layout
      *
      * @param view the view for the CareProvider home screen layout included for onClick methods in XML

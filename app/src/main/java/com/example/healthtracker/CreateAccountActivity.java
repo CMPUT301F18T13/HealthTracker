@@ -78,16 +78,14 @@ public class CreateAccountActivity extends AppCompatActivity {
                 userID = UserID.getText().toString();
                 if (checkInputs(email, userID, password, phone)) {
                     try {
-                        if(!userExists(userID)){
+                        if (!userExists(userID)) {
                             addNewUser();
-                        } else{
+                        } else {
                             Toast.makeText(context, "User ID is taken", Toast.LENGTH_SHORT).show();
                         }
                     } catch (ExecutionException | InterruptedException e) {
                         e.printStackTrace();
                     }
-                } else{
-                    Toast.makeText(context, "All fields must be filled", Toast.LENGTH_SHORT).show();
                 }
             }
         });

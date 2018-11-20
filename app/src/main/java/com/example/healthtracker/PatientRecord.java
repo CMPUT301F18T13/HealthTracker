@@ -39,7 +39,6 @@ public class PatientRecord implements Serializable {
 
     public void addPhoto(Photo photo){
         photos.add(photo);
-        photo.setParentRecord(this);
     }
 
     public void deletePhoto(int index){

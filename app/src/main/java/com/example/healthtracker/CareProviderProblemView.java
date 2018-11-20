@@ -13,6 +13,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
+/**
+ * CareProviderProblemView enables a careprovider to view the current details of a patient's problems
+ * including title, date, description and records. From this activity a careprovider can select
+ * the "Add Comment" button to initiate the AddCareProvderCommentView activity.
+ */
 public class CareProviderProblemView extends AppCompatActivity {
 
     private TextView titleText;
@@ -58,18 +63,16 @@ public class CareProviderProblemView extends AppCompatActivity {
         records = pProblem.getRecords();
 
         showProblem(title,date,des);
-
-
-
     }
 
-    public String dateToString(Date date){
+
+    private String dateToString(Date date){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.CANADA);
         String dateString = format.format(date);
         return dateString;
     }
 
-    public void showProblem(String title, Date date, String des) {
+    private void showProblem(String title, Date date, String des) {
         titleText.setText(title);
         dateText.setText(dateToString(date));
         desText.setText(des);
@@ -78,14 +81,14 @@ public class CareProviderProblemView extends AppCompatActivity {
             recordText.setText(pProblem.getcaregiverRecords().get(0).getComment());
         }
     }
-/*
-    public void returnToProblemsList(View view) {
-        // Create an intent object containing the bridge to between the two activities
-        Intent intent = new Intent(CareProviderProblemView.this, ViewPatientsProblems.class);
-        // Launch the browse emotions activity
-        startActivity(intent);
-    }
-*/
+
+    /**
+     * Clicking the "Add Comment" button initiates a new AddCareProviderComment activity and
+     * sends the patient and problem index numbers to that activity. This allows the CareProvider
+     * to then add a comment record to the problem in the AddCareProviderComment activity.
+     *
+     * @param view the view for the layout included for onClick methods in XML
+     */
     public void addCareProviderComment(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(CareProviderProblemView.this, AddCareProviderCommentView.class);
@@ -97,6 +100,12 @@ public class CareProviderProblemView extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Initiate a slidshow of all of the photos associated with the currently viewed problem.
+     *
+     * @param view the view for the layout included for onClick methods in XML
+     *
+     */
     public void viewProblemsPhotos(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(CareProviderProblemView.this, SlideShowActivity.class);

@@ -62,7 +62,14 @@ public class AddPatientView extends AppCompatActivity {
                 }
             }
 
-            if (!validID){
+            if (ElasticsearchController.testConnection(this)){
+                AlertDialog.Builder alertBuilder = new AlertDialog.Builder(AddPatientView.this);
+                alertBuilder.setMessage("Please connect to a network to add a patient.");
+                alertBuilder.setPositiveButton("OK",null);
+                AlertDialog alertDialog = alertBuilder.create();
+                alertDialog.show();
+                return false;
+            } else if(!validID){
                 AlertDialog.Builder alertBuilder = new AlertDialog.Builder(AddPatientView.this);
                 alertBuilder.setMessage("The patient ID is not valid. Please try again.");
                 alertBuilder.setPositiveButton("OK",null);
@@ -78,46 +85,54 @@ public class AddPatientView extends AppCompatActivity {
 
         // If valid.
         if (validID) {
-            // Check whether the patient has already been assigned to another care provider
-            if (mPatient.getCareProvider().equals("")) {
-                // Fetch user data (Care Provider)
-                CareProvider careProvider = UserDataController.loadCareProviderData(this);
 
-                // Fetch user data (Patient)
-                String mPatientUserID = mPatient.getUserID();
-                ElasticsearchController.GetPatient getPatient = new ElasticsearchController.GetPatient();
-                getPatient.execute(mPatientUserID);
-                try{
-                    mPatient = getPatient.get();
-                }catch (ExecutionException e1){
+            // Fetch user data (Care Provider)
+            CareProvider careProvider = UserDataController.loadCareProviderData(this);
 
-                }catch (InterruptedException e2){
+            // Fetch user data (Patient)
+            String mPatientUserID = mPatient.getUserID();
+            ElasticsearchController.GetPatient getPatient = new ElasticsearchController.GetPatient();
+            getPatient.execute(mPatientUserID);
+            try{
+                mPatient = getPatient.get();
+            }catch (ExecutionException e1){
 
-                }
+            }catch (InterruptedException e2) {
+
+            }
+
+            System.out.println("reaches here!");
+            // Check whether a patient is assigned to the same care provider twice
+            Boolean careProviderExist = false;
+            if(mPatient.getCareProviderString().contains(careProvider.getUserID())){
+                careProviderExist = true;
+            }
+
+
+            System.out.println("careProviderExist"+careProviderExist);
+            if (careProviderExist == false) {
 
                 // Update Patient data
-                mPatient.updateCareProvider(careProvider.getUserID());
-                UserDataController.savePatientData(this,mPatient);
+                mPatient.addToCareProviderString(careProvider.getUserID());
+                UserDataController.savePatientData(this, mPatient);
 
                 // Update Care Provider data
                 careProvider.addPatient(mPatient);
                 UserDataController.saveCareProviderData(this, careProvider);
-
                 return true;
             }
             else{
-                //Toast.makeText(this, "This patient has been assigned to a care provider already.", Toast.LENGTH_LONG).show();
                 AlertDialog.Builder alertBuilder = new AlertDialog.Builder(AddPatientView.this);
-                alertBuilder.setMessage("The patient is already assigned to a care provider.");
-                alertBuilder.setPositiveButton("OK",null);
+                alertBuilder.setMessage("This patient has already been assigned you.");
+                alertBuilder.setPositiveButton("OK", null);
                 AlertDialog alertDialog = alertBuilder.create();
                 alertDialog.show();
-
                 return false;
             }
-        }
 
+        }
         return true;
+
     }
 
     /**

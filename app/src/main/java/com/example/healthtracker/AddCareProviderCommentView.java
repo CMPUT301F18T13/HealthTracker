@@ -23,8 +23,8 @@ import java.util.ArrayList;
  */
 public class AddCareProviderCommentView extends AppCompatActivity {
 
-    private CareGiverComment newComment;
-    private ArrayList<CareGiverComment> CareGiverComments;
+    private CareProviderComment newComment;
+    private ArrayList<CareProviderComment> careProviderComments;
 
     private CareProvider careProvider;
     private Patient myPatient;
@@ -52,12 +52,12 @@ public class AddCareProviderCommentView extends AppCompatActivity {
         pProblem = myPatient.getProblem(problemNum);
 
 
-        CareGiverComments = pProblem.getcaregiverRecords();
-        if (CareGiverComments == null){
-            CareGiverComments = new ArrayList<CareGiverComment>();
+        careProviderComments = pProblem.getcaregiverRecords();
+        if (careProviderComments == null){
+            careProviderComments = new ArrayList<CareProviderComment>();
         }
 
-        newComment = new CareGiverComment();
+        newComment = new CareProviderComment();
 
 
         titleText = findViewById(R.id.care_comment_title);
@@ -103,8 +103,8 @@ public class AddCareProviderCommentView extends AppCompatActivity {
         // set data
         newComment.setTitle(title);
         newComment.setComment(comment);
-        CareGiverComments.add(newComment);
-        pProblem.setCaregiverRecords(CareGiverComments);
+        careProviderComments.add(newComment);
+        pProblem.setCaregiverRecords(careProviderComments);
         myPatient.setProblem(pProblem, problemNum);
         careProvider.setPatient(myPatient, patientNum);
 

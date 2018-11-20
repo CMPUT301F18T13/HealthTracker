@@ -1,8 +1,5 @@
 package com.example.healthtracker;
 
-import android.app.Notification;
-import android.util.Log;
-
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -10,7 +7,6 @@ import java.util.Date;
 import java.util.List;
 
 import static java.lang.Boolean.FALSE;
-import static java.lang.Boolean.TRUE;
 
 public class Problem implements Serializable {
 
@@ -18,10 +14,10 @@ public class Problem implements Serializable {
     private Date dateStarted;
     private String description;
     // if we use the android built in notifications then they cant be here or elastic search will break
-    private List<notifyUser> notifications;
+    private List<NotificationsController> notifications;
     private Boolean notificationsOn = FALSE;
     private ArrayList<PatientRecord> patientRecords = new ArrayList<PatientRecord>();
-    private ArrayList<CareGiverComment> caregiverRecords = new ArrayList<>();
+    private ArrayList<CareProviderComment> caregiverRecords = new ArrayList<>();
 
     public Problem(){
 
@@ -86,64 +82,11 @@ public class Problem implements Serializable {
         return patientRecords.size();
     }
 
-   /* public ArrayList<PatientRecord> getPatientRecords(){
-        return this.patientRecords;
-    }
-
-
-    public ArrayList<CareGiverComment> getCareGiverRecords(){
-        return caregiverRecords;
-    }
-
-    public void addPatientRecord(PatientRecord patientRecord){
-        patientRecords.add(patientRecord);
-        numOfRecords += 1;
-    }
-
-    public void addCareGiverRecord(CareGiverComment caregiverRecord){
-        caregiverRecords.add(caregiverRecord);
-    }
-
-    public void deletePatientRecord(Integer index){
-        patientRecords.remove(patientRecords.get(index));
-        numOfRecords -= 1;
-    }
-
-    public void deleteCareGiverRecord(Integer index){
-        caregiverRecords.remove(caregiverRecords.get(index));
-    }
-
-    public ArrayList<notifyUser> getNotifications(){
-        return this.notifications;
-    }
-
-    public void addNotification(notifyUser newNotification){
-        notifications.add(newNotification);
-    }
-
-    public void deleteNotification(Integer index){
-        notifications.remove(index);
-    }
-
-
-    public void switchNotification(){
-        if (notificationsOn  == TRUE){
-            notificationsOn = FALSE;
-        }
-        else{
-            notificationsOn = TRUE;
-        }
-    }
-
-    public Boolean notificationStatus(){
-        return notificationsOn;
-    }*/
-
-    public void setCaregiverRecords(ArrayList<CareGiverComment> caregiverRecords){
+    public void setCaregiverRecords(ArrayList<CareProviderComment> caregiverRecords){
         this.caregiverRecords = caregiverRecords;
     }
 
-    public ArrayList<CareGiverComment> getcaregiverRecords(){
+    public ArrayList<CareProviderComment> getcaregiverRecords(){
         return this.caregiverRecords;
     }
 }
