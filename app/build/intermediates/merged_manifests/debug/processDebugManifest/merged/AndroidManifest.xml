@@ -66,7 +66,6 @@
         <activity android:name="com.example.healthtracker.ViewPatientsProblems" />
         <activity android:name="com.example.healthtracker.CareProviderProblemView" />
         <activity android:name="com.example.healthtracker.AddCareProviderCommentView" />
-        <activity android:name="com.example.healthtracker.ViewUsers" />
         <activity android:name="com.example.healthtracker.PatientHomeView" />
         <activity
             android:name="com.example.healthtracker.AddProblemView"
@@ -76,11 +75,12 @@
             android:name="com.example.healthtracker.EditProblem"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name="com.example.healthtracker.AddorEditRecordView" />
-        <activity android:name="com.example.healthtracker.PatientProblemView" />
         <activity android:name="com.example.healthtracker.SlideShowActivity" />
-        <activity android:name="com.example.healthtracker.ViewAUser" />
         <activity android:name="com.example.healthtracker.MapView" />
-        <activity android:name="com.example.healthtracker.RecordView" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
 
         <meta-data
             android:name="com.google.android.gms.version"
