@@ -28,8 +28,8 @@ public class CareProvider extends User implements Serializable {
      * @param code the code generated for the CareProvider which is associated with their specific account
      *
      */
-    public CareProvider(String phone, String email, String userID, String code) {
-        super(phone, email, userID, code);
+    public CareProvider(String phone, String email, String userID) {
+        super(phone, email, userID);
         this.patientList = new ArrayList<Patient>();
     }
 

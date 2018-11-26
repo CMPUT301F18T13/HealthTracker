@@ -14,8 +14,11 @@ import android.widget.Toast;
 
 import com.searchly.jestdroid.JestDroidClient;
 
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
+
+import io.searchbox.core.SearchResult;
 
 /* Idea and implemented code for testing interent connection from *binnyb(user:416412),   
 https://stackoverflow.com/questions/5474089/how-to-check-currently-internet-connection-is-available-or-not-in-android, 
@@ -136,7 +139,7 @@ public class CreateAccountActivity extends AppCompatActivity {
             // Save new user with elasticsearch
             if (checkBox.isChecked()) {
                 // save new care provider
-                CareProvider newCareProvider = new CareProvider(phone, email, userID, createCode());
+                CareProvider newCareProvider = new CareProvider(phone, email, userID);
                 ElasticsearchController.AddCareProvider addCareProviderTask = new ElasticsearchController.AddCareProvider();
                 addCareProviderTask.execute(newCareProvider);
             } else {
@@ -167,7 +170,8 @@ public class CreateAccountActivity extends AppCompatActivity {
     viewed 2018/11/23* */
 
     // Generates a 5 character long random string containing alphanumeric characters to serve as an account code
-    protected String createCode() {
+    private String createCode() {
+        /*
         String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         StringBuilder salt = new StringBuilder();
         Random rnd = new Random();
@@ -175,7 +179,22 @@ public class CreateAccountActivity extends AppCompatActivity {
             int index = (int) (rnd.nextFloat() * chars.length());
             salt.append(chars.charAt(index));
         }
-        return salt.toString();
+        String code = salt.toString();
+        */
+
+        String code = "testCode";
+
+        if(!codeExists(code)){
+            return code;
+        } else {
+            return createCode();
+        }
+    }
+
+    private boolean codeExists(String code){
+        List<String> searchHits = UserDataController
+                .searchUserData("code", code, "Patient");
+        return searchHits.isEmpty();
     }
 
 }

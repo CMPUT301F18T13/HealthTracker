@@ -5,7 +5,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.healthtracker"
-        minSdkVersion 19
+        minSdkVersion 26
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -48,6 +48,8 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:2.7.22'
     // required if you want to use Mockito for Android tests
     androidTestImplementation 'org.mockito:mockito-android:2.7.22'
+    implementation 'org.elasticsearch:elasticsearch:1.4.2'
+
 }
 
 apply plugin: 'com.google.gms.google-services'

@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 
@@ -338,5 +339,21 @@ public class UserDataController<E> {
      */
     public static PatientRecord unSerializeRecord(Context context, String recordString){
         return new UserDataController<PatientRecord>(context).objectFromString(recordString);
+    }
+
+    public static List<String> searchUserData(String searchType, String searchTerm, String userType){
+        String[] searchInfo = new String[]{searchType, searchTerm, userType};
+        ElasticsearchController.SearchData searchTask = new ElasticsearchController.SearchData();
+        searchTask.execute(searchInfo);
+        List<String> results = null;
+        try {
+            results = searchTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        return results;
     }
 }

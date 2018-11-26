@@ -11,6 +11,9 @@ import com.searchly.jestdroid.DroidClientConfig;
 import com.searchly.jestdroid.JestClientFactory;
 import com.searchly.jestdroid.JestDroidClient;
 
+import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.builder.SearchSourceBuilder;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -247,7 +250,34 @@ class ElasticsearchController {
         }
     }
 
-    public static List<Problem> search(String searchType, String keyword){
-        return null;
+    public static class SearchData extends AsyncTask<String, Void, List<String>>{
+        @Override
+        protected List<String> doInBackground(String...params){
+            verifySettings();
+
+            String searchType = params[0];
+            String keyword = params[1];
+            String accountType = params[2];
+
+            SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+            searchSourceBuilder.query(QueryBuilders.matchQuery(searchType, keyword));
+
+            Search search = new Search.Builder(searchSourceBuilder.toString())
+                    .addIndex(Index)
+                    .addType(accountType)
+                    .build();
+
+            SearchResult result = null;
+
+            try {
+                result = client.execute(search);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            List<String> hits = result.getSourceAsObjectList(String.class);
+
+            return hits;
+        }
     }
 }
