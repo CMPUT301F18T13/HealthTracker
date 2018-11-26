@@ -250,21 +250,20 @@ class ElasticsearchController {
         }
     }
 
-    public static class SearchData extends AsyncTask<String, Void, List<String>>{
+    public static class SearchForPatient extends AsyncTask<String, Void, Patient> {
         @Override
-        protected List<String> doInBackground(String...params){
+        protected Patient doInBackground(String... params) {
             verifySettings();
 
             String searchType = params[0];
             String keyword = params[1];
-            String accountType = params[2];
 
             SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
             searchSourceBuilder.query(QueryBuilders.matchQuery(searchType, keyword));
 
             Search search = new Search.Builder(searchSourceBuilder.toString())
                     .addIndex(Index)
-                    .addType(accountType)
+                    .addType("Patient")
                     .build();
 
             SearchResult result = null;
@@ -275,9 +274,45 @@ class ElasticsearchController {
                 e.printStackTrace();
             }
 
-            List<String> hits = result.getSourceAsObjectList(String.class);
+            if(result == null){
+                return null;
+            }
 
-            return hits;
+            Patient patient = result.getSourceAsObject(Patient.class, false);
+            return patient;
+        }
+    }
+
+    public static class SearchForProblem extends AsyncTask<String, Void, List<Problem>> {
+        @Override
+        protected List<Problem> doInBackground(String... params) {
+            verifySettings();
+
+            String searchType = params[0];
+            String keyword = params[1];
+
+            SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+            searchSourceBuilder.query(QueryBuilders
+                    .nestedQuery("problemList", QueryBuilders
+                            .matchQuery(searchType, keyword)));
+
+            Search search = new Search.Builder(searchSourceBuilder.toString())
+                    .addIndex(Index)
+                    .addType("Patient")
+                    .build();
+
+            SearchResult result = null;
+
+            try {
+                result = client.execute(search);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            List<Problem> problems = result.getSourceAsObjectList(Problem.class, false);
+
+            return problems;
         }
     }
 }
+

@@ -16,7 +16,7 @@ public class PatientTest {
 
     @Before
     public void setUp() {
-        this.patient = new Patient("7801234567", "abc@gmail.com", "abc");
+        this.patient = new Patient("7801234567", "abc@gmail.com", "abc", "XXXXX");
         this.problem = new Problem("New Problem 1", new java.util.Date(( new java.util.Date()).getTime()), "This is a new problem1");
         this.problem2 = new Problem("New Problem 2", new java.util.Date(( new java.util.Date()).getTime()), "This is a new problem2");
         problemList = new ArrayList<Problem> ();

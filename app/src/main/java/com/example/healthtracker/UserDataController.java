@@ -341,19 +341,35 @@ public class UserDataController<E> {
         return new UserDataController<PatientRecord>(context).objectFromString(recordString);
     }
 
-    public static List<String> searchUserData(String searchType, String searchTerm, String userType){
-        String[] searchInfo = new String[]{searchType, searchTerm, userType};
-        ElasticsearchController.SearchData searchTask = new ElasticsearchController.SearchData();
+    public static Patient searchForPatient(String searchType, String searchTerm){
+        String[] searchInfo = new String[]{searchType, searchTerm};
+        ElasticsearchController.SearchForPatient searchTask = new ElasticsearchController.SearchForPatient();
         searchTask.execute(searchInfo);
-        List<String> results = null;
+        Patient patient = null;
         try {
-            results = searchTask.get();
+            patient = searchTask.get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
 
-        return results;
+        return patient;
+    }
+
+    public static List<Problem> searchForProblem(String searchType, String searchTerm){
+        String[] searchInfo = new String[]{searchType, searchTerm};
+        ElasticsearchController.SearchForProblem searchTask = new ElasticsearchController.SearchForProblem();
+        searchTask.execute(searchInfo);
+        List<Problem> problems = null;
+        try {
+            problems = searchTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        return problems;
     }
 }

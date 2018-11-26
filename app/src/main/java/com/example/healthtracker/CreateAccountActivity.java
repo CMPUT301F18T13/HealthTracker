@@ -171,7 +171,6 @@ public class CreateAccountActivity extends AppCompatActivity {
 
     // Generates a 5 character long random string containing alphanumeric characters to serve as an account code
     private String createCode() {
-        /*
         String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         StringBuilder salt = new StringBuilder();
         Random rnd = new Random();
@@ -180,21 +179,18 @@ public class CreateAccountActivity extends AppCompatActivity {
             salt.append(chars.charAt(index));
         }
         String code = salt.toString();
-        */
-
-        String code = "testCode";
 
         if(!codeExists(code)){
             return code;
         } else {
+            Log.d("code", "code already exists");
             return createCode();
         }
     }
 
     private boolean codeExists(String code){
-        List<String> searchHits = UserDataController
-                .searchUserData("code", code, "Patient");
-        return searchHits.isEmpty();
+        Patient patient = UserDataController.searchForPatient("code", code);
+        return (patient != null);
     }
 
 }
