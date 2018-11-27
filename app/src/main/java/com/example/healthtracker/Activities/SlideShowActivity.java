@@ -29,8 +29,14 @@ public class SlideShowActivity extends AppCompatActivity {
         update();
     }
 
-    public static void add(String imageName){
-        images.add(imageName);
+    public static boolean add(String imageName){
+        if (images.size()==10){
+            return false;
+        }
+        else{
+            images.add(imageName);
+            return true;
+        }
     }
 
     public void update(){

@@ -40,17 +40,17 @@
         app:srcCompat="@drawable/add32"
         tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/test"
+    <Button
+        android:id="@+id/addPhotoToRecord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="88dp"
-        android:textSize="16sp"
+        android:layout_marginBottom="128dp"
+        android:text="Add Photo"
+        android:onClick="addPhotoToRecord"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent" />
 
 

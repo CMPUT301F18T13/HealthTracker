@@ -28,11 +28,9 @@ public class TakePhotoActivity extends AppCompatActivity {
     Uri imageFileUri;
     private TextView textTargetUri;
     private ImageView imageView;
-    String imageName;
-    String pathTaken;
     String pathLoaded;
+    String addPath = "";
     String path = "/storage/self/primary/Download/";
-    Integer number = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,7 +40,6 @@ public class TakePhotoActivity extends AppCompatActivity {
         StrictMode.setVmPolicy(builder.build());
         ImageButton takePhotoButton = findViewById(R.id.take_photo_button);
         Button loadPhotoButton = findViewById(R.id.photo_from_library_button);
-        textTargetUri = findViewById(R.id.test);
         imageView = findViewById(R.id.imageView);
         takePhotoButton.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -74,21 +71,19 @@ public class TakePhotoActivity extends AppCompatActivity {
         if (requestCode == 100) {
             // Can't display the photo in a text view for whatever reason
             if (resultCode == RESULT_OK) {
-                Toast.makeText(this, "Photo Saved", Toast.LENGTH_SHORT).show();
                 Bitmap image = (Bitmap) Objects.requireNonNull(data.getExtras()).get("data");
                 Matrix matrix = new Matrix();
                 matrix.postRotate(90);
                 assert image != null;
                 Bitmap scaledBitmap = Bitmap.createScaledBitmap(image, 300, 300, true);
                 Bitmap rotatedBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
-                String test = PhotoController.imageToString(rotatedBitmap);
-                imageView.setImageBitmap(PhotoController.stringToImage(test));
-
+                addPath= PhotoController.imageToString(rotatedBitmap);
+                imageView.setImageBitmap(PhotoController.stringToImage(addPath));
 
 
                 ContextWrapper cw = new ContextWrapper(getApplicationContext());
                 pathLoaded=PhotoController.saveToInternalStorage(rotatedBitmap,cw);
-                SlideShowActivity.add(test);
+                SlideShowActivity.add(addPath);
                // Bitmap test1 = PhotoController.loadImageFromStorage(pathLoaded,imageName);
                 //textTargetUri.setText(pathLoaded);
             } else if (resultCode == RESULT_CANCELED) {
@@ -112,8 +107,8 @@ public class TakePhotoActivity extends AppCompatActivity {
                      /*pathLoaded=PhotoController.saveToInternalStorage(rotatedBitmap);
                     Bitmap test1 = PhotoController.loadImageFromStorage(pathLoaded,imageName);
                     textTargetUri.setText(pathLoaded);*/
-                    String test = PhotoController.imageToString(rotatedBitmap);
-                    imageView.setImageBitmap(PhotoController.stringToImage(test));
+                    addPath= PhotoController.imageToString(rotatedBitmap);
+                    imageView.setImageBitmap(PhotoController.stringToImage(addPath));
                 } catch (FileNotFoundException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
@@ -122,6 +117,18 @@ public class TakePhotoActivity extends AppCompatActivity {
             else{
                 Toast.makeText(this, "Load Photo Cancelled", Toast.LENGTH_SHORT).show();
             }
+        }
+    }
+
+    public void addPhotoToRecord(View view){
+        if (addPath.equals("")){
+            Toast.makeText(this, "No Photo Selected", Toast.LENGTH_SHORT).show();
+        }
+        else if(SlideShowActivity.add(addPath)){
+            Toast.makeText(this, "Photo Recorded", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(this, "Max Photo Limit Reached", Toast.LENGTH_SHORT).show();
         }
     }
 }

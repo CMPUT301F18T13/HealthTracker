@@ -1117,6 +1117,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addPhotoToRecord
 id add_comment_button
 id add_patient
 id add_patient_button
@@ -1326,7 +1327,6 @@ id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id take_photo_button
 id terrain
-id test
 id text
 id text2
 id textSpacerNoButtons
