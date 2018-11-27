@@ -20,6 +20,7 @@ import com.example.healthtracker.EntityObjects.Problem;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.R;
 import com.example.healthtracker.View.AddorEditRecordView;
+import com.example.healthtracker.View.CareProviderProblemView;
 import com.example.healthtracker.View.ViewCareProviderComments;
 
 import java.text.ParseException;
@@ -299,6 +300,14 @@ public class EditProblem extends AppCompatActivity {
             }
         }
     }
+
+    public void viewProblemsPhotos(View view) {
+        // Create an intent object containing the bridge to between the two activities
+        Intent intent = new Intent(EditProblem.this, SlideShowActivity.class);
+        // Launch the browse emotions activity
+        startActivity(intent);
+    }
+
 
 
 }

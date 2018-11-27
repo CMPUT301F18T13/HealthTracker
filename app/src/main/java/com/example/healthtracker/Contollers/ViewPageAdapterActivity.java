@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import com.example.healthtracker.R;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
 /* Code for testing the ability of a slideshow to operate on the emulator reused from the tutorial by 
 *EDMT Dev, https://www.youtube.com/watch?v=SX8l9vv-N_4, 2016/07/13, viewed 2018/10/20*
 */
@@ -22,16 +24,16 @@ import com.squareup.picasso.Picasso;
 
 public class ViewPageAdapterActivity extends PagerAdapter {
     private final Activity activity;
-    private final String[] images;
+    private final ArrayList<String> images;
 
-    public ViewPageAdapterActivity(Activity activity, String[] images){
+    public ViewPageAdapterActivity(Activity activity, ArrayList<String> images){
         this.activity = activity;
         this.images = images;
     }
 
     @Override
     public int getCount() {
-        return images.length;
+        return images.size();
     }
 
     @Override
@@ -54,16 +56,7 @@ public class ViewPageAdapterActivity extends PagerAdapter {
         int width = dis.widthPixels;
         image.setMinimumHeight(height);
         image.setMinimumWidth(width);
-
-        try {
-            Picasso.with(activity.getApplicationContext())
-                    .load(images[position])
-                    .placeholder(R.mipmap.ic_launcher)
-                    .error(R.mipmap.ic_launcher)
-                    .into(image);
-        } catch (Exception ignored) {
-        }
-
+        image.setImageBitmap(PhotoController.stringToImage(images.get(position)));
         container.addView(itemView);
         return itemView;
     }

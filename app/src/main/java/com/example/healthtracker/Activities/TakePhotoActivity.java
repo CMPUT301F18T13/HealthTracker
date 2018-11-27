@@ -1,5 +1,6 @@
 package com.example.healthtracker.Activities;
 
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -82,11 +83,14 @@ public class TakePhotoActivity extends AppCompatActivity {
                 Bitmap rotatedBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
                 String test = PhotoController.imageToString(rotatedBitmap);
                 imageView.setImageBitmap(PhotoController.stringToImage(test));
-                /*
+
+
+
                 ContextWrapper cw = new ContextWrapper(getApplicationContext());
                 pathLoaded=PhotoController.saveToInternalStorage(rotatedBitmap,cw);
-                Bitmap test1 = PhotoController.loadImageFromStorage(pathLoaded,imageName);
-                textTargetUri.setText(pathLoaded);*/
+                SlideShowActivity.add(test);
+               // Bitmap test1 = PhotoController.loadImageFromStorage(pathLoaded,imageName);
+                //textTargetUri.setText(pathLoaded);
             } else if (resultCode == RESULT_CANCELED) {
                 Toast.makeText(this, "Photo Cancelled", Toast.LENGTH_SHORT).show();
             } else {
