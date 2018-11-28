@@ -41,6 +41,9 @@ public class TakePhotoActivity extends AppCompatActivity {
         StrictMode.setVmPolicy(builder.build());
         ImageButton takePhotoButton = findViewById(R.id.take_photo_button);
         Button loadPhotoButton = findViewById(R.id.photo_from_library_button);
+        textTargetUri = findViewById(R.id.textView);
+        textTargetUri.setText(getExtraString());
+
         imageView = findViewById(R.id.imageView);
         getExtraString();
         takePhotoButton.setOnClickListener(new Button.OnClickListener() {
@@ -123,10 +126,12 @@ public class TakePhotoActivity extends AppCompatActivity {
     }
 
     public void addPhotoToRecord(View view){
+        textTargetUri = findViewById(R.id.textView);
+        String test= textTargetUri.getText().toString();
         if (addPath.equals("")){
             Toast.makeText(this, "No Photo Selected", Toast.LENGTH_SHORT).show();
         }
-        else if(SlideShowActivity.add(addPath,problemTitle)){
+        else if(SlideShowActivity.add(addPath,test)){
             Toast.makeText(this, "Photo Recorded", Toast.LENGTH_SHORT).show();
         }
         else{
@@ -135,8 +140,8 @@ public class TakePhotoActivity extends AppCompatActivity {
     }
 
     public String getExtraString(){
-        problemTitle= getIntent().getStringExtra("ProblemTitle");
-        return problemTitle;
+        Intent intent = getIntent();
+        return intent.getStringExtra("ProblemTitle");
     }
 }
 

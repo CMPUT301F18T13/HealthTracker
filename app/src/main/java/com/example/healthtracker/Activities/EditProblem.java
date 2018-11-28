@@ -306,7 +306,7 @@ public class EditProblem extends AppCompatActivity {
     public void viewProblemsPhotos(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(EditProblem.this, SlideShowActivity.class);
-        intent.putExtra("ProblemTitle",initialTitle);
+        intent.putExtra("ProblemTitle",problem.getTitle());
         // Launch the browse emotions activity
         startActivity(intent);
     }

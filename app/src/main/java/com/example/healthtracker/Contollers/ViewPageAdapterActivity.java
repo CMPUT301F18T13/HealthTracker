@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.healthtracker.R;
 import com.squareup.picasso.Picasso;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 public class ViewPageAdapterActivity extends PagerAdapter {
     private final Activity activity;
     private final ArrayList<String> images;
+    Context context;
 
     public ViewPageAdapterActivity(Activity activity, ArrayList<String> images){
         this.activity = activity;
@@ -33,7 +35,13 @@ public class ViewPageAdapterActivity extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return images.size();
+        try{
+            return images.size();
+        }
+        catch (NullPointerException ne) {
+            Toast.makeText(context, "No Photos to Display", Toast.LENGTH_SHORT).show();
+            return 0;
+        }
     }
 
     @Override

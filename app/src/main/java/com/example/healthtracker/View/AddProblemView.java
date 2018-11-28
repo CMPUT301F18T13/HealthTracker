@@ -233,7 +233,7 @@ public class AddProblemView extends AppCompatActivity {
         }
         else {
             Intent intent = new Intent(AddProblemView.this, AddorEditRecordView.class);
-            intent.putExtra("Problem Title", titleText.getText().toString());
+            intent.putExtra("ProblemTitle", titleText.getText().toString());
             // Launch the browse emotions activity
             startActivityForResult(intent, 1);
         }

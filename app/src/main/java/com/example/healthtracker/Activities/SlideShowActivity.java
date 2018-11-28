@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.healthtracker.R;
 import com.example.healthtracker.Contollers.ViewPageAdapterActivity;
@@ -28,39 +29,34 @@ import java.util.Objects;
 public class SlideShowActivity extends AppCompatActivity {
 
     private static Map<String, ArrayList<String>> images1 = new HashMap<>();
-    private static ArrayList<String> imageList = new ArrayList<String>();
+    private static ArrayList<String> imageList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slide_show);
         ViewPager viewPager = findViewById(R.id.ViewPager);
-        update();
+        //String test = getImageList();
+        //String test = "test1";
+        try {
+            update();
+        }
+        catch (NullPointerException ne){
+            Toast.makeText(this, "No photos associated with this problem", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public static boolean add(String imageName, String arrayName) {
-        List<String> itemsList = images1.get("test");
+        List<String> itemsList = images1.get(arrayName);
         // if list does not exist create it
         if(itemsList == null) {
-            itemsList = new ArrayList<String>();
+            itemsList = new ArrayList<>();
             itemsList.add(imageName);
-            images1.put("test", (ArrayList<String>) itemsList);
+            images1.put(arrayName, (ArrayList<String>) itemsList);
         } else {
             // add if item is not already in list
             if(!itemsList.contains(imageName)) itemsList.add(imageName);
         }
-
-        /*
-        if(images1.get("test")!=null){
-            imageList= new ArrayList<>();
-            imageList.add(imageName);
-            images1.put("test",imageList);
-        }
-        else{
-            images1.put("test",new ArrayList<>());
-            imageList.add(imageName);
-            images1.put("test",imageList);
-        }*/
         return true;
 
         /*
@@ -85,13 +81,12 @@ public class SlideShowActivity extends AppCompatActivity {
 
     public void update(){
         ViewPager viewPager = findViewById(R.id.ViewPager);
-        ViewPageAdapterActivity adapter = new ViewPageAdapterActivity(SlideShowActivity.this, images1.get("test"));
+        ViewPageAdapterActivity adapter = new ViewPageAdapterActivity(SlideShowActivity.this, images1.get(getImageList()));
         viewPager.setAdapter(adapter);
     }
 
-    public ArrayList<String> getImageList(){
+    public String getImageList(){
         Intent intent =getIntent();
-        String problem =  intent.getStringExtra("ProblemTitle");
-        return images1.get(problem);
+        return intent.getStringExtra("ProblemTitle");
     }
 }

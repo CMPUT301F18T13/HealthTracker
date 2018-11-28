@@ -142,12 +142,12 @@ public class AddorEditRecordView extends AppCompatActivity {
 
     public void addPhoto(View view) {
         Intent intent = new Intent(AddorEditRecordView.this, TakePhotoActivity.class);
-        intent.putExtra(getExtraString(),"Problem Title");
+        intent.putExtra("ProblemTitle",getExtraString());
         startActivity(intent);
     }
 
     public String getExtraString(){
-        problemTitle= getIntent().getStringExtra("ProblemTitle");
-        return problemTitle;
+        Intent intent = getIntent();
+        return intent.getStringExtra("ProblemTitle");
     }
 }
