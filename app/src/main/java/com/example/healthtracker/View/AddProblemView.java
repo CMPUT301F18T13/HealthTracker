@@ -228,9 +228,15 @@ public class AddProblemView extends AppCompatActivity {
      */
     public void addRecordFromAdd(View view) {
         // Create an intent object containing the bridge to between the two activities
-        Intent intent = new Intent(AddProblemView.this, AddorEditRecordView.class);
-        // Launch the browse emotions activity
-        startActivityForResult(intent, 1);
+        if (titleText.getText().toString().equals("")){
+            Toast.makeText(this, "Please fill in the Problem Title", Toast.LENGTH_LONG).show();
+        }
+        else {
+            Intent intent = new Intent(AddProblemView.this, AddorEditRecordView.class);
+            intent.putExtra("Problem Title", titleText.getText().toString());
+            // Launch the browse emotions activity
+            startActivityForResult(intent, 1);
+        }
     }
 
     @Override

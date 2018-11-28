@@ -57,6 +57,17 @@ public class ViewPageAdapterActivity extends PagerAdapter {
         image.setMinimumHeight(height);
         image.setMinimumWidth(width);
         image.setImageBitmap(PhotoController.stringToImage(images.get(position)));
+
+        /*
+        try {
+            Picasso.with(activity.getApplicationContext())
+                    .load(images.get(position))
+                    .placeholder(R.mipmap.ic_launcher)
+                    .error(R.mipmap.ic_launcher)
+                    .into(image);
+        } catch (Exception ignored) {
+        }*/
+
         container.addView(itemView);
         return itemView;
     }

@@ -30,6 +30,7 @@ public class TakePhotoActivity extends AppCompatActivity {
     private ImageView imageView;
     String pathLoaded;
     String addPath = "";
+    String problemTitle;
     String path = "/storage/self/primary/Download/";
 
     @Override
@@ -41,6 +42,7 @@ public class TakePhotoActivity extends AppCompatActivity {
         ImageButton takePhotoButton = findViewById(R.id.take_photo_button);
         Button loadPhotoButton = findViewById(R.id.photo_from_library_button);
         imageView = findViewById(R.id.imageView);
+        getExtraString();
         takePhotoButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,7 +85,7 @@ public class TakePhotoActivity extends AppCompatActivity {
 
                 ContextWrapper cw = new ContextWrapper(getApplicationContext());
                 pathLoaded=PhotoController.saveToInternalStorage(rotatedBitmap,cw);
-                SlideShowActivity.add(addPath);
+                //SlideShowActivity.add(addPath);
                // Bitmap test1 = PhotoController.loadImageFromStorage(pathLoaded,imageName);
                 //textTargetUri.setText(pathLoaded);
             } else if (resultCode == RESULT_CANCELED) {
@@ -124,12 +126,17 @@ public class TakePhotoActivity extends AppCompatActivity {
         if (addPath.equals("")){
             Toast.makeText(this, "No Photo Selected", Toast.LENGTH_SHORT).show();
         }
-        else if(SlideShowActivity.add(addPath)){
+        else if(SlideShowActivity.add(addPath,problemTitle)){
             Toast.makeText(this, "Photo Recorded", Toast.LENGTH_SHORT).show();
         }
         else{
             Toast.makeText(this, "Max Photo Limit Reached", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public String getExtraString(){
+        problemTitle= getIntent().getStringExtra("ProblemTitle");
+        return problemTitle;
     }
 }
 

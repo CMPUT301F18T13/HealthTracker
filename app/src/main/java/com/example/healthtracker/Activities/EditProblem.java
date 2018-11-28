@@ -43,6 +43,7 @@ public class EditProblem extends AppCompatActivity {
     private Date date;
     private String initial_entry;
     private Patient user;
+    private String initialTitle;
     private Problem problem;
     private int index;
     private Context context;
@@ -57,6 +58,7 @@ public class EditProblem extends AppCompatActivity {
         setContentView(R.layout.activity_edit_problem);
 
         titleText = findViewById(R.id.title_text_editscreen);
+        initialTitle=titleText.getText().toString();
         dateText = findViewById(R.id.date_started_editscreen);
         descriptionText = findViewById(R.id.problem_description_editscreen);
         context = this;
@@ -304,6 +306,7 @@ public class EditProblem extends AppCompatActivity {
     public void viewProblemsPhotos(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(EditProblem.this, SlideShowActivity.class);
+        intent.putExtra("ProblemTitle",initialTitle);
         // Launch the browse emotions activity
         startActivity(intent);
     }

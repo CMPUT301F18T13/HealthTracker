@@ -33,6 +33,7 @@ public class AddorEditRecordView extends AppCompatActivity {
     private String title, comment;
     private Context context;
     private Patient patient;
+    String problemTitle;
     File capturedImages;
     private PatientRecord record;
 
@@ -45,6 +46,7 @@ public class AddorEditRecordView extends AppCompatActivity {
         timestampText = findViewById(R.id.patient_record_timestamp);
         context = this;
         record = new PatientRecord();
+        getExtraString();
 
         // if editing a record show its current details
         Intent intent = getIntent();
@@ -140,6 +142,12 @@ public class AddorEditRecordView extends AppCompatActivity {
 
     public void addPhoto(View view) {
         Intent intent = new Intent(AddorEditRecordView.this, TakePhotoActivity.class);
+        intent.putExtra(getExtraString(),"Problem Title");
         startActivity(intent);
+    }
+
+    public String getExtraString(){
+        problemTitle= getIntent().getStringExtra("ProblemTitle");
+        return problemTitle;
     }
 }
