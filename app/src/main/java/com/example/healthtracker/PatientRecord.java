@@ -7,6 +7,8 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 
+import io.searchbox.annotations.JestId;
+
 /**
  * The patient record is a record added to a problem by a patient.
  *
@@ -16,6 +18,7 @@ import java.util.Date;
  */
 public class PatientRecord implements Serializable {
 
+    @JestId
     private String RecordTitle;
     private String comment;
     private Timestamp timestamp;

@@ -1,2 +1,0 @@
-# Referenced at C:\Users\mikey\AndroidStudioProjects\HealthTracker\app\build\intermediates\merged_manifests\debugAndroidTest\processDebugAndroidTestManifest\merged\AndroidManifest.xml:9
--keep class android.support.test.runner.AndroidJUnitRunner { <init>(...); }

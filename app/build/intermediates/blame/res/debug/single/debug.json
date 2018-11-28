@@ -152,6 +152,10 @@
         "source": "C:\\Users\\mikey\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\12237ca012bd756b7a7dbd142f7d67f1\\res\\drawable-xhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
+        "merged": "C:\\Users\\mikey\\AndroidStudioProjects\\HealthTracker\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_search_results_record_view.xml.flat",
+        "source": "C:\\Users\\mikey\\AndroidStudioProjects\\HealthTracker\\app\\src\\main\\res\\layout\\activity_search_results_record_view.xml"
+    },
+    {
         "merged": "C:\\Users\\mikey\\AndroidStudioProjects\\HealthTracker\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_in_top.xml.flat",
         "source": "C:\\Users\\mikey\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\12237ca012bd756b7a7dbd142f7d67f1\\res\\anim\\abc_slide_in_top.xml"
     },
@@ -242,6 +246,10 @@
     {
         "merged": "C:\\Users\\mikey\\AndroidStudioProjects\\HealthTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "C:\\Users\\mikey\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\35070c62b0a0ec27fb9d5f20fb859edc\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\mikey\\AndroidStudioProjects\\HealthTracker\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_search_results_problem.xml.flat",
+        "source": "C:\\Users\\mikey\\AndroidStudioProjects\\HealthTracker\\app\\src\\main\\res\\layout\\activity_search_results_problem.xml"
     },
     {
         "merged": "C:\\Users\\mikey\\AndroidStudioProjects\\HealthTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_fab_background.xml.flat",
@@ -1010,6 +1018,10 @@
     {
         "merged": "C:\\Users\\mikey\\AndroidStudioProjects\\HealthTracker\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\mikey\\AndroidStudioProjects\\HealthTracker\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\mikey\\AndroidStudioProjects\\HealthTracker\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_search_result_comments.xml.flat",
+        "source": "C:\\Users\\mikey\\AndroidStudioProjects\\HealthTracker\\app\\src\\main\\res\\layout\\activity_search_result_comments.xml"
     },
     {
         "merged": "C:\\Users\\mikey\\AndroidStudioProjects\\HealthTracker\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_cab_background_internal_bg.xml.flat",

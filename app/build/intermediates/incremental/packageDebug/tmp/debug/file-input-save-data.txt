@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Nov 25 21:20:15 MST 2018
+#Tue Nov 27 02:58:22 MST 2018
 1.base=C\:\\Users\\mikey\\AndroidStudioProjects\\HealthTracker\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
 2.path=classes2.dex
 0.baseType=DIRECTORY

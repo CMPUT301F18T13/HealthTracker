@@ -25,7 +25,6 @@
         android:required="true" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
     <!--
@@ -33,7 +32,6 @@
      Google Maps Android API v2, but are recommended.
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <permission
         android:name="com.example.healthtracker.permission.MAPS_RECEIVE"
@@ -49,7 +47,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/Theme.AppCompat" >
         <activity
             android:name="com.example.healthtracker.LoginActivity"
             android:exported="true"
@@ -82,6 +80,10 @@
         <activity android:name="com.example.healthtracker.SlideShowActivity" />
         <activity android:name="com.example.healthtracker.MapView" />
 
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -96,6 +98,15 @@
             android:name="com.example.healthtracker.CareProviderRecordView"
             android:label="@string/title_activity_care_provider_record_view" />
         <activity android:name="com.example.healthtracker.TakePhotoActivity" />
+        <activity
+            android:name="com.example.healthtracker.search_results_problem"
+            android:label="@string/title_activity_search_results_problem" />
+        <activity
+            android:name="com.example.healthtracker.search_results_record"
+            android:label="@string/title_activity_search_results_record" />
+        <activity
+            android:name="com.example.healthtracker.search_result_comments"
+            android:label="@string/title_activity_search_result_comments" />
 
         <provider
             android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"

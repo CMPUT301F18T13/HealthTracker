@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import io.searchbox.annotations.JestId;
+
 import static java.lang.Boolean.FALSE;
 
 /**
@@ -18,6 +20,7 @@ import static java.lang.Boolean.FALSE;
  */
 public class Problem implements Serializable {
 
+    @JestId
     private String ProblemTitle;
     private Date dateStarted;
     private String description;

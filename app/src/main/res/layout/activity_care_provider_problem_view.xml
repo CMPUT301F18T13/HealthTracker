@@ -34,7 +34,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/viewTitle"
+                android:id="@+id/titleView"
                 android:layout_width="303dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -58,11 +58,11 @@
                 tools:layout_editor_absoluteY="75dp" />
 
             <TextView
-                android:id="@+id/viewDes"
+                android:id="@+id/desView"
                 android:layout_width="303dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/viewTitle"
-                android:layout_alignLeft="@id/viewTitle"
+                android:layout_below="@id/titleView"
+                android:layout_alignLeft="@id/titleView"
                 android:layout_marginTop="80dp"
                 android:singleLine="false"
                 android:inputType="textMultiLine"
@@ -75,8 +75,8 @@
                 android:id="@+id/viewRecord"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/viewTitle"
-                android:layout_below="@id/viewDes"
+                android:layout_alignLeft="@id/titleView"
+                android:layout_below="@id/desView"
                 android:layout_marginTop="40dp"
                 android:text="@string/record_strict_care_view"
                 android:textSize="18sp"
@@ -88,7 +88,7 @@
                 android:id="@+id/imageButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/viewTitle"
+                android:layout_alignEnd="@+id/titleView"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="14dp"
                 android:onClick="viewProblemsPhotos"
