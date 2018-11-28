@@ -135,4 +135,14 @@
         app:srcCompat="@drawable/pic32"
         tools:ignore="ContentDescription" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:onClick="AddReminder"
+        android:text="@string/add_or_delete_reminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/problem_description_editscreen" />
+
 </android.support.constraint.ConstraintLayout>

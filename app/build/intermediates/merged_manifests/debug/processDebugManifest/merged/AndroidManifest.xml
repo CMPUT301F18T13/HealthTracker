@@ -108,9 +108,11 @@
         <activity
             android:name="com.example.healthtracker.View.CareProviderRecordView"
             android:label="@string/title_activity_care_provider_record_view" />
-        <activity android:name="com.example.healthtracker.Activities.TakePhotoActivity" >
-        </activity>
+        <activity android:name="com.example.healthtracker.Activities.TakePhotoActivity" />
         <activity android:name="com.example.healthtracker.Contollers.PhotoController" />
+        <activity android:name="com.example.healthtracker.Activities.AddReminderActivity" />
+
+        <receiver android:name="EntityObjects.AlarmReceiver" />
 
         <provider
             android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"

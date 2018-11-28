@@ -19,6 +19,7 @@ import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.Problem;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.R;
+import com.example.healthtracker.View.AddProblemView;
 import com.example.healthtracker.View.AddorEditRecordView;
 import com.example.healthtracker.View.CareProviderProblemView;
 import com.example.healthtracker.View.ViewCareProviderComments;
@@ -305,6 +306,13 @@ public class EditProblem extends AppCompatActivity {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(EditProblem.this, SlideShowActivity.class);
         // Launch the browse emotions activity
+        startActivity(intent);
+    }
+
+    public void AddReminder(View view) {
+        // Create an intent object containing the bridge to between the two activities
+        Intent intent = new Intent(EditProblem.this, AddReminderActivity.class);
+        intent.putExtra("FROM","Edit");
         startActivity(intent);
     }
 

@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.healthtracker.Activities.AddReminderActivity;
 import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.Problem;
@@ -257,6 +258,12 @@ public class AddProblemView extends AppCompatActivity {
                 recordList.set(index, record);
             }
         }
+    }
+    public void AddReminder(View view) {
+        // Create an intent object containing the bridge to between the two activities
+        Intent intent = new Intent(AddProblemView.this, AddReminderActivity.class);
+        intent.putExtra("FROM","Add");
+        startActivity(intent);
     }
 
 }

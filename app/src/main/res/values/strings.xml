@@ -85,6 +85,12 @@
     <string name="add_geo_location_button">Add Geo-Location</string>
     <string name="add_reminder">Add Reminder</string>
     <string name="from_library">From Library</string>
+    <string name="my_notification">My notification</string>
+    <string name="repeat_mode">Repeat Mode</string>
+    <string name="time">Time</string>
+    <string name="add_or_delete_reminder">Add/Delete Reminder</string>
+    <string name="delete_reminder">Delete</string>
+    <string name="choose_time">Choose a time!</string>
 
 
 </resources>

@@ -26,6 +26,7 @@ animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 array body_location_options
+array repeat_choice
 array searchTypes
 attr actionBarDivider
 attr actionBarItemBackground
@@ -1137,6 +1138,8 @@ id blocking
 id bodylocation_button
 id bottom
 id button
+id button2
+id button3
 id buttonPanel
 id cancel_action
 id care_comment
@@ -1152,6 +1155,7 @@ id center_vertical
 id chains
 id checkLink
 id checkbox
+id choose_repeat
 id chronometer
 id clip_horizontal
 id clip_vertical
@@ -1171,6 +1175,7 @@ id date_started_editable
 id date_started_editscreen
 id decor_content_parent
 id default_activity_button
+id delete_reminder
 id description_edit_text
 id design_bottom_sheet
 id design_menu_item_action_area
@@ -1204,6 +1209,7 @@ id ghost_view
 id gone
 id group_divider
 id groups
+id guide_title
 id home
 id homeAsUp
 id hybrid
@@ -1268,15 +1274,18 @@ id problem_list_view
 id problem_title
 id progress_circular
 id progress_horizontal
+id r_timepicker
 id radio
 id record_list_addscreen
 id record_list_editscreen
+id repeatView
 id right
 id right_icon
 id right_side
 id satellite
 id save_image_matrix
 id save_non_transition_alpha
+id save_reminder
 id save_scale_type
 id screen
 id scroll
@@ -1419,6 +1428,7 @@ layout abc_tooltip
 layout activity_add_care_provider_comment
 layout activity_add_patient
 layout activity_add_problem
+layout activity_add_reminder
 layout activity_addor_edit_record
 layout activity_care_provider_problem_view
 layout activity_care_provider_record_view
@@ -1517,6 +1527,7 @@ string abc_toolbar_collapse_description
 string add_body_location_button
 string add_geo_location_button
 string add_new_problem
+string add_or_delete_reminder
 string add_patient
 string add_problem
 string add_record_from_add
@@ -1534,6 +1545,7 @@ string care_comment_title
 string care_title_strict
 string character_counter_content_description
 string character_counter_pattern
+string choose_time
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title
@@ -1556,6 +1568,7 @@ string create_account
 string date_started
 string date_started_care_view
 string default_web_client_id
+string delete_reminder
 string description_care_view
 string email_settings
 string fab_transformation_scrim_behavior
@@ -1574,6 +1587,7 @@ string max_descript_length
 string max_title_length
 string mayo_clinic
 string mtrl_chip_close_icon_content_description
+string my_notification
 string newUserID
 string password_toggle_content_description
 string path_password_eye
@@ -1590,6 +1604,7 @@ string prompt_email
 string provider_add_comment
 string record_strict_care_view
 string record_view_title
+string repeat_mode
 string save
 string save_care_comment
 string save_edited_problem
@@ -1602,6 +1617,7 @@ string settings
 string startdate_edit
 string status_bar_notification_info_overflow
 string symptom_checker
+string time
 string timestamp
 string title_activity_care_provider_record_view
 string title_activity_view_care_provider_comments
