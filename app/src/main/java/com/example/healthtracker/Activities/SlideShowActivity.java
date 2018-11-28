@@ -39,6 +39,18 @@ public class SlideShowActivity extends AppCompatActivity {
     }
 
     public static boolean add(String imageName, String arrayName) {
+        List<String> itemsList = images1.get("test");
+        // if list does not exist create it
+        if(itemsList == null) {
+            itemsList = new ArrayList<String>();
+            itemsList.add(imageName);
+            images1.put("test", (ArrayList<String>) itemsList);
+        } else {
+            // add if item is not already in list
+            if(!itemsList.contains(imageName)) itemsList.add(imageName);
+        }
+
+        /*
         if(images1.get("test")!=null){
             imageList= new ArrayList<>();
             imageList.add(imageName);
@@ -48,7 +60,7 @@ public class SlideShowActivity extends AppCompatActivity {
             images1.put("test",new ArrayList<>());
             imageList.add(imageName);
             images1.put("test",imageList);
-        }
+        }*/
         return true;
 
         /*
