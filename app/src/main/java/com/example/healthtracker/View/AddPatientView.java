@@ -59,7 +59,7 @@ public class AddPatientView extends AppCompatActivity {
 
             // Check whether the patient ID exists
             for(int i=0;i<patients.size();i++){
-                if(patientId.equals(patients.get(i).getUserID())){
+                if(patientId.equals(patients.get(i).getCode())){
                     validID = true;
                     mPatient = patients.get(i);
                 }
@@ -133,10 +133,8 @@ public class AddPatientView extends AppCompatActivity {
                 alertDialog.show();
                 return false;
             }
-
         }
         return true;
-
     }
 
     /*

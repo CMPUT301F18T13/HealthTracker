@@ -11,7 +11,7 @@
     <string name="search">Search</string>
     <string name="keywords">Keywords</string>
     <string name="back1">Back</string>
-    <string name="patient_id">Patient ID</string>
+    <string name="patient_id">Patient ID Code</string>
     <string name="save">Save</string>
     <string name="phone_number">Phone Number</string>
     <string name="settings">Settings</string>
