@@ -20,7 +20,7 @@ public class ViewPatientsProblems extends AppCompatActivity {
 
     private ArrayList<Problem> pProblems;
     private ListView pListView;
-    private TextView idText;
+    private TextView idText, phoneText, emailText;
     private ArrayAdapter<Problem> pArrayAdapter;
     private Patient myPatient;
 
@@ -32,14 +32,19 @@ public class ViewPatientsProblems extends AppCompatActivity {
         // get patient#
         Intent intent = getIntent();
         CareProvider careProvider = UserDataController.loadCareProviderData(this);
-        int patientNum = intent.getIntExtra("patientNum", 0);
+        int patientNum = intent.getIntExtra("patientNum", -1);
         myPatient = careProvider.getPatientList().get(patientNum);
 
         //Load patient data
         pProblems = myPatient.getProblemList();
         idText = findViewById(R.id.selected_patient_ID);
+        phoneText = findViewById(R.id.patient_phone);
+        emailText = findViewById(R.id.patient_email);
+
         String patientID = myPatient.getUserID();
         idText.setText("Patient: " + patientID);
+        phoneText.setText("Patient Phone Number: " + myPatient.getPhone());
+        emailText.setText("Patient Email Address: " + myPatient.getEmail());
 
         // Create an instance of an array adapter
         pArrayAdapter = new ArrayAdapter<Problem>(this, android.R.layout.simple_list_item_1, pProblems);

@@ -10,13 +10,16 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature android:name="android.hardware.camera2" />
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
     <!--
@@ -24,7 +27,6 @@
      Google Maps Android API v2, but are recommended.
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <permission
         android:name="com.example.healthtracker.permission.MAPS_RECEIVE"
@@ -37,13 +39,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/Theme.AppCompat"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".LoginActivity"
+            android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -58,10 +62,12 @@
         <activity android:name=".CareProviderProblemView" />
         <activity android:name=".AddCareProviderCommentView" />
         <activity android:name=".PatientHomeView" />
-        <activity android:name=".AddProblemView"
+        <activity
+            android:name=".AddProblemView"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".ViewMyProblems" />
-        <activity android:name=".EditProblem"
+        <activity
+            android:name=".EditProblem"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".AddorEditRecordView" />
         <activity android:name=".SlideShowActivity" />
@@ -69,18 +75,33 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false"/>
-
-
-
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyDppOAUxXEBGrsc_gg8bw392b4QdyzlzYw" />
 
+        <activity
+            android:name=".ViewCareProviderComments"
+            android:label="@string/title_activity_view_care_provider_comments" />
+        <activity
+            android:name=".CareProviderRecordView"
+            android:label="@string/title_activity_care_provider_record_view" />
+        <activity android:name=".TakePhotoActivity" />
+        <activity
+            android:name=".search_results_problem"
+            android:label="@string/title_activity_search_results_problem" />
+        <activity
+            android:name=".search_results_record"
+            android:label="@string/title_activity_search_results_record" />
+        <activity
+            android:name=".search_result_comments"
+            android:label="@string/title_activity_search_result_comments"></activity>
     </application>
 
 </manifest>

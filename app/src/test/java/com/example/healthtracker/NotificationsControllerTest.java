@@ -25,7 +25,7 @@ public class NotificationsControllerTest {
         repeatType = "week";
         isOn = true;
         parentProblem = new Problem("testproblem",new java.util.Date(), "test");
-        n = new NotificationsController(startDate, time, repeatType);
+        n = new NotificationsController(startDate, time, repeatType, "id");
 
     }
 

@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="19"
+        android:minSdkVersion="26"
         android:targetSdkVersion="28" />
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
@@ -15,13 +15,16 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature android:name="android.hardware.camera2" />
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
     <!--
@@ -29,14 +32,12 @@
      Google Maps Android API v2, but are recommended.
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <permission
         android:name="com.example.healthtracker.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
     <application
-        android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
         android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:debuggable="true"
@@ -46,9 +47,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/Theme.AppCompat" >
         <activity
             android:name="com.example.healthtracker.LoginActivity"
+            android:exported="true"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -81,6 +83,9 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -88,6 +93,23 @@
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyDppOAUxXEBGrsc_gg8bw392b4QdyzlzYw" />
+
+        <activity
+            android:name="com.example.healthtracker.ViewCareProviderComments"
+            android:label="@string/title_activity_view_care_provider_comments" />
+        <activity
+            android:name="com.example.healthtracker.CareProviderRecordView"
+            android:label="@string/title_activity_care_provider_record_view" />
+        <activity android:name="com.example.healthtracker.TakePhotoActivity" />
+        <activity
+            android:name="com.example.healthtracker.search_results_problem"
+            android:label="@string/title_activity_search_results_problem" />
+        <activity
+            android:name="com.example.healthtracker.search_results_record"
+            android:label="@string/title_activity_search_results_record" />
+        <activity
+            android:name="com.example.healthtracker.search_result_comments"
+            android:label="@string/title_activity_search_result_comments" />
 
         <provider
             android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"

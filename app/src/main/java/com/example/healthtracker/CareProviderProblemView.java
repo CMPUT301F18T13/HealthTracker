@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -23,11 +25,8 @@ public class CareProviderProblemView extends AppCompatActivity {
     private TextView titleText;
     private TextView dateText;
     private TextView desText;
-    private TextView recordText;
+    private ListView recordList;
 
-    private String title;
-    private Date date;
-    private String des;
     private ArrayList<PatientRecord> records;
 
     private ArrayAdapter<PatientRecord> rArrayAdapter;
@@ -36,33 +35,56 @@ public class CareProviderProblemView extends AppCompatActivity {
     private Problem pProblem;
     private int patientNum;
     private int problemNum;
+    private Bundle bd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_care_provider_problem_view);
 
-        titleText = findViewById(R.id.viewTitle);
+        titleText = findViewById(R.id.titleView);
         dateText = findViewById(R.id.viewDate);
-        desText = findViewById(R.id.viewDes);
-        recordText = findViewById(R.id.viewRecord);
+        desText = findViewById(R.id.desView);
+        recordList = findViewById(R.id.care_record_list);
 
         Intent intent = getIntent();
-        Bundle bd = intent.getExtras();
-
-        CareProvider careProvider = UserDataController.loadCareProviderData(this);
+        bd = intent.getExtras();
 
         patientNum = bd.getInt("patientNum");
         problemNum = bd.getInt("problemNum");
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        CareProvider careProvider = UserDataController.loadCareProviderData(this);
         myPatient = careProvider.getPatientList().get(patientNum);
         pProblem = myPatient.getProblem(problemNum);
-
-        title = pProblem.getTitle();
-        date = pProblem.getDate();
-        des = pProblem.getDescription();
         records = pProblem.getRecords();
 
+        String title = pProblem.getTitle();
+        Date date = pProblem.getDate();
+        String des = pProblem.getDescription();
+
         showProblem(title,date,des);
+
+        ArrayAdapter<PatientRecord> adapter = new ArrayAdapter<PatientRecord>
+                (this, android.R.layout.simple_list_item_1, records);
+        recordList.setAdapter(adapter);
+
+
+        // Add listener to detect button click on items in listview
+        recordList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            // method to initiate after listener detects click
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(CareProviderProblemView.this, CareProviderRecordView.class);
+                bd.putInt("recordNum", position);
+                intent.putExtras(bd);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -76,10 +98,6 @@ public class CareProviderProblemView extends AppCompatActivity {
         titleText.setText(title);
         dateText.setText(dateToString(date));
         desText.setText(des);
-
-        if(pProblem.getcaregiverRecords().size() > 0){
-            recordText.setText(pProblem.getcaregiverRecords().get(0).getComment());
-        }
     }
 
     /*
@@ -96,6 +114,22 @@ public class CareProviderProblemView extends AppCompatActivity {
         intent.putExtras(bd);
         // Launch the browse emotions activity
         startActivity(intent);
+    }
+
+    public void viewCareProviderComments(View view){
+        // Create an intent object containing the bridge to between the two activities
+        if(myPatient.getProblem(problemNum).getcaregiverRecords().size() > 0){
+            Intent intent = new Intent(CareProviderProblemView.this, ViewCareProviderComments.class);
+            Bundle bd = new Bundle();
+            bd.putInt("patientNum", patientNum);
+            bd.putInt("problemNum", problemNum);
+            bd.putString("profileType", "CareProvider");
+            intent.putExtras(bd);
+            // Launch the browse emotions activity
+            startActivity(intent);
+        } else{
+            Toast.makeText(this, "No comments to view!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     /*

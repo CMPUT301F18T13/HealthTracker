@@ -16,7 +16,7 @@ public class PatientTest {
 
     @Before
     public void setUp() {
-        this.patient = new Patient("7801234567", "abc@gmail.com", "abc");
+        this.patient = new Patient("7801234567", "abc@gmail.com", "abc", "XXXXX");
         this.problem = new Problem("New Problem 1", new java.util.Date(( new java.util.Date()).getTime()), "This is a new problem1");
         this.problem2 = new Problem("New Problem 2", new java.util.Date(( new java.util.Date()).getTime()), "This is a new problem2");
         problemList = new ArrayList<Problem> ();
@@ -62,10 +62,10 @@ public class PatientTest {
 
     @Test
     public void addToCareProviderString() {
-        patient.addToCareProviderString("Care Provider 1");
+        patient.addToCareProviderString(new CareProvider("", "", "Care Provider 1"));
         assertEquals(patient.getCareProviderString(), "Care Provider 1");
 
-        patient.addToCareProviderString("Care Provider 2");
+        patient.addToCareProviderString(new CareProvider("", "", "Care Provider 2"));
         assertEquals(patient.getCareProviderString(), "Care Provider 1 | Care Provider 2");
     }
 
@@ -73,7 +73,7 @@ public class PatientTest {
     public void getCareProviderString() {
         assertEquals(patient.getCareProviderString(), "");
 
-        patient.addToCareProviderString("Care Provider 1");
+        patient.addToCareProviderString(new CareProvider("", "", "Care Provider 1"));
         assertEquals(patient.getCareProviderString(), "Care Provider 1");
     }
 }

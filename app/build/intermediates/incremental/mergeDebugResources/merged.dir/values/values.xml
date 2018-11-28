@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
+    <string-array name="body_location_options">
+        <item>Left foot</item>
+        <item>Right foot</item>
+        <item>Left leg</item>
+        <item>Right leg</item>
+        <item>Groin</item>
+        <item>Stomach</item>
+        <item>Left side</item>
+        <item>Right side</item>
+        <item>Left Arm</item>
+        <item>Right Arm</item>
+        <item>Left Hand</item>
+        <item>Right Hand</item>
+        <item>Upper back</item>
+        <item>Mid back</item>
+        <item>Lower back</item>
+        <item>Shoulders</item>
+        <item>Neck</item>
+        <item>Head</item>
+    </string-array>
+    <string-array name="searchResults">
+        <item>Problems</item>
+        <item>Records</item>
+    </string-array>
     <string-array name="searchTypes">
         <item>Keywords</item>
         <item>Geo-location</item>
@@ -2350,12 +2374,16 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="add_body_location_button">Add Body-Location</string>
+    <string name="add_geo_location_button">Add Geo-Location</string>
     <string name="add_new_problem">Save</string>
     <string name="add_patient">Add Patient</string>
+    <string name="add_photo_button">Add Photo</string>
     <string name="add_problem">Add Problem</string>
     <string name="add_record_from_add">Add Record</string>
     <string name="add_record_from_edit">Add Record</string>
     <string name="add_record_to_problem">Add Record</string>
+    <string name="add_reminder">Add Reminder</string>
     <string name="app_name">HealthTracker</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="back">Back</string>
@@ -2371,6 +2399,7 @@
     <string name="back_from_problem_view">Back</string>
     <string name="back_from_record_view">Back</string>
     <string name="back_from_settings">Back</string>
+    <string name="bodyLocation">Body Location</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="cancel_problem_edit">Cancel</string>
     <string name="care_comment">Comment</string>
@@ -2453,6 +2482,7 @@
     <string name="save">Save</string>
     <string name="save_care_comment">Save</string>
     <string name="save_edited_problem">Save</string>
+    <string name="save_record_button">Save</string>
     <string name="save_settings">Save</string>
     <string name="search">Search</string>
     <string name="searchType">Search Type</string>
@@ -2462,6 +2492,13 @@
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="symptom_checker">Symptom Checker</string>
     <string name="test_login_checkbox">Care Provider</string>
+    <string name="timestamp">Timestamp</string>
+    <string name="title_activity_care_provider_record_view">CareProviderRecordView</string>
+    <string name="title_activity_search_result_comments">search_result_comments</string>
+    <string name="title_activity_search_results_problem">search_results_problem</string>
+    <string name="title_activity_search_results_record">search_results_record</string>
+    <string name="title_activity_view_care_provider_comments">ViewCareProviderComments</string>
+    <string name="title_activity_view_comments">ViewComments</string>
     <string name="title_care_view">Title</string>
     <string name="track_users"/>
     <string name="userID">User ID</string>
@@ -2482,7 +2519,7 @@
     <item name="android:windowEnterAnimation">@anim/design_bottom_sheet_slide_in</item>
     <item name="android:windowExitAnimation">@anim/design_bottom_sheet_slide_out</item>
   </style>
-    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="android:Theme.Material.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

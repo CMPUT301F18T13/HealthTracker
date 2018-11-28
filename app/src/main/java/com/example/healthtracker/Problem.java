@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import io.searchbox.annotations.JestId;
+
 import static java.lang.Boolean.FALSE;
 
 /**
@@ -18,6 +20,7 @@ import static java.lang.Boolean.FALSE;
  */
 public class Problem implements Serializable {
 
+    @JestId
     private String ProblemTitle;
     private Date dateStarted;
     private String description;
@@ -159,6 +162,16 @@ public class Problem implements Serializable {
         return this.caregiverRecords;
     }
 
+    /**
+     * Get a specific one of the PatientRecords belonging to the Problem.
+     *
+     * @param Index The index of the desired PatientRecord in the patientRecords list.
+     * @return The PatienRecord corresponding to the Index input.
+     */
+    public PatientRecord getPatientRecord(int Index){
+        return patientRecords.get(Index);
+    }
+
     @Override
     /**
      * Override the toString method to set what a string representation of a problem is.
@@ -169,6 +182,6 @@ public class Problem implements Serializable {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String dateStr = sdf.format(dateStarted);
         return "title: "+ProblemTitle+"\n"+"start date: "+dateStr+"\n"+"description: "+
-                description+"\n"+"number of records: "+String.valueOf(patientRecords.size());
+                description+"\n"+"number of records: "+String.valueOf(patientRecords.size() + caregiverRecords.size());
     }
 }

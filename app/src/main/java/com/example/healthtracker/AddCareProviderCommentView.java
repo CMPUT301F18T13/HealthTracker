@@ -108,8 +108,7 @@ public class AddCareProviderCommentView extends AppCompatActivity {
         Toast.makeText(this, "New Comment Added", Toast.LENGTH_LONG).show();
 
         // save data
-        UserDataController.savePatientData(this, myPatient);
-        UserDataController.saveCareProviderData(this, careProvider);
+        UserDataController.saveCareProviderComments(this, myPatient, patientNum);
 
         // done
         finish();

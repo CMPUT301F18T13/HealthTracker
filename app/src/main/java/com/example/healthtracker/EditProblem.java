@@ -239,8 +239,29 @@ public class EditProblem extends AppCompatActivity {
     public void addRecordFromAdd(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(EditProblem.this, AddorEditRecordView.class);
-        // Launch the browse emotions activity
+        // Launch the activity
         startActivityForResult(intent, 1);
+    }
+
+    /*
+    * Select "View Care Provider Comments" to be taken to a page listing all comments left by the
+    * user's Care Providers.
+     */
+    public void viewCareProviderComments(View view){
+        if(user.getProblem(index).getcaregiverRecords().size()>0){
+            // Create an intent object containing the bridge to between the two activities
+            Intent intent = new Intent(EditProblem.this, ViewCareProviderComments.class);
+
+            Bundle bd = new Bundle();
+            bd.putInt("problemNum", index);
+            bd.putString("profileType", "Patient");
+            intent.putExtras(bd);
+
+            // Launch the activity
+            startActivity(intent);
+        } else{
+            Toast.makeText(this, "No comments to view!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

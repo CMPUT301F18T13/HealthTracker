@@ -41,7 +41,7 @@ public class User implements Serializable {
     }
 
     /**
-     * user singleton
+     * user constructor that requires no parameters
      */
     public User(){
 

@@ -1,5 +1,7 @@
 package com.example.healthtracker;
 
+import android.content.Context;
+
 import java.sql.Date;
 import java.sql.Time;
 
@@ -12,6 +14,8 @@ import java.sql.Time;
  * @since 2018-10-20
  */
 public class NotificationsController {
+    private Context context;
+    private String ID;
     private Boolean isOn;
     private String repeatType;
     private Time time;
@@ -24,10 +28,11 @@ public class NotificationsController {
      * @param time When the user will be alerted.
      * @param repeatType How often the user will be alerted.
      */
-    public NotificationsController(Date startDate, Time time, String repeatType ){
+    public NotificationsController(Date startDate, Time time, String repeatType, String ID){
         this.startDate = startDate;
         this.time = time;
         this.repeatType = repeatType;
+        this.ID = ID;
     }
 
     /**

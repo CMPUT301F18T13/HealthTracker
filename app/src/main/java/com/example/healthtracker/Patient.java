@@ -18,6 +18,7 @@ public class Patient extends User implements Serializable {
 
     private ArrayList<Problem> problemList = new ArrayList<Problem>();
     private String careProviders = "";
+    private String code;
 
     /**
      * constructor for creating a new Patient user and their appropriate profile information designated by parameter values
@@ -25,9 +26,12 @@ public class Patient extends User implements Serializable {
      * @param phone  the phone number provided by the Patient which is associated with their account
      * @param email  the email address provided by the Patient which is associated with their account
      * @param userID the userID generated for the Patient which is associated with their account
+     * @param code the code generated for the Patient which is associated with their specific account
+     *
      */
-    public Patient(String phone, String email, String userID){
+    public Patient(String phone, String email, String userID, String code){
         super(phone, email, userID);
+        this.code = code;
 
     }
 
@@ -100,17 +104,21 @@ public class Patient extends User implements Serializable {
         return problemList.get(index);
     }
 
+    public String getCode(){
+        return this.code;
+    }
+
     /**
-     * Add a cProviderID to the patient
+     * Add details of CareProvider assigned to the patient
      *
-     * @param cProviderID the providerId of the care provider assigned to this patient
+     * @param careProvider A CareProvider who has been assigned the patient
      */
-    public void addToCareProviderString(String cProviderID){
+    public void addToCareProviderString(CareProvider careProvider){
         if(this.careProviders.equals("")){
-            this.careProviders = cProviderID;
+            this.careProviders = careProvider.toString();
         }
         else {
-            this.careProviders = this.careProviders + " | " + cProviderID;
+            this.careProviders = this.careProviders + "\n" + careProvider.toString();
         }
     }
 
@@ -131,6 +139,6 @@ public class Patient extends User implements Serializable {
      * @return A string that represents the patient.
      */
     public String toString() {
-        return "Patient: "+getUserID()+"\nPhone: "+getPhone()+"\nEmail: "+getEmail()+"\nCare givers: "+getCareProviderString();
+        return "Patient: "+getUserID()+"\nPhone: "+getPhone()+"\nEmail: "+getEmail()+"\nCare Providers: \n"+getCareProviderString();
     }
 }

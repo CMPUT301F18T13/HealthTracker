@@ -1,5 +1,8 @@
 package com.example.healthtracker;
 
+import android.graphics.Bitmap;
+
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +16,7 @@ import java.util.List;
  */
 public class CareProvider extends User implements Serializable {
 
-    private List<Patient> patientList;
+    private ArrayList<Patient> patientList;
 
 
     /**
@@ -22,6 +25,7 @@ public class CareProvider extends User implements Serializable {
      * @param phone  the phone number provided by the CareProvider which is associated with their account
      * @param email  the email address provided by the CareProvider which is associated with their account
      * @param userID the userID generated for the CareProvider which is associated with their account
+     *
      */
     public CareProvider(String phone, String email, String userID) {
         super(phone, email, userID);
@@ -39,7 +43,7 @@ public class CareProvider extends User implements Serializable {
      *
      * @return returns the CareProviders patient list
      */
-    public List<Patient> getPatientList() {
+    public ArrayList<Patient> getPatientList() {
         return this.patientList;
     }
 
@@ -52,27 +56,49 @@ public class CareProvider extends User implements Serializable {
         this.patientList.add(newPatient);
     }
 
+    /**
+     * Update one of the CareProvider's patients.
+     *
+     * @param updatedPatient Patient to replace previous Patient object
+     * @param patientIndex The index of the Patient to be replace in the PatientList
+     */
     public void setPatient(Patient updatedPatient, int patientIndex){
         patientList.set(patientIndex, updatedPatient);
     }
 
     /**
-     * TODO
-     * Is this used?
+     * Update the CareProvider's entire PatientList with a new list.
      *
-     * @param phone
-     * @param email
+     * @param patientList The new Patient list.
      */
-    public void updateUserInfo(String phone, String email){
-        super.setEmail(email);
-        super.setPhone(phone);
+    public void setPatientList(ArrayList<Patient> patientList){
+        this.patientList = patientList;
     }
 
+    /**
+     * Get a specific one of the CareProvider's patients.
+     *
+     * @param Index The index of the patient to return in the PatientList.
+     * @return The patient corresponding to the Index input.
+     */
+    public Patient getPatient(int Index){
+        return patientList.get(Index);
+    }
+
+    /**
+     * Create map visual of all the geolocation records for a patient.
+     *
+     * @param patient The patient whose geolocation records will appear on the map.
+     * @return byte code of map visual.
+     */
+    public Bitmap createMap(Patient patient){
+        return null;
+    }
     @Override
     public String toString() {
         if(getUserID() == null) {
             return "";
         }
-        return "Care Provider: " + getUserID() + "|phone: " + getPhone() + "|email: " + getEmail();
+        return "  ID: " + getUserID() + "\n    phone: " + getPhone() + "\n    email: " + getEmail();
     }
 }

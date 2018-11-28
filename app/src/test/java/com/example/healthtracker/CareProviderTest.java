@@ -1,13 +1,19 @@
 package com.example.healthtracker;
 
+import android.graphics.Bitmap;
+
 import org.junit.Before;
 import org.junit.Test;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import static junit.framework.TestCase.assertNotNull;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 
 public class CareProviderTest {
@@ -60,9 +66,9 @@ public class CareProviderTest {
         password3 = "Dave123";
         phone3 = "780-777-777";
         email3 = "Dave@ualberta.ca";
-        patient1 = new Patient(phone, email, userName);
-        patient2 = new Patient(phone2, email2, userName2);
-        patient3 = new Patient(phone3, email3, userName3);
+        patient1 = new Patient(phone, email, userName, "XXXX");
+        patient2 = new Patient(phone2, email2, userName2, "AAAA");
+        patient3 = new Patient(phone3, email3, userName3, "BBBB");
     }
     @Test
     public void addPatient(){
@@ -75,6 +81,8 @@ public class CareProviderTest {
         arrayToTestAgainst.add(patient2);
 
         assertArrayEquals(c.getPatientList().toArray(), arrayToTestAgainst.toArray());
+
+        assertEquals(c.getPatient(0), patient2);
     }
 
     @Test
@@ -131,60 +139,27 @@ public class CareProviderTest {
         assertEquals(phone3, c.getPhone());
         assertEquals(email3, c.getEmail());
     }
-/*
-    @Test
-    public void editProfileTest(){
-        CareProvider c = new CareProvider(phone3, email3, userName3, password3);
-        c.setEmail(email);
-        //c.setPassword(password);
-        c.setPhone(phone);
-        c.setUserID(userID);
-        assertEquals(userID, c.getUserID());
-        //assertEquals(password, c.getPassword());
-        assertEquals(phone, c.getPhone());
-        assertEquals(email, c.getEmail());
-    }
 
-    @Test
-    public void addPatient_GetPatients(){
-        CareProvider c = new CareProvider(phone3, email3, userName3, password3);
-        //Patient p = new Patient(userID2, password2, phone2, email2, userName2);
-        assertEquals(c.getPatientList().size(), 0);
-        c.addPatient(p);
-        assertEquals(c.getPatientList().size(), 1);
-        assertEquals(c.getPatientList().get(0), p);
-    }
 
     @Test
     public void testCaretakerMap(){
-        CareProvider c = new CareProvider(phone3, email3, userName3, password3);
-        Patient patient1 = new Patient(phone2, email2, userName2, password2);
-        Problem p1 = new Problem(title, date, description);
-        patient1.addProblem(p1);
-        Patient patient2 = new Patient(phone3, email3, userName3, password3);
-        Problem p2 = new Problem(title2, date2, description2);
-        patient2.addProblem(p2);
-        //PatientRecord r1 = new PatientRecord("Day1", "Bruise is small", p1, new Timestamp(date.getTime()).toString(), new ArrayList<Bitmap>());
-        //PatientRecord r2 = new PatientRecord("Day1", "Minor rash", p2, new Timestamp(date.getTime()).toString(), new ArrayList<Bitmap>());
-        //p1.addPatientRecord(r1);
-        //p2.addPatientRecord(r2);
-        Bitmap data = c.createMap();
-        assertNotNull(data);
+        CareProvider c = new CareProvider(phone3, email3, userName3);
+        Bitmap data = c.createMap(patient1);
+        assertFalse(data == null);
     }
 
     @Test
     public void testCaretakerSearch(){
-        //CareProvider c = new CareProvider(userID3, password3, phone3, email3, userName3);
-        //Patient patient1 = new Patient(userID, password, phone, email, userName);
-        //Patient patient2 = new Patient(userID2, password2, phone2, email2, userName2);
+        CareProvider c = new CareProvider(phone3, email3, userID3);
+        Patient patient1 = new Patient(phone, email, userID, "BBBB");
+        Patient patient2 = new Patient(phone2, email2, userID2, "XXXX");
         Problem p1 = new Problem(title, date, description);
         Problem p2 = new Problem(title2, date2, description2);
-        //patient2.addProblem(p2);
-        //List<Problem> filteredProblems = c.search("Bruise", "keyword");
-        //assertNotNull(filteredProblems);
-        //assertEquals(filteredProblems.size(), 1);
-        //assertEquals(filteredProblems.get(0), p1);
+        patient2.addProblem(p2);
+        List<Problem> filteredProblems = UserDataController.searchForProblem("problemList", "Bruise");
+        assertNotNull(filteredProblems);
+        assertEquals(filteredProblems.size(), 1);
+        assertEquals(filteredProblems.get(0), p1);
     }
 
-*/
 }

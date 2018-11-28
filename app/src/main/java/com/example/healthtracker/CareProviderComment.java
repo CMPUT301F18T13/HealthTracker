@@ -2,6 +2,8 @@ package com.example.healthtracker;
 
 import java.io.Serializable;
 
+import io.searchbox.annotations.JestId;
+
 
 /**
  * CareProviderComment represents the comment records that careproviders can leave on patient problems.
@@ -14,6 +16,7 @@ import java.io.Serializable;
  */
 public class CareProviderComment implements Serializable{
 
+    @JestId
     private String messageTitle;
     private String message;
 
@@ -71,5 +74,11 @@ public class CareProviderComment implements Serializable{
      */
     public void setComment(String comment){
         this.message = comment;
+    }
+
+
+    @Override
+    public String toString(){
+        return "Title: " + getTitle() + "\n\nComment: " + getComment();
     }
 }

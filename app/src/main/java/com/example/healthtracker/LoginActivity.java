@@ -38,7 +38,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         //mRegister = (TextView) findViewById(R.id.link_register);
         UserID = findViewById(R.id.userID);
-        Password = findViewById(R.id.login_password);
         checkBox = findViewById(R.id.CareGiverLogin);
         context = this;
     }
@@ -57,12 +56,9 @@ public class LoginActivity extends AppCompatActivity {
     public void UserLogin(View view) throws ExecutionException, InterruptedException {
         if (ElasticsearchController.testConnection(context)) {
             String userID = UserID.getText().toString();
-            if (isEmpty(UserID.getText().toString()) && isEmpty(Password.getText().toString())) {
+            if (isEmpty(UserID.getText().toString())) {
                 if (checkBox.isChecked()) {
-                    CareProvider careProvider;
-                    ElasticsearchController.GetCareProvider getCareProvider = new ElasticsearchController.GetCareProvider();
-                    getCareProvider.execute(userID);
-                    careProvider = getCareProvider.get();
+                    CareProvider careProvider = UserDataController.loadCareProviderByID(this, userID);
                     if (careProvider != null) {
                         SharedPreferences myPrefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = myPrefs.edit();

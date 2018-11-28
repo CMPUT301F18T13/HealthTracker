@@ -49,9 +49,35 @@ public class AddCareProviderCommentViewTest {
         // Second step: View patients
         solo.clickOnView(solo.getView(R.id.view_problems));
 
+        solo.waitForActivity(ViewPatients.class, 2000);
+        solo.assertCurrentActivity("Should be in ViewPatient activity", ViewPatients.class);
+
         // Third step: Click on the first patient shown in the patient list if at least a patient exists
-        ListView patientListView = (ListView) solo.getView(R.id.patients_list_view);
+        solo.clickInList(0, 0, R.id.patients_list_view);
 
 
+        solo.waitForActivity(ViewPatientsProblems.class, 2000);
+        solo.assertCurrentActivity("Should be in ViewPatientsProblems activity", ViewPatientsProblems.class);
+
+        solo.clickInList(0, 0, R.id.pProblem_list_view);
+
+        solo.waitForActivity(CareProviderProblemView.class, 2000);
+        solo.assertCurrentActivity("Should be in CareProviderProblemView activity", CareProviderProblemView.class);
+
+        solo.clickOnView(solo.getView(R.id.add_comment_button));
+
+        solo.waitForActivity(AddCareProviderCommentView.class, 2000);
+        solo.assertCurrentActivity("Should be in AddCareProviderCommentView activity", AddCareProviderCommentView.class);
+
+        solo.enterText(solo.getEditText("care_comment_title"), "Comment title");
+        solo.clickOnView(solo.getView(R.id.add_comment_button));
+
+        solo.waitForActivity(CareProviderProblemView.class, 2000);
+        solo.assertCurrentActivity("Should be in CareProviderProblemView activity", CareProviderProblemView.class);
+
+        solo.clickOnView(solo.getView(R.id.view_comments));
+
+        solo.waitForActivity(ViewCareProviderComments.class, 2000);
+        solo.assertCurrentActivity("Should be in ViewCareProviderComments activity", ViewCareProviderComments.class);
     }
 }

@@ -11,6 +11,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -27,6 +28,7 @@ public class UserSettingsActivity extends AppCompatActivity {
     List<User> userInfo;
     EditText uemail;
     EditText phone;
+    TextView code;
     private Patient patient;
     private CareProvider careProvider;
     private Context context;
@@ -51,8 +53,10 @@ public class UserSettingsActivity extends AppCompatActivity {
      */
     private void loadCurrentPatientData(){
         patient = UserDataController.loadPatientData(this);
+        code=findViewById(R.id.code);
         uemail.setText(patient.getEmail());
         phone.setText(patient.getPhone());
+        code.setText(patient.getCode());
     }
 
     /*
