@@ -1,6 +1,8 @@
 package com.example.healthtracker.Activities;
 
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /* Code for testing the ability of a slideshow to operate on the emulator reused from the tutorial by 
 *EDMT Dev, https://www.youtube.com/watch?v=SX8l9vv-N_4, 2016/07/13, viewed 2018/10/20*
@@ -25,22 +28,31 @@ import java.util.Map;
 public class SlideShowActivity extends AppCompatActivity {
 
     private static Map<String, ArrayList<String>> images1 = new HashMap<>();
-    private static final String TAG = "SlideShow fuck";
+    private static ArrayList<String> imageList = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slide_show);
-        ArrayList<String> image = new ArrayList<>();
-        images1.put("test",image);
-
-        getImageList();
         ViewPager viewPager = findViewById(R.id.ViewPager);
-
         update();
     }
 
     public static boolean add(String imageName, String arrayName) {
+        if(images1.get("test")!=null){
+            imageList= new ArrayList<>();
+            imageList.add(imageName);
+            images1.put("test",imageList);
+        }
+        else{
+            images1.put("test",new ArrayList<>());
+            imageList.add(imageName);
+            images1.put("test",imageList);
+        }
+        return true;
+
+        /*
+
         if (images1.get(arrayName) == null) {
             ArrayList<String> image = new ArrayList<>();
             image.add(imageName);
@@ -56,12 +68,12 @@ public class SlideShowActivity extends AppCompatActivity {
                 image2.add(imageName);
                 return true;
             }
-        }
+        }*/
     }
 
     public void update(){
         ViewPager viewPager = findViewById(R.id.ViewPager);
-        ViewPageAdapterActivity adapter = new ViewPageAdapterActivity(SlideShowActivity.this, images1.get("123"));
+        ViewPageAdapterActivity adapter = new ViewPageAdapterActivity(SlideShowActivity.this, images1.get("test"));
         viewPager.setAdapter(adapter);
     }
 
