@@ -26,7 +26,6 @@ import java.util.ArrayList;
 public class ViewPageAdapterActivity extends PagerAdapter {
     private final Activity activity;
     private final ArrayList<String> images;
-    Context context;
 
     public ViewPageAdapterActivity(Activity activity, ArrayList<String> images){
         this.activity = activity;
@@ -39,7 +38,6 @@ public class ViewPageAdapterActivity extends PagerAdapter {
             return images.size();
         }
         catch (NullPointerException ne) {
-            Toast.makeText(context, "No Photos to Display", Toast.LENGTH_SHORT).show();
             return 0;
         }
     }
