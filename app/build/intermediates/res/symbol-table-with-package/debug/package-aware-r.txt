@@ -1167,8 +1167,6 @@ id custom
 id customPanel
 id dark
 id date_started
-id date_started_editable
-id date_started_editscreen
 id decor_content_parent
 id default_activity_button
 id description_edit_text
@@ -1212,6 +1210,7 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageButton
 id imageView
 id info
 id invisible
@@ -1260,6 +1259,8 @@ id patients_list_view
 id percent
 id phone_number
 id photo_from_library_button
+id pickDateButton
+id pickedDate
 id pin
 id problem_description
 id problem_description_edit

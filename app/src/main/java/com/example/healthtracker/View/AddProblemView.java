@@ -1,16 +1,22 @@
 package com.example.healthtracker.View;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.healthtracker.Contollers.UserDataController;
@@ -22,6 +28,7 @@ import com.example.healthtracker.R;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -48,17 +55,24 @@ public class AddProblemView extends AppCompatActivity {
     private ArrayAdapter<PatientRecord> adapter;
     private ListView mListView;
     private int index;
+    private Button datePickButton;
+    Calendar calender;
+    DatePickerDialog datePickerDialog;
+    TextView pickedDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_problem);
         titleText = findViewById(R.id.title_text);
-        dateText = findViewById(R.id.date_started_editable);
+        //dateText = findViewById(R.id.date_started_editable);
         descriptionText = findViewById(R.id.problem_description_edit);
+        datePickButton = findViewById(R.id.pickDateButton);
+        pickedDate = findViewById(R.id.pickedDate);
         context = this;
         recordList = new ArrayList<PatientRecord>();
     }
+
 
     private static boolean testDate(String date) {
         // establish the date format and make the format non lenient, include a parse catch and try clause
@@ -150,7 +164,7 @@ public class AddProblemView extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (!titleText.getText().toString().equals("") || !dateText.getText().toString().equals("")
+        if (!titleText.getText().toString().equals("") || !pickedDate.getText().toString().equals("")
                 || !descriptionText.getText().toString().equals("")) {
             AlertDialog.Builder ab = new AlertDialog.Builder(AddProblemView.this);
             ab.setMessage("Warning. Changes have been made to the problem." + "\n" + "Returning to the home screen will not save changes.");
@@ -183,10 +197,10 @@ public class AddProblemView extends AppCompatActivity {
      * date format or not every field being filled.
      */
     public void addPatientProblem(View view) {
-        if (titleText.getText().toString().equals("") || dateText.getText().toString().equals("")
+        if (titleText.getText().toString().equals("") || pickedDate.getText().toString().equals("")
                 || descriptionText.getText().toString().equals("")) {
             Toast.makeText(this, "Error, all field must be filled", Toast.LENGTH_LONG).show();
-        } else if (!testDate(dateText.getText().toString())) {
+        } else if (!testDate(pickedDate.getText().toString())) {
             Toast.makeText(this, "Improper Date Format", Toast.LENGTH_LONG).show();
         } else {
             saveProblem();
@@ -196,7 +210,7 @@ public class AddProblemView extends AppCompatActivity {
     private void saveProblem(){
         // get Problem info
         title = titleText.getText().toString();
-        dateString = dateText.getText().toString();
+        dateString = pickedDate.getText().toString();
         description = descriptionText.getText().toString();
         try{
             date = new SimpleDateFormat("yyyy-MM-dd",Locale.CANADA).parse(dateString);
@@ -263,6 +277,23 @@ public class AddProblemView extends AppCompatActivity {
                 recordList.set(index, record);
             }
         }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void datePicker(View view){
+        calender=Calendar.getInstance();
+        int day = calender.get(Calendar.DAY_OF_MONTH);
+        int month = calender.get(Calendar.MONTH);
+        int year = calender.get(Calendar.YEAR);
+
+        datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int myear, int mmonth, int mday) {
+                mmonth+=1;
+                pickedDate.setText(myear+"/"+mmonth+"/"+mday);
+            }
+        }, year,month,day);
+        datePickerDialog.show();
     }
 
 }

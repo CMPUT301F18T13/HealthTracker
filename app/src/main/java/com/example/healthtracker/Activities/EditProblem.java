@@ -1,17 +1,23 @@
 package com.example.healthtracker.Activities;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.healthtracker.Contollers.UserDataController;
@@ -26,6 +32,7 @@ import com.example.healthtracker.View.ViewCareProviderComments;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -50,6 +57,10 @@ public class EditProblem extends AppCompatActivity {
     private ArrayList<PatientRecord> recordList;
     private ArrayAdapter<PatientRecord> adapter;
     private ListView mListView;
+    private Button datePickButton;
+    Calendar calender;
+    DatePickerDialog datePickerDialog;
+    TextView pickedDate;
 
     @SuppressLint("Assert")
     @Override
@@ -59,7 +70,7 @@ public class EditProblem extends AppCompatActivity {
 
         titleText = findViewById(R.id.title_text_editscreen);
         initialTitle=titleText.getText().toString();
-        dateText = findViewById(R.id.date_started_editscreen);
+        //dateText = findViewById(R.id.date_started_editscreen);
         descriptionText = findViewById(R.id.problem_description_editscreen);
         context = this;
 
@@ -70,6 +81,8 @@ public class EditProblem extends AppCompatActivity {
         assert index >= 0;
         problem = user.getProblem(index);
         recordList = problem.getRecords();
+        datePickButton = findViewById(R.id.pickDateButton);
+        pickedDate = findViewById(R.id.pickedDate);
 
         // display current data
         displayData();
@@ -159,9 +172,9 @@ public class EditProblem extends AppCompatActivity {
         titleText.setText(problem.getTitle());
         descriptionText.setText(problem.getDescription());
         date = problem.getDate();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.CANADA);
+        /*SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.CANADA);
         String dateString = format.format(date);
-        dateText.setText(dateString);
+        dateText.setText(dateString);*/
     }
 
     private static boolean testDate(String date) {
@@ -178,7 +191,7 @@ public class EditProblem extends AppCompatActivity {
     }
 
     private String getEntry() {
-        return titleText.getText().toString() + " -- " + dateText.getText().toString() + "\n" + descriptionText.getText().toString();
+        return titleText.getText().toString() + " -- " + pickedDate.getText().toString() + "\n" + descriptionText.getText().toString();
     }
 
     @Override
@@ -215,10 +228,10 @@ public class EditProblem extends AppCompatActivity {
      * and the date is in the proper date format.
      */
     public void editPatientProblem(View view) {
-        if (titleText.getText().toString().equals("") || dateText.getText().toString().equals("")
+        if (titleText.getText().toString().equals("") || pickedDate.getText().toString().equals("")
                 || descriptionText.getText().toString().equals("")) {
             Toast.makeText(this, "Error, all fields must be filled", Toast.LENGTH_LONG).show();
-        } else if (!testDate(dateText.getText().toString())) {
+        } else if (!testDate(pickedDate.getText().toString())) {
             Toast.makeText(this, "Improper Date Format", Toast.LENGTH_LONG).show();
         } else {
             // get changes
@@ -227,7 +240,7 @@ public class EditProblem extends AppCompatActivity {
             Date date = null;
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.CANADA);
             try {
-                date = format.parse(dateText.getText().toString());
+                date = format.parse(pickedDate.getText().toString());
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -311,6 +324,20 @@ public class EditProblem extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void datePicker(View view){
+        calender=Calendar.getInstance();
+        int day = calender.get(Calendar.DAY_OF_MONTH);
+        int month = calender.get(Calendar.MONTH);
+        int year = calender.get(Calendar.YEAR);
 
-
+        datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int myear, int mmonth, int mday) {
+                mmonth+=1;
+                pickedDate.setText(myear+"/"+mmonth+"/"+mday);
+            }
+        }, year,month,day);
+        datePickerDialog.show();
+    }
 }

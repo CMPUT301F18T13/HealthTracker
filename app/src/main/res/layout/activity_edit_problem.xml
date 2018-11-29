@@ -40,28 +40,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_text_editscreen" />
 
-    <EditText
-        android:id="@+id/date_started_editscreen"
-        android:layout_width="237dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="@string/startdate_edit"
-        android:inputType="date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_started"
-        tools:ignore="Autofill,LabelFor" />
-
     <TextView
         android:id="@+id/problem_description_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="168dp"
         android:text="@string/problem_description"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_started_editscreen" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/problem_description_editscreen"
@@ -123,6 +110,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
+        android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/viewTitle"
@@ -134,5 +122,28 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pic32"
         tools:ignore="ContentDescription" />
+
+    <Button
+        android:id="@+id/pickDateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="8dp"
+        android:text="Pick Date"
+        android:onClick="datePicker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pickedDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/problem_description_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_started"
+        app:layout_constraintVertical_bias="0.384" />
 
 </android.support.constraint.ConstraintLayout>
