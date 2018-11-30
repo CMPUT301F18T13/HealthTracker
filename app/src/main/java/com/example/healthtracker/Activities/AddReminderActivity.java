@@ -294,7 +294,7 @@ public class AddReminderActivity extends AppCompatActivity {
         }
 
         //alarm.setExact(AlarmManager.RTC_WAKEUP, alarmStartTime, alarmIntent);
-        Boolean alarmUp = (PendingIntent.getBroadcast(this,0,new Intent()))
+        //Boolean alarmUp = (PendingIntent.getBroadcast(this,0,new Intent()))
         Toast.makeText(this, "Reminder Done!", Toast.LENGTH_SHORT).show();
         AddReminderActivity.this.finish();
 
