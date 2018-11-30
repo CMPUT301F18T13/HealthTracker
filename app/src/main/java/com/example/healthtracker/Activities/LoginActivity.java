@@ -6,20 +6,25 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.healthtracker.Contollers.ElasticsearchController;
 import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.Patient;
+import com.example.healthtracker.View.AddPatientView;
 import com.example.healthtracker.View.PatientHomeView;
 import com.example.healthtracker.R;
 import com.example.healthtracker.View.CareProviderHomeView;
 
+import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 /* Idea and implemented code for testing interent connection from *binnyb(user:416412),   
@@ -35,9 +40,10 @@ https://stackoverflow.com/questions/5474089/how-to-check-currently-internet-conn
  */
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText UserID, Password;
+    private EditText UserID;
     private CheckBox checkBox;
     private Context context;
+    private EditText accountCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         //mRegister = (TextView) findViewById(R.id.link_register);
         UserID = findViewById(R.id.userID);
         checkBox = findViewById(R.id.CareGiverLogin);
+        accountCode = findViewById(R.id.codeLogin);
         context = this;
     }
 
@@ -64,8 +71,9 @@ public class LoginActivity extends AppCompatActivity {
     public void UserLogin(View view) throws ExecutionException, InterruptedException {
         if (ElasticsearchController.testConnection(context)) {
             String userID = UserID.getText().toString();
-            if (isEmpty(UserID.getText().toString())) {
-                if (checkBox.isChecked()) {
+            String emptyTest = accountCode.getText().toString();
+            if (checkBox.isChecked()) {
+                if (!isEmpty(UserID.getText().toString())) {
                     CareProvider careProvider = UserDataController.loadCareProviderByID(this, userID);
                     if (careProvider != null) {
                         SharedPreferences myPrefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
@@ -75,40 +83,42 @@ public class LoginActivity extends AppCompatActivity {
                         UserDataController.saveCareProviderData(this, careProvider);
                         Intent intent = new Intent(LoginActivity.this, CareProviderHomeView.class);
                         startActivity(intent);
-                    } else {
+                    }
+                    else {
                         Toast.makeText(LoginActivity.this, "Unknown Account", Toast.LENGTH_SHORT).show();
                     }
-
-                } else {
-                    Patient patient;
-                    ElasticsearchController.GetPatient getPatient = new ElasticsearchController.GetPatient();
-                    getPatient.execute(userID);
-                    patient = getPatient.get();
-                    if (patient != null) {
-                        SharedPreferences myPrefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor = myPrefs.edit();
-                        editor.putString("userID", userID);
-                        editor.apply();
-                        UserDataController.savePatientData(this, patient);
-                        Intent intent = new Intent(LoginActivity.this, PatientHomeView.class);
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(LoginActivity.this, "Unknown Account", Toast.LENGTH_SHORT).show();
+                } else{
+                    Toast.makeText(LoginActivity.this, "User ID Field not filled", Toast.LENGTH_SHORT).show();
+                }
+            } else{
+                if(!isEmpty(UserID.getText().toString()) || !emptyTest.equals("")){
+                    if(!emptyTest.equals("")){
+                        if(!isEmpty(UserID.getText().toString())){
+                            Toast.makeText(LoginActivity.this, "Please fill only 1 field", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            String userIdHolder = codeLogin();
+                            patientLogin(userIdHolder);
+                        }
+                    }
+                    else{
+                        patientLogin(userID);
                     }
                 }
-            } else {
-                Toast.makeText(LoginActivity.this, "You didn't fill in all the fields.", Toast.LENGTH_SHORT).show();
+                else{
+                    Toast.makeText(LoginActivity.this, "Either field not filled", Toast.LENGTH_SHORT).show();
+                }
             }
-        } else {
+        } else{
             Toast.makeText(context, "No internet connection available.", Toast.LENGTH_SHORT).show();
         }
     }
 
     /*
-     * isEmpty() tests if one of the login fields is not filled in
-     */
+    * * isEmpty() tests if one of the login fields is not filled in
+     * */
     private boolean isEmpty(String string) {
-        return !string.equals("");
+        return string.equals("");
     }
 
     /*
@@ -131,5 +141,63 @@ public class LoginActivity extends AppCompatActivity {
                 connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() != NetworkInfo.State.CONNECTED;
     }
 
+    private String codeLogin(){
+        // Read user input
+        String patientCode = accountCode.getText().toString();
+        String patientID = "";
 
+        boolean validID = false;
+        // Read from the elastic search database, obtain a list of registered patient IDs
+        ElasticsearchController.getAllPatients getAllMyPatients  = new ElasticsearchController.getAllPatients();
+        getAllMyPatients.execute();
+        try {
+            ArrayList<Patient> patients = getAllMyPatients.get();
+            System.out.println(patients);
+
+            // Check whether the patient ID exists
+            for(int i = 0; i< patients.size(); i++){
+                if(patientCode.equals(patients.get(i).getCode())){
+                    patientID = patients.get(i).getUserID() ;
+                    validID = true;
+                    Patient mPatient = patients.get(i);
+                }
+            }
+
+            if (!ElasticsearchController.testConnection(this)) {
+                Toast.makeText(LoginActivity.this, "No Interent Connection", Toast.LENGTH_SHORT).show();
+                validID = false;
+            }
+            if (!validID) {
+                Toast.makeText(LoginActivity.this, "Account code not found", Toast.LENGTH_SHORT).show();
+            }
+        }catch (ExecutionException e1) {
+            Log.i("error", "execution exception");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (validID){
+            return patientID;
+        }
+        else{
+            return null;
+        }
+    }
+
+    public void patientLogin(String userID) throws ExecutionException, InterruptedException {
+        Patient patient;
+        ElasticsearchController.GetPatient getPatient = new ElasticsearchController.GetPatient();
+        getPatient.execute(userID);
+        patient = getPatient.get();
+        if (patient != null) {
+            SharedPreferences myPrefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = myPrefs.edit();
+            editor.putString("userID", userID);
+            editor.apply();
+            UserDataController.savePatientData(this, patient);
+            Intent intent = new Intent(LoginActivity.this, PatientHomeView.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(LoginActivity.this, "Unknown Account", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

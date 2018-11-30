@@ -85,6 +85,7 @@
     <string name="add_geo_location_button">Add Geo-Location</string>
     <string name="add_reminder">Add Reminder</string>
     <string name="from_library">From Library</string>
+    <string name="account_code_hint">Account Code</string>
 
 
 </resources>

@@ -1156,6 +1156,8 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id code
+id codeLogin
+id codeLoginMessage
 id collapseActionView
 id comment_list
 id container
@@ -1518,6 +1520,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string account_code_hint
 string add_body_location_button
 string add_geo_location_button
 string add_new_problem

@@ -2,31 +2,38 @@
 <instant-run
     abi="x86"
     api-level="26"
-    build-mode="COLD"
+    build-mode="HOT_WARM"
     density="420dpi"
     format="10"
     plugin-version="3.2.1"
-    timestamp="1543541832570"
+    timestamp="1543601417673"
     token="3228296361726906817"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="872" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="841" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="178" />
     <task
         name="verifier"
-        duration="0" />
+        duration="27" />
+
+    <artifact
+        location="C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
 
     <build
         build-mode="FULL"
-        timestamp="1543540553412"
+        timestamp="1543599176177"
         verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
         <artifact
             location="C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
@@ -38,9 +45,6 @@
             type="SPLIT" />
         <artifact
             location="C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
@@ -69,18 +73,28 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1543541734811"
-        verifier="METHOD_ADDED" >
+        ir-eligibility="FIELD_REMOVED"
+        timestamp="1543599761988"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
-        <artifact
-            location="C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
     </build>
     <build
-        build-mode="COLD"
-        timestamp="1543541832570"
-        verifier="COLD_SWAP_REQUESTED" />
+        build-mode="HOT_WARM"
+        timestamp="1543601149861"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\build\intermediates\builds\debug\1543601149861\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1543601417673"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
 
 </instant-run>

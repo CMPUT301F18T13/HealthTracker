@@ -4,6 +4,21 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <EditText
+        android:id="@+id/codeLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="219dp"
+        android:layout_marginEnd="88dp"
+        android:ems="10"
+        android:hint="@string/account_code_hint"
+        android:inputType="text"
+        tools:ignore="Autofill" />
+
+    <EditText
         android:id="@+id/userID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,7 +30,7 @@
         android:layout_marginEnd="87dp"
         android:ems="10"
         android:hint="@string/userID"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         tools:ignore="Autofill" />
 
     <Button
@@ -50,4 +65,13 @@
         android:layout_marginTop="283dp"
         android:layout_marginEnd="125dp"
         android:text="Are you a care provider?" />
+
+    <TextView
+        android:id="@+id/codeLoginMessage"
+        android:layout_width="231dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/codeLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-216dp"
+        android:text="Have an old Patient account? Enter it in the field below to retrieve it!" />
 </RelativeLayout>

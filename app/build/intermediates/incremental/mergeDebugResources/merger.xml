@@ -3724,7 +3724,7 @@
         <item>Shoulders</item>
         <item>Neck</item>
         <item>Head</item>
-    </string-array><string name="title_activity_view_care_provider_comments">ViewCareProviderComments</string><string name="title_activity_care_provider_record_view">CareProviderRecordView</string><string name="timestamp">Timestamp</string><string name="save_record_button">Save</string><string name="add_body_location_button">Add Body-Location</string><string name="add_geo_location_button">Add Geo-Location</string><string name="add_reminder">Add Reminder</string><string name="from_library">From Library</string></file><file path="C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+    </string-array><string name="title_activity_view_care_provider_comments">ViewCareProviderComments</string><string name="title_activity_care_provider_record_view">CareProviderRecordView</string><string name="timestamp">Timestamp</string><string name="save_record_button">Save</string><string name="add_body_location_button">Add Body-Location</string><string name="add_geo_location_button">Add Geo-Location</string><string name="add_reminder">Add Reminder</string><string name="from_library">From Library</string><string name="account_code_hint">Account Code</string></file><file path="C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
