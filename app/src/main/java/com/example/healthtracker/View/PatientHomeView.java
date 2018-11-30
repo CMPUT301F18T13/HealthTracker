@@ -111,11 +111,7 @@ public class PatientHomeView extends AppCompatActivity {
 
     }
 
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/PatientHomeView.java
-    /**
-=======
     /*
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/View/PatientHomeView.java
      * Method containing the new intent which will bring user to the user settings activity layout
      */
     public void Settings(View view) {

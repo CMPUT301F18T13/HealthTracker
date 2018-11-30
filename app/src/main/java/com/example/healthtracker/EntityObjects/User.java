@@ -20,11 +20,8 @@ public class User implements Serializable {
     private String phone;
     @JestId
     private String userID;
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/User.java
-    private String password;
-=======
     private String code;
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/EntityObjects/User.java
+
 
     /**
      * a constructor for the user that takes several parameters that detail the user information
@@ -34,19 +31,12 @@ public class User implements Serializable {
      * @param userID the userID generated for the user which is associated with their account
      * @param code the code generated for the user which is associated with their specific account
      */
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/User.java
-    public User(String phone, String email, String userID, String password) {
-        this.email = email;
-        this.phone = phone;
-        this.userID = userID;
-        this.password = password;
-=======
+
     User(String phone, String email, String userID, String code) {
         this.email = email;
         this.phone = phone;
         this.userID = userID;
         this.code = code;
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/EntityObjects/User.java
     }
 
 

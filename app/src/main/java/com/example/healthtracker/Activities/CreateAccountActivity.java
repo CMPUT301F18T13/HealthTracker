@@ -139,20 +139,12 @@ public class CreateAccountActivity extends AppCompatActivity {
             // Save new user with elasticsearch
             if (checkBox.isChecked()) {
                 // save new care provider
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/CreateAccountActivity.java
-                CareProvider newCareProvider = new CareProvider(phone, email, userID, password);
-=======
                 CareProvider newCareProvider = new CareProvider(phone, email, userID, createCode());
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/Activities/CreateAccountActivity.java
                 ElasticsearchController.AddCareProvider addCareProviderTask = new ElasticsearchController.AddCareProvider();
                 addCareProviderTask.execute(newCareProvider);
             } else {
                 // save new patient
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/CreateAccountActivity.java
-                Patient newPatient = new Patient(phone, email, userID, password);
-=======
                 Patient newPatient = new Patient(phone, email, userID, createCode());
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/Activities/CreateAccountActivity.java
                 ElasticsearchController.AddPatient addPatientTask = new ElasticsearchController.AddPatient();
                 addPatientTask.execute(newPatient);
             }

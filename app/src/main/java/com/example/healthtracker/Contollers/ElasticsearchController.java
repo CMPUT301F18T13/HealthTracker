@@ -47,13 +47,9 @@ license identified and documented at https://github.com/CMPUT301W18T17/TheProfes
  */
 public class ElasticsearchController {
     private static JestDroidClient client;
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/ElasticsearchController.java
-    private static String server = "http://cmput301.softwareprocess.es:8080";
-    private static String Index = "cmput301f18t13";
-=======
     private static final String server = "http://cmput301.softwareprocess.es:8080";
     private static final String Index = "cmput301f18t13";
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/Contollers/ElasticsearchController.java
+
 
 
     /**

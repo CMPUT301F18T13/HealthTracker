@@ -26,21 +26,15 @@ public class CareProvider extends User implements Serializable {
      * @param code the code generated for the CareProvider which is associated with their specific account
      *
      */
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/CareProvider.java
-    public CareProvider(String phone, String email, String userID, String password) {
-        super(phone, email, userID, password);
-=======
+
     public CareProvider(String phone, String email, String userID, String code) {
         super(phone, email, userID, code);
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/EntityObjects/CareProvider.java
         this.patientList = new ArrayList<Patient>();
     }
 
     /**
      * singleton method for CareProvider
      */
-    public CareProvider() {
-    }
 
     /**
      * gets a list object of the current CareProvider's assigned patients
@@ -82,22 +76,11 @@ public class CareProvider extends User implements Serializable {
     /**
      * Get a specific one of the CareProvider's patients.
      *
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/CareProvider.java
-     * @param phone
-     * @param email
-     * @param userName
-     */
-    public void updateUserInfo(String phone, String email, String userName){
-        super.setEmail(email);
-        super.setPhone(phone);
-        super.setUserID(userName);
-=======
      * @param Index The index of the patient to return in the PatientList.
      * @return The patient corresponding to the Index input.
      */
     public Patient getPatient(int Index){
         return patientList.get(Index);
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/EntityObjects/CareProvider.java
     }
 
     /**

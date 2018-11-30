@@ -64,11 +64,8 @@ public class CareProviderHomeView extends AppCompatActivity {
         startActivity(intent);
     }
 
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/CareProviderHomeView.java
-    /**
-=======
+
     /*
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/View/CareProviderHomeView.java
      * Method containing the new intent which will bring user to the user settings activity layout
      */
     public void Settings(View view) {

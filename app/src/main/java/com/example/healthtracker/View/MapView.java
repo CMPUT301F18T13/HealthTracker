@@ -21,10 +21,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.IOException;
 import java.util.List;
 
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/MapView.java
 
-/**
-=======
 /* Code for testing the functionality of google maps within our program reused from a
 3-part tutorial from 
 *https://www.viralandroid.com/2016/04/google-maps-android-api-getting-started-tutorial.html, Apr 24, 2016, viewed: Oct 23, 2018* & 
@@ -35,7 +32,6 @@ posted: Apr 25, 2016, viewed: Oct 23, 2018*
 
 
 /*
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/View/MapView.java
  * MapView will allow Patients to view all of the geolocations associated with their problems in
  * a map. Careproviders can view all of the geolocations associated with their patients'
  * problems.
@@ -54,15 +50,8 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
         mapFragment.getMapAsync(this);
     }
 
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/MapView.java
-    /**
-     * Search for a location by address.
-     *
-     * @param view the view for the layout included for onClick methods in XML
-=======
     /*
      * Search for a location by address.
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/View/MapView.java
      */
     public void onMapSearch(View view) {
         EditText locationSearch = findViewById(R.id.editText);
@@ -85,15 +74,8 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
     }
 
     @Override
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/MapView.java
-    /**
-     * Override the onMapReady method in order to set what will apear when the map is initiated.
-     *
-     * @param googleMap the GPS map that will be displayed to the user
-=======
     /*
      * Override the onMapReady method in order to set what will apear when the map is initiated.
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/View/MapView.java
      */
     public void onMapReady(GoogleMap googleMap) {
 

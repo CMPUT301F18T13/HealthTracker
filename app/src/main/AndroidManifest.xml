@@ -93,23 +93,10 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyDppOAUxXEBGrsc_gg8bw392b4QdyzlzYw" />
 
-<<<<<<< HEAD
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false"/>
 
-=======
-        <activity
-            android:name=".View.ViewCareProviderComments"
-            android:label="@string/title_activity_view_care_provider_comments" />
-        <activity
-            android:name=".View.CareProviderRecordView"
-            android:label="@string/title_activity_care_provider_record_view" />
-
-        <activity android:name=".Activities.TakePhotoActivity">
-        </activity>
-        <activity android:name=".Contollers.PhotoController" />
->>>>>>> tyler
     </application>
 
 </manifest>

@@ -13,15 +13,13 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/AddProblemView.java
-=======
+
 import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.Problem;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.R;
 
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/View/AddProblemView.java
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

@@ -65,25 +65,18 @@ public class AddPatientView extends AppCompatActivity {
                 }
             }
 
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/AddPatientView.java
-            if (ElasticsearchController.testConnection(this)){
-=======
 
             if (!ElasticsearchController.testConnection(this)) {
 
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/View/AddPatientView.java
                 AlertDialog.Builder alertBuilder = new AlertDialog.Builder(AddPatientView.this);
                 alertBuilder.setMessage("Please connect to a network to add a patient.");
                 alertBuilder.setPositiveButton("OK",null);
                 AlertDialog alertDialog = alertBuilder.create();
                 alertDialog.show();
                 return false;
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/AddPatientView.java
-            } else if(!validID){
-=======
+
             }
             if (!validID) {
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/View/AddPatientView.java
                 AlertDialog.Builder alertBuilder = new AlertDialog.Builder(AddPatientView.this);
                 alertBuilder.setMessage("The patient ID is not valid. Please try again.");
                 alertBuilder.setPositiveButton("OK",null);
@@ -109,15 +102,10 @@ public class AddPatientView extends AppCompatActivity {
             getPatient.execute(mPatientUserID);
             try{
                 mPatient = getPatient.get();
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/AddPatientView.java
-            }catch (ExecutionException e1){
 
-            }catch (InterruptedException e2) {
+            } catch (ExecutionException | InterruptedException ignored){
 
-=======
-            }catch (ExecutionException | InterruptedException ignored){
 
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/View/AddPatientView.java
             }
 
             System.out.println("reaches here!");
@@ -129,17 +117,12 @@ public class AddPatientView extends AppCompatActivity {
 
 
             System.out.println("careProviderExist"+careProviderExist);
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/AddPatientView.java
-            if (careProviderExist == false) {
 
-                // Update Patient data
-                mPatient.addToCareProviderString(careProvider.getUserID());
-=======
             if (!careProviderExist) {
 
                 // Update Patient data
                 mPatient.addToCareProviderString(careProvider);
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/View/AddPatientView.java
+
                 UserDataController.savePatientData(this, mPatient);
 
                 // Update Care Provider data
@@ -155,10 +138,7 @@ public class AddPatientView extends AppCompatActivity {
                 alertDialog.show();
                 return false;
             }
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/AddPatientView.java
 
-=======
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/View/AddPatientView.java
         }
         return true;
 

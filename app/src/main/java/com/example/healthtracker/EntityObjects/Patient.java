@@ -1,10 +1,8 @@
 package com.example.healthtracker.EntityObjects;
 
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/Patient.java
-=======
 import android.support.annotation.NonNull;
 
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/EntityObjects/Patient.java
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -29,21 +27,16 @@ public class Patient extends User implements Serializable {
      * @param code the code generated for the Patient which is associated with their specific account
      *
      */
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/Patient.java
-    public Patient(String phone, String email, String userID, String password){
-        super(phone, email, userID, password);
-=======
+
     public Patient(String phone, String email, String userID, String code){
         super(phone, email, userID, code);
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/EntityObjects/Patient.java
+
 
     }
 
     /**
      * singleton method for Patient
      */
-    public Patient() {
-    }
 
     /**
      * gets a list object of the current Patient's documented problems
@@ -109,20 +102,6 @@ public class Patient extends User implements Serializable {
     }
 
     /**
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/Patient.java
-     * Add a new careProvider to the patient.
-     *
-     * This may need to be reworked.
-     *
-     * @param cProviderID the ID of the CareProvder to add.
-     */
-    public void addToCareProviderString(String cProviderID){
-        if(this.careProviders.equals("")){
-            this.careProviders = cProviderID;
-        }
-        else {
-            this.careProviders = this.careProviders + " | " + cProviderID;
-=======
      * Add details of CareProvider assigned to the patient
      *
      * @param careProvider A CareProvider who has been assigned the patient
@@ -133,7 +112,6 @@ public class Patient extends User implements Serializable {
         }
         else {
             this.careProviders = this.careProviders + "\n" + careProvider.toString();
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/EntityObjects/Patient.java
         }
     }
 
@@ -161,10 +139,6 @@ public class Patient extends User implements Serializable {
      * @return A string that represents the patient.
      */
     public String toString() {
-<<<<<<< HEAD:app/src/main/java/com/example/healthtracker/Patient.java
-        return "Patient: "+getUserID()+"\nPhone: "+getPhone()+"\nEmail: "+getEmail()+"\nCare givers: "+getCareProviderString();
-=======
         return "Patient: "+getUserID()+"\nPhone: "+getPhone()+"\nEmail: "+getEmail()+"\nCare Providers: \n"+getCareProviderString();
->>>>>>> tyler:app/src/main/java/com/example/healthtracker/EntityObjects/Patient.java
     }
 }
