@@ -38,12 +38,12 @@ public class AddorEditRecordView extends AppCompatActivity {
 
     private EditText titleText, descriptionText;
     private TextView timestampText;
-    private String title, comment, geo_location;
+    private String title, comment;
     private Context context;
     private Patient patient;
     File capturedImages;
     private PatientRecord record;
-    private Button geoLocation;
+    //private Button geoLocation;
     private TextView saved_geoLocation;
     private Double Lat;
     private Double Lon;
@@ -55,7 +55,7 @@ public class AddorEditRecordView extends AppCompatActivity {
         titleText = findViewById(R.id.title_edit_text);
         descriptionText = findViewById(R.id.description_edit_text);
         timestampText = findViewById(R.id.patient_record_timestamp);
-        geoLocation = findViewById(R.id.add_geolocation);
+        //geoLocation = findViewById(R.id.add_geolocation);
         saved_geoLocation = findViewById(R.id.show_geo);
         context = this;
         record = new PatientRecord();
@@ -186,18 +186,25 @@ public class AddorEditRecordView extends AppCompatActivity {
    // @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         List<Address> addressList = null;
-        if(resultCode==RESULT_OK){
-        geo_location = data.getExtras().getString("result");
-        saved_geoLocation.setText(geo_location);}
-        Geocoder geocoder = new Geocoder(this);
-        try {
-            addressList = geocoder.getFromLocationName(geo_location, 1);
-        } catch (IOException e) {
-            e.printStackTrace();
+        String CurrentLocation;
+        if(resultCode==RESULT_OK) {
+            Lat = data.getExtras().getDouble("Lat");
+            Lon = data.getExtras().getDouble("Lon");
+            Geocoder geocoder = new Geocoder(this);
+            try {
+                addressList = geocoder.getFromLocation(Lat, Lon, 1);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Address address = addressList.get(0);
+            String city = address.getLocality();
+            String state = address.getAdminArea();
+            String country = address.getCountryName();
+            String postalCode = address.getPostalCode();
+            CurrentLocation = city + " " + state + " " + country + " " + postalCode;
+            saved_geoLocation.setText(CurrentLocation);
         }
-        Address address = addressList.get(0);
-        Lat = address.getLatitude();
-        Lon =  address.getLongitude();
+        //saved_geoLocation.setText(geo_location);
     }
 
 }
