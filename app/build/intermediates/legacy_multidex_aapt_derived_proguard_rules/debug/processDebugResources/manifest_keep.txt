@@ -1,2 +1,0 @@
-# Referenced at C:\Users\Jori\Documents\CMPUT301Lab\HealthTracker\app\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:37
--keep class android.support.multidex.MultiDexApplication { <init>(...); }
