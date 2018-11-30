@@ -128,7 +128,9 @@ public class AddorEditRecordView extends AppCompatActivity {
      */
     private void saveRecord(){
         // get Record info
+        System.out.println(titleText.getText().toString());
         title = titleText.getText().toString();
+
         comment = descriptionText.getText().toString();
 
         // fetch user data

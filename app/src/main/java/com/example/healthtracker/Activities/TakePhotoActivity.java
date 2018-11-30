@@ -139,7 +139,7 @@ public class TakePhotoActivity extends AppCompatActivity {
         if (addPath.equals("")){
             Toast.makeText(this, "No Photo Selected", Toast.LENGTH_SHORT).show();
         }
-        else if(SlideShowActivity.add(addPath,test)){
+        else {
             Toast.makeText(this, "Photo Recorded", Toast.LENGTH_SHORT).show();
 
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
@@ -152,9 +152,10 @@ public class TakePhotoActivity extends AppCompatActivity {
 
             finish();
         }
+        /*
         else{
             Toast.makeText(this, "Max Photo Limit Reached", Toast.LENGTH_SHORT).show();
-        }
+        } */
     }
 
     public String getExtraString(){

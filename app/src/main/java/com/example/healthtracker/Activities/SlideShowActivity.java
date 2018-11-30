@@ -1,11 +1,14 @@
 package com.example.healthtracker.Activities;
 
+import android.content.ContextWrapper;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.healthtracker.Contollers.PhotoController;
 import com.example.healthtracker.R;
 import com.example.healthtracker.Contollers.ViewPageAdapterActivity;
 
@@ -29,105 +32,59 @@ import android.widget.ImageView;
  * SlideShowActivity will enable patients and careproviders to view a slidehsow of all of the photos
  * associated with a problem.
  */
-public class SlideShowActivity extends AppCompatActivity {
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
-    private static Map<String, ArrayList<String>> images1 = new HashMap<>();
-    private static ArrayList<String> imageList = new ArrayList<>();
+public class SlideShowActivity extends Activity {
+
+    private ViewFlipper myViewFlipper;
+    private float initialXPoint;
+    private ArrayList<Bitmap> images = new ArrayList<Bitmap>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.slide_show);
-        ViewPager viewPager = findViewById(R.id.ViewPager);
-        //String test = getImageList();
-        //String test = "test1";
-        try {
-            update();
-        }
-        catch (NullPointerException ne){
-            Toast.makeText(this, "No photos associated with this problem", Toast.LENGTH_SHORT).show();
+        myViewFlipper = (ViewFlipper) findViewById(R.id.myflipper);
+
+        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+        images = PhotoController.loadImagesByProblem(cw, this.getExtraString());
+
+        for (Bitmap image: images) {
+            ImageView imageView = new ImageView(SlideShowActivity.this);
+            imageView.setImageBitmap(image);
+            myViewFlipper.addView(imageView);
         }
     }
 
-    public static boolean add(String imageName, String arrayName) {
-        List<String> itemsList = images1.get(arrayName);
-        // if list does not exist create it
-        if(itemsList == null) {
-            itemsList = new ArrayList<>();
-            itemsList.add(imageName);
-            images1.put(arrayName, (ArrayList<String>) itemsList);
-        } else {
-            // add if item is not already in list
-            if(!itemsList.contains(imageName)) itemsList.add(imageName);
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                initialXPoint = event.getX();
+                break;
+            case MotionEvent.ACTION_UP:
+                float finalx = event.getX();
+                if (initialXPoint > finalx) {
+                    if (myViewFlipper.getDisplayedChild() == images.size())
+                        break;
+                    myViewFlipper.showNext();
+                } else {
+                    if (myViewFlipper.getDisplayedChild() == 0)
+                        break;
+                    myViewFlipper.showPrevious();
+                }
+                break;
         }
-        return true;
-
-        /*
-
-        if (images1.get(arrayName) == null) {
-            ArrayList<String> image = new ArrayList<>();
-            image.add(imageName);
-            images1.put(arrayName,image);
-            return true;
-        } else {
-            ArrayList<String> image2 = images1.get(arrayName);
-            image2.add(imageName);
-            images1.put(arrayName,image2);
-            if (image2.size() == 10) {
-                return false;
-            } else {
-                image2.add(imageName);
-                return true;
-            }
-        }*/
+        return false;
     }
 
-    public void update(){
-        ViewPager viewPager = findViewById(R.id.ViewPager);
-        ViewPageAdapterActivity adapter = new ViewPageAdapterActivity(SlideShowActivity.this, images1.get(getImageList()));
-        viewPager.setAdapter(adapter);
-    }
-
-    public String getImageList(){
-        Intent intent =getIntent();
+    public String getExtraString(){
+        Intent intent = getIntent();
         return intent.getStringExtra("ProblemTitle");
     }
-
-    public class MyAdapter extends PagerAdapter {
-
-        private ArrayList<Integer> images;
-        private LayoutInflater inflater;
-        private Context context;
-
-        public MyAdapter(Context context, ArrayList<Integer> images) {
-            this.context = context;
-            this.images=images;
-            inflater = LayoutInflater.from(context);
-        }
-
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            container.removeView((View) object);
-        }
-
-        @Override
-        public int getCount() {
-            return images.size();
-        }
-
-        @Override
-        public Object instantiateItem(ViewGroup view, int position) {
-            View myImageLayout = inflater.inflate(R.layout.slide, view, false);
-            ImageView myImage = (ImageView) myImageLayout
-                    .findViewById(R.id.image);
-            myImage.setImageResource(images.get(position));
-            view.addView(myImageLayout, 0);
-            return myImageLayout;
-        }
-
-        @Override
-        public boolean isViewFromObject(View view, Object object) {
-            return view.equals(object);
-        }
-    }
 }
+
