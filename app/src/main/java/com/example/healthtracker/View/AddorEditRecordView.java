@@ -1,8 +1,11 @@
 package com.example.healthtracker.View;
 
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,12 +14,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.healthtracker.Contollers.PhotoController;
 import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.PatientRecord;
+import com.example.healthtracker.EntityObjects.Photo;
 import com.example.healthtracker.R;
 import com.example.healthtracker.Activities.TakePhotoActivity;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 
 /*
@@ -35,6 +41,7 @@ public class AddorEditRecordView extends AppCompatActivity {
     private Patient patient;
     String problemTitle;
     File capturedImages;
+    private Bitmap takenPhoto;
     private PatientRecord record;
 
     @Override
@@ -77,6 +84,7 @@ public class AddorEditRecordView extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = getIntent();
                 setResult(RESULT_CANCELED, intent);
+
                 finish();
             }
         });
@@ -130,6 +138,11 @@ public class AddorEditRecordView extends AppCompatActivity {
         record.setComment(comment);
         record.setTitle(title);
 
+        // Add photos
+        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+        String pathLoaded= PhotoController.saveToInternalStorage(takenPhoto,cw, this.getExtraString(), title);
+        record.addPhoto(new Photo(pathLoaded));
+
         // TODO set photos, geomap, bodylocation once they are implemented
 
         // return to add problem with record result
@@ -140,10 +153,23 @@ public class AddorEditRecordView extends AppCompatActivity {
         finish();
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            byte[] byteArray = data.getByteArrayExtra("image");
+            takenPhoto = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+        }
+    }
+
     public void addPhoto(View view) {
+        //ByteArrayOutputStream bStream = new ByteArrayOutputStream();
+        //takenPhoto.compress(Bitmap.CompressFormat.PNG, 100, bStream);
+        //byte[] byteArray = bStream.toByteArray();
+
         Intent intent = new Intent(AddorEditRecordView.this, TakePhotoActivity.class);
         intent.putExtra("ProblemTitle",getExtraString());
-        startActivity(intent);
+
+        startActivityForResult(intent, 1);
+
     }
 
     public String getExtraString(){

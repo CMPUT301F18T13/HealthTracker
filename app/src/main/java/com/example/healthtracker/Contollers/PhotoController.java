@@ -21,12 +21,12 @@ public class PhotoController extends AppCompatActivity {
 
 
     // Save a photo to locally in internal storage
-    public static String saveToInternalStorage(Bitmap bitmapImage, ContextWrapper cw){
+    public static String saveToInternalStorage(Bitmap bitmapImage, ContextWrapper cw, String problemTitle, String recordTitle){
         // path to /data/user/0/com.example.healthtracker/app_imageDir
         File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
         // Create imageDir
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",Locale.CANADA).format(new Date());
-        String imageName = "test_"+timeStamp+".jpg";
+        String imageName = problemTitle + "_" + recordTitle + "_" + timeStamp+".jpg";
         File mypath=new File(directory,imageName);
 
         FileOutputStream fos = null;

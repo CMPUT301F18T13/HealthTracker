@@ -84,6 +84,7 @@
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".View.AddorEditRecordView" />
         <activity android:name=".Activities.SlideShowActivity" />
+        <activity android:name=".Activities.TakePhotoActivity" />
         <activity android:name=".View.MapView" />
 
         <meta-data
