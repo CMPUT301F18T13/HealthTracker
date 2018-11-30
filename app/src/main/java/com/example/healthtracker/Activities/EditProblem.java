@@ -47,7 +47,7 @@ public class EditProblem extends AppCompatActivity {
     private EditText descriptionText;
     private String title;
     private String description;
-    private Date date;
+    private String date;
     private String initial_entry;
     private Patient user;
     private String initialTitle;
@@ -172,22 +172,7 @@ public class EditProblem extends AppCompatActivity {
         titleText.setText(problem.getTitle());
         descriptionText.setText(problem.getDescription());
         date = problem.getDate();
-        /*SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.CANADA);
-        String dateString = format.format(date);
-        dateText.setText(dateString);*/
-    }
-
-    private static boolean testDate(String date) {
-        // establish the date format and make the format non lenient, include a parse catch and try clause
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.CANADA);
-        format.setLenient(false);
-        try {
-            format.parse(date.trim());
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return false;
-        }
-        return true;
+        pickedDate.setText(problem.getDate());
     }
 
     private String getEntry() {
@@ -231,19 +216,12 @@ public class EditProblem extends AppCompatActivity {
         if (titleText.getText().toString().equals("") || pickedDate.getText().toString().equals("")
                 || descriptionText.getText().toString().equals("")) {
             Toast.makeText(this, "Error, all fields must be filled", Toast.LENGTH_LONG).show();
-        } else if (!testDate(pickedDate.getText().toString())) {
-            Toast.makeText(this, "Improper Date Format", Toast.LENGTH_LONG).show();
         } else {
             // get changes
             String titleString = titleText.getText().toString();
             String descriptionString = descriptionText.getText().toString();
-            Date date = null;
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.CANADA);
-            try {
-                date = format.parse(pickedDate.getText().toString());
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+            String date = pickedDate.getText().toString();
+
 
             // save changes
             user = UserDataController.loadPatientData(this);
@@ -335,7 +313,7 @@ public class EditProblem extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int myear, int mmonth, int mday) {
                 mmonth+=1;
-                pickedDate.setText(myear+"/"+mmonth+"/"+mday);
+                pickedDate.setText(myear+"-"+mmonth+"-"+mday);
             }
         }, year,month,day);
         datePickerDialog.show();

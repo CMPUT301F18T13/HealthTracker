@@ -24,7 +24,7 @@ import static java.lang.Boolean.FALSE;
 public class Problem implements Serializable {
 
     private String ProblemTitle;
-    private Date dateStarted;
+    private String dateStarted;
     private String description;
     // if we use the android built in notifications then they cant be here or elastic search will break
     private List<NotificationsController> notifications;
@@ -46,7 +46,7 @@ public class Problem implements Serializable {
      * @param dateStarted A Date that will indicate when the Problem started.
      * @param description A string that will be the description of the Problem.
      */
-    public Problem(String title,Date dateStarted,String description){
+    public Problem(String title,String dateStarted,String description){
         this.ProblemTitle = title;
         this.dateStarted = dateStarted;
         this.description = description;
@@ -66,7 +66,7 @@ public class Problem implements Serializable {
      *
      * @return A Date indicating when the problem started.
      */
-    public Date getDate(){
+    public String getDate(){
         return dateStarted;
     }
 
@@ -93,7 +93,7 @@ public class Problem implements Serializable {
      *
      * @param newDate The new Date that will indicate when the Problem began.
      */
-    public void setDate(Date newDate){
+    public void setDate(String newDate){
         this.dateStarted = newDate;
     }
 
@@ -113,7 +113,7 @@ public class Problem implements Serializable {
      * @param date A new start date for the problem.
      * @param description A new description for the problem.
      */
-    public void update(String title, Date date, String description){
+    public void update(String title, String date, String description){
         setDate(date);
         setTitle(title);
         setDescription(description);
@@ -182,9 +182,7 @@ public class Problem implements Serializable {
     @NonNull
     @Override
     public String toString(){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd",Locale.CANADA);
-        String dateStr = sdf.format(dateStarted);
-        return "title: "+ProblemTitle+"\n"+"start date: "+dateStr+"\n"+"description: "+
+        return "title: "+ProblemTitle+"\n"+"start date: "+dateStarted+"\n"+"description: "+
                 description+"\n"+"number of records: "+String.valueOf(patientRecords.size() + caregiverRecords.size());
     }
 }

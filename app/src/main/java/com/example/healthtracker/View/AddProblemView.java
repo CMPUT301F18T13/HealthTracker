@@ -43,19 +43,14 @@ import java.util.Locale;
 public class AddProblemView extends AppCompatActivity {
 
     private EditText titleText;
-    private EditText dateText;
     private EditText descriptionText;
-    public static Integer counter = 0;
     private String title;
-    private String dateString;
     private String description;
-    private Date date;
     private Context context;
     private ArrayList<PatientRecord> recordList;
     private ArrayAdapter<PatientRecord> adapter;
     private ListView mListView;
     private int index;
-    private Button datePickButton;
     Calendar calender;
     DatePickerDialog datePickerDialog;
     TextView pickedDate;
@@ -65,26 +60,10 @@ public class AddProblemView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_problem);
         titleText = findViewById(R.id.title_text);
-        //dateText = findViewById(R.id.date_started_editable);
         descriptionText = findViewById(R.id.problem_description_edit);
-        datePickButton = findViewById(R.id.pickDateButton);
-        pickedDate = findViewById(R.id.pickedDate);
+        pickedDate = findViewById(R.id.pickedDate2);
         context = this;
         recordList = new ArrayList<PatientRecord>();
-    }
-
-
-    private static boolean testDate(String date) {
-        // establish the date format and make the format non lenient, include a parse catch and try clause
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.CANADA);
-        format.setLenient(false);
-        try {
-            format.parse(date.trim());
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return false;
-        }
-        return true;
     }
 
     @Override
@@ -200,8 +179,6 @@ public class AddProblemView extends AppCompatActivity {
         if (titleText.getText().toString().equals("") || pickedDate.getText().toString().equals("")
                 || descriptionText.getText().toString().equals("")) {
             Toast.makeText(this, "Error, all field must be filled", Toast.LENGTH_LONG).show();
-        } else if (!testDate(pickedDate.getText().toString())) {
-            Toast.makeText(this, "Improper Date Format", Toast.LENGTH_LONG).show();
         } else {
             saveProblem();
         }
@@ -210,13 +187,9 @@ public class AddProblemView extends AppCompatActivity {
     private void saveProblem(){
         // get Problem info
         title = titleText.getText().toString();
-        dateString = pickedDate.getText().toString();
+        String date =pickedDate.getText().toString();
         description = descriptionText.getText().toString();
-        try{
-            date = new SimpleDateFormat("yyyy-MM-dd",Locale.CANADA).parse(dateString);
-        } catch (ParseException e){
-            Toast.makeText(this, "Improper Date Format", Toast.LENGTH_LONG).show();
-        }
+
 
         // fetch user data
         Patient patient = UserDataController.loadPatientData(context);
@@ -290,7 +263,7 @@ public class AddProblemView extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int myear, int mmonth, int mday) {
                 mmonth+=1;
-                pickedDate.setText(myear+"/"+mmonth+"/"+mday);
+                pickedDate.setText(myear+"-"+mmonth+"-"+mday);
             }
         }, year,month,day);
         datePickerDialog.show();

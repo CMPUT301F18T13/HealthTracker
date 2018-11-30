@@ -72,7 +72,7 @@ public class CareProviderProblemView extends AppCompatActivity {
         records = pProblem.getRecords();
 
         String title = pProblem.getTitle();
-        Date date = pProblem.getDate();
+        String date = pProblem.getDate();
         String des = pProblem.getDescription();
 
         showProblem(title,date,des);
@@ -95,15 +95,9 @@ public class CareProviderProblemView extends AppCompatActivity {
         });
     }
 
-
-    private String dateToString(Date date){
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.CANADA);
-        return format.format(date);
-    }
-
-    private void showProblem(String title, Date date, String des) {
+    private void showProblem(String title, String date, String des) {
         titleText.setText(title);
-        dateText.setText(dateToString(date));
+        dateText.setText(date);
         desText.setText(des);
     }
 

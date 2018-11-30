@@ -1260,7 +1260,9 @@ id percent
 id phone_number
 id photo_from_library_button
 id pickDateButton
+id pickDateButton2
 id pickedDate
+id pickedDate2
 id pin
 id problem_description
 id problem_description_edit

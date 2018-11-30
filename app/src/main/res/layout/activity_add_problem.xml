@@ -113,17 +113,17 @@
         app:layout_constraintTop_toBottomOf="@+id/problem_description_edit" />
 
     <Button
-        android:id="@+id/pickDateButton"
+        android:id="@+id/pickDateButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:onClick="datePicker"
         android:text="Pick Date"
-        app:layout_constraintBaseline_toBaselineOf="@+id/pickedDate"
+        app:layout_constraintBaseline_toBaselineOf="@+id/pickedDate2"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/pickedDate"
+        android:id="@+id/pickedDate2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"

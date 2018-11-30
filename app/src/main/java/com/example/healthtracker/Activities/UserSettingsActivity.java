@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -74,17 +75,34 @@ public class UserSettingsActivity extends AppCompatActivity {
         String phoneString = phone.getText().toString();
         String emailString = uemail.getText().toString().toLowerCase();
         if(!isEmpty(phoneString) && !isEmpty(emailString)){
-            if(profileType.equals("Patient")){
-                patient.updateUserInfo(phoneString, emailString);
-                UserDataController.savePatientData(this, patient);
-            } else{
-                careProvider.updateUserInfo(phoneString, emailString);
-                UserDataController.saveCareProviderData(this, careProvider);
-            }
-        } else{
+            if(validateEmail(emailString)) {
+                if(validatePhone(phoneString)) {
+                    if (profileType.equals("Patient")) {
+                        patient.updateUserInfo(phoneString, emailString);
+                        UserDataController.savePatientData(this, patient);
+                    } else {
+                        careProvider.updateUserInfo(phoneString, emailString);
+                        UserDataController.saveCareProviderData(this, careProvider);
+                    }
+                }else{
+                    Toast.makeText(context, "Invalid Phone Number", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(context, "Invalid Email", Toast.LENGTH_SHORT).show();
+            } 
+        } else {
             Toast.makeText(this, "All fields must be filled in.", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public static boolean validateEmail(CharSequence target) {
+        return Patterns.EMAIL_ADDRESS.matcher(target).matches();
+    }
+
+    public boolean validatePhone(String number) {
+        return Patterns.PHONE.matcher(number).matches();
+    }
+
 
 
     private boolean isEmpty(String string) {
