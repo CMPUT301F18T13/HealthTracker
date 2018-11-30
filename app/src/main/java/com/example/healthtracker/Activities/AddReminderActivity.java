@@ -10,9 +10,11 @@ import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TimePicker;
@@ -29,7 +31,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-public class AddReminderActivity extends AppCompatActivity implements View.OnClickListener {
+public class AddReminderActivity extends AppCompatActivity {
 
 
     //private EditText reminderTime;
@@ -48,6 +50,8 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
     private String idea;
 
     private int notificationId = 1;
+    private AlarmManager alarm;
+    private PendingIntent alarmIntent;
 
 
 
@@ -56,13 +60,25 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_reminder);
 
-        Intent fromIntent = getIntent();
-        idea = fromIntent.getStringExtra("FROM");
         // Set Onclick Listener
-        findViewById(R.id.delete_reminder).setOnClickListener(this);
-        findViewById(R.id.save_reminder).setOnClickListener(this);
+        //delete_r = findViewById(R.id.delete_reminder);//.setOnClickListener(this);
+        //save_r = findViewById(R.id.save_reminder);//.setOnClickListener(this);
+
+        timePicker = findViewById(R.id.r_timepicker);
+
+        // Set notificationId & mode.
+        Intent intent = new Intent(AddReminderActivity.this, AlarmReceiver.class);
+        intent.putExtra("notificationID", notificationId);
+        intent.putExtra("todo", "Hello!!!");
+
+        //getBroadcast(context, requestCode, intent, flags)
+        alarmIntent = PendingIntent.getBroadcast(AddReminderActivity.this, 0,
+                intent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+        alarm = (AlarmManager) getSystemService(ALARM_SERVICE);
 
 
+        /*
         //When choose repeat method
         repeatChoices = findViewById(R.id.choose_repeat);
         ArrayList<String> choices = new ArrayList<>();
@@ -99,7 +115,7 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
                 // TODO Auto-generated method stub
             }
         });
-
+*/
 
 /*
         //When choose repeat time
@@ -208,9 +224,10 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
         }
     }
 
-
+/*
     @Override
     public void onClick(View v) {
+
         //repeatChoices = findViewById(R.id.reminder_time);
         timePicker = findViewById(R.id.r_timepicker);
 
@@ -227,46 +244,66 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
 
         Intent backIntent = new Intent(AddReminderActivity.this, AddProblemView.class);
         Intent backToEditIntent = new Intent(AddReminderActivity.this, EditProblem.class);
+
+
+
         switch (v.getId()){
             case R.id.save_reminder:
-                int h = timePicker.getCurrentHour();
-                int min = timePicker.getCurrentMinute();
 
-                //Create time
-                Calendar startTime = Calendar.getInstance();
-                startTime.set(Calendar.HOUR_OF_DAY, h);
-                startTime.set(Calendar.MINUTE, min);
-                startTime.set(Calendar.SECOND, 0);
-                long alarmStartTime = startTime.getTimeInMillis();
-
-                // Set alarm
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    alarm.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, alarmStartTime, alarmIntent);
-                } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                    alarm.setExact(AlarmManager.RTC_WAKEUP, alarmStartTime, alarmIntent);
-                } else {
-                    alarm.setRepeating(AlarmManager.RTC_WAKEUP, alarmStartTime, (1000 * 60 * 60 * 24),alarmIntent);
-                }
-                alarm.setExact(AlarmManager.RTC_WAKEUP, alarmStartTime, alarmIntent);
-                Toast.makeText(this, "Reminder Done!", Toast.LENGTH_SHORT).show();
-                /*
-                if(idea == "Edit"){
-                    startActivity(backToEditIntent);
-                }else if(idea == "Add"){
-                    startActivity(backIntent);
-                }
-                */
-                AddReminderActivity.this.finish();
 
                 break;
 
             case R.id.delete_reminder:
-                alarm.cancel(alarmIntent);
-                Toast.makeText(this, "Reminder Delete!", Toast.LENGTH_SHORT).show();
-                startActivity(backIntent);
-                AddReminderActivity.this.finish();
+
                 break;
         }
 
     }
+  */
+
+    public void saveButton(View view){
+        int h = timePicker.getCurrentHour();
+        if(h == 0){
+            h = 12;
+        }
+        else if(h == 12){
+            h = 24;
+        }
+        int min = timePicker.getCurrentMinute();
+
+        Log.d("!!!!!!!!!!!1HOUR IS :",String.valueOf(h));
+        Log.d("!!!!!!!!!!!1MINUTE IS :",String.valueOf(min));
+
+
+        //Create time
+        Calendar startTime = Calendar.getInstance();
+        startTime.set(Calendar.HOUR_OF_DAY, h);
+        startTime.set(Calendar.MINUTE, min);
+        startTime.set(Calendar.SECOND, 0);
+        long alarmStartTime = startTime.getTimeInMillis();
+
+
+
+        // Set alarm
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            alarm.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, alarmStartTime, alarmIntent);
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            alarm.setExact(AlarmManager.RTC_WAKEUP, alarmStartTime, alarmIntent);
+        } else {
+            alarm.setRepeating(AlarmManager.RTC_WAKEUP, alarmStartTime, (1000 * 60 * 60 * 24),alarmIntent);
+        }
+
+        //alarm.setExact(AlarmManager.RTC_WAKEUP, alarmStartTime, alarmIntent);
+        Boolean alarmUp = (PendingIntent.getBroadcast(this,0,new Intent()))
+        Toast.makeText(this, "Reminder Done!", Toast.LENGTH_SHORT).show();
+        AddReminderActivity.this.finish();
+
+    }
+
+    public void deleteButton(View view){
+        alarm.cancel(alarmIntent);
+        Toast.makeText(this, "Reminder Delete!", Toast.LENGTH_SHORT).show();
+        AddReminderActivity.this.finish();
+    }
+
 }

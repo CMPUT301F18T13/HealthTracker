@@ -17,6 +17,7 @@ import com.example.healthtracker.R;
 public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
+        Log.d("!!!!!!!!!!! :","RUN1");
         //Get id & mode from intent.
         int notificationId = intent.getIntExtra("notificationID",0);
         String message = intent.getStringExtra("todo");
@@ -40,6 +41,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                 .setDefaults(Notification.DEFAULT_ALL);
 
         //Notify
+        Log.d("!!!!!!!!!!! :","RUN2");
         myNotificationManager.notify(notificationId,builder.build());
 
 
