@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddProblemView">
+    tools:context=".View.AddProblemView">
 
     <TextView
         android:id="@+id/problem_title"
@@ -19,9 +19,9 @@
     <EditText
         android:id="@+id/title_text"
         android:layout_width="237dp"
-        android:layout_height="wrap_content"
+        android:layout_height="42dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/max_title_length"
         android:inputType="textPersonName"
@@ -45,7 +45,7 @@
         android:layout_width="237dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/startdate_edit"
         android:inputType="date"
@@ -66,19 +66,22 @@
     <EditText
         android:id="@+id/problem_description_edit"
         android:layout_width="280dp"
-        android:layout_height="wrap_content"
+        android:layout_height="111dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/max_descript_length"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
+        android:maxEms="46"
         android:maxLength="300"
         android:scrollHorizontally="false"
+        android:singleLine="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/problem_description"
         tools:ignore="Autofill" />
 
     <Button
+        android:id="@+id/add_problem_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -94,20 +97,31 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/add_record_from_add"
         android:onClick="addRecordFromAdd"
+        android:text="@string/add_record_from_add"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/problem_description_edit" />
 
     <ListView
         android:id="@+id/record_list_addscreen"
         android:layout_width="368dp"
-        android:layout_height="202dp"
+        android:layout_height="129dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_record_from_add_problem"
+        app:layout_constraintVertical_bias="0.058" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/add_reminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/problem_description_edit" />
 </android.support.constraint.ConstraintLayout>

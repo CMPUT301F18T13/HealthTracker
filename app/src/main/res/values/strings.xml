@@ -2,41 +2,29 @@
     <string name="app_name">HealthTracker</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email Address</string>
-    <string name="prompt_username">Username</string>
     <string name="create_account">Create Account</string>
     <string name="login">Login</string>
     <string name="view_patients">View Patients</string>
     <string name="view_map">View Map</string>
-    <string name="view_users">View Users</string>
     <string name="add_patient">Add Patient</string>
-    <string name="home">Home</string>
     <string name="back">Back</string>
     <string name="search">Search</string>
     <string name="keywords">Keywords</string>
     <string name="back1">Back</string>
-    <string name="back2">Back</string>
-    <string name="patient_id">Patient ID</string>
-    <string name="back3">Back</string>
+    <string name="patient_id">Patient ID Code</string>
     <string name="save">Save</string>
     <string name="phone_number">Phone Number</string>
     <string name="settings">Settings</string>
-    <string name="logout">Logout</string>
-    <string name="back_from_settings">Back</string>
     <string name="save_settings">Save</string>
-    <string name="user_id_settings">User ID</string>
     <string name="email_settings">Email Address</string>
     <string name="phone_settings">Phone Number</string>
-    <string name="back_from_problem_view">Back</string>
-    <string name="back_from_problem">Back</string>
     <string name="provider_add_comment">Add Comment</string>
-    <string name="records_care_provider">Records</string>
-    <string name="back_from_careprovider_comment">Back</string>
     <string name="save_care_comment">Save</string>
     <string name="care_comment_title">Title</string>
     <string name="care_comment">Comment</string>
 
     <string name="searchType">Search Type</string>
-    <string name="home_from_userlist">Home</string>
+    <string name="bodyLocation">Body Location</string>
     <string name="add_problem">Add Problem</string>
     <string name="problem_title">Title</string>
     <string name="max_title_length">Enter Title(Max 30 chars)</string>
@@ -44,44 +32,21 @@
     <string name="startdate_edit">yyyy-mm-dd</string>
     <string name="problem_description">Description</string>
     <string name="max_descript_length">Enter Description (Max 300 chars)</string>
-    <string name="back_from_add_problem">Back</string>
     <string name="add_new_problem">Save</string>
-    <string name="test_login_checkbox">Care Provider</string>
-    <string name="back_from_myproblems">Back</string>
     <string name="view_myproblems">View Problems</string>
-    <string name="cancel_problem_edit">Cancel</string>
     <string name="save_edited_problem">Save</string>
     <string name="add_record_from_add">Add Record</string>
     <string name="add_record_from_edit">Add Record</string>
-    <string name="edit_problem_button">Edit</string>
-    <string name="back_from_auser_info">Back</string>
-    <string name="patient_id_strict">Patient ID</string>
     <string name="record_strict_care_view">Records</string>
-    <string name="a_record_care_view">A Record</string>
     <string name="description_care_view">Description</string>
     <string name="date_started_care_view">Date Started</string>
     <string name="title_care_view">Title</string>
     <string name="care_title_strict">Title</string>
     <string name="care_comment_strict">Comment</string>
     <string name="record_view_title">Title</string>
-    <string name="record_view_comment">Comment</string>
-    <string name="record_view_geo_location">Geo-location</string>
-    <string name="record_view_body_location">Body Location</string>
-    <string name="record_view_timestamp">Timestamp</string>
-    <string name="back_from_record_view">Back</string>
-    <string name="back_from_patient_p_view">Back</string>
-    <string name="add_record_to_problem">Add Record</string>
-    <string name="edit_record_button_text">Edit</string>
     <string name="webmd">webMD</string>
     <string name="symptom_checker">Symptom Checker</string>
     <string name="mayo_clinic">Mayo Clinic</string>
-    <string name="password_hint">Password</string>
-    <string name="name_hint">Name</string>
-    <string name="track_users" />
-    <string name="password_login_hint">Password</string>
-    <string name="username">Username(email address)</string>
-    <string name="email">Email Address</string>
-    <string name="usernameSettings">Username</string>
     <string name="userID">User ID</string>
     <string name="newUserID">User ID(min 8 characters)</string>
 
@@ -91,6 +56,35 @@
         <item>Geo-location</item>
         <item>Body-location</item>
     </string-array>
+    <string-array name="body_location_options">
+        <item>Left foot</item>
+        <item>Right foot</item>
+        <item>Left leg</item>
+        <item>Right leg</item>
+        <item>Groin</item>
+        <item>Stomach</item>
+        <item>Left side</item>
+        <item>Right side</item>
+        <item>Left Arm</item>
+        <item>Right Arm</item>
+        <item>Left Hand</item>
+        <item>Right Hand</item>
+        <item>Upper back</item>
+        <item>Mid back</item>
+        <item>Lower back</item>
+        <item>Shoulders</item>
+        <item>Neck</item>
+        <item>Head</item>
+    </string-array>
+
+    <string name="title_activity_view_care_provider_comments">ViewCareProviderComments</string>
+    <string name="title_activity_care_provider_record_view">CareProviderRecordView</string>
+    <string name="timestamp">Timestamp</string>
+    <string name="save_record_button">Save</string>
+    <string name="add_body_location_button">Add Body-Location</string>
+    <string name="add_geo_location_button">Add Geo-Location</string>
+    <string name="add_reminder">Add Reminder</string>
+    <string name="from_library">From Library</string>
 
 
 </resources>

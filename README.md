@@ -13,3 +13,9 @@ https://www.viralandroid.com/2016/04/google-maps-android-api-getting-started-tut
 https://www.viralandroid.com/2016/04/get-current-location-google-maps-android-api-tutorial.html, 2016/04/24, viewed 2018/10/23
 
 https://www.viralandroid.com/2016/04/google-maps-android-api-adding-search-bar-part-3.html, 2016/04/25, viewed 2018/10/23
+
+<<<<<<< HEAD
+Student Picker For Android - CMPUT301 video tutorial series by Abram Hindle, https://www.youtube.com/watch?v=5PPD0ncJU1g&list=PL240uJOh_Vb4PtMZ0f7N8ACYkCLv0673O, 2014/09/11, viewed 2018/10/25
+=======
+See more references and reuse at https://github.com/CMPUT301F18T13/HealthTracker/wiki/Reuse-Statement.
+>>>>>>> master

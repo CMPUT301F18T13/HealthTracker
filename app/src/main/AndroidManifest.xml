@@ -10,6 +10,12 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature android:name="android.hardware.camera"
+        android:required="false"/>
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -38,53 +44,72 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
+
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/app_name">
+            android:name=".Activities.LoginActivity"
+            android:label="@string/app_name"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CareProviderHomeView" />
-        <activity android:name=".ViewPatients" />
-        <activity android:name=".SearchActivity" />
-        <activity android:name=".SearchResultsView" />
-        <activity android:name=".AddPatientView" />
-        <activity android:name=".CreateAccountActivity" />
-        <activity android:name=".UserSettingsActivity" />
-        <activity android:name=".ViewPatientsProblems" />
-        <activity android:name=".CareProviderProblemView" />
-        <activity android:name=".AddCareProviderCommentView" />
-        <activity android:name=".ViewUsers" />
-        <activity android:name=".PatientHomeView" />
-        <activity android:name=".AddProblemView"
+        <activity android:name=".View.CareProviderHomeView" />
+        <activity android:name=".View.ViewPatients" />
+        <activity android:name=".Activities.SearchActivity" />
+        <activity android:name=".View.SearchResultsView" />
+        <activity android:name=".View.AddPatientView" />
+        <activity android:name=".Activities.CreateAccountActivity" />
+        <activity android:name=".Activities.UserSettingsActivity" />
+        <activity android:name=".View.ViewPatientsProblems" />
+        <activity android:name=".View.CareProviderProblemView" />
+        <activity android:name=".View.AddCareProviderCommentView" />
+        <activity android:name=".View.PatientHomeView" />
+        <activity
+            android:name=".View.AddProblemView"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".ViewMyProblems" />
-        <activity android:name=".EditProblem"
+        <activity android:name=".View.ViewMyProblems" />
+        <activity
+            android:name=".Activities.EditProblem"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".AddorEditRecordView" />
-        <activity android:name=".PatientProblemView" />
-        <activity android:name=".SlideShowActivity" />
-        <activity android:name=".ViewAUser" />
-        <activity android:name=".MapView" />
-        <activity android:name=".RecordView"/>
-
-
-
+        <activity android:name=".View.AddorEditRecordView" />
+        <activity android:name=".Activities.SlideShowActivity" />
+        <activity android:name=".View.MapView" />
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyDppOAUxXEBGrsc_gg8bw392b4QdyzlzYw" />
 
+<<<<<<< HEAD
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false"/>
 
+=======
+        <activity
+            android:name=".View.ViewCareProviderComments"
+            android:label="@string/title_activity_view_care_provider_comments" />
+        <activity
+            android:name=".View.CareProviderRecordView"
+            android:label="@string/title_activity_care_provider_record_view" />
+
+        <activity android:name=".Activities.TakePhotoActivity">
+        </activity>
+        <activity android:name=".Contollers.PhotoController" />
+>>>>>>> tyler
     </application>
 
 </manifest>

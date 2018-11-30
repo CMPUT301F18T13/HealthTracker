@@ -7,9 +7,12 @@
         android:id="@+id/userID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="87dp"
         android:ems="10"
         android:hint="@string/userID"
         android:inputType="textEmailAddress"
@@ -18,15 +21,14 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="31dp"
+        android:layout_alignParentStart="true"
         android:layout_marginBottom="51dp"
+        android:layout_marginStart="31dp"
         android:onClick="CreateAccount"
         android:text="@string/create_account" />
 
     <Button
-        android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -37,26 +39,15 @@
         android:onClick="UserLogin"
         tools:ignore="RelativeOverlap" />
 
-    <EditText
-        android:id="@+id/login_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/userID"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
-        android:ems="10"
-        android:hint="@string/password_login_hint"
-        android:inputType="textPassword"
-        android:autofillHints=""
-        tools:targetApi="o" />
-
     <CheckBox
         android:id="@+id/CareGiverLogin"
-        android:layout_width="105dp"
+        android:layout_width="127dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="206dp"
-        android:layout_marginEnd="133dp"
-        android:text="Are you a CareGiver?" />
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="283dp"
+        android:layout_marginEnd="125dp"
+        android:text="Are you a care provider?" />
 </RelativeLayout>

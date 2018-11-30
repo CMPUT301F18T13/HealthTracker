@@ -4,22 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CareProviderProblemView">
+    tools:context=".View.CareProviderProblemView">
 
     <Button
         android:id="@+id/add_comment_button"
-        android:layout_width="233dp"
+        android:layout_width="156dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
         android:onClick="addCareProviderComment"
         android:text="@string/provider_add_comment"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/scrollView3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/scrollView3" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ScrollView
-        android:id="@+id/scrollView3"
         android:layout_width="368dp"
         android:layout_height="551dp"
         android:layout_marginEnd="8dp"
@@ -62,45 +60,61 @@
                 android:id="@+id/viewDes"
                 android:layout_width="303dp"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_below="@id/viewTitle"
+                android:layout_alignLeft="@id/viewTitle"
+                android:layout_marginTop="80dp"
+                android:singleLine="false"
+                android:inputType="textMultiLine"
                 android:text="@string/description_care_view"
                 android:textSize="24sp"
                 tools:layout_editor_absoluteX="50dp"
                 tools:layout_editor_absoluteY="32dp" />
 
             <TextView
-                android:id="@+id/viewRecord"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="325dp"
+                android:layout_alignLeft="@id/viewTitle"
+                android:layout_below="@id/viewDes"
+                android:layout_marginTop="40dp"
                 android:text="@string/record_strict_care_view"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="124dp"
                 tools:layout_editor_absoluteY="212dp" />
 
-            <TextView
-                android:id="@+id/subRecords"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="375dp"
-                android:text="@string/a_record_care_view"
-                android:textSize="18sp"
-                tools:layout_editor_absoluteX="124dp"
-                tools:layout_editor_absoluteY="212dp" />
-
             <ImageButton
-                android:id="@+id/imageButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@+id/viewTitle"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="14dp"
                 android:onClick="viewProblemsPhotos"
-                app:srcCompat="@drawable/pic32" />
+                app:srcCompat="@drawable/pic32"
+                tools:ignore="ContentDescription" />
 
         </RelativeLayout>
     </ScrollView>
+
+    <ListView
+        android:id="@+id/care_record_list"
+        android:layout_width="301dp"
+        android:layout_height="174dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/add_comment_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/view_comments"
+        android:layout_width="156dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="viewCareProviderComments"
+        android:text="View Comments"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
