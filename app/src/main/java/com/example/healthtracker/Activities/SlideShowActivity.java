@@ -46,13 +46,20 @@ public class SlideShowActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("Am i even being created?");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.slide_show);
         myViewFlipper = (ViewFlipper) findViewById(R.id.myflipper);
 
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
-        images = PhotoController.loadImagesByProblem(cw, this.getExtraString());
-
+        if (this.isProblem()) {
+            images = PhotoController.loadImagesByProblem(cw, this.getExtraString());
+        }
+        else {
+            System.out.println("Made it here, good");
+            images = PhotoController.loadTemporaryRecordImages(cw);
+            System.out.println("Not crashing here, also good");
+        }
         for (Bitmap image: images) {
             ImageView imageView = new ImageView(SlideShowActivity.this);
             imageView.setImageBitmap(image);
@@ -84,7 +91,15 @@ public class SlideShowActivity extends Activity {
 
     public String getExtraString(){
         Intent intent = getIntent();
-        return intent.getStringExtra("ProblemTitle");
+        return intent.getExtras().getString("ProblemTitle");
+    }
+
+    public Boolean isProblem() {
+        Intent intent = getIntent();
+        if (intent.getExtras().getString("isProblem").equals("Problem")) {
+            return true;
+        }
+        return false;
     }
 }
 

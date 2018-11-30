@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.healthtracker.Activities.EditProblem;
+import com.example.healthtracker.Activities.SlideShowActivity;
 import com.example.healthtracker.Contollers.PhotoController;
 import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.Patient;
@@ -24,6 +26,7 @@ import com.example.healthtracker.Activities.TakePhotoActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.util.ArrayList;
 
 /*
  * AddorEditRecordView enables a patient to add a new record to one of their problems or edit an
@@ -41,8 +44,9 @@ public class AddorEditRecordView extends AppCompatActivity {
     private Patient patient;
     String problemTitle;
     File capturedImages;
-    private Bitmap takenPhoto;
+    private ArrayList<Bitmap> takenPhoto = new ArrayList<Bitmap>();
     private PatientRecord record;
+    private String oldTitle = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +123,12 @@ public class AddorEditRecordView extends AppCompatActivity {
         titleText.setText(record.getTitle());
         descriptionText.setText(record.getComment());
         timestampText.setText(record.getTimestamp().toString());
+        oldTitle = record.getTitle();
+        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+        takenPhoto = PhotoController.loadImagesByRecord(cw, this.getExtraString(), oldTitle);
+        for (Bitmap photo: takenPhoto) {
+            PhotoController.saveToTemporaryStorage(photo, cw);
+        }
         //TODO show geomap, photos, bodlocation
     }
 
@@ -128,7 +138,7 @@ public class AddorEditRecordView extends AppCompatActivity {
      */
     private void saveRecord(){
         // get Record info
-        System.out.println(titleText.getText().toString());
+
         title = titleText.getText().toString();
 
         comment = descriptionText.getText().toString();
@@ -142,8 +152,18 @@ public class AddorEditRecordView extends AppCompatActivity {
 
         // Add photos
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
-        String pathLoaded= PhotoController.saveToInternalStorage(takenPhoto,cw, this.getExtraString(), title);
-        record.addPhoto(new Photo(pathLoaded));
+        for (Bitmap photo: takenPhoto) {
+            String pathLoaded= PhotoController.saveToInternalStorage(photo,cw, this.getExtraString(), title);
+        }
+        PhotoController.removePhotosFromTemporaryStorage(cw);
+        System.out.println(this.getExtraString());
+        //record.addPhoto(new Photo(pathLoaded));
+
+        // Remove photos if title has changed...
+        if (oldTitle != "") {
+            PhotoController.removePhotosFromInternalStorage(cw, this.getExtraString(), oldTitle);
+        }
+
 
         // TODO set photos, geomap, bodylocation once they are implemented
 
@@ -158,7 +178,9 @@ public class AddorEditRecordView extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             byte[] byteArray = data.getByteArrayExtra("image");
-            takenPhoto = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+            takenPhoto.add(BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length));
+            ContextWrapper cw = new ContextWrapper(getApplicationContext());
+            PhotoController.saveToTemporaryStorage(BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length), cw);
         }
     }
 
@@ -174,8 +196,17 @@ public class AddorEditRecordView extends AppCompatActivity {
 
     }
 
+    public void viewPhotos(View view) {
+        // Create an intent object containing the bridge to between the two activities
+        Intent intent = new Intent(AddorEditRecordView.this, SlideShowActivity.class);
+        intent.putExtra("ProblemTitle", this.getExtraString());
+        intent.putExtra("isProblem", "Record");
+        // Launch the browse emotions activity
+        startActivity(intent);
+    }
+
     public String getExtraString(){
         Intent intent = getIntent();
-        return intent.getStringExtra("ProblemTitle");
+        return intent.getExtras().getString("ProblemTitle");
     }
 }

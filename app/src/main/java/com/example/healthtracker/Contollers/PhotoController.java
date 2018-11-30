@@ -29,11 +29,42 @@ public class PhotoController extends AppCompatActivity {
         if (!directory.exists()) {
             directory.mkdirs();
         }
-        System.out.println(directory);
         // Create imageDir
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",Locale.CANADA).format(new Date());
         String imageName = problemTitle + "_" + recordTitle + "_" + timeStamp+".jpg";
         File mypath=new File(directory,imageName);
+        System.out.println(mypath);
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(mypath);
+            // Use the compress method on the BitMap object to write image to the OutputStream
+            bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        } finally {
+            try {
+                assert fos != null;
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return directory.getAbsolutePath();
+    }
+    // Used to hold photos without titles
+    public static String saveToTemporaryStorage(Bitmap bitmapImage, ContextWrapper cw) {
+        // path to /data/user/0/com.example.healthtracker/app_imageDir
+        //File directory = cw.getDir(cw.getDataDir(), Context.MODE_PRIVATE);
+        File directory = new File(cw.getCacheDir().toString() + File.separator + "temporaryRecord");
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+        // Create imageDir
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",Locale.CANADA).format(new Date());
+        String imageName = timeStamp+".jpg";
+        File mypath=new File(directory,imageName);
+        System.out.println(mypath);
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(mypath);
@@ -67,6 +98,7 @@ public class PhotoController extends AppCompatActivity {
     }
 
     public static ArrayList<Bitmap> loadImagesByProblem(ContextWrapper cw, String problemName) {
+
         ArrayList<Bitmap> bitmapArray = new ArrayList<Bitmap>();
 
         File dir = new File(cw.getCacheDir().toString() + File.separator + "images");
@@ -88,6 +120,50 @@ public class PhotoController extends AppCompatActivity {
         return bitmapArray;
     }
 
+    public static ArrayList<Bitmap> loadImagesByRecord(ContextWrapper cw, String problemName, String record) {
+
+        ArrayList<Bitmap> bitmapArray = new ArrayList<Bitmap>();
+
+        File dir = new File(cw.getCacheDir().toString() + File.separator + "images");
+        File[] directoryListing = dir.listFiles();
+
+        if (directoryListing != null) {
+            for (File child : directoryListing) {
+                if ((child.toString().split("_")[0] + "_" + child.toString().split("_")[1]).equals(dir.toString() + File.separator + problemName + File.separator + record)) {
+                    System.out.println("Found match");
+                    try {
+                        bitmapArray.add(BitmapFactory.decodeStream(new FileInputStream(child)));
+                    }
+                    catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+        return bitmapArray;
+    }
+
+    public static ArrayList<Bitmap> loadTemporaryRecordImages(ContextWrapper cw) {
+        ArrayList<Bitmap> bitmapArray = new ArrayList<Bitmap>();
+
+        File dir = new File(cw.getCacheDir().toString() + File.separator + "temporaryRecord");
+        File[] directoryListing = dir.listFiles();
+
+        if (directoryListing != null) {
+            for (File child : directoryListing) {
+                System.out.println("Found match");
+                try {
+                    bitmapArray.add(BitmapFactory.decodeStream(new FileInputStream(child)));
+                }
+                catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return bitmapArray;
+    }
+
     // Encode a bitmap to a string
     public static String imageToString(Bitmap bitmap){
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -101,4 +177,35 @@ public class PhotoController extends AppCompatActivity {
         byte[] decodedString = Base64.decode(encodedImage, Base64.DEFAULT);
         return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
     }
+
+    // Removes photos for the given record
+    public static void removePhotosFromInternalStorage(ContextWrapper cw, String problemName, String record) {
+        ArrayList<Bitmap> bitmapArray = new ArrayList<Bitmap>();
+
+        File dir = new File(cw.getCacheDir().toString() + File.separator + "images");
+        File[] directoryListing = dir.listFiles();
+
+        if (directoryListing != null) {
+            for (File child : directoryListing) {
+                if ((child.toString().split("_")[0] + "_" + child.toString().split("_")[1]).equals(dir.toString() + File.separator + problemName + "_" + record)) {
+                    System.out.println("Found match");
+                    child.delete();
+                }
+            }
+        }
+    }
+
+    // Removes photos for the given record
+    public static void removePhotosFromTemporaryStorage(ContextWrapper cw) {
+        File dir = new File(cw.getCacheDir().toString() + File.separator + "temporaryRecord");
+        File[] directoryListing = dir.listFiles();
+
+        if (directoryListing != null) {
+            for (File child : directoryListing) {
+                System.out.println("Found match");
+                child.delete();
+            }
+        }
+    }
+
 }

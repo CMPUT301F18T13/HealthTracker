@@ -143,6 +143,7 @@ public class EditProblem extends AppCompatActivity {
                         intent.putExtra("Record", UserDataController
                                 .serializeRecord(EditProblem.this, selectedRecord));
                         intent.putExtra("Index", position);
+                        intent.putExtra("ProblemTitle",problem.getTitle());
 
                         // Launch the edit record activity
                         startActivityForResult(intent, 2);
@@ -252,6 +253,7 @@ public class EditProblem extends AppCompatActivity {
     public void addRecordFromAdd(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(EditProblem.this, AddorEditRecordView.class);
+        intent.putExtra("ProblemTitle",problem.getTitle());
         // Launch the activity
         startActivityForResult(intent, 1);
     }
@@ -307,6 +309,7 @@ public class EditProblem extends AppCompatActivity {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(EditProblem.this, SlideShowActivity.class);
         intent.putExtra("ProblemTitle",problem.getTitle());
+        intent.putExtra("isProblem", "Problem");
         // Launch the browse emotions activity
         startActivity(intent);
     }

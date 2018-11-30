@@ -160,7 +160,7 @@ public class TakePhotoActivity extends AppCompatActivity {
 
     public String getExtraString(){
         Intent intent = getIntent();
-        return intent.getStringExtra("ProblemTitle");
+        return intent.getExtras().getString("ProblemTitle");
     }
 }
 
