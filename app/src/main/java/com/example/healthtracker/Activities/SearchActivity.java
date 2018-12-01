@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 import org.elasticsearch.common.geo.GeoPoint;
@@ -40,7 +41,7 @@ public class SearchActivity extends AppCompatActivity {
         spinner = findViewById(R.id.search_type_dropdown);
         keywords = findViewById(R.id.search_terms);
         distance = findViewById(R.id.distance_edittext);
-
+        distance.setVisibility(View.INVISIBLE);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
@@ -75,20 +76,40 @@ public class SearchActivity extends AppCompatActivity {
             hits = UserDataController.searchForKeywords(keywords.getText().toString());
         } else if(searchType.equals("geoLocation")){
 
-            /*
+            String address = keywords.getText().toString();
+
             System.out.println("Reaches here!!!!!!!!!!!!!!!!");
-            System.out.println("The address is "+keywords.getText().toString());
-            */
-            Double latitude = getLocationFromAddress(keywords.getText().toString()).getLat() / 1E6;
-            Double longitude = getLocationFromAddress(keywords.getText().toString()).getLon() / 1E6;
+            System.out.println("The address is "+address);
 
-            /*
-            System.out.println("The latitude is "+latitude.toString());
-            System.out.println("The longitude is "+longitude.toString());
-            System.out.println("The distance is "+distance.getText().toString());
-            */
+            if (getLocationFromAddress(address) == null) {
+                System.out.println("No address can be found.");
+                Toast.makeText(this,"No valid address is found!Please try again.",Toast.LENGTH_LONG);
+            }
+            else {
+                Double latitude = getLocationFromAddress(keywords.getText().toString()).getLat() / 1E6;
+                Double longitude = getLocationFromAddress(keywords.getText().toString()).getLon() / 1E6;
 
-            hits = UserDataController.searchForGeoLocations(distance.getText().toString(),latitude,longitude);
+                System.out.println("The latitude is "+latitude.toString());
+                System.out.println("The longitude is "+longitude.toString());
+                System.out.println("The distance is "+distance.getText().toString());
+                Toast.makeText(this,"Valid address!Success.",Toast.LENGTH_LONG);
+
+
+                //System.out.println(myStr);
+
+
+                hits = UserDataController.searchForGeoLocations(distance.getText().toString(),latitude,longitude);
+                System.out.println(hits.toString());
+
+                // Create an intent object containing the bridge to between the two activities
+                Intent intent = new Intent(SearchActivity.this, SearchResultsView.class);
+                intent.putExtra("hits", UserDataController.serializeObjectArray(this, hits));
+
+                // Launch the browse activity
+                startActivity(intent);
+
+            }
+
 
         } else if(searchType.equals("bodyLocation")){
 

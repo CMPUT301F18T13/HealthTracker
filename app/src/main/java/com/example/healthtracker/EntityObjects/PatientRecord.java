@@ -5,6 +5,8 @@ import android.location.Address;
 
 import com.example.healthtracker.EntityObjects.Photo;
 
+import org.elasticsearch.common.geo.GeoPoint;
+
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -28,6 +30,7 @@ public class PatientRecord implements Serializable {
     private Double Lat;
     private ArrayList<Double> geoLocations = new ArrayList<>();
     private final ArrayList<Photo> photos;
+
 
     /**
      * Constructor for PatientRecord that sets the record title and comment.

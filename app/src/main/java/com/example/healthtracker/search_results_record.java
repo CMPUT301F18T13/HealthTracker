@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.widget.TextView;
 
+import com.example.healthtracker.Contollers.UserDataController;
+import com.example.healthtracker.EntityObjects.PatientRecord;
+
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;

@@ -408,6 +408,7 @@ public class UserDataController<E> {
         searchProblemsTask.execute(searchInfo);
         try {
             hits[0] = searchProblemsTask.get().getSourceAsObjectList(Problem.class, false);
+            System.out.println("Search results from Problem field: "+hits[0]);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -420,6 +421,9 @@ public class UserDataController<E> {
         searchRecordsTask.execute(searchInfo);
         try {
             hits[1] = searchRecordsTask.get().getSourceAsObjectList(PatientRecord.class, false);
+            System.out.println("Search results in Record field: "+hits[1]);
+            System.out.println(hits[1].getClass());
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -431,6 +435,8 @@ public class UserDataController<E> {
         searchCommentsTask.execute(searchInfo);
         try {
             hits[2] = searchCommentsTask.get().getSourceAsObjectList(CareProviderComment.class, false);
+            System.out.println("Search results in CommentRecord field: "+hits[2]);
+            System.out.println(hits[2].getClass());
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -444,19 +450,31 @@ public class UserDataController<E> {
     public static Object[] searchForGeoLocations(String distance,Double latitude,Double longitude){
 
         // Create an Object array which can hold 3 items
-        Object[] hits = new Object[1];
+        Object[] hits = new Object[3];
+
+        // Search for problem
+        hits[0] = new ArrayList<Problem>();
+        System.out.println("Search results in Problem field: "+hits[0]);
 
         // Search for records: Initialize a String Array
-        String searchInfo[] = new String[]{"Record",distance,latitude.toString(),longitude.toString()};
+        String searchInfo[] = new String[]{"myRecord",distance,latitude.toString(),longitude.toString()};
         ElasticsearchController.SearchByGeoLocations searchRecordsTask = new ElasticsearchController.SearchByGeoLocations();
         searchRecordsTask.execute(searchInfo);
         try{
-            hits[0] = searchRecordsTask.get().getSourceAsObject(PatientRecord.class,false);
+            hits[1] = searchRecordsTask.get().getSourceAsObject(PatientRecord.class,false);
+            System.out.println("Search results in myRecord field: "+hits[1]);
+            if(hits[1] == null){
+                
+            }
         }catch(InterruptedException e){
             e.printStackTrace();
         }catch(ExecutionException e){
             e.printStackTrace();
         }
+
+        // Search for commentRecords
+        hits[2] = new ArrayList<CareProviderComment>();
+        System.out.println("Search results in CareProviderComment field: "+hits[1]);
 
         return hits;
 

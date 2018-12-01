@@ -5,6 +5,10 @@ import android.app.Activity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.healthtracker.Contollers.UserDataController;
+import com.example.healthtracker.EntityObjects.CareProviderComment;
+import com.example.healthtracker.EntityObjects.Problem;
+
 import java.util.ArrayList;
 
 public class search_result_comments extends Activity {

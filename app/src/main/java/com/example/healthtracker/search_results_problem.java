@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.healthtracker.Contollers.UserDataController;
+import com.example.healthtracker.EntityObjects.PatientRecord;
+import com.example.healthtracker.EntityObjects.Problem;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
