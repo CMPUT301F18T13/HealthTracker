@@ -37,7 +37,11 @@ public class User implements Serializable {
         this.code = code;
     }
 
-
+    /**
+     * Concatenates the users contact information into a single string
+     *
+     * @return a concatenated string of the user's information
+     */
     @Override
     public String toString() {
         return "userId: "+userID+"|email: "+email+"|phone: "+phone+"|code: "+code;
@@ -47,9 +51,13 @@ public class User implements Serializable {
      * user constructor that requires no parameters
      */
     public User(){
-
     }
 
+    /**
+     * gets the user's account code and returns it
+     *
+     * @return account code
+     */
     public String getCode(){
         return this.code;
     }

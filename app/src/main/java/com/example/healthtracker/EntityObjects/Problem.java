@@ -36,7 +36,6 @@ public class Problem implements Serializable {
      * An empty constructor for Problem that requires no parameters.
      */
     public Problem(){
-
     }
 
     /**

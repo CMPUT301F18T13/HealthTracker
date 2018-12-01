@@ -84,6 +84,7 @@ public class UserDataController<E> {
     /**
      * Retrieves the CareProvider object to who the ID input belongs to. Retrieves from server
      * if an internet connection is available or from the local cache otherwise.
+     *
      * @param context The context in which to access local cache if necessary.
      * @param ID The ID of the desired CareProvider.
      * @return The CareProvider to whom the ID input belongs to.
@@ -333,6 +334,7 @@ public class UserDataController<E> {
 
     /**
      * Convert serialized record string back into a PatientRecord object
+     *
      * @param context input context to initialize a new UserDataController
      * @param recordString input serialized string of record to convert back into a PatientRecord object
      * @return PatientRecord object corresponding to serialized record string

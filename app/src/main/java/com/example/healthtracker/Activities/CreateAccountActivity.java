@@ -193,14 +193,13 @@ public class CreateAccountActivity extends AppCompatActivity {
         return salt.toString();
     }
 
-
+    // Validate's the entered email address
     public static boolean validateEmail(CharSequence target) {
         return Patterns.EMAIL_ADDRESS.matcher(target).matches();
     }
 
+    // Validate's the entered phone number
     public boolean validatePhone(String number) {
         return Patterns.PHONE.matcher(number).matches();
     }
-
-
 }

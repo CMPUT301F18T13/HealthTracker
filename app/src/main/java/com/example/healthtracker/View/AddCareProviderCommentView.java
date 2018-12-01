@@ -1,12 +1,19 @@
 package com.example.healthtracker.View;
 
+import android.app.ActionBar;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.healthtracker.EntityObjects.CareProviderComment;
@@ -45,6 +52,8 @@ public class AddCareProviderCommentView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_care_provider_comment);
+        android.support.v7.app.ActionBar bar = getSupportActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
 
         careProvider = UserDataController.loadCareProviderData(this);
         Intent intent = getIntent();
@@ -53,22 +62,16 @@ public class AddCareProviderCommentView extends AppCompatActivity {
         problemNum = bd.getInt("problemNum");
         myPatient = careProvider.getPatientList().get(patientNum);
         pProblem = myPatient.getProblem(problemNum);
-
-
         careProviderComments = pProblem.getcaregiverRecords();
         if (careProviderComments == null){
             careProviderComments = new ArrayList<CareProviderComment>();
         }
-
         newComment = new CareProviderComment();
-
-
         titleText = findViewById(R.id.care_comment_title);
         commentText = findViewById(R.id.care_comment);
-
-
     }
 
+    // Handle a back button selection event after edit text fields are modified so user is alerted they may lose data
     @Override
     public void onBackPressed() {
         // Create an intent object containing the bridge to between the two activities
@@ -97,6 +100,7 @@ public class AddCareProviderCommentView extends AppCompatActivity {
         }
     }
 
+    // Save the comment record created by a care provider to be assigned to a patient's problem
     public void saveCareProviderComment(View view) {
 
         // get data
@@ -119,6 +123,13 @@ public class AddCareProviderCommentView extends AppCompatActivity {
 
         // done
         finish();
+    }
 
+    // Load the icon for the CareProvider view
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.actionbar, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 }

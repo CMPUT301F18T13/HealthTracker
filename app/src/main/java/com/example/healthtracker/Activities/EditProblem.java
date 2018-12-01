@@ -89,8 +89,6 @@ public class EditProblem extends AppCompatActivity {
 
         // initial entry to check if changes have been made
         initial_entry = getEntry();
-
-
     }
 
     @Override
@@ -168,6 +166,7 @@ public class EditProblem extends AppCompatActivity {
         });
     }
 
+    // Fills the text fields with the original problems string values
     private void displayData() {
         titleText.setText(problem.getTitle());
         descriptionText.setText(problem.getDescription());
@@ -175,14 +174,13 @@ public class EditProblem extends AppCompatActivity {
         pickedDate.setText(problem.getDate());
     }
 
+    // Gets a concatened string of the edited problem
     private String getEntry() {
         return titleText.getText().toString() + " -- " + pickedDate.getText().toString() + "\n" + descriptionText.getText().toString();
     }
 
+    // Override back button to warn patient that their changes will not be saved.
     @Override
-    /*
-     * Override back button to warn patient that their changes will not be saved.
-     */
     public void onBackPressed() {
         if (!initial_entry.equals(getEntry())) {
             AlertDialog.Builder ab = new AlertDialog.Builder(this);
@@ -302,6 +300,7 @@ public class EditProblem extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // Creates and opens a datePicker widget to allow the Patient to more easily choose a date
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void datePicker(View view){
         calender=Calendar.getInstance();

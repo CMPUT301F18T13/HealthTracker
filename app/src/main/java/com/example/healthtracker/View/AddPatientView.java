@@ -2,10 +2,14 @@ package com.example.healthtracker.View;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -36,14 +40,19 @@ public class AddPatientView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_patient);
+        android.support.v7.app.ActionBar bar = getSupportActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
 
         // Get context
         context = this;
-
         inputId = findViewById(R.id.editText4);
 
     }
 
+    /*
+     * Validate the patient account code entered by the CareProvider and add that patient to
+     * the CareProvider's assigned patients if valid.
+      */
     private Boolean ValidatePatientId(){
         // Read user input
         String patientId = inputId.getText().toString();
@@ -147,5 +156,13 @@ public class AddPatientView extends AppCompatActivity {
             // Create an intent object containing the bridge to between the two activities
             finish();
         }
+    }
+
+    // Load the icon for the CareProvider view
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.actionbar, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 }

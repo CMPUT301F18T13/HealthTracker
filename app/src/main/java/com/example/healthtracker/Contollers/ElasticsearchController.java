@@ -248,6 +248,11 @@ public class ElasticsearchController {
         }
     }
 
+    /**
+     * Currently does nothing.
+     *
+     * @return returns a null object reference.
+     */
     public static List<Problem> search(String searchType, String keyword){
         return null;
     }

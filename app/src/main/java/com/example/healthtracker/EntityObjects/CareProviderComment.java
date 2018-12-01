@@ -73,7 +73,6 @@ public class CareProviderComment implements Serializable{
         this.message = comment;
     }
 
-
     @Override
     public String toString(){
         return "Title: " + getTitle() + "\n\nComment: " + getComment();

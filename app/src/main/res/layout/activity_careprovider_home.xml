@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".View.CareProviderHomeView">
 
+
     <Button
         android:id="@+id/search"
         android:layout_width="128dp"
@@ -96,4 +97,6 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/view_problems"
         app:layout_constraintTop_toBottomOf="@+id/logout_button2" />
+
+
 </android.support.constraint.ConstraintLayout>

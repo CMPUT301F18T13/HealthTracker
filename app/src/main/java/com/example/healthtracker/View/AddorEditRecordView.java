@@ -92,10 +92,7 @@ public class AddorEditRecordView extends AppCompatActivity {
         ab.show();
     }
 
-    /*
-     * When clicked the save button will save or update the record as long as the record at least
-     * has a title.
-     */
+    // When clicked,  save button will save or update the record as long as the record at least has a title.
     public void saveButton(View view) {
         if (titleText.getText().toString().equals("")) {
             Toast.makeText(this, "Error, a title is required.", Toast.LENGTH_LONG).show();
@@ -104,9 +101,7 @@ public class AddorEditRecordView extends AppCompatActivity {
         }
     }
 
-    /*
-     * If a record is being edited this method is called to display its current data.
-     */
+    // If a record is being edited this method is called to display its current data.
     private void showRecord(){
         titleText.setText(record.getTitle());
         descriptionText.setText(record.getComment());
@@ -140,6 +135,7 @@ public class AddorEditRecordView extends AppCompatActivity {
         finish();
     }
 
+    // Intent initiated to add a photo to a record
     public void addPhoto(View view) {
         Intent intent = new Intent(AddorEditRecordView.this, TakePhotoActivity.class);
         intent.putExtra("ProblemTitle",getExtraString());

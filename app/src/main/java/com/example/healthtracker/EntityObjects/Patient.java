@@ -56,6 +56,11 @@ public class Patient extends User implements Serializable {
         problemList.set(index, modifiedProblem);
     }
 
+    /**
+     * Set the problems in a problem list
+     *
+     * @param problems problems in problem list
+     */
     public void setProblems(ArrayList<Problem> problems){
         this.problemList = problems;
     }

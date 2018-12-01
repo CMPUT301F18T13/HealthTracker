@@ -1038,6 +1038,7 @@ drawable abc_vector_test
 drawable add32
 drawable avd_hide_password
 drawable avd_show_password
+drawable care_provider_symbol
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1141,6 +1142,7 @@ id buttonPanel
 id cancel_action
 id care_comment
 id care_comment_title
+id care_image
 id care_record_comment
 id care_record_list
 id care_record_timestamp
@@ -1479,6 +1481,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout viewpager_item
+menu actionbar
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description
@@ -1539,6 +1542,7 @@ string care_comment
 string care_comment_strict
 string care_comment_title
 string care_title_strict
+string careimage
 string character_counter_content_description
 string character_counter_pattern
 string common_google_play_services_enable_button

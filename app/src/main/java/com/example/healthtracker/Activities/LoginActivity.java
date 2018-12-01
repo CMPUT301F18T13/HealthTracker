@@ -114,25 +114,19 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    /*
-    * * isEmpty() tests if one of the login fields is not filled in
-     * */
+    // Tests if one of the login fields is not filled in
     private boolean isEmpty(String string) {
         return string.equals("");
     }
 
-    /*
-     * Brings the user to the create account screen upon clicking the create
-     */
+    // Brings the user to the create account screen upon clicking the create
     public void CreateAccount(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(LoginActivity.this, CreateAccountActivity.class);// Launch the browse emotions activity
         startActivity(intent);
     }
 
-    /*
-     * testConnection() checks for online connectivity on either wifi or mobile data and returns the connectivity state
-     */
+    // Checks for online connectivity on either wifi or mobile data and returns the connectivity state
     public boolean testConnection() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
         //check for network connection
@@ -141,6 +135,7 @@ public class LoginActivity extends AppCompatActivity {
                 connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() != NetworkInfo.State.CONNECTED;
     }
 
+    // Handles logging in the patient when a the user provides an account code rather than a User ID
     private String codeLogin(){
         // Read user input
         String patientCode = accountCode.getText().toString();
@@ -162,7 +157,6 @@ public class LoginActivity extends AppCompatActivity {
                     Patient mPatient = patients.get(i);
                 }
             }
-
             if (!ElasticsearchController.testConnection(this)) {
                 Toast.makeText(LoginActivity.this, "No Interent Connection", Toast.LENGTH_SHORT).show();
                 validID = false;
@@ -183,6 +177,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    // Handles logging in the patient when a the user provides a UserId rather than an account code
     public void patientLogin(String userID) throws ExecutionException, InterruptedException {
         Patient patient;
         ElasticsearchController.GetPatient getPatient = new ElasticsearchController.GetPatient();

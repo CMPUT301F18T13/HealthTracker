@@ -154,6 +154,4 @@ public class PatientRecord implements Serializable {
     public String toString(){
         return " Title: " + getTitle() + "\n Comment: " + getComment() + "\n Timestamp: " + timestamp.toString();
     }
-
-
 }

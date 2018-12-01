@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-109:12
-INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-109:12
-INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-109:12
-INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-109:12
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-111:12
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-111:12
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-111:12
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-111:12
 MERGED from [com.android.support.test:rules:1.0.2] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\rules-1.0.2.aar\f21e3a42769e2f989ab68dd7c0f08373\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support.test:runner:1.0.2] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\runner-1.0.2.aar\1477c6d40e1c8ff1255a7bcea190a6b7\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\fa85bc68be6ed8f3e8336b3f3770b4bf\AndroidManifest.xml:17:1-22:12
@@ -46,22 +46,22 @@ MERGED from [com.android.support:documentfile:28.0.0] C:\Users\tyler\.gradle\cac
 MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\830e006328a6b4aacee4b0f20fd52c3f\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:print:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\d452a8c2f8a60649951d5730ab2b6f44\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\70bc1a6a06874b86902e4c79b9e738c3\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-109:12
-INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-109:12
-INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-109:12
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-111:12
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-111:12
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-111:12
 	package
 		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:4:5-40
 		INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-109:12
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-111:12
 		INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-109:12
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:1-111:12
 		INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:2:11-69
@@ -138,7 +138,7 @@ ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\Andr
 	android:name
 		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:36:9-73
 application
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:39:5-107:19
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:39:5-109:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\d8aa778db67327851be6d1ae1dab44f1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\d8aa778db67327851be6d1ae1dab44f1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\adadbed0c92a9206f030552b0a1e8f55\AndroidManifest.xml:9:5-20
@@ -214,111 +214,115 @@ ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\Andr
 	android:name
 		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:65:27-74
 activity#com.example.healthtracker.View.CareProviderHomeView
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:68:9-63
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:68:9-70:61
+	android:label
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:69:13-45
+	android:icon
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:70:13-58
 	android:name
 		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:68:19-60
 activity#com.example.healthtracker.View.ViewPatients
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:69:9-55
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:71:9-55
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:69:19-52
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:71:19-52
 activity#com.example.healthtracker.Activities.SearchActivity
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:70:9-63
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:72:9-63
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:70:19-60
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:72:19-60
 activity#com.example.healthtracker.View.SearchResultsView
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:71:9-60
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:73:9-60
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:71:19-57
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:73:19-57
 activity#com.example.healthtracker.View.AddPatientView
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:72:9-57
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:74:9-57
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:72:19-54
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:74:19-54
 activity#com.example.healthtracker.Activities.CreateAccountActivity
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:73:9-70
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:75:9-70
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:73:19-67
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:75:19-67
 activity#com.example.healthtracker.Activities.UserSettingsActivity
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:74:9-69
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:76:9-69
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:74:19-66
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:76:19-66
 activity#com.example.healthtracker.View.ViewPatientsProblems
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:75:9-63
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:77:9-63
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:75:19-60
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:77:19-60
 activity#com.example.healthtracker.View.CareProviderProblemView
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:76:9-66
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:78:9-66
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:76:19-63
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:78:19-63
 activity#com.example.healthtracker.View.AddCareProviderCommentView
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:77:9-69
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:79:9-69
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:77:19-66
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:79:19-66
 activity#com.example.healthtracker.View.PatientHomeView
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:78:9-58
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:80:9-58
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:78:19-55
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:80:19-55
 activity#com.example.healthtracker.View.AddProblemView
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:79:9-81:55
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:81:9-83:55
 	android:windowSoftInputMode
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:81:13-52
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:83:13-52
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:80:13-48
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:82:13-48
 activity#com.example.healthtracker.View.ViewMyProblems
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:82:9-57
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:84:9-57
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:82:19-54
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:84:19-54
 activity#com.example.healthtracker.Activities.EditProblem
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:83:9-85:55
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:85:9-87:55
 	android:windowSoftInputMode
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:85:13-52
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:87:13-52
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:84:13-51
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:86:13-51
 activity#com.example.healthtracker.View.AddorEditRecordView
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:86:9-62
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:88:9-62
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:86:19-59
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:88:19-59
 activity#com.example.healthtracker.Activities.SlideShowActivity
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:87:9-66
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:89:9-66
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:87:19-63
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:89:19-63
 activity#com.example.healthtracker.View.MapView
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:88:9-50
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:90:9-50
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:88:19-47
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:90:19-47
 meta-data#com.google.android.gms.version
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:90:9-92:69
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:92:9-94:69
 MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\21b979d065533451bda711487044e2bc\AndroidManifest.xml:23:9-25:69
 MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\21b979d065533451bda711487044e2bc\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:92:13-66
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:94:13-66
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:91:13-58
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:93:13-58
 meta-data#com.google.android.maps.v2.API_KEY
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:93:9-95:71
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:95:9-97:71
 	android:value
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:95:13-68
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:97:13-68
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:94:13-62
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:96:13-62
 activity#com.example.healthtracker.View.ViewCareProviderComments
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:97:9-99:82
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:99:9-101:82
 	android:label
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:99:13-79
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:101:13-79
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:98:13-58
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:100:13-58
 activity#com.example.healthtracker.View.CareProviderRecordView
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:100:9-102:80
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:102:9-104:80
 	android:label
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:102:13-77
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:104:13-77
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:101:13-56
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:103:13-56
 activity#com.example.healthtracker.Activities.TakePhotoActivity
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:104:9-105:20
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:106:9-107:20
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:104:19-63
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:106:19-63
 activity#com.example.healthtracker.Contollers.PhotoController
-ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:106:9-64
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:108:9-64
 	android:name
-		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:106:19-61
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml:108:19-61
 uses-sdk
 INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker1\app\src\main\AndroidManifest.xml

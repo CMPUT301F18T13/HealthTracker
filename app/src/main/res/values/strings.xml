@@ -22,6 +22,7 @@
     <string name="save_care_comment">Save</string>
     <string name="care_comment_title">Title</string>
     <string name="care_comment">Comment</string>
+    <string name="careimage">Search</string>
 
     <string name="searchType">Search Type</string>
     <string name="bodyLocation">Body Location</string>

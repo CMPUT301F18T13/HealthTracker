@@ -17,10 +17,26 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+
+/**
+ * PhotoController handles saving images taken or selected by the Patient to both local and remote storage.
+ * <p></p>
+ * Also manages converting the image to and from a string to ease storage abilities
+ *
+ * @author Tyler Watson
+ * @version 1.0
+ * @since 2018-11-25
+ */
 public class PhotoController extends AppCompatActivity {
 
 
-    // Save a photo to locally in internal storage
+    /**
+     * Save a photo to locally in internal storage
+     *
+     * @param bitmapImage bitmap object passed in method call
+     * @param cw Context wrapper passed in method on call
+     * @return the path of where the image was stored
+     */
     public static String saveToInternalStorage(Bitmap bitmapImage, ContextWrapper cw){
         // path to /data/user/0/com.example.healthtracker/app_imageDir
         File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
@@ -47,7 +63,13 @@ public class PhotoController extends AppCompatActivity {
         return directory.getAbsolutePath();
     }
 
-    // Load a locally stored photo
+    /**
+     * Loads an image stored locally within the app
+     *
+     * @param path the path to where the photo is stored
+     * @param imageName the image name at the end of the path
+     * @return returns null on image not found or returns a bitmap if image found
+     */
     public static Bitmap loadImageFromStorage(String path, String imageName) {
         try {
             File f=new File(path, imageName);
@@ -60,7 +82,12 @@ public class PhotoController extends AppCompatActivity {
         }
     }
 
-    // Encode a bitmap to a string
+    /**
+     * Converts a provided bitmap of an image to a string object
+     *
+     * @param bitmap the bitmap provided on method call to be converted to a string
+     * @return returns the encoded bitmap as a string object
+     */
     public static String imageToString(Bitmap bitmap){
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100 , baos);
@@ -68,7 +95,12 @@ public class PhotoController extends AppCompatActivity {
         return Base64.encodeToString(b, Base64.DEFAULT);
     }
 
-    // Convert an encoded string to an image to be displayed
+    /**
+     * Converts a provided string of an image to a bitmap object
+     *
+     * @param encodedImage the string provided on method call to be converted to an image
+     * @return returns the decoded string as a bitmap
+     */
     public static Bitmap stringToImage(String encodedImage){
         byte[] decodedString = Base64.decode(encodedImage, Base64.DEFAULT);
         return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);

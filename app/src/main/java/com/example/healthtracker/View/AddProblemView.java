@@ -184,6 +184,7 @@ public class AddProblemView extends AppCompatActivity {
         }
     }
 
+    // Save's the patient's problem both locally and remotely
     private void saveProblem(){
         // get Problem info
         title = titleText.getText().toString();
@@ -252,6 +253,7 @@ public class AddProblemView extends AppCompatActivity {
         }
     }
 
+    // Creates and opens a datePicker widget to allow the Patient to more easily choose a date
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void datePicker(View view){
         calender=Calendar.getInstance();

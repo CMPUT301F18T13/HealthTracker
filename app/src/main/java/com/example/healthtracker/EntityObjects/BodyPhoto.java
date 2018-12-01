@@ -77,7 +77,4 @@ public class BodyPhoto extends Photo {
         this.pinXLocation = 0;
         this.pinYLocation = 0;
     }
-
-
-
 }

@@ -1,8 +1,13 @@
 package com.example.healthtracker.View;
 
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.TextView;
 
 import com.example.healthtracker.Contollers.UserDataController;
@@ -24,6 +29,9 @@ public class CareProviderRecordView extends Activity {
         titleText = findViewById(R.id.care_record_title);
         desText = findViewById(R.id.care_record_comment);
         timestampText = findViewById(R.id.care_record_timestamp);
+        ActionBar bar = getActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+
 
         Bundle bd = getIntent().getExtras();
         int patientNum = bd.getInt("patientNum");
@@ -46,4 +54,10 @@ public class CareProviderRecordView extends Activity {
         timestampText.setText("Timestamp: \n" + record.getTimestamp().toString());
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.actionbar, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 }

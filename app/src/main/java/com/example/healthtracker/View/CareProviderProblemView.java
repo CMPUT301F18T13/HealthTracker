@@ -1,8 +1,12 @@
 package com.example.healthtracker.View;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -49,6 +53,9 @@ public class CareProviderProblemView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_care_provider_problem_view);
+        android.support.v7.app.ActionBar bar = getSupportActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+
 
         titleText = findViewById(R.id.viewTitle);
         dateText = findViewById(R.id.viewDate);
@@ -141,6 +148,13 @@ public class CareProviderProblemView extends AppCompatActivity {
         Intent intent = new Intent(CareProviderProblemView.this, SlideShowActivity.class);
         // Launch the browse emotions activity
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.actionbar, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
 }
