@@ -6,10 +6,10 @@ import android.support.test.runner.AndroidJUnit4;
 import android.support.test.rule.ActivityTestRule;
 import android.widget.EditText;
 
+import com.example.healthtracker.Activities.LoginActivity;
 import com.robotium.solo.Solo;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -20,18 +20,18 @@ import static junit.framework.TestCase.assertTrue;
 @RunWith(AndroidJUnit4.class)
 public class AddProblemViewTest {
     @Rule
-    public ActivityTestRule<LoginActivity> activityTestRule =
+    public final ActivityTestRule<LoginActivity> activityTestRule =
             new ActivityTestRule<>(LoginActivity.class);
     private Solo solo;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         solo = new Solo(InstrumentationRegistry.getInstrumentation(),
                 activityTestRule.getActivity());
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         solo.finishOpenedActivities();
     }
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PatientHomeView">
+    tools:context=".View.PatientHomeView">
 
 
     <Button
@@ -47,7 +47,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/view_map"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -128,7 +127,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/sync_button"
         android:layout_width="93dp"
         android:layout_height="49dp"
         android:layout_marginTop="8dp"

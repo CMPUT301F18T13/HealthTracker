@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.example.healthtracker.Activities.CreateAccountActivity;
+import com.example.healthtracker.Activities.LoginActivity;
 import com.robotium.solo.Solo;
 
 import org.junit.After;
@@ -20,7 +22,7 @@ import org.junit.runner.RunWith;
 public class CreateAccountViewIntentTest {
 
     @Rule
-    public ActivityTestRule<LoginActivity> activityTestRule =
+    public final ActivityTestRule<LoginActivity> activityTestRule =
             new ActivityTestRule<>(LoginActivity.class);
 
     private Solo solo;
@@ -32,7 +34,7 @@ public class CreateAccountViewIntentTest {
     private Button createAccount;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         solo = new Solo(InstrumentationRegistry.getInstrumentation(),
                 activityTestRule.getActivity());
         solo.clickOnButton(0);
@@ -46,7 +48,7 @@ public class CreateAccountViewIntentTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         solo.finishOpenedActivities();
     }
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddProblemView">
+    tools:context=".View.AddProblemView">
 
     <TextView
         android:id="@+id/problem_title"
@@ -118,7 +118,6 @@
         app:layout_constraintVertical_bias="0.058" />
 
     <Button
-        android:id="@+id/add_notify_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

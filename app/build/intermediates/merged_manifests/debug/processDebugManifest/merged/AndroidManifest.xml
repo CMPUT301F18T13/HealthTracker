@@ -21,7 +21,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature android:name="android.hardware.location.gps" />
-    <uses-feature android:name="android.hardware.camera2" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
@@ -34,6 +36,8 @@
      Google Maps Android API v2, but are recommended.
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.example.healthtracker.permission.MAPS_RECEIVE" />
 
     <permission
         android:name="com.example.healthtracker.permission.MAPS_RECEIVE"
@@ -50,8 +54,18 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat" >
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
         <activity
-            android:name="com.example.healthtracker.LoginActivity"
+            android:name="com.example.healthtracker.Activities.LoginActivity"
             android:exported="true"
             android:label="@string/app_name" >
             <intent-filter>
@@ -60,58 +74,46 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.healthtracker.CareProviderHomeView" />
-        <activity android:name="com.example.healthtracker.ViewPatients" />
-        <activity android:name="com.example.healthtracker.SearchActivity" />
-        <activity android:name="com.example.healthtracker.SearchResultsView" />
-        <activity android:name="com.example.healthtracker.AddPatientView" />
-        <activity android:name="com.example.healthtracker.CreateAccountActivity" />
-        <activity android:name="com.example.healthtracker.UserSettingsActivity" />
-        <activity android:name="com.example.healthtracker.ViewPatientsProblems" />
-        <activity android:name="com.example.healthtracker.CareProviderProblemView" />
-        <activity android:name="com.example.healthtracker.AddCareProviderCommentView" />
-        <activity android:name="com.example.healthtracker.PatientHomeView" />
+        <activity android:name="com.example.healthtracker.View.CareProviderHomeView" />
+        <activity android:name="com.example.healthtracker.View.ViewPatients" />
+        <activity android:name="com.example.healthtracker.Activities.SearchActivity" />
+        <activity android:name="com.example.healthtracker.View.SearchResultsView" />
+        <activity android:name="com.example.healthtracker.View.AddPatientView" />
+        <activity android:name="com.example.healthtracker.Activities.CreateAccountActivity" />
+        <activity android:name="com.example.healthtracker.Activities.UserSettingsActivity" />
+        <activity android:name="com.example.healthtracker.View.ViewPatientsProblems" />
+        <activity android:name="com.example.healthtracker.View.CareProviderProblemView" />
+        <activity android:name="com.example.healthtracker.View.AddCareProviderCommentView" />
+        <activity android:name="com.example.healthtracker.View.PatientHomeView" />
         <activity
-            android:name="com.example.healthtracker.AddProblemView"
+            android:name="com.example.healthtracker.View.AddProblemView"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name="com.example.healthtracker.ViewMyProblems" />
+        <activity android:name="com.example.healthtracker.View.ViewMyProblems" />
         <activity
-            android:name="com.example.healthtracker.EditProblem"
+            android:name="com.example.healthtracker.Activities.EditProblem"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name="com.example.healthtracker.AddorEditRecordView" />
-        <activity android:name="com.example.healthtracker.SlideShowActivity" />
-        <activity android:name="com.example.healthtracker.MapView" />
-
-        <uses-library
-            android:name="org.apache.http.legacy"
-            android:required="false" />
-        <uses-library
-            android:name="org.apache.http.legacy"
-            android:required="false" />
+        <activity android:name="com.example.healthtracker.View.AddorEditRecordView" />
+        <activity android:name="com.example.healthtracker.Activities.SlideShowActivity" />
+        <activity android:name="com.example.healthtracker.View.MapView" />
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDppOAUxXEBGrsc_gg8bw392b4QdyzlzYw" />
+            android:value="AIzaSyD1QEFjtCNEqiOiJ-zKC761PXvjlNHJbsg" />
 
         <activity
-            android:name="com.example.healthtracker.ViewCareProviderComments"
+            android:name="com.example.healthtracker.View.ViewCareProviderComments"
             android:label="@string/title_activity_view_care_provider_comments" />
         <activity
-            android:name="com.example.healthtracker.CareProviderRecordView"
+            android:name="com.example.healthtracker.View.CareProviderRecordView"
             android:label="@string/title_activity_care_provider_record_view" />
-        <activity android:name="com.example.healthtracker.TakePhotoActivity" />
-        <activity
-            android:name="com.example.healthtracker.search_results_problem"
-            android:label="@string/title_activity_search_results_problem" />
-        <activity
-            android:name="com.example.healthtracker.search_results_record"
-            android:label="@string/title_activity_search_results_record" />
-        <activity
-            android:name="com.example.healthtracker.search_result_comments"
-            android:label="@string/title_activity_search_result_comments" />
+        <activity android:name="com.example.healthtracker.Activities.TakePhotoActivity" >
+        </activity>
+        <activity android:name="com.example.healthtracker.Activities.AddGeoLocationActivity" >
+        </activity>
+        <activity android:name="com.example.healthtracker.Contollers.PhotoController" />
 
         <provider
             android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"

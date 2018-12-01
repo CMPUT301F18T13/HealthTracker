@@ -5,6 +5,10 @@ import android.support.test.runner.AndroidJUnit4;
 import android.support.test.rule.ActivityTestRule;
 import android.widget.EditText;
 
+import com.example.healthtracker.Activities.LoginActivity;
+import com.example.healthtracker.Activities.UserSettingsActivity;
+import com.example.healthtracker.View.AddProblemView;
+import com.example.healthtracker.View.ViewMyProblems;
 import com.robotium.solo.Solo;
 
 import org.junit.After;
@@ -19,24 +23,24 @@ public class PatientHomeViewIntentTest {
 
 
     @Rule
-    public ActivityTestRule<LoginActivity> activityTestRule =
+    public final ActivityTestRule<LoginActivity> activityTestRule =
             new ActivityTestRule<>(LoginActivity.class);
 
     private Solo solo;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         solo = new Solo(InstrumentationRegistry.getInstrumentation(),
                 activityTestRule.getActivity());
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         solo.finishOpenedActivities();
     }
 
     @Test
-    public void testButtons() throws Exception {
+    public void testButtons() {
         EditText name = (EditText) solo.getView("userID");
         EditText pwd = (EditText) solo.getView("login_password");
         solo.enterText(name, "");

@@ -2,10 +2,14 @@ package com.example.healthtracker;
 
 import android.graphics.Bitmap;
 
+import com.example.healthtracker.Contollers.ElasticsearchController;
+import com.example.healthtracker.EntityObjects.CareProvider;
+import com.example.healthtracker.EntityObjects.Patient;
+import com.example.healthtracker.EntityObjects.Problem;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,30 +21,30 @@ import static org.junit.Assert.assertFalse;
 
 
 public class CareProviderTest {
-    String userID;
-    String userName;
-    String password;
-    String phone;
-    String email;
-    String userID2;
-    String userName2;
-    String password2;
-    String phone2;
-    String email2;
-    String userID3;
-    String userName3;
-    String password3;
-    String email3;
-    String phone3;
-    String title;
-    Date date;
-    String description;
-    String title2;
-    Date date2;
-    String description2;
-    Patient patient1;
-    Patient patient2;
-    Patient patient3;
+    private String userID;
+    private String userName;
+    private String password;
+    private String phone;
+    private String email;
+    private String userID2;
+    private String userName2;
+    private String password2;
+    private String phone2;
+    private String email2;
+    private String userID3;
+    private String userName3;
+    private String password3;
+    private String email3;
+    private String phone3;
+    private String title;
+    private Date date;
+    private String description;
+    private String title2;
+    private Date date2;
+    private String description2;
+    private Patient patient1;
+    private Patient patient2;
+    private Patient patient3;
 
     @Before
     public void setUp() {

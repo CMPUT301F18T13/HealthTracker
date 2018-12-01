@@ -1,5 +1,9 @@
 package com.example.healthtracker;
 
+import com.example.healthtracker.EntityObjects.CareProvider;
+import com.example.healthtracker.EntityObjects.Patient;
+import com.example.healthtracker.EntityObjects.Problem;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,10 +13,10 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class PatientTest {
-    Patient patient;
-    Problem problem;
-    Problem problem2;
-    ArrayList<Problem> problemList;
+    private Patient patient;
+    private Problem problem;
+    private Problem problem2;
+    private ArrayList<Problem> problemList;
 
     @Before
     public void setUp() {

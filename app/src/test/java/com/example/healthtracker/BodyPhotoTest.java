@@ -1,5 +1,8 @@
 package com.example.healthtracker;
 
+import com.example.healthtracker.EntityObjects.BodyPhoto;
+import com.example.healthtracker.EntityObjects.PatientRecord;
+
 import org.junit.Before;
 import org.junit.Test;
 

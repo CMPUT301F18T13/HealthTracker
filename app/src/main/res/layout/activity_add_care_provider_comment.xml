@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddCareProviderCommentView">
+    tools:context=".View.AddCareProviderCommentView">
 
     <Button
         android:layout_width="217dp"
@@ -52,7 +52,6 @@
         tools:ignore="Autofill" />
 
     <TextView
-        android:id="@+id/add_comment_title"
         android:layout_width="wrap_content"
         android:layout_height="23dp"
         android:layout_marginStart="84dp"
@@ -64,7 +63,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="23dp"
         android:layout_marginStart="84dp"

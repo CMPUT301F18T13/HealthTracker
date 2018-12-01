@@ -1,5 +1,7 @@
 package com.example.healthtracker;
 
+import com.example.healthtracker.EntityObjects.User;
+
 import org.junit.Before;
 import org.junit.Test;
 

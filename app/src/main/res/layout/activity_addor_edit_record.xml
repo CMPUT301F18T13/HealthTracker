@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddorEditRecordView">
+    tools:context=".View.AddorEditRecordView">
 
     <TextView
-        android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -26,10 +25,10 @@
         android:hint="@string/max_title_length"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="Autofill" />
 
     <TextView
-        android:id="@+id/description_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -50,14 +49,16 @@
         android:maxEms="46"
         android:singleLine="false"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="Autofill" />
 
     <Button
-        android:id="@+id/geomap_button"
+        android:id="@+id/add_geolocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:onClick="addGeoLocation"
         android:text="@string/add_geo_location_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bodylocation_button" />
@@ -73,18 +74,17 @@
         app:layout_constraintTop_toBottomOf="@+id/description_edit_text" />
 
     <Button
-        android:id="@+id/save_record_button"
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
         android:layout_marginBottom="30dp"
+        android:layout_marginEnd="10dp"
         android:onClick="saveButton"
         android:text="@string/save_record_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/textTimestamp"
         android:layout_width="77dp"
         android:layout_height="17dp"
         android:layout_marginStart="28dp"
@@ -103,7 +103,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/body_location_options"
         android:layout_width="176dp"
         android:layout_height="37dp"
         android:layout_marginStart="8dp"
@@ -118,7 +117,6 @@
         tools:ignore="HardcodedText" />
 
     <ImageButton
-        android:id="@+id/imageButton"
         android:layout_width="54dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -126,6 +124,23 @@
         android:onClick="addPhoto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/add32" />
+        app:srcCompat="@drawable/add32"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/show_geo"
+        android:layout_width="265dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="GeoLocation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_geolocation"
+        app:layout_constraintVertical_bias="0.074" />
 
 </android.support.constraint.ConstraintLayout>
