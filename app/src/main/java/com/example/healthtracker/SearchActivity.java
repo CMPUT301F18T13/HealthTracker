@@ -41,13 +41,14 @@ public class SearchActivity extends AppCompatActivity {
                     searchType = "keyword";
                     distance.setVisibility(View.INVISIBLE);
                 } else if(position == 1){
-                    searchType = "geoLoaction";
+                    searchType = "geoLocation";
                     distance.setVisibility(View.VISIBLE);
                 } else{
                     searchType = "bodyLocation";
                     distance.setVisibility(View.INVISIBLE);
                 }
                 keywords.setHint(searchType);
+                System.out.println("I am here aaaaaaaaaaaa");
             }
 
 
@@ -62,22 +63,37 @@ public class SearchActivity extends AppCompatActivity {
 
     public void Search(View view) {
         Object[] hits = null;
+        System.out.println("Search type is "+searchType);
         if(searchType.equals("keyword")){
             hits = UserDataController.searchForKeywords(keywords.getText().toString());
         } else if(searchType.equals("geoLocation")){
-            Double latitude = getLocationFromAddress(keywords.getText().toString()).getLat();
-            Double longitude = getLocationFromAddress(keywords.getText().toString()).getLon();
+
+            /*
+            System.out.println("Reaches here!!!!!!!!!!!!!!!!");
+            System.out.println("The address is "+keywords.getText().toString());
+            */
+            Double latitude = getLocationFromAddress(keywords.getText().toString()).getLat() / 1E6;
+            Double longitude = getLocationFromAddress(keywords.getText().toString()).getLon() / 1E6;
+
+            /*
+            System.out.println("The latitude is "+latitude.toString());
+            System.out.println("The longitude is "+longitude.toString());
+            System.out.println("The distance is "+distance.getText().toString());
+            */
 
             hits = UserDataController.searchForGeoLocations(distance.getText().toString(),latitude,longitude);
+
         } else if(searchType.equals("bodyLocation")){
 
         }
+        /*
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(SearchActivity.this, SearchResultsView.class);
         intent.putExtra("hits", UserDataController.serializeObjectArray(this, hits));
 
         // Launch the browse activity
         startActivity(intent);
+        */
     }
 
     public GeoPoint getLocationFromAddress(String strAddress){
