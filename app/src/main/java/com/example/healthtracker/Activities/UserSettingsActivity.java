@@ -50,8 +50,10 @@ public class UserSettingsActivity extends AppCompatActivity {
         if(profileType.equals("CareProvider")){
             android.support.v7.app.ActionBar bar = getSupportActionBar();
             bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
-            loadCurrentPatientData();
             loadCurrentCareProviderData();
+        }
+        else{
+            loadCurrentPatientData();
         }
     }
 

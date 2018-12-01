@@ -1137,7 +1137,6 @@ id beginning
 id blocking
 id bodylocation_button
 id bottom
-id button
 id buttonPanel
 id cancel_action
 id care_comment
