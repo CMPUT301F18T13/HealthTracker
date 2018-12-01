@@ -69,6 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:onClick="addBodyLocation"
         android:text="@string/add_body_location_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description_edit_text" />
@@ -101,20 +102,6 @@
         android:layout_marginTop="128dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Spinner
-        android:layout_width="176dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:entries="@array/body_location_options"
-        android:prompt="@string/bodyLocation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toEndOf="@+id/bodylocation_button"
-        app:layout_constraintTop_toBottomOf="@+id/description_edit_text"
-        tools:ignore="HardcodedText" />
 
     <ImageButton
         android:layout_width="54dp"

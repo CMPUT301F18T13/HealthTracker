@@ -52,7 +52,6 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -109,11 +108,10 @@
         <activity
             android:name="com.example.healthtracker.View.CareProviderRecordView"
             android:label="@string/title_activity_care_provider_record_view" />
-        <activity android:name="com.example.healthtracker.Activities.TakePhotoActivity" >
-        </activity>
-        <activity android:name="com.example.healthtracker.Activities.AddGeoLocationActivity" >
-        </activity>
+        <activity android:name="com.example.healthtracker.Activities.TakePhotoActivity" />
+        <activity android:name="com.example.healthtracker.Activities.AddGeoLocationActivity" />
         <activity android:name="com.example.healthtracker.Contollers.PhotoController" />
+        <activity android:name="com.example.healthtracker.View.AddBodyLocationView" />
 
         <provider
             android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"

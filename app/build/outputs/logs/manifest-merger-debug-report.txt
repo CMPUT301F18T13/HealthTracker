@@ -1,455 +1,459 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
-INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
-INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
-INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
-MERGED from [com.android.support.test:rules:1.0.2] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\rules-1.0.2.aar\20c40a5a7ca95ca98c2bc15be6e6b8f2\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support.test:runner:1.0.2] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\runner-1.0.2.aar\b5447548dba5223f1f871c553743578d\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:multidex:1.0.2] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\95f7a49558fe8f607840956757db591a\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:design:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\53996395823d64b33d88cf4bfcd6a43f\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\fdcc2f11da9a56b673c5da6ac6bab693\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\671f5db47dbe7acf36318f0abfaaa934\AndroidManifest.xml:2:1-11:12
-MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\10bcf0124cb7da4f88afcbc5ffe2637e\AndroidManifest.xml:17:1-30:12
-MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\b4b967b28e4985bc5637a1e90677c3ba\AndroidManifest.xml:17:1-32:12
-MERGED from [com.android.support.test:monitor:1.0.2] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\monitor-1.0.2.aar\a83ac35d10e2648d83299a27871add54\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\88c468a3638fc4b95d2656d859bbd076\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\d88d6e03579262c5d7a442c549475805\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:transition:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\c5f454c69161f9cd956058a7d257446e\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\54a51b8c2f42cb0f1efbea7293a1a4b5\AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\0b289bc65b14143801883af4388bb12f\AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\6c2088d16929d07c562f0e6533dc714a\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\d1458ecfa59c17655d2bae6ee94247bf\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\694980b23f54273c8a36491dca5e6c3c\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\929150adf67ad7beb1826c828cc7e552\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\ceeaee20a560e90555245b0a69bc6ca6\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\352242ab990f4ce070b693fd7127ea04\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\4d1e22514858e04c6a94a7b793ca69f6\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:loader:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\6922ede907a803fb5639b00736c46403\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\33718f34733526ade73af8f30e41f4c5\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\acb09953c47839df08a8c1c725e9c5ab\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\41552949fbbf4f23c9d0775825432c9c\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\3a8d278dfd0fe2ea68f536cae9d300ec\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:customview:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\feeb3418fe688d0c7b1131267b11e91a\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\e7ce61e328e3aa481eb16d0630ea0fb2\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\b61a56d23bad26fa9f6842e34f289306\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\7f55983391e6f63c3358daf4b700e169\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\59af9913b23f9f19d9639785854fcc43\AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\9fe86ac8a2c32d335417f99d217c20f1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\a219a5c00fd5673ce0bd39e890283930\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\74d15d12e06b95818a7e689897c7fca1\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\fa6721b21ed80b0638f9c9612286ed80\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\14e3b6371876c5d89d26a8b9ad2f6732\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\7b0fe01d222ff213f925efcd0c6f6ecc\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\5f86d9a449f9227f24ff21004d503156\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\0edcce9f67e0c6631c94d7c36592222e\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\74223f8cd24a2766a10cf81fce93b231\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:print:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\f4ac8c0e2a8dcaf870e150de9d24f797\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\4843edb7a24ce05b85075439a51d97a9\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
-INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
-INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
+MERGED from [com.android.support.test:rules:1.0.2] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\rules-1.0.2.aar\300190f134532627b64c484fbae7e15d\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support.test:runner:1.0.2] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\runner-1.0.2.aar\9cf2568fb51a0bfaaf630c88a5fe08ec\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\fd7eac015e7f1fd0de7583d735cfebab\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:design:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\9afd621c041af150c1ab55ab14feb97e\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\ba62e3378fc6f2f4c7524460fb85cd7b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\70debd741d5d6721c34a1cf218e76792\AndroidManifest.xml:2:1-11:12
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\4a3a476d5bdd53fca44d106ee50a8372\AndroidManifest.xml:17:1-30:12
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\7551063f39c31ec811aaf114a25bdc1b\AndroidManifest.xml:17:1-32:12
+MERGED from [com.android.support.test:monitor:1.0.2] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\monitor-1.0.2.aar\bb84d260f6d76f1a5a695443c6ac0cb9\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\45dd71423d66f617da89fb78bc586b6a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\ebf1204e74901aec63647fb81fa0ef15\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\b8fe6f33047c18c019b9afe620a8b00a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\b1ee29149dc10ee67b680efc72c6825c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\81d713c0a4339e027a6801defe099b50\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\3a8eee343c0bc59c5460ae6ef2ac4b8e\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\1c8d838fe98ecc6bc0252ae69b5bf005\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\996400cac8f94fd0d8daafc77e460559\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\67058aba421dba7dd2f6114522de38de\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\db1e9b3d4ce07afd526fee978ced38e7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\639f4b4b6d8ff8130c702cdcf39fd5ae\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\b20e93e32c7cca6290c46ad95c91c277\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\ed00e9b8ce855ef7d46e394be73e64dc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\660edc4592bc152995c1ce52ee78f2bb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\ed5f125474d5be564a70b3a20d9c26ae\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\d84ffe9ea75ef106e93c15fa3b1b68fa\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\4258339644343b88e79994c7e13902ed\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\87666522227f488a8ddb5229c1fd5a3f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\47cf421fb2436c97b2be3c29b0e8d5cf\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\8949da7f22c392471e0bf38b0bbdca46\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\56fb9a32f17bce0ab67595a405570585\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\a8b3023c7c1ebff4690f408e9a06f4c2\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\73915ae6d791bc0376c689e93e75c64f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\88de649013ce3545330edb45ab03e16b\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\da7ee220b76be8ce80c6c4882a9e1233\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\1bdae91279697a0a5cd24cff3b52f86c\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\6c808f2d0c0c6ce0053b7ad94534d81f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\0b5ee785d9b26d2de88644f269eefca5\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\6a0ce88acc0338349eeebc64c68dcd4e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\1a2721919e664c8ac2b4ec56e2df336d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\f56f5942921317352eb62911afaa3230\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\90e9ab87eacf7a0af16c0c004fd25dd4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\29cec56c18a0726e0e55a855aa757f24\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
 	package
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:4:5-40
-		INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:4:5-40
+		INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
-		INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
+		INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:3:5-51
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
-		INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
+		INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:7:5-71
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:7:5-71
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:7:22-68
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:7:22-68
 uses-permission#android.permission.READ_PROFILE
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:8:5-71
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:8:5-71
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:8:22-68
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:8:22-68
 uses-permission#android.permission.READ_CONTACTS
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:9:5-72
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:9:5-72
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:9:22-69
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:9:22-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:10:5-67
-MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\b4b967b28e4985bc5637a1e90677c3ba\AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\b4b967b28e4985bc5637a1e90677c3ba\AndroidManifest.xml:24:5-67
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:10:5-67
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\7551063f39c31ec811aaf114a25bdc1b\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\7551063f39c31ec811aaf114a25bdc1b\AndroidManifest.xml:24:5-67
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:10:22-64
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:10:22-64
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:11:5-75
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:11:5-75
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:11:22-72
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:11:22-72
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:12:5-80
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:12:5-80
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:12:22-77
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:12:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:13:5-81
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:13:5-81
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:13:22-78
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:13:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:14:5-79
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:14:5-79
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:14:22-76
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:14:22-76
 uses-feature#android.hardware.location.gps
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:16:5-66
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:16:5-66
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:16:19-63
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:16:19-63
 uses-feature#android.hardware.camera
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:17:5-18:35
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:17:5-19:36
 	android:required
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:18:9-33
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:19:9-33
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:17:19-57
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:18:9-47
 uses-feature#0x00020000
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:20:5-22:35
-MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\b4b967b28e4985bc5637a1e90677c3ba\AndroidManifest.xml:26:5-28:35
-MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\b4b967b28e4985bc5637a1e90677c3ba\AndroidManifest.xml:26:5-28:35
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:20:5-22:35
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\7551063f39c31ec811aaf114a25bdc1b\AndroidManifest.xml:26:5-28:35
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\7551063f39c31ec811aaf114a25bdc1b\AndroidManifest.xml:26:5-28:35
 	android:glEsVersion
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:21:9-41
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:21:9-41
 	android:required
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:22:9-32
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:22:9-32
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\b4b967b28e4985bc5637a1e90677c3ba\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\b4b967b28e4985bc5637a1e90677c3ba\AndroidManifest.xml:23:5-79
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\7551063f39c31ec811aaf114a25bdc1b\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\7551063f39c31ec811aaf114a25bdc1b\AndroidManifest.xml:23:5-79
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:24:22-76
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:24:22-76
 uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:26:5-98
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:26:5-98
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:26:22-95
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:26:22-95
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:32:5-81
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:32:5-81
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:32:22-78
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:32:22-78
 uses-permission#com.example.healthtracker.permission.MAPS_RECEIVE
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:34:5-89
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:34:5-89
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:34:22-86
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:34:22-86
 permission#com.example.healthtracker.permission.MAPS_RECEIVE
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:35:5-37:47
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:36:5-38:47
 	android:protectionLevel
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:37:9-44
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:38:9-44
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:36:9-73
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:37:9-73
 application
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:39:5-109:19
-MERGED from [com.android.support:design:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\53996395823d64b33d88cf4bfcd6a43f\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:design:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\53996395823d64b33d88cf4bfcd6a43f\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\671f5db47dbe7acf36318f0abfaaa934\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\671f5db47dbe7acf36318f0abfaaa934\AndroidManifest.xml:9:5-20
-MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\10bcf0124cb7da4f88afcbc5ffe2637e\AndroidManifest.xml:22:5-28:19
-MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\10bcf0124cb7da4f88afcbc5ffe2637e\AndroidManifest.xml:22:5-28:19
-MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\b4b967b28e4985bc5637a1e90677c3ba\AndroidManifest.xml:30:5-20
-MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\b4b967b28e4985bc5637a1e90677c3ba\AndroidManifest.xml:30:5-20
-MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\0b289bc65b14143801883af4388bb12f\AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\0b289bc65b14143801883af4388bb12f\AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\6c2088d16929d07c562f0e6533dc714a\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\6c2088d16929d07c562f0e6533dc714a\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\d1458ecfa59c17655d2bae6ee94247bf\AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\d1458ecfa59c17655d2bae6ee94247bf\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\694980b23f54273c8a36491dca5e6c3c\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\694980b23f54273c8a36491dca5e6c3c\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\929150adf67ad7beb1826c828cc7e552\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\929150adf67ad7beb1826c828cc7e552\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\7f55983391e6f63c3358daf4b700e169\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\7f55983391e6f63c3358daf4b700e169\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\59af9913b23f9f19d9639785854fcc43\AndroidManifest.xml:22:5-23:19
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\59af9913b23f9f19d9639785854fcc43\AndroidManifest.xml:22:5-23:19
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:40:5-108:19
+MERGED from [com.android.support:design:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\9afd621c041af150c1ab55ab14feb97e\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\9afd621c041af150c1ab55ab14feb97e\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\70debd741d5d6721c34a1cf218e76792\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\70debd741d5d6721c34a1cf218e76792\AndroidManifest.xml:9:5-20
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\4a3a476d5bdd53fca44d106ee50a8372\AndroidManifest.xml:22:5-28:19
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\4a3a476d5bdd53fca44d106ee50a8372\AndroidManifest.xml:22:5-28:19
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\7551063f39c31ec811aaf114a25bdc1b\AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\7551063f39c31ec811aaf114a25bdc1b\AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\81d713c0a4339e027a6801defe099b50\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\81d713c0a4339e027a6801defe099b50\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\3a8eee343c0bc59c5460ae6ef2ac4b8e\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\3a8eee343c0bc59c5460ae6ef2ac4b8e\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\1c8d838fe98ecc6bc0252ae69b5bf005\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\1c8d838fe98ecc6bc0252ae69b5bf005\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\996400cac8f94fd0d8daafc77e460559\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\996400cac8f94fd0d8daafc77e460559\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\67058aba421dba7dd2f6114522de38de\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\67058aba421dba7dd2f6114522de38de\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\56fb9a32f17bce0ab67595a405570585\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\56fb9a32f17bce0ab67595a405570585\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\a8b3023c7c1ebff4690f408e9a06f4c2\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\a8b3023c7c1ebff4690f408e9a06f4c2\AndroidManifest.xml:22:5-23:19
 	android:appComponentFactory
-		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\7f55983391e6f63c3358daf4b700e169\AndroidManifest.xml:22:18-91
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\56fb9a32f17bce0ab67595a405570585\AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:45:9-35
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:46:9-35
 	android:label
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:43:9-41
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:44:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:41:9-59
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:42:9-59
 	tools:ignore
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:47:9-48
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:48:9-48
 	android:roundIcon
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:44:9-54
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:45:9-54
 	android:icon
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:42:9-43
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:43:9-43
 	android:allowBackup
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:40:9-35
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:41:9-35
 	android:theme
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:46:9-40
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:47:9-40
 provider#android.support.v4.content.FileProvider
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:48:9-56:20
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:49:9-57:20
 	android:grantUriPermissions
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:52:13-47
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:53:13-47
 	android:authorities
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:50:13-67
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:51:13-67
 	android:exported
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:51:13-37
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:52:13-37
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:49:13-67
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:50:13-67
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:53:13-55:64
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:54:13-56:54
 	android:resource
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:55:17-51
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:56:17-51
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:54:17-67
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:55:17-67
 activity#com.example.healthtracker.Activities.LoginActivity
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:58:9-67:20
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:59:9-68:20
 	android:label
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:60:13-45
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:62:13-45
 	android:exported
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:61:13-36
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:61:13-36
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:59:13-53
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:60:13-53
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:62:13-66:29
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:63:13-67:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:63:17-69
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:64:17-69
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:63:25-66
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:64:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:65:17-77
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:66:17-77
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:65:27-74
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:66:27-74
 activity#com.example.healthtracker.View.CareProviderHomeView
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:68:9-63
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:69:9-63
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:68:19-60
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:69:19-60
 activity#com.example.healthtracker.View.ViewPatients
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:69:9-55
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:70:9-55
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:69:19-52
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:70:19-52
 activity#com.example.healthtracker.Activities.SearchActivity
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:70:9-63
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:71:9-63
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:70:19-60
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:71:19-60
 activity#com.example.healthtracker.View.SearchResultsView
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:71:9-60
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:72:9-60
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:71:19-57
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:72:19-57
 activity#com.example.healthtracker.View.AddPatientView
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:72:9-57
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:73:9-57
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:72:19-54
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:73:19-54
 activity#com.example.healthtracker.Activities.CreateAccountActivity
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:73:9-70
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:74:9-70
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:73:19-67
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:74:19-67
 activity#com.example.healthtracker.Activities.UserSettingsActivity
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:74:9-69
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:75:9-69
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:74:19-66
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:75:19-66
 activity#com.example.healthtracker.View.ViewPatientsProblems
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:75:9-63
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:76:9-63
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:75:19-60
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:76:19-60
 activity#com.example.healthtracker.View.CareProviderProblemView
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:76:9-66
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:77:9-66
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:76:19-63
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:77:19-63
 activity#com.example.healthtracker.View.AddCareProviderCommentView
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:77:9-69
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:78:9-69
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:77:19-66
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:78:19-66
 activity#com.example.healthtracker.View.PatientHomeView
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:78:9-58
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:79:9-58
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:78:19-55
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:79:19-55
 activity#com.example.healthtracker.View.AddProblemView
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:79:9-81:55
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:80:9-82:55
 	android:windowSoftInputMode
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:81:13-52
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:82:13-52
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:80:13-48
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:81:13-48
 activity#com.example.healthtracker.View.ViewMyProblems
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:82:9-57
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:83:9-57
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:82:19-54
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:83:19-54
 activity#com.example.healthtracker.Activities.EditProblem
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:83:9-85:55
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:84:9-86:55
 	android:windowSoftInputMode
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:85:13-52
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:86:13-52
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:84:13-51
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:85:13-51
 activity#com.example.healthtracker.View.AddorEditRecordView
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:86:9-62
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:87:9-62
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:86:19-59
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:87:19-59
 activity#com.example.healthtracker.Activities.SlideShowActivity
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:87:9-66
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:88:9-66
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:87:19-63
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:88:19-63
 activity#com.example.healthtracker.View.MapView
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:88:9-50
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:89:9-50
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:88:19-47
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:89:19-47
 meta-data#com.google.android.gms.version
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:90:9-92:69
-MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\d1458ecfa59c17655d2bae6ee94247bf\AndroidManifest.xml:23:9-25:69
-MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\d1458ecfa59c17655d2bae6ee94247bf\AndroidManifest.xml:23:9-25:69
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:91:9-93:69
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\1c8d838fe98ecc6bc0252ae69b5bf005\AndroidManifest.xml:23:9-25:69
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\1c8d838fe98ecc6bc0252ae69b5bf005\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:92:13-66
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:93:13-66
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:91:13-58
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:92:13-58
 meta-data#com.google.android.maps.v2.API_KEY
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:93:9-95:71
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:94:9-96:71
 	android:value
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:95:13-68
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:96:13-68
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:94:13-62
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:95:13-62
 activity#com.example.healthtracker.View.ViewCareProviderComments
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:97:9-99:82
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:98:9-100:82
 	android:label
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:99:13-79
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:100:13-79
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:98:13-58
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:99:13-58
 activity#com.example.healthtracker.View.CareProviderRecordView
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:100:9-102:80
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:101:9-103:80
 	android:label
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:102:13-77
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:103:13-77
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:101:13-56
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:102:13-56
 activity#com.example.healthtracker.Activities.TakePhotoActivity
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:104:9-105:20
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:104:9-75
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:104:19-63
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:104:19-63
 activity#com.example.healthtracker.Activities.AddGeoLocationActivity
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:106:9-107:20
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:105:9-80
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:106:19-68
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:105:19-68
 activity#com.example.healthtracker.Contollers.PhotoController
-ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:108:9-64
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:106:9-64
 	android:name
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml:108:19-61
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:106:19-61
+activity#com.example.healthtracker.View.AddBodyLocationView
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:107:9-71
+	android:name
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:107:19-59
 uses-sdk
-INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support.test:rules:1.0.2] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\rules-1.0.2.aar\20c40a5a7ca95ca98c2bc15be6e6b8f2\AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.support.test:rules:1.0.2] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\rules-1.0.2.aar\20c40a5a7ca95ca98c2bc15be6e6b8f2\AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.support.test:runner:1.0.2] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\runner-1.0.2.aar\b5447548dba5223f1f871c553743578d\AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.support.test:runner:1.0.2] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\runner-1.0.2.aar\b5447548dba5223f1f871c553743578d\AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.support:multidex:1.0.2] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\95f7a49558fe8f607840956757db591a\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:multidex:1.0.2] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\95f7a49558fe8f607840956757db591a\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:design:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\53996395823d64b33d88cf4bfcd6a43f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\53996395823d64b33d88cf4bfcd6a43f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\fdcc2f11da9a56b673c5da6ac6bab693\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\fdcc2f11da9a56b673c5da6ac6bab693\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\671f5db47dbe7acf36318f0abfaaa934\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\671f5db47dbe7acf36318f0abfaaa934\AndroidManifest.xml:5:5-7:41
-MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\10bcf0124cb7da4f88afcbc5ffe2637e\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\10bcf0124cb7da4f88afcbc5ffe2637e\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\b4b967b28e4985bc5637a1e90677c3ba\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\b4b967b28e4985bc5637a1e90677c3ba\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.test:monitor:1.0.2] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\monitor-1.0.2.aar\a83ac35d10e2648d83299a27871add54\AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.support.test:monitor:1.0.2] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\monitor-1.0.2.aar\a83ac35d10e2648d83299a27871add54\AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\88c468a3638fc4b95d2656d859bbd076\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\88c468a3638fc4b95d2656d859bbd076\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\d88d6e03579262c5d7a442c549475805\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\d88d6e03579262c5d7a442c549475805\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\c5f454c69161f9cd956058a7d257446e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\c5f454c69161f9cd956058a7d257446e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\54a51b8c2f42cb0f1efbea7293a1a4b5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\54a51b8c2f42cb0f1efbea7293a1a4b5\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\0b289bc65b14143801883af4388bb12f\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\0b289bc65b14143801883af4388bb12f\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\6c2088d16929d07c562f0e6533dc714a\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\6c2088d16929d07c562f0e6533dc714a\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\d1458ecfa59c17655d2bae6ee94247bf\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\d1458ecfa59c17655d2bae6ee94247bf\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\694980b23f54273c8a36491dca5e6c3c\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\694980b23f54273c8a36491dca5e6c3c\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\929150adf67ad7beb1826c828cc7e552\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\929150adf67ad7beb1826c828cc7e552\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\ceeaee20a560e90555245b0a69bc6ca6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\ceeaee20a560e90555245b0a69bc6ca6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\352242ab990f4ce070b693fd7127ea04\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\352242ab990f4ce070b693fd7127ea04\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\4d1e22514858e04c6a94a7b793ca69f6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\4d1e22514858e04c6a94a7b793ca69f6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\6922ede907a803fb5639b00736c46403\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\6922ede907a803fb5639b00736c46403\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\33718f34733526ade73af8f30e41f4c5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\33718f34733526ade73af8f30e41f4c5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\acb09953c47839df08a8c1c725e9c5ab\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\acb09953c47839df08a8c1c725e9c5ab\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\41552949fbbf4f23c9d0775825432c9c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\41552949fbbf4f23c9d0775825432c9c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\3a8d278dfd0fe2ea68f536cae9d300ec\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\3a8d278dfd0fe2ea68f536cae9d300ec\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\feeb3418fe688d0c7b1131267b11e91a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\feeb3418fe688d0c7b1131267b11e91a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\e7ce61e328e3aa481eb16d0630ea0fb2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\e7ce61e328e3aa481eb16d0630ea0fb2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\b61a56d23bad26fa9f6842e34f289306\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\b61a56d23bad26fa9f6842e34f289306\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\7f55983391e6f63c3358daf4b700e169\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\7f55983391e6f63c3358daf4b700e169\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\59af9913b23f9f19d9639785854fcc43\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\59af9913b23f9f19d9639785854fcc43\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\9fe86ac8a2c32d335417f99d217c20f1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\9fe86ac8a2c32d335417f99d217c20f1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\a219a5c00fd5673ce0bd39e890283930\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\a219a5c00fd5673ce0bd39e890283930\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\74d15d12e06b95818a7e689897c7fca1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\74d15d12e06b95818a7e689897c7fca1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\fa6721b21ed80b0638f9c9612286ed80\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\fa6721b21ed80b0638f9c9612286ed80\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\14e3b6371876c5d89d26a8b9ad2f6732\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\14e3b6371876c5d89d26a8b9ad2f6732\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\7b0fe01d222ff213f925efcd0c6f6ecc\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\7b0fe01d222ff213f925efcd0c6f6ecc\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\5f86d9a449f9227f24ff21004d503156\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\5f86d9a449f9227f24ff21004d503156\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\0edcce9f67e0c6631c94d7c36592222e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\0edcce9f67e0c6631c94d7c36592222e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\74223f8cd24a2766a10cf81fce93b231\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\74223f8cd24a2766a10cf81fce93b231\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\f4ac8c0e2a8dcaf870e150de9d24f797\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\f4ac8c0e2a8dcaf870e150de9d24f797\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\4843edb7a24ce05b85075439a51d97a9\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\4843edb7a24ce05b85075439a51d97a9\AndroidManifest.xml:20:5-44
-INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support.test:rules:1.0.2] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\rules-1.0.2.aar\300190f134532627b64c484fbae7e15d\AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support.test:rules:1.0.2] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\rules-1.0.2.aar\300190f134532627b64c484fbae7e15d\AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support.test:runner:1.0.2] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\runner-1.0.2.aar\9cf2568fb51a0bfaaf630c88a5fe08ec\AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support.test:runner:1.0.2] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\runner-1.0.2.aar\9cf2568fb51a0bfaaf630c88a5fe08ec\AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\fd7eac015e7f1fd0de7583d735cfebab\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\fd7eac015e7f1fd0de7583d735cfebab\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\9afd621c041af150c1ab55ab14feb97e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\9afd621c041af150c1ab55ab14feb97e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\ba62e3378fc6f2f4c7524460fb85cd7b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\ba62e3378fc6f2f4c7524460fb85cd7b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\70debd741d5d6721c34a1cf218e76792\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\70debd741d5d6721c34a1cf218e76792\AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\4a3a476d5bdd53fca44d106ee50a8372\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\4a3a476d5bdd53fca44d106ee50a8372\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\7551063f39c31ec811aaf114a25bdc1b\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\7551063f39c31ec811aaf114a25bdc1b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.test:monitor:1.0.2] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\monitor-1.0.2.aar\bb84d260f6d76f1a5a695443c6ac0cb9\AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support.test:monitor:1.0.2] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\monitor-1.0.2.aar\bb84d260f6d76f1a5a695443c6ac0cb9\AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\45dd71423d66f617da89fb78bc586b6a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\45dd71423d66f617da89fb78bc586b6a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\ebf1204e74901aec63647fb81fa0ef15\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\ebf1204e74901aec63647fb81fa0ef15\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\b8fe6f33047c18c019b9afe620a8b00a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\b8fe6f33047c18c019b9afe620a8b00a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\b1ee29149dc10ee67b680efc72c6825c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\b1ee29149dc10ee67b680efc72c6825c\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\81d713c0a4339e027a6801defe099b50\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\81d713c0a4339e027a6801defe099b50\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\3a8eee343c0bc59c5460ae6ef2ac4b8e\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\3a8eee343c0bc59c5460ae6ef2ac4b8e\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\1c8d838fe98ecc6bc0252ae69b5bf005\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\1c8d838fe98ecc6bc0252ae69b5bf005\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\996400cac8f94fd0d8daafc77e460559\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\996400cac8f94fd0d8daafc77e460559\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\67058aba421dba7dd2f6114522de38de\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\67058aba421dba7dd2f6114522de38de\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\db1e9b3d4ce07afd526fee978ced38e7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\db1e9b3d4ce07afd526fee978ced38e7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\639f4b4b6d8ff8130c702cdcf39fd5ae\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\639f4b4b6d8ff8130c702cdcf39fd5ae\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\b20e93e32c7cca6290c46ad95c91c277\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\b20e93e32c7cca6290c46ad95c91c277\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\ed00e9b8ce855ef7d46e394be73e64dc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\ed00e9b8ce855ef7d46e394be73e64dc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\660edc4592bc152995c1ce52ee78f2bb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\660edc4592bc152995c1ce52ee78f2bb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\ed5f125474d5be564a70b3a20d9c26ae\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\ed5f125474d5be564a70b3a20d9c26ae\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\d84ffe9ea75ef106e93c15fa3b1b68fa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\d84ffe9ea75ef106e93c15fa3b1b68fa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\4258339644343b88e79994c7e13902ed\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\4258339644343b88e79994c7e13902ed\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\87666522227f488a8ddb5229c1fd5a3f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\87666522227f488a8ddb5229c1fd5a3f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\47cf421fb2436c97b2be3c29b0e8d5cf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\47cf421fb2436c97b2be3c29b0e8d5cf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\8949da7f22c392471e0bf38b0bbdca46\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\8949da7f22c392471e0bf38b0bbdca46\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\56fb9a32f17bce0ab67595a405570585\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\56fb9a32f17bce0ab67595a405570585\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\a8b3023c7c1ebff4690f408e9a06f4c2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\a8b3023c7c1ebff4690f408e9a06f4c2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\73915ae6d791bc0376c689e93e75c64f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\73915ae6d791bc0376c689e93e75c64f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\88de649013ce3545330edb45ab03e16b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\88de649013ce3545330edb45ab03e16b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\da7ee220b76be8ce80c6c4882a9e1233\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\da7ee220b76be8ce80c6c4882a9e1233\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\1bdae91279697a0a5cd24cff3b52f86c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\1bdae91279697a0a5cd24cff3b52f86c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\6c808f2d0c0c6ce0053b7ad94534d81f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\6c808f2d0c0c6ce0053b7ad94534d81f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\0b5ee785d9b26d2de88644f269eefca5\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\0b5ee785d9b26d2de88644f269eefca5\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\6a0ce88acc0338349eeebc64c68dcd4e\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\6a0ce88acc0338349eeebc64c68dcd4e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\1a2721919e664c8ac2b4ec56e2df336d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\1a2721919e664c8ac2b4ec56e2df336d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\f56f5942921317352eb62911afaa3230\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\f56f5942921317352eb62911afaa3230\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\90e9ab87eacf7a0af16c0c004fd25dd4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\90e9ab87eacf7a0af16c0c004fd25dd4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\29cec56c18a0726e0e55a855aa757f24\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\29cec56c18a0726e0e55a855aa757f24\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\694980b23f54273c8a36491dca5e6c3c\AndroidManifest.xml:23:9-51
+		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\996400cac8f94fd0d8daafc77e460559\AndroidManifest.xml:23:9-51
 	android:targetSdkVersion
-		INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\ningbo\Documents\GitHub\HealthTracker\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
 provider#android.arch.lifecycle.ProcessLifecycleOwnerInitializer
-ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\10bcf0124cb7da4f88afcbc5ffe2637e\AndroidManifest.xml:23:9-27:43
+ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\4a3a476d5bdd53fca44d106ee50a8372\AndroidManifest.xml:23:9-27:43
 	android:authorities
-		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\10bcf0124cb7da4f88afcbc5ffe2637e\AndroidManifest.xml:25:13-68
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\4a3a476d5bdd53fca44d106ee50a8372\AndroidManifest.xml:25:13-68
 	android:multiprocess
-		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\10bcf0124cb7da4f88afcbc5ffe2637e\AndroidManifest.xml:27:13-40
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\4a3a476d5bdd53fca44d106ee50a8372\AndroidManifest.xml:27:13-40
 	android:exported
-		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\10bcf0124cb7da4f88afcbc5ffe2637e\AndroidManifest.xml:26:13-37
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\4a3a476d5bdd53fca44d106ee50a8372\AndroidManifest.xml:26:13-37
 	android:name
-		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\10bcf0124cb7da4f88afcbc5ffe2637e\AndroidManifest.xml:24:13-83
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\4a3a476d5bdd53fca44d106ee50a8372\AndroidManifest.xml:24:13-83
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\0b289bc65b14143801883af4388bb12f\AndroidManifest.xml:23:9-26:75
+ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\81d713c0a4339e027a6801defe099b50\AndroidManifest.xml:23:9-26:75
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\0b289bc65b14143801883af4388bb12f\AndroidManifest.xml:25:13-37
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\81d713c0a4339e027a6801defe099b50\AndroidManifest.xml:25:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\0b289bc65b14143801883af4388bb12f\AndroidManifest.xml:26:13-72
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\81d713c0a4339e027a6801defe099b50\AndroidManifest.xml:26:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\0b289bc65b14143801883af4388bb12f\AndroidManifest.xml:24:13-79
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\81d713c0a4339e027a6801defe099b50\AndroidManifest.xml:24:13-79
 meta-data#android.support.VERSION
-ADDED from [com.android.support:support-v4:26.1.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\694980b23f54273c8a36491dca5e6c3c\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\929150adf67ad7beb1826c828cc7e552\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\929150adf67ad7beb1826c828cc7e552\AndroidManifest.xml:26:9-28:38
+ADDED from [com.android.support:support-v4:26.1.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\996400cac8f94fd0d8daafc77e460559\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\67058aba421dba7dd2f6114522de38de\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\67058aba421dba7dd2f6114522de38de\AndroidManifest.xml:26:9-28:38
 	android:value
-		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\694980b23f54273c8a36491dca5e6c3c\AndroidManifest.xml:28:13-35
+		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\996400cac8f94fd0d8daafc77e460559\AndroidManifest.xml:28:13-35
 	android:name
-		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\ningbo\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\694980b23f54273c8a36491dca5e6c3c\AndroidManifest.xml:27:13-51
+		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\996400cac8f94fd0d8daafc77e460559\AndroidManifest.xml:27:13-51

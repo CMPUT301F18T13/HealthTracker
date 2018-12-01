@@ -1420,6 +1420,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_body_location_view
 layout activity_add_care_provider_comment
 layout activity_add_geo_location
 layout activity_add_patient

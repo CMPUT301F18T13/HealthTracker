@@ -207,4 +207,9 @@ public class AddorEditRecordView extends AppCompatActivity {
         //saved_geoLocation.setText(geo_location);
     }
 
+    public void addBodyLocation(View view) {
+        Intent intent = new Intent(AddorEditRecordView.this, AddBodyLocationView.class);
+        startActivityForResult(intent,1);
+    }
+
 }
