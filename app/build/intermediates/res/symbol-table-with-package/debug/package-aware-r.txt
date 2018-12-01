@@ -1189,6 +1189,7 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id distance_edittext
 id editProblem
 id editText
 id editText4

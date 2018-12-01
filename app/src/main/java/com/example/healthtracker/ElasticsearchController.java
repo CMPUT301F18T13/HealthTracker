@@ -12,8 +12,11 @@ import com.searchly.jestdroid.DroidClientConfig;
 import com.searchly.jestdroid.JestClientFactory;
 import com.searchly.jestdroid.JestDroidClient;
 
+import org.apache.lucene.queryparser.xml.builders.BooleanQueryBuilder;
+import org.elasticsearch.index.query.GeoDistanceFilterBuilder;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.aggregations.bucket.range.geodistance.GeoDistanceBuilder;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,6 +40,11 @@ import io.searchbox.core.SearchResult;
 import io.searchbox.indices.mapping.PutMapping;
 
 import static org.elasticsearch.index.query.QueryStringQueryBuilder.Operator.AND;
+import org.elasticsearch.common.geo.ShapeRelation;
+import org.elasticsearch.common.geo.builders.ShapeBuilder;
+import org.elasticsearch.common.geo.GeoDistance;
+//import org.elasticsearch.index.query.GeoDistanceQueryBuilder;
+
 
 /* General ideas for how to implement basic elastic search features from 
 *CMPUT301W18T17, https://github.com/CMPUT301W18T17/TheProfessionals , 2018/04/09, viewed 2018/10/13* with apache 
@@ -396,6 +404,44 @@ class ElasticsearchController {
 
 
             return result;
+        }
+    }
+
+    public static class SearchByGeoLocations extends AsyncTask<String,Void,SearchResult> {
+        @Override
+        protected SearchResult doInBackground(String...params) {
+            verifySettings();
+
+            String searchType = params[0];
+            String keyDistance = params[1];
+            String latitude = params[2];
+            String longitude = params[3];
+
+            SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+            // Create a geo distance query
+            GeoDistanceFilterBuilder geoDistanceFilterBuilder = new GeoDistanceFilterBuilder("geoDistanceFilter");
+            geoDistanceFilterBuilder.distance(keyDistance);
+            geoDistanceFilterBuilder.point(Double.valueOf(latitude),Double.valueOf(longitude));
+            searchSourceBuilder.query(geoDistanceFilterBuilder.toString());
+
+            Search search = new Search.Builder(searchSourceBuilder.toString())
+                    .addIndex(Index)
+                    .addType(searchType)
+                    .build();
+
+            SearchResult result = null;
+
+            try{
+                result = client.execute(search);
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+
+            return result;
+
+
+
+
         }
     }
 }

@@ -3,10 +3,14 @@ package com.example.healthtracker;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.location.Address;
+import android.location.Geocoder;
 import android.support.v7.app.AlertDialog;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Toast;
+
+import org.elasticsearch.common.geo.GeoPoint;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -429,6 +433,28 @@ public class UserDataController<E> {
         return hits;
     }
 
+    // Search By Geo-Locations
+    public static Object[] searchForGeoLocations(String distance,Double latitude,Double longitude){
+
+        // Create an Object array which can hold 3 items
+        Object[] hits = new Object[1];
+
+        // Search for records: Initialize a String Array
+        String searchInfo[] = new String[]{"Record",distance,latitude.toString(),longitude.toString()};
+        ElasticsearchController.SearchByGeoLocations searchRecordsTask = new ElasticsearchController.SearchByGeoLocations();
+        searchRecordsTask.execute(searchInfo);
+        try{
+            hits[0] = searchRecordsTask.get().getSourceAsObject(PatientRecord.class,false);
+        }catch(InterruptedException e){
+            e.printStackTrace();
+        }catch(ExecutionException e){
+            e.printStackTrace();
+        }
+
+        return hits;
+
+    }
+
     public static void saveProblemData(Problem problem, Context context){
         ElasticsearchController.AddProblem addProblem = new ElasticsearchController.AddProblem();
         addProblem.execute(problem);
@@ -437,5 +463,8 @@ public class UserDataController<E> {
             addRecord.execute(record);
         }
     }
+
+
+
 
 }

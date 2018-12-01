@@ -1,6 +1,8 @@
 package com.example.healthtracker;
 
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +10,9 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import org.elasticsearch.common.geo.GeoPoint;
+
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -18,6 +23,7 @@ public class SearchActivity extends AppCompatActivity {
     private String searchType;
     private Spinner spinner;
     private EditText keywords;
+    private EditText distance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +32,24 @@ public class SearchActivity extends AppCompatActivity {
 
         spinner = findViewById(R.id.search_type_dropdown);
         keywords = findViewById(R.id.search_terms);
+        distance = findViewById(R.id.distance_edittext);
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 if(position == 0){
                     searchType = "keyword";
+                    distance.setVisibility(View.INVISIBLE);
                 } else if(position == 1){
                     searchType = "geoLoaction";
+                    distance.setVisibility(View.VISIBLE);
                 } else{
                     searchType = "bodyLocation";
+                    distance.setVisibility(View.INVISIBLE);
                 }
+                keywords.setHint(searchType);
             }
+
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
@@ -52,7 +65,10 @@ public class SearchActivity extends AppCompatActivity {
         if(searchType.equals("keyword")){
             hits = UserDataController.searchForKeywords(keywords.getText().toString());
         } else if(searchType.equals("geoLocation")){
+            Double latitude = getLocationFromAddress(keywords.getText().toString()).getLat();
+            Double longitude = getLocationFromAddress(keywords.getText().toString()).getLon();
 
+            hits = UserDataController.searchForGeoLocations(distance.getText().toString(),latitude,longitude);
         } else if(searchType.equals("bodyLocation")){
 
         }
@@ -62,5 +78,31 @@ public class SearchActivity extends AppCompatActivity {
 
         // Launch the browse activity
         startActivity(intent);
+    }
+
+    public GeoPoint getLocationFromAddress(String strAddress){
+
+        Geocoder coder = new Geocoder(this);
+        List<Address> address;
+        GeoPoint p1 = null;
+
+        try {
+            address = coder.getFromLocationName(strAddress,5);
+            if (address==null) {
+                return null;
+            }
+            Address location=address.get(0);
+            location.getLatitude();
+            location.getLongitude();
+
+            p1 = new GeoPoint((double) (location.getLatitude() * 1E6),
+                    (double) (location.getLongitude() * 1E6));
+
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+        return p1;
     }
 }
