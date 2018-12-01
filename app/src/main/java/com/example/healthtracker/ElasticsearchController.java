@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.google.gson.JsonObject;
+import com.google.gson.JsonSyntaxException;
 import com.searchly.jestdroid.DroidClientConfig;
 import com.searchly.jestdroid.JestClientFactory;
 import com.searchly.jestdroid.JestDroidClient;
@@ -253,6 +254,7 @@ class ElasticsearchController {
             } catch (Exception e) {
                 Log.i("Error", "Could not access the server to get the patient");
             }
+
             return patient;
         }
     }
