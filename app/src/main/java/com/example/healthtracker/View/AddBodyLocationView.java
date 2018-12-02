@@ -1,11 +1,21 @@
 package com.example.healthtracker.View;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.media.Image;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,9 +26,16 @@ import android.widget.Toast;
 
 import com.example.healthtracker.R;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
-public class AddBodyLocationView extends AppCompatActivity {
+import pub.devrel.easypermissions.AppSettingsDialog;
+import pub.devrel.easypermissions.EasyPermissions;
+
+public class AddBodyLocationView extends AppCompatActivity  implements EasyPermissions.PermissionCallbacks  {
 
     private ImageView bodyLocPhoto;
     private EditText bodyLoc_text;
@@ -26,10 +43,12 @@ public class AddBodyLocationView extends AppCompatActivity {
     private float x;
     private float y;
     private String bodyLoc;
-    private ArrayList<String> lable;
 
 
     private int SELECT_IMAGE_RESULT_CODE = 6;
+    private static final String TAG = "AddBodyLocationView";
+    private static final int REQUEST_CODE_SAVE_IMG = 10;
+
 
 
 
@@ -49,9 +68,12 @@ public class AddBodyLocationView extends AppCompatActivity {
                 x = event.getX();
                 y = event.getY();
                 Toast.makeText(AddBodyLocationView.this, "lable at x = "+x+" y = "+y, Toast.LENGTH_LONG).show();
+                addPin(v);
                 return true;
             }
         });
+
+
 
 
 
@@ -100,8 +122,12 @@ public class AddBodyLocationView extends AppCompatActivity {
         startActivityForResult(intent, SELECT_IMAGE_RESULT_CODE);
     }
 
-    public void saveButton(View view){
+    public void savePhotoButton(View view){
+        requestPermission();
+    }
 
+    public void saveButton(View view){
+        bodyLoc = bodyLoc_text.getText().toString();
     }
 
     public void switchForB(View view){
@@ -118,10 +144,135 @@ public class AddBodyLocationView extends AppCompatActivity {
     }
 
     public void addPin(View view){
-        lable = new ArrayList<>();
-        lable.add(bodyLoc);
-        lable.add(String.valueOf(x));
-        lable.add(String.valueOf(y));
+        Log.d("(x,y): ","("+String.valueOf(x)+", "+String.valueOf(y)+")");
+        String storePath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "BodyLoc";
+        Bitmap bitmap=BitmapFactory.decodeFile(storePath+"/defult.jpg")
+                .copy(Bitmap.Config.ARGB_8888, true);//从文件得到一个位图对象。要调用copy函数重新生成位图，不然会报错
+
+        float bitmapWidth = bitmap.getWidth();
+        float bitmapHeight = bitmap.getHeight();
+        float floorWidth = bodyLocPhoto.getWidth();
+        float floorHeight = bodyLocPhoto.getHeight();
+        float proportionateWidth = bitmapWidth / floorWidth;
+        float proportionateHeight = bitmapHeight / floorHeight;
+
+        Canvas canvas=new Canvas(bitmap);//new canvas
+        Paint p = new Paint();
+        p.setColor(0xffff0000);//set color
+        p.setAntiAlias(true);
+        canvas.drawCircle(x*proportionateWidth,y*proportionateHeight,20,p);
+
+        boolean isSaveSuccess = saveImageToGallery(this, bitmap,"Labeled");
+        if (isSaveSuccess) {
+            Toast.makeText(this, "Saved!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Failed! Try again!", Toast.LENGTH_SHORT).show();
+        }
+
+        bodyLocPhoto.setImageBitmap(bitmap);//Set new photo
     }
+
+
+
+
+    //TODO SAVE IMAGE TO LOCAL (NEED TO BE FIXED)
+    private void requestPermission() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            // read SD card permission
+            String[] mPermissionList = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+            if (EasyPermissions.hasPermissions(this, mPermissionList)) {
+                //PASS
+                saveImage();
+            } else {
+                //DENY
+                EasyPermissions.requestPermissions(
+                        this,
+                        "need SD card permission",
+                        REQUEST_CODE_SAVE_IMG,
+                        mPermissionList
+                );
+            }
+        } else {
+            saveImage();
+        }
+    }
+
+    private void saveImage() {
+        int imgId;
+        if (i == 0) {
+            imgId = R.drawable.bodylocationfront;
+
+        } else {
+            imgId = R.drawable.bodylocationback;
+        }
+
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgId);
+        boolean isSaveSuccess = saveImageToGallery(this, bitmap,"defult");
+        if (isSaveSuccess) {
+            Toast.makeText(this, "Saved!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Failed! Try again!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        // Forward results to EasyPermissions
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> list) {
+        Log.i(TAG, "onPermissionsGranted:" + requestCode + ":" + list.size());
+        saveImage();
+    }
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> perms) {
+        Log.i(TAG, "onPermissionsDenied:" + requestCode + ":" + perms.size());
+        if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
+            new AppSettingsDialog.Builder(this).build().show();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == AppSettingsDialog.DEFAULT_SETTINGS_REQ_CODE) {
+            Log.i(TAG, "onPermissionsDenied:------>BACK TO APP");
+            saveImage();
+        }
+        else if(requestCode == SELECT_IMAGE_RESULT_CODE){
+            //bodyLocPhoto.setImageBitmap();
+        }
+    }
+
+    public static boolean saveImageToGallery(Context context, Bitmap bmp, String name) {
+        // First save the picture
+        String storePath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "BodyLoc";
+        File appDir = new File(storePath);
+        if (!appDir.exists()) {
+            appDir.mkdir();
+        }
+        String fileName = name + ".jpg";
+        File file = new File(appDir, fileName);
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            boolean isSuccess = bmp.compress(Bitmap.CompressFormat.JPEG, 60, fos);
+            fos.flush();
+            fos.close();
+
+            Uri uri = Uri.fromFile(file);
+            context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri));
+            if (isSuccess) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
 }

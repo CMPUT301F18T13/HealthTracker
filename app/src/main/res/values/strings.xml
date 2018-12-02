@@ -89,6 +89,7 @@
     <string name="add_pin">Add a pin</string>
     <string name="change_pic">Change body graphic</string>
     <string name="save_body_loc">Save</string>
+    <string name="save_pic_to_local">Save Photo</string>
     <string name="change_side">Change body side</string>
     <string name="bodyloc_input">Enter a body Loc</string>
 

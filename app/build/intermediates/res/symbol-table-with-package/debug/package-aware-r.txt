@@ -1038,6 +1038,8 @@ drawable abc_vector_test
 drawable add32
 drawable avd_hide_password
 drawable avd_show_password
+drawable bodylocationback
+drawable bodylocationfront
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1121,6 +1123,7 @@ id add_comment_button
 id add_geolocation
 id add_patient
 id add_patient_button
+id add_pin
 id add_problem
 id add_problem_button
 id add_record_from_add_problem
@@ -1134,7 +1137,9 @@ id auto
 id barrier
 id beginning
 id blocking
+id bodyloc_text
 id bodylocation_button
+id bodylocphoto
 id bottom
 id button
 id button2
@@ -1151,8 +1156,11 @@ id center
 id center_horizontal
 id center_vertical
 id chains
+id changeB
 id checkLink
 id checkbox
+id choose_body_location
+id choose_front_back
 id chronometer
 id clip_horizontal
 id clip_vertical
@@ -1280,6 +1288,7 @@ id save_geo_location
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
+id save_to_local
 id screen
 id scroll
 id scrollIndicatorDown
@@ -1524,6 +1533,7 @@ string add_body_location_button
 string add_geo_location_button
 string add_new_problem
 string add_patient
+string add_pin
 string add_problem
 string add_record_from_add
 string add_record_from_edit
@@ -1533,11 +1543,14 @@ string appbar_scrolling_view_behavior
 string back
 string back1
 string bodyLocation
+string bodyloc_input
 string bottom_sheet_behavior
 string care_comment
 string care_comment_strict
 string care_comment_title
 string care_title_strict
+string change_pic
+string change_side
 string character_counter_content_description
 string character_counter_pattern
 string common_google_play_services_enable_button
@@ -1595,11 +1608,14 @@ string problem_title
 string project_id
 string prompt_email
 string provider_add_comment
+string rationale_ask_again
 string record_strict_care_view
 string record_view_title
 string save
+string save_body_loc
 string save_care_comment
 string save_edited_problem
+string save_pic_to_local
 string save_record_button
 string save_settings
 string search
@@ -1613,6 +1629,7 @@ string timestamp
 string title_activity_care_provider_record_view
 string title_activity_view_care_provider_comments
 string title_care_view
+string title_settings_dialog
 string userID
 string view_map
 string view_myproblems
@@ -1816,6 +1833,8 @@ style Base_Widget_MaterialComponents_TextInputLayout
 style CardView
 style CardView_Dark
 style CardView_Light
+style EasyPermissions
+style EasyPermissions_Transparent
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents
