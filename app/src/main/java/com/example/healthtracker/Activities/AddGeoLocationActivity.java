@@ -106,19 +106,21 @@ public class AddGeoLocationActivity extends FragmentActivity implements OnMapRea
             e.printStackTrace();
         }
 
+        if (addressList != null) {
 
-        Address address = addressList.get(0);
-        String city = address.getLocality();
-        String state = address.getAdminArea();
-        String country = address.getCountryName();
-        String postalCode = address.getPostalCode();
-        CurrentLocation = city+ " " + state + " " + country + " " + postalCode;
-        Lat = address.getLatitude();
-        Lon = address.getLongitude();
-        String Locality = address.getLocality();
-        Toast.makeText(getApplicationContext(),Locality,Toast.LENGTH_SHORT).show();
+            Address address = addressList.get(0);
+            String city = address.getLocality();
+            String state = address.getAdminArea();
+            String country = address.getCountryName();
+            String postalCode = address.getPostalCode();
+            CurrentLocation = city + " " + state + " " + country + " " + postalCode;
+            Lat = address.getLatitude();
+            Lon = address.getLongitude();
+            String Locality = address.getLocality();
+            Toast.makeText(getApplicationContext(), Locality, Toast.LENGTH_SHORT).show();
 
-        goToLocation(address.getLatitude(), address.getLongitude(),15);
+            goToLocation(address.getLatitude(), address.getLongitude(), 15);
+        }
 
 
 

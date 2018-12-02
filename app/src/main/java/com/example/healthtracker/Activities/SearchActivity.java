@@ -3,6 +3,7 @@ package com.example.healthtracker.Activities;
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -56,7 +57,6 @@ public class SearchActivity extends AppCompatActivity {
                     distance.setVisibility(View.INVISIBLE);
                 }
                 keywords.setHint(searchType);
-                System.out.println("I am here aaaaaaaaaaaa");
             }
 
 
@@ -72,8 +72,10 @@ public class SearchActivity extends AppCompatActivity {
     public void Search(View view) {
         Object[] hits = null;
         System.out.println("Search type is "+searchType);
+        Boolean addressFound = true;
         if(searchType.equals("keyword")){
             hits = UserDataController.searchForKeywords(keywords.getText().toString());
+
         } else if(searchType.equals("geoLocation")){
 
             String address = keywords.getText().toString();
@@ -83,7 +85,15 @@ public class SearchActivity extends AppCompatActivity {
 
             if (getLocationFromAddress(address) == null) {
                 System.out.println("No address can be found.");
-                Toast.makeText(this,"No valid address is found!Please try again.",Toast.LENGTH_LONG);
+
+                addressFound = false;
+
+                // Use an alert dialog to let the user try again
+                AlertDialog.Builder alertBuilder = new AlertDialog.Builder(SearchActivity.this);
+                alertBuilder.setMessage("The Internet connection is poor or the address is not valid. Please try again.");
+                alertBuilder.setPositiveButton("OK",null);
+                AlertDialog alertDialog = alertBuilder.create();
+                alertDialog.show();
             }
             else {
                 Double latitude = getLocationFromAddress(keywords.getText().toString()).getLat() / 1E6;
@@ -95,33 +105,23 @@ public class SearchActivity extends AppCompatActivity {
                 Toast.makeText(this,"Valid address!Success.",Toast.LENGTH_LONG);
 
 
-                //System.out.println(myStr);
-
-
                 hits = UserDataController.searchForGeoLocations(distance.getText().toString(),latitude,longitude);
-                System.out.println(hits.toString());
-
-                // Create an intent object containing the bridge to between the two activities
-                Intent intent = new Intent(SearchActivity.this, SearchResultsView.class);
-                intent.putExtra("hits", UserDataController.serializeObjectArray(this, hits));
-
-                // Launch the browse activity
-                startActivity(intent);
-
             }
-
 
         } else if(searchType.equals("bodyLocation")){
 
         }
-        /*
-        // Create an intent object containing the bridge to between the two activities
-        Intent intent = new Intent(SearchActivity.this, SearchResultsView.class);
-        intent.putExtra("hits", UserDataController.serializeObjectArray(this, hits));
 
-        // Launch the browse activity
-        startActivity(intent);
-        */
+        if (addressFound) {
+            // Create an intent object containing the bridge to between the two activities
+            Intent intent = new Intent(SearchActivity.this, SearchResultsView.class);
+            intent.putExtra("hits", UserDataController.serializeObjectArray(this, hits));
+
+            // Launch the browse activity
+            startActivity(intent);
+        }
+
+
     }
 
     public GeoPoint getLocationFromAddress(String strAddress){
@@ -145,6 +145,8 @@ public class SearchActivity extends AppCompatActivity {
 
         }catch (IOException e){
             e.printStackTrace();
+
+
         }
 
         return p1;

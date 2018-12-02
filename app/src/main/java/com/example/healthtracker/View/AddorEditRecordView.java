@@ -162,7 +162,7 @@ public class AddorEditRecordView extends AppCompatActivity {
         // add record
         record.setComment(comment);
         record.setTitle(title);
-        record.setGeoLocation(Lat,Lon);
+        record.setGeoLocation(Lon,Lat);
 
         // TODO set photos, geomap, bodylocation once they are implemented
 

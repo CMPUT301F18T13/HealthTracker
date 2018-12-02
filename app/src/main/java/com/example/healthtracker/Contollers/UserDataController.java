@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -460,21 +461,20 @@ public class UserDataController<E> {
         String searchInfo[] = new String[]{"myRecord",distance,latitude.toString(),longitude.toString()};
         ElasticsearchController.SearchByGeoLocations searchRecordsTask = new ElasticsearchController.SearchByGeoLocations();
         searchRecordsTask.execute(searchInfo);
-        try{
-            hits[1] = searchRecordsTask.get().getSourceAsObject(PatientRecord.class,false);
+
+        try {
+            hits[1] = searchRecordsTask.get().getSourceAsObjectList(PatientRecord.class,false);
             System.out.println("Search results in myRecord field: "+hits[1]);
-            if(hits[1] == null){
-                
-            }
-        }catch(InterruptedException e){
+
+        }catch (ExecutionException e){
             e.printStackTrace();
-        }catch(ExecutionException e){
+        }catch (InterruptedException e){
             e.printStackTrace();
         }
 
         // Search for commentRecords
         hits[2] = new ArrayList<CareProviderComment>();
-        System.out.println("Search results in CareProviderComment field: "+hits[1]);
+        System.out.println("Search results in CareProviderComment field: "+hits[2]);
 
         return hits;
 

@@ -44,8 +44,8 @@ public class PatientRecord implements Serializable {
         this.timestamp = new Timestamp(System.currentTimeMillis());
         this.Lat = Lat;
         this.Lon = Lon;
-        this.geoLocations.add(Lat);
         this.geoLocations.add(Lon);
+        this.geoLocations.add(Lat);
         photos = new ArrayList<Photo> ();
     }
 
@@ -66,9 +66,9 @@ public class PatientRecord implements Serializable {
      *
      * @param geoLocation The geoLocation to be added.
      */
-    public void setGeoLocation(Double Lat, Double Lon){
-        this.geoLocations.add(Lat);
+    public void setGeoLocation(Double Lon, Double Lat){
         this.geoLocations.add(Lon);
+        this.geoLocations.add(Lat);
     }
 
     /**

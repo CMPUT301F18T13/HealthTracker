@@ -468,53 +468,27 @@ public class ElasticsearchController {
             String latitude = params[2];
             String longitude = params[3];
 
-            List<PatientRecord> record_list;
-            ArrayList<PatientRecord> record_array_list = new ArrayList<PatientRecord>();
-
             SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
 
-            // Create a Geo Distance Query
+            // Create a geoLocationQuery
 
-            String GeoDistanceQuery = "{\n" +
-                                    "       \"query\" : {\n" +
-                                    "           \"bool\" : {\n" +
-                                    "               \"must\" : {\n" +
-                                    "                   \"match_all\" : {}\n" +
-                                    "                 },\n" +
-                                    "                 \"filter\" : {\n" +
-                                    "                       \"geo_distance\" : {\n" +
-                                    "                               \"distance\" : \"" +keyDistance+"km\", \n"+
-                                    "                                \"geoLocation\" : {\n" +
-                                    "                                       \"lat\" : " + latitude + ",\n" +
-                                    "                                       \"lon\" : " + longitude +"\n" +
-                                    "                                   }\n" +
-                                    "                         }\n" +
-                                    "                   }\n" +
-                                    "             }\n" +
-                                    "       }\n" +
-                                    "  }";
+            String geoLocationQuery = "{\n" +
+                    "    \"query\" : {\n" +
+                    "        \"filtered\" : {\n" +
+                    "            \"query\" : {\n" +
+                    "            \t\"match_all\" : {}\n" +
+                    "            },\n" +
+                    "            \"filter\" : {\n" +
+                    "                \"geo_distance\" : {\n" +
+                    "                    \"distance\" : \" " + keyDistance + "km\",\n" +
+                    "                    \"geoLocations\" : [" + longitude + "," + latitude+ "]\n" +
+                    "                }\n" +
+                    "            }\n" +
+                    "        }\n" +
+                    "    }\n" +
+                    "}";
 
-
-            // Create a geo distance query
-
-
-            /*
-            GeoDistanceFilterBuilder geoDistanceFilterBuilder = new GeoDistanceFilterBuilder("geoLocations")
-                                                                    .distance(Integer.valueOf(keyDistance),DistanceUnit.KILOMETERS)
-                                                                    .point(Double.valueOf(latitude),Double.valueOf(longitude))
-                                                                    .geoDistance(GeoDistance.ARC)
-                                                                    .optimizeBbox("none");
-
-            searchSourceBuilder.postFilter(geoDistanceFilterBuilder);
-
-            Search search = new Search.Builder(searchSourceBuilder.toString())
-                    .addIndex(Index)
-                    .addType(searchType)
-                    .build();
-
-            */
-
-            Search search = new Search.Builder(GeoDistanceQuery)
+            Search search = new Search.Builder(geoLocationQuery)
                     .addIndex(Index)
                     .addType("myRecord")
                     .build();
@@ -525,14 +499,11 @@ public class ElasticsearchController {
                     System.out.println("result is null");
                 } else {
                     System.out.println("result not null");
+                    System.out.println("result is "+result);
                 }
-                /*
-                record_list = (List<PatientRecord>)result.getSourceAsObject(PatientRecord.class);
-                for(int i = 0;i<record_list.size();i++){
-                    record_array_list.set(i,record_list.get(i));
-                }
-                */
+
                 return result;
+
             }catch (IOException e){
                 e.printStackTrace();
                 }
