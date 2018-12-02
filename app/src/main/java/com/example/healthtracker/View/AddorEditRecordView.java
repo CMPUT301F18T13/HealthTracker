@@ -26,7 +26,10 @@ import com.example.healthtracker.Activities.TakePhotoActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 /*
  * AddorEditRecordView enables a patient to add a new record to one of their problems or edit an
@@ -45,6 +48,7 @@ public class AddorEditRecordView extends AppCompatActivity {
     String problemTitle;
     File capturedImages;
     private ArrayList<Bitmap> takenPhoto = new ArrayList<Bitmap>();
+    private ArrayList<String> timeStamps = new ArrayList<String>();
     private PatientRecord record;
     private String oldTitle = "";
 
@@ -88,7 +92,8 @@ public class AddorEditRecordView extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = getIntent();
                 setResult(RESULT_CANCELED, intent);
-
+                ContextWrapper cw = new ContextWrapper(getApplicationContext());
+                PhotoController.removePhotosFromTemporaryStorage(cw);
                 finish();
             }
         });
@@ -126,8 +131,11 @@ public class AddorEditRecordView extends AppCompatActivity {
         oldTitle = record.getTitle();
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
         takenPhoto = PhotoController.loadImagesByRecord(cw, this.getExtraString(), oldTitle);
-        for (Bitmap photo: takenPhoto) {
-            PhotoController.saveToTemporaryStorage(photo, cw);
+        timeStamps = PhotoController.getTimestampsByRecord(cw, this.getExtraString(), oldTitle);
+        for (int i = 0; i < takenPhoto.size(); i++) {
+            System.out.println("Adding back to temp photos!!!");
+            Bitmap photo = takenPhoto.get(i);
+            PhotoController.saveToTemporaryStorage(photo, cw, timeStamps.get(i));
         }
         //TODO show geomap, photos, bodlocation
     }
@@ -152,15 +160,18 @@ public class AddorEditRecordView extends AppCompatActivity {
 
         // Add photos
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
-        for (Bitmap photo: takenPhoto) {
-            String pathLoaded= PhotoController.saveToInternalStorage(photo,cw, this.getExtraString(), title);
+        for (int i = 0; i < takenPhoto.size(); i++) {
+            Bitmap photo = takenPhoto.get(i);
+            String pathLoaded= PhotoController.saveToInternalStorage(photo,cw, this.getExtraString(), title, timeStamps.get(i));
         }
         PhotoController.removePhotosFromTemporaryStorage(cw);
         System.out.println(this.getExtraString());
-        //record.addPhoto(new Photo(pathLoaded));
+        //record.addPhoto(new Photo());
 
         // Remove photos if title has changed...
-        if (oldTitle != "") {
+        System.out.println("Old title is... " + oldTitle + '\n' + "New title is... " + title);
+        if (!oldTitle.equals(title)) {
+            System.out.println("Removing old photos...");
             PhotoController.removePhotosFromInternalStorage(cw, this.getExtraString(), oldTitle);
         }
 
@@ -180,7 +191,9 @@ public class AddorEditRecordView extends AppCompatActivity {
             byte[] byteArray = data.getByteArrayExtra("image");
             takenPhoto.add(BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length));
             ContextWrapper cw = new ContextWrapper(getApplicationContext());
-            PhotoController.saveToTemporaryStorage(BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length), cw);
+            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",Locale.CANADA).format(new Date());
+            PhotoController.saveToTemporaryStorage(BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length), cw, timeStamp);
+            timeStamps.add(timeStamp);
         }
     }
 

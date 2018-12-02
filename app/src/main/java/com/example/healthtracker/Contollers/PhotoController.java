@@ -22,7 +22,7 @@ public class PhotoController extends AppCompatActivity {
 
 
     // Save a photo to locally in internal storage
-    public static String saveToInternalStorage(Bitmap bitmapImage, ContextWrapper cw, String problemTitle, String recordTitle){
+    public static String saveToInternalStorage(Bitmap bitmapImage, ContextWrapper cw, String problemTitle, String recordTitle, String timeStamp){
         // path to /data/user/0/com.example.healthtracker/app_imageDir
         //File directory = cw.getDir(cw.getDataDir(), Context.MODE_PRIVATE);
         File directory = new File(cw.getCacheDir().toString() + File.separator + "images");
@@ -30,7 +30,6 @@ public class PhotoController extends AppCompatActivity {
             directory.mkdirs();
         }
         // Create imageDir
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",Locale.CANADA).format(new Date());
         String imageName = problemTitle + "_" + recordTitle + "_" + timeStamp+".jpg";
         File mypath=new File(directory,imageName);
         System.out.println(mypath);
@@ -53,7 +52,7 @@ public class PhotoController extends AppCompatActivity {
         return directory.getAbsolutePath();
     }
     // Used to hold photos without titles
-    public static String saveToTemporaryStorage(Bitmap bitmapImage, ContextWrapper cw) {
+    public static String saveToTemporaryStorage(Bitmap bitmapImage, ContextWrapper cw, String timeStamp) {
         // path to /data/user/0/com.example.healthtracker/app_imageDir
         //File directory = cw.getDir(cw.getDataDir(), Context.MODE_PRIVATE);
         File directory = new File(cw.getCacheDir().toString() + File.separator + "temporaryRecord");
@@ -61,7 +60,6 @@ public class PhotoController extends AppCompatActivity {
             directory.mkdirs();
         }
         // Create imageDir
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",Locale.CANADA).format(new Date());
         String imageName = timeStamp+".jpg";
         File mypath=new File(directory,imageName);
         System.out.println(mypath);
@@ -81,7 +79,7 @@ public class PhotoController extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-        return directory.getAbsolutePath();
+        return timeStamp;
     }
 
     // Load a locally stored photo
@@ -129,7 +127,8 @@ public class PhotoController extends AppCompatActivity {
 
         if (directoryListing != null) {
             for (File child : directoryListing) {
-                if ((child.toString().split("_")[0] + "_" + child.toString().split("_")[1]).equals(dir.toString() + File.separator + problemName + File.separator + record)) {
+                //System.out.println("Here's the difference...\n" + child.toString().split("_")[0] + "_" + child.toString().split("_")[1] + '\n' + dir.toString() + problemName + File.separator + record);
+                if ((child.toString().split("_")[0] + "_" + child.toString().split("_")[1]).equals(dir.toString() + File.separator + problemName + "_" + record)) {
                     System.out.println("Found match");
                     try {
                         bitmapArray.add(BitmapFactory.decodeStream(new FileInputStream(child)));
@@ -141,6 +140,26 @@ public class PhotoController extends AppCompatActivity {
             }
         }
         return bitmapArray;
+    }
+
+    public static ArrayList<String> getTimestampsByRecord(ContextWrapper cw, String problemName, String record) {
+        ArrayList<String> timeStamps = new ArrayList<String>();
+
+        File dir = new File(cw.getCacheDir().toString() + File.separator + "images");
+        File[] directoryListing = dir.listFiles();
+
+        if (directoryListing != null) {
+            for (File child: directoryListing) {
+                if ((child.toString().split("_")[0] + "_" + child.toString().split("_")[1]).equals(dir.toString() + File.separator + problemName + "_" + record)) {
+                    String timeStamp = child.toString().split("_")[2] + "_" + child.toString().split("_")[3];
+                    timeStamps.add(timeStamp.substring(0, timeStamp.length() - 4));
+
+                    System.out.println("Found match " + timeStamp.substring(0, timeStamp.length() - 4));
+                }
+            }
+        }
+
+        return timeStamps;
     }
 
     public static ArrayList<Bitmap> loadTemporaryRecordImages(ContextWrapper cw) {
