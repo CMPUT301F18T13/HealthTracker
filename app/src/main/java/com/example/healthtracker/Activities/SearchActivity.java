@@ -176,7 +176,7 @@ public class SearchActivity extends AppCompatActivity {
 
         Geocoder coder = new Geocoder(this);
         List<Address> address;
-        GeoPoint p1 = null;
+        GeoPoint myPoint = null;
 
         try {
             address = coder.getFromLocationName(strAddress,5);
@@ -187,7 +187,7 @@ public class SearchActivity extends AppCompatActivity {
             location.getLatitude();
             location.getLongitude();
 
-            p1 = new GeoPoint((double) (location.getLatitude() * 1E6),
+            myPoint = new GeoPoint((double) (location.getLatitude() * 1E6),
                     (double) (location.getLongitude() * 1E6));
 
 
@@ -196,6 +196,6 @@ public class SearchActivity extends AppCompatActivity {
 
         }
 
-        return p1;
+        return myPoint;
     }
 }

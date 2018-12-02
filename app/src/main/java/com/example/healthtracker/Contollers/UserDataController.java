@@ -409,7 +409,7 @@ public class UserDataController<E> {
         searchProblemsTask.execute(searchInfo);
         try {
             hits[0] = searchProblemsTask.get().getSourceAsObjectList(Problem.class, false);
-            System.out.println("Search results from Problem field: "+hits[0]);
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -422,8 +422,6 @@ public class UserDataController<E> {
         searchRecordsTask.execute(searchInfo);
         try {
             hits[1] = searchRecordsTask.get().getSourceAsObjectList(PatientRecord.class, false);
-            System.out.println("Search results in Record field: "+hits[1]);
-            System.out.println(hits[1].getClass());
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -436,8 +434,7 @@ public class UserDataController<E> {
         searchCommentsTask.execute(searchInfo);
         try {
             hits[2] = searchCommentsTask.get().getSourceAsObjectList(CareProviderComment.class, false);
-            System.out.println("Search results in CommentRecord field: "+hits[2]);
-            System.out.println(hits[2].getClass());
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -455,16 +452,14 @@ public class UserDataController<E> {
 
         // Search for problem
         hits[0] = new ArrayList<Problem>();
-        System.out.println("Search results in Problem field: "+hits[0]);
 
         // Search for records: Initialize a String Array
-        String searchInfo[] = new String[]{"myRecord",distance,latitude.toString(),longitude.toString(),identifier};
+        String searchInfo[] = new String[]{"Record",distance,latitude.toString(),longitude.toString(),identifier};
         ElasticsearchController.SearchByGeoLocations searchRecordsTask = new ElasticsearchController.SearchByGeoLocations();
         searchRecordsTask.execute(searchInfo);
 
         try {
             hits[1] = searchRecordsTask.get().getSourceAsObjectList(PatientRecord.class,false);
-            System.out.println("Search results in myRecord field: "+hits[1]);
 
         }catch (ExecutionException e){
             e.printStackTrace();
@@ -474,7 +469,6 @@ public class UserDataController<E> {
 
         // Search for commentRecords
         hits[2] = new ArrayList<CareProviderComment>();
-        System.out.println("Search results in CareProviderComment field: "+hits[2]);
 
         return hits;
 

@@ -169,15 +169,15 @@ public class ElasticsearchController {
 
             Index index = new Index.Builder(record)
                     .index(Index)
-                    .type("myRecord")
+                    .type("Record")
                     .build();
 
 
             // Create an Index Mapping
             PutMapping putMapping = new PutMapping.Builder(
-                    "cmput301f18t13",
-                    "myRecord",
-                    "{ \"myRecord\" : { " +
+                    Index,
+                    "Record",
+                    "{ \"Record\" : { " +
                             "   \"properties\" : { " +
                             "       \"RecordTitle\" : { " +
                             "           \"type\" : " + "\"string\" " +
@@ -218,7 +218,6 @@ public class ElasticsearchController {
             return null;
 
         }
-
 
 
 
@@ -491,7 +490,7 @@ public class ElasticsearchController {
 
             Search search = new Search.Builder(geoLocationQuery)
                     .addIndex(Index)
-                    .addType("myRecord")
+                    .addType("Record")
                     .build();
 
             try {
