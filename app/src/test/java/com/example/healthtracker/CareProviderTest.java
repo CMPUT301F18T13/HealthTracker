@@ -10,6 +10,7 @@ import com.example.healthtracker.EntityObjects.Problem;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -163,7 +164,7 @@ public class CareProviderTest {
         Problem p1 = new Problem(title, date, description);
         Problem p2 = new Problem(title2, date2, description2);
         patient2.addProblem(p2);
-        List<Problem> filteredProblems = ElasticsearchController.search("Bruise", "keyword");
+        List<Problem> filteredProblems = UserDataController.searchForProblem("problemList", "Bruise");
         assertNotNull(filteredProblems);
         assertEquals(filteredProblems.size(), 1);
         assertEquals(filteredProblems.get(0), p1);

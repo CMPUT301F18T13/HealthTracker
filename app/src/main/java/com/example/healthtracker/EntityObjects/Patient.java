@@ -16,6 +16,7 @@ public class Patient extends User implements Serializable {
 
     private ArrayList<Problem> problemList = new ArrayList<Problem>();
     private String careProviders = "";
+    private String code;
 
     /**
      * constructor for creating a new Patient user and their appropriate profile information designated by parameter values
@@ -28,6 +29,13 @@ public class Patient extends User implements Serializable {
      */
     public Patient(String phone, String email, String userID, String code){
         super(phone, email, userID, code);
+
+    }
+
+    /**
+     * singleton method for Patient
+     */
+    public Patient() {
     }
 
     /**
@@ -96,6 +104,10 @@ public class Patient extends User implements Serializable {
      */
     public Problem getProblem(int index){
         return problemList.get(index);
+    }
+
+    public String getCode(){
+        return this.code;
     }
 
     /**

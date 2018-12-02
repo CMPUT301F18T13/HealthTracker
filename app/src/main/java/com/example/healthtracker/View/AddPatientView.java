@@ -76,6 +76,7 @@ public class AddPatientView extends AppCompatActivity {
 
 
             if (!ElasticsearchController.testConnection(this)) {
+
                 AlertDialog.Builder alertBuilder = new AlertDialog.Builder(AddPatientView.this);
                 alertBuilder.setMessage("Please connect to a network to add a patient.");
                 alertBuilder.setPositiveButton("OK",null);
@@ -134,8 +135,10 @@ public class AddPatientView extends AppCompatActivity {
                 Toast.makeText(context, "Patient already assigned to you.", Toast.LENGTH_SHORT).show();
                 return false;
             }
+
         }
         return true;
+
     }
 
     /*

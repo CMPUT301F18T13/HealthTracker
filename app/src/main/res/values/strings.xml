@@ -57,6 +57,10 @@
         <item>Geo-location</item>
         <item>Body-location</item>
     </string-array>
+    <string-array name="searchResults">
+        <item>Problems</item>
+        <item>Records</item>
+    </string-array>
     <string-array name="body_location_options">
         <item>Left foot</item>
         <item>Right foot</item>
@@ -80,15 +84,20 @@
 
     <string name="title_activity_view_care_provider_comments">ViewCareProviderComments</string>
     <string name="title_activity_care_provider_record_view">CareProviderRecordView</string>
+    <string name="title_activity_view_comments">ViewComments</string>
     <string name="timestamp">Timestamp</string>
     <string name="save_record_button">Save</string>
     <string name="add_body_location_button">Add Body-Location</string>
     <string name="add_geo_location_button">Add Geo-Location</string>
+    <string name="add_photo_button">Add Photo</string>
     <string name="add_reminder">Add Reminder</string>
     <string name="from_library">From Library</string>
     <string name="account_code_hint">Account Code</string>
     <string name="pick_date2">Pick Date</string>
     <string name="logout">Logout</string>
+    <string name="title_activity_search_results_problem">search_results_problem</string>
+    <string name="title_activity_search_results_record">search_results_record</string>
+    <string name="title_activity_search_result_comments">search_result_comments</string>
 
 
 </resources>

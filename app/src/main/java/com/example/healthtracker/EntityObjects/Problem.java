@@ -11,6 +11,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import io.searchbox.annotations.JestId;
+
 import static java.lang.Boolean.FALSE;
 
 /**
@@ -23,6 +25,7 @@ import static java.lang.Boolean.FALSE;
  */
 public class Problem implements Serializable {
 
+    @JestId
     private String ProblemTitle;
     private String dateStarted;
     private String description;

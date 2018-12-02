@@ -15,6 +15,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 
@@ -188,6 +191,9 @@ public class UserDataController<E> {
             Toast.makeText(context, "Success", Toast.LENGTH_LONG).show();
             ElasticsearchController.AddPatient addPatientTask = new ElasticsearchController.AddPatient();
             addPatientTask.execute(patient);
+            for(Problem problem: patient.getProblemList()){
+                saveProblemData(problem, context);
+            }
         } else {
             Toast.makeText(context, "Could not reach server. Changes saved locally.", Toast.LENGTH_LONG).show();
             Toast.makeText(context, "Sync data when a connection is available to save changes to server.", Toast.LENGTH_LONG).show();
@@ -213,8 +219,7 @@ public class UserDataController<E> {
             addCareProviderTask.execute(careProvider);
             // update patient data
             for(Patient patient: careProvider.getPatientList()){
-                ElasticsearchController.AddPatient addPatientTask = new ElasticsearchController.AddPatient();
-                addPatientTask.execute(patient);
+                savePatientData(context, patient);
             }
         } else{
             Toast.makeText(context, "Could not reach server. Changes saved locally.", Toast.LENGTH_LONG).show();
@@ -236,6 +241,13 @@ public class UserDataController<E> {
         CareProvider careProvider = loadCareProviderData(context);
         careProvider.setPatient(patient, patientNum);
         UserDataController.saveCareProviderData(context, careProvider);
+        UserDataController.savePatientData(context, patient);
+        for(Problem problem: patient.getProblemList()){
+            for(CareProviderComment comment: problem.getcaregiverRecords()){
+                ElasticsearchController.AddComment addCommentTask = new ElasticsearchController.AddComment();
+                addCommentTask.execute(comment);
+            }
+        }
     }
 
     // Method taken from Abram Hindle's Student Picker for android series: https://www.youtube.com/watch?v=5PPD0ncJU1g
@@ -300,6 +312,9 @@ public class UserDataController<E> {
             // upload cached user data
             Patient user = new UserDataController<Patient>(context).loadUserLocally();
             UserDataController.savePatientData(context, user);
+            for(Problem problem: user.getProblemList()){
+                UserDataController.saveProblemData(problem, context);
+            }
         } else {
             Toast.makeText(context, "No internet connection available. Unable to sync.", Toast.LENGTH_LONG).show();
         }
@@ -316,6 +331,14 @@ public class UserDataController<E> {
             // upload cached user data
             CareProvider user = new UserDataController<CareProvider>(context).loadUserLocally();
             UserDataController.saveCareProviderData(context, user);
+            for(Patient patient: user.getPatientList()){
+                for(Problem problem: patient.getProblemList()){
+                    for(CareProviderComment comment: problem.getcaregiverRecords()){
+                        ElasticsearchController.AddComment addCommentTask = new ElasticsearchController.AddComment();
+                        addCommentTask.execute(comment);
+                    }
+                }
+            }
         } else {
             Toast.makeText(context, "No internet connection available. Unable to sync.", Toast.LENGTH_LONG).show();
         }
@@ -332,6 +355,14 @@ public class UserDataController<E> {
       return new UserDataController<PatientRecord>(context).objectToString(record);
     }
 
+    public static String serializeObjectArray(Context context, Object[] objects){
+        return new UserDataController<Object[]>(context).objectToString(objects);
+    }
+
+    public static Object[] unserializeObjectArray(Context context, String data){
+        return new UserDataController<Object[]>(context).objectFromString(data);
+    }
+
     /**
      * Convert serialized record string back into a PatientRecord object
      *
@@ -342,4 +373,72 @@ public class UserDataController<E> {
     public static PatientRecord unSerializeRecord(Context context, String recordString){
         return new UserDataController<PatientRecord>(context).objectFromString(recordString);
     }
+
+    public static Patient searchForPatient(String searchType, String searchTerm){
+        String[] searchInfo = new String[]{searchType, searchTerm};
+        ElasticsearchController.SearchForPatient searchTask = new ElasticsearchController.SearchForPatient();
+        searchTask.execute(searchInfo);
+        Patient patient = null;
+        try {
+            patient = searchTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        return patient;
+    }
+
+    public static Object[] searchForKeywords(String searchTerm){
+
+        Object[] hits = new Object[3];
+
+        // search for problems
+        String[] searchInfo = new String[]{"Problem", searchTerm};
+        ElasticsearchController.SearchByKeyword searchProblemsTask = new ElasticsearchController.SearchByKeyword();
+        searchProblemsTask.execute(searchInfo);
+        try {
+            hits[0] = searchProblemsTask.get().getSourceAsObjectList(Problem.class, false);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        // search for records
+        searchInfo[0] = "Record";
+        ElasticsearchController.SearchByKeyword searchRecordsTask = new ElasticsearchController.SearchByKeyword();
+        searchRecordsTask.execute(searchInfo);
+        try {
+            hits[1] = searchRecordsTask.get().getSourceAsObjectList(PatientRecord.class, false);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        searchInfo[0] = "CommentRecord";
+        ElasticsearchController.SearchByKeyword searchCommentsTask = new ElasticsearchController.SearchByKeyword();
+        searchCommentsTask.execute(searchInfo);
+        try {
+            hits[2] = searchCommentsTask.get().getSourceAsObjectList(CareProviderComment.class, false);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        return hits;
+    }
+
+    public static void saveProblemData(Problem problem, Context context){
+        ElasticsearchController.AddProblem addProblem = new ElasticsearchController.AddProblem();
+        addProblem.execute(problem);
+        for(PatientRecord record: problem.getRecords()){
+            ElasticsearchController.AddRecord addRecord = new ElasticsearchController.AddRecord();
+            addRecord.execute(record);
+        }
+    }
+
 }

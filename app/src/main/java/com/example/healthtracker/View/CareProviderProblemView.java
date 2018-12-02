@@ -57,9 +57,9 @@ public class CareProviderProblemView extends AppCompatActivity {
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
 
 
-        titleText = findViewById(R.id.viewTitle);
+        titleText = findViewById(R.id.titleView);
         dateText = findViewById(R.id.viewDate);
-        desText = findViewById(R.id.viewDes);
+        desText = findViewById(R.id.desView);
         recordList = findViewById(R.id.care_record_list);
 
         Intent intent = getIntent();

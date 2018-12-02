@@ -97,6 +97,13 @@
         <activity android:name="com.example.healthtracker.Activities.SlideShowActivity" />
         <activity android:name="com.example.healthtracker.View.MapView" />
 
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -110,6 +117,16 @@
         <activity
             android:name="com.example.healthtracker.View.CareProviderRecordView"
             android:label="@string/title_activity_care_provider_record_view" />
+        <activity android:name="com.example.healthtracker.TakePhotoActivity" />
+        <activity
+            android:name="com.example.healthtracker.search_results_problem"
+            android:label="@string/title_activity_search_results_problem" />
+        <activity
+            android:name="com.example.healthtracker.search_results_record"
+            android:label="@string/title_activity_search_results_record" />
+        <activity
+            android:name="com.example.healthtracker.search_result_comments"
+            android:label="@string/title_activity_search_result_comments" />
         <activity android:name="com.example.healthtracker.Activities.TakePhotoActivity" >
         </activity>
         <activity android:name="com.example.healthtracker.Contollers.PhotoController" />
