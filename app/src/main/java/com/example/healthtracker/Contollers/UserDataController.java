@@ -2,14 +2,25 @@ package com.example.healthtracker.Contollers;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
+import android.location.Address;
+import android.location.Geocoder;
+import android.support.v7.app.AlertDialog;
+
 import android.util.Base64;
 import android.widget.Toast;
+
+import org.elasticsearch.common.geo.GeoPoint;
 
 import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.CareProviderComment;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.EntityObjects.Problem;
+<<<<<<< HEAD
+=======
+
+>>>>>>> chenlin
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -17,6 +28,13 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+<<<<<<< HEAD
+=======
+import java.util.ConcurrentModificationException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+>>>>>>> chenlin
 import java.util.concurrent.ExecutionException;
 
 
@@ -392,7 +410,14 @@ public class UserDataController<E> {
         searchProblemsTask.execute(searchInfo);
         try {
             hits[0] = searchProblemsTask.get().getSourceAsObjectList(Problem.class, false);
+<<<<<<< HEAD
         } catch (InterruptedException | ExecutionException e) {
+=======
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+>>>>>>> chenlin
             e.printStackTrace();
         }
 
@@ -402,7 +427,14 @@ public class UserDataController<E> {
         searchRecordsTask.execute(searchInfo);
         try {
             hits[1] = searchRecordsTask.get().getSourceAsObjectList(PatientRecord.class, false);
+<<<<<<< HEAD
         } catch (InterruptedException | ExecutionException e) {
+=======
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+>>>>>>> chenlin
             e.printStackTrace();
         }
 
@@ -411,14 +443,55 @@ public class UserDataController<E> {
         searchCommentsTask.execute(searchInfo);
         try {
             hits[2] = searchCommentsTask.get().getSourceAsObjectList(CareProviderComment.class, false);
+<<<<<<< HEAD
         } catch (InterruptedException | ExecutionException e) {
+=======
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+>>>>>>> chenlin
             e.printStackTrace();
         }
 
         return hits;
     }
 
+<<<<<<< HEAD
     public static void saveProblemData(Problem problem){
+=======
+    // Search By Geo-Locations
+    public static Object[] searchForGeoLocations(String distance,Double latitude,Double longitude,String identifier){
+
+        // Create an Object array which can hold 3 items
+        Object[] hits = new Object[3];
+
+        // Search for problem
+        hits[0] = new ArrayList<Problem>();
+
+        // Search for records: Initialize a String Array
+        String searchInfo[] = new String[]{"Record",distance,latitude.toString(),longitude.toString(),identifier};
+        ElasticsearchController.SearchByGeoLocations searchRecordsTask = new ElasticsearchController.SearchByGeoLocations();
+        searchRecordsTask.execute(searchInfo);
+
+        try {
+            hits[1] = searchRecordsTask.get().getSourceAsObjectList(PatientRecord.class,false);
+
+        }catch (ExecutionException e){
+            e.printStackTrace();
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
+        // Search for commentRecords
+        hits[2] = new ArrayList<CareProviderComment>();
+
+        return hits;
+
+    }
+
+    public static void saveProblemData(Problem problem, Context context){
+>>>>>>> chenlin
         ElasticsearchController.AddProblem addProblem = new ElasticsearchController.AddProblem();
         addProblem.execute(problem);
         for(PatientRecord record: problem.getRecords()){
@@ -426,5 +499,8 @@ public class UserDataController<E> {
             addRecord.execute(record);
         }
     }
+
+
+
 
 }

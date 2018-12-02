@@ -7,6 +7,8 @@ import android.widget.TextView;
 import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 
+import java.sql.Timestamp;
+
 import java.util.ArrayList;
 
 public class search_results_record extends Activity {

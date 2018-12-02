@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 #Sun Dec 02 00:36:58 MST 2018
 base.0=C\:\\Users\\tyler\\AndroidStudioProjects\\HealthTracker1\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\5
+=======
+#Wed Nov 28 00:37:31 MST 2018
+base.0=C\:\\Users\\ningbo\\Documents\\GitHub\\HealthTracker\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\5
+>>>>>>> chenlin
 path.0=classes.dex
 renamed.0=classes.dex

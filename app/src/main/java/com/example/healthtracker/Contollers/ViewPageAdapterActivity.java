@@ -14,7 +14,7 @@ import com.example.healthtracker.R;
 
 import java.util.ArrayList;
 
-/* Code for testing the ability of a slideshow to operate on the emulator reused from the tutorial by 
+/* Code for testing the ability of a slideshow to operate on the emulator reused from the tutorial by
 *EDMT Dev, https://www.youtube.com/watch?v=SX8l9vv-N_4, 2016/07/13, viewed 2018/10/20*
 */
 

@@ -29,7 +29,9 @@ public class User implements Serializable {
      * @param userID the userID generated for the user which is associated with their account
      * @param code the code generated for the user which is associated with their specific account
      */
-    User(String phone, String email, String userID, String code) {
+
+    public User(String phone, String email, String userID) {
+
         this.email = email;
         this.phone = phone;
         this.userID = userID;

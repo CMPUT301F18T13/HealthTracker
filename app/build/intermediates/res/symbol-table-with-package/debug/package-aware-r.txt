@@ -1122,6 +1122,7 @@ id activity_chooser_view_content
 id add
 id addPhotoToRecord
 id add_comment_button
+id add_geolocation
 id add_patient
 id add_patient_button
 id add_problem
@@ -1140,6 +1141,7 @@ id beginning
 id blocking
 id bodylocation_button
 id bottom
+id button2
 id buttonPanel
 id cancel_action
 id care_comment
@@ -1187,7 +1189,11 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+<<<<<<< HEAD
 id editSaveButton
+=======
+id distance_edittext
+>>>>>>> chenlin
 id editText
 id editText4
 id edit_email
@@ -1293,6 +1299,7 @@ id right
 id right_icon
 id right_side
 id satellite
+id save_geo_location
 id save_image_matrix
 id save_non_transition_alpha
 id save_record_button
@@ -1327,6 +1334,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id show_geo
 id smallLabel
 id snackbar_action
 id snackbar_text
@@ -1383,7 +1391,10 @@ id up
 id useLogo
 id userID
 id viewDate
+<<<<<<< HEAD
 id viewTitle
+=======
+>>>>>>> chenlin
 id view_comments
 id view_offset_helper
 id view_problems
@@ -1442,6 +1453,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_care_provider_comment
+layout activity_add_geo_location
 layout activity_add_patient
 layout activity_add_problem
 layout activity_addor_edit_record
@@ -1598,6 +1610,7 @@ string gcm_defaultSenderId
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
+string google_maps_key
 string google_storage_bucket
 string hide_bottom_view_on_scroll_behavior
 string keywords

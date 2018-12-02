@@ -1,0 +1,4 @@
+#Fri Nov 30 02:39:13 MST 2018
+base.0=C\:\\Users\\ningbo\\Documents\\GitHub\\HealthTracker\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\8
+path.0=classes.dex
+renamed.0=classes.dex

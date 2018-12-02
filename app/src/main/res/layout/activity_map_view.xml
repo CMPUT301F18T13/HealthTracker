@@ -13,26 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
 
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:context=".MapView">
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:hint="Search Location Here"
-            android:importantForAutofill="no"
-            android:inputType=""
-            tools:targetApi="o" />
-
-
-        <Button
-            android:id="@+id/search_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:onClick="onMapSearch"
-            android:text="Search" />
 
     </LinearLayout>
 
@@ -43,6 +26,6 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.viralandroid.googlemapsandroidapi.MapsActivity" />
+         />
 
 </LinearLayout>
