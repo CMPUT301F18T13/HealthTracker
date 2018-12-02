@@ -448,7 +448,7 @@ public class UserDataController<E> {
     }
 
     // Search By Geo-Locations
-    public static Object[] searchForGeoLocations(String distance,Double latitude,Double longitude){
+    public static Object[] searchForGeoLocations(String distance,Double latitude,Double longitude,String identifier){
 
         // Create an Object array which can hold 3 items
         Object[] hits = new Object[3];
@@ -458,7 +458,7 @@ public class UserDataController<E> {
         System.out.println("Search results in Problem field: "+hits[0]);
 
         // Search for records: Initialize a String Array
-        String searchInfo[] = new String[]{"myRecord",distance,latitude.toString(),longitude.toString()};
+        String searchInfo[] = new String[]{"myRecord",distance,latitude.toString(),longitude.toString(),identifier};
         ElasticsearchController.SearchByGeoLocations searchRecordsTask = new ElasticsearchController.SearchByGeoLocations();
         searchRecordsTask.execute(searchInfo);
 

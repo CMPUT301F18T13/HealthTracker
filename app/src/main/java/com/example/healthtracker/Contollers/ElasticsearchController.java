@@ -467,6 +467,7 @@ public class ElasticsearchController {
             String keyDistance = params[1];
             String latitude = params[2];
             String longitude = params[3];
+            String identifier = params[4];
 
             SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
 
@@ -476,7 +477,7 @@ public class ElasticsearchController {
                     "    \"query\" : {\n" +
                     "        \"filtered\" : {\n" +
                     "            \"query\" : {\n" +
-                    "            \t\"match_all\" : {}\n" +
+                    "            \t\"term\" : {\"_id\" : \"" + identifier + "\" " + "}\n" +
                     "            },\n" +
                     "            \"filter\" : {\n" +
                     "                \"geo_distance\" : {\n" +

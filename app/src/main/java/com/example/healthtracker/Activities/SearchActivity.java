@@ -16,9 +16,14 @@ import android.widget.Toast;
 import org.elasticsearch.common.geo.GeoPoint;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.healthtracker.Contollers.UserDataController;
+import com.example.healthtracker.EntityObjects.CareProviderComment;
+import com.example.healthtracker.EntityObjects.Patient;
+import com.example.healthtracker.EntityObjects.PatientRecord;
+import com.example.healthtracker.EntityObjects.Problem;
 import com.example.healthtracker.R;
 import com.example.healthtracker.View.SearchResultsView;
 import com.example.healthtracker.View.CareProviderHomeView;
@@ -71,8 +76,10 @@ public class SearchActivity extends AppCompatActivity {
 
     public void Search(View view) {
         Object[] hits = null;
+
         System.out.println("Search type is "+searchType);
         Boolean addressFound = true;
+
         if(searchType.equals("keyword")){
             hits = UserDataController.searchForKeywords(keywords.getText().toString());
 
@@ -80,11 +87,16 @@ public class SearchActivity extends AppCompatActivity {
 
             String address = keywords.getText().toString();
 
-            System.out.println("Reaches here!!!!!!!!!!!!!!!!");
-            System.out.println("The address is "+address);
+            hits = new Object[3];
+            hits[0] = new ArrayList<Problem>();
+            hits[1] = new ArrayList<PatientRecord>();
+            hits[2] = new ArrayList<CareProviderComment>();
+
+            ArrayList<PatientRecord> allReceivedRecords = new ArrayList<PatientRecord>();
+
+            Object[] preHits = null;
 
             if (getLocationFromAddress(address) == null) {
-                System.out.println("No address can be found.");
 
                 addressFound = false;
 
@@ -99,13 +111,49 @@ public class SearchActivity extends AppCompatActivity {
                 Double latitude = getLocationFromAddress(keywords.getText().toString()).getLat() / 1E6;
                 Double longitude = getLocationFromAddress(keywords.getText().toString()).getLon() / 1E6;
 
-                System.out.println("The latitude is "+latitude.toString());
-                System.out.println("The longitude is "+longitude.toString());
-                System.out.println("The distance is "+distance.getText().toString());
-                Toast.makeText(this,"Valid address!Success.",Toast.LENGTH_LONG);
+                // Retrieve all records associated with this Patient and provide titles of all records for geoLocationQuery
 
+                    // Fetch user data
+                Patient mPatient = UserDataController.loadPatientData(this);
 
-                hits = UserDataController.searchForGeoLocations(distance.getText().toString(),latitude,longitude);
+                System.out.println("mPatient is "+mPatient.toString());
+
+                    // Find all problems and then find all records for each problem
+                ArrayList<Problem> mPatientProblems = mPatient.getProblemList();
+                System.out.println("mPatient Problems is "+mPatientProblems);
+
+                    // Go through each problem and find all records of each problem
+                ArrayList<PatientRecord> mPatientRecords = new ArrayList<PatientRecord>();
+                for(int i=0;i<mPatientProblems.size();i++){
+                    Problem mPatientProblem = mPatientProblems.get(i);
+                    for(int j=0;j<mPatientProblem.countRecords();j++){
+                        mPatientRecords.add(mPatientProblem.getPatientRecord(j));
+                    }
+                }
+
+                System.out.println("mPatient Record is "+mPatientRecords);
+
+                // For each record, check whether the geo location fits the search REQUEST
+
+                for(int k=0;k<mPatientRecords.size();k++){
+                    String identifier = mPatientRecords.get(k).getTitle();
+                    System.out.println("identifier is "+identifier);
+
+                    preHits = UserDataController.searchForGeoLocations(distance.getText().toString(),latitude,longitude,identifier);
+
+                    // Add all valid results to an arrayList allReceivedRecords
+                    ArrayList<PatientRecord> temp;
+                    temp = (ArrayList<PatientRecord>) preHits[1];
+
+                    if(temp.size() != 0){
+                       for(int m=0;m<temp.size();m++){
+                           allReceivedRecords.add(temp.get(m));
+                       }
+                    }
+                }
+
+                hits[1] = allReceivedRecords;
+
             }
 
         } else if(searchType.equals("bodyLocation")){
@@ -145,7 +193,6 @@ public class SearchActivity extends AppCompatActivity {
 
         }catch (IOException e){
             e.printStackTrace();
-
 
         }
 
