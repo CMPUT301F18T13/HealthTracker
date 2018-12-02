@@ -76,7 +76,6 @@ public class AddPatientView extends AppCompatActivity {
 
 
             if (!ElasticsearchController.testConnection(this)) {
-
                 AlertDialog.Builder alertBuilder = new AlertDialog.Builder(AddPatientView.this);
                 alertBuilder.setMessage("Please connect to a network to add a patient.");
                 alertBuilder.setPositiveButton("OK",null);
@@ -85,11 +84,7 @@ public class AddPatientView extends AppCompatActivity {
                 return false;
             }
             if (!validID) {
-                AlertDialog.Builder alertBuilder = new AlertDialog.Builder(AddPatientView.this);
-                alertBuilder.setMessage("The patient ID is not valid. Please try again.");
-                alertBuilder.setPositiveButton("OK",null);
-                AlertDialog alertDialog = alertBuilder.create();
-                alertDialog.show();
+                Toast.makeText(context, "Patient code invalid. Please try again.", Toast.LENGTH_SHORT).show();
                 return false;
             }
         }catch (ExecutionException e1){
@@ -132,14 +127,11 @@ public class AddPatientView extends AppCompatActivity {
                 // Update Care Provider data
                 careProvider.addPatient(mPatient);
                 UserDataController.saveCareProviderData(this, careProvider);
+                Toast.makeText(context, "Patient Added", Toast.LENGTH_SHORT).show();
                 return true;
             }
             else{
-                AlertDialog.Builder alertBuilder = new AlertDialog.Builder(AddPatientView.this);
-                alertBuilder.setMessage("This patient has already been assigned you.");
-                alertBuilder.setPositiveButton("OK", null);
-                AlertDialog alertDialog = alertBuilder.create();
-                alertDialog.show();
+                Toast.makeText(context, "Patient already assigned to you.", Toast.LENGTH_SHORT).show();
                 return false;
             }
         }

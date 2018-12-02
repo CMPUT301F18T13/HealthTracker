@@ -34,8 +34,11 @@ public class Problem implements Serializable {
 
     /**
      * An empty constructor for Problem that requires no parameters.
+     * @param problem
+     * @param date
+     * @param comment
      */
-    public Problem(){
+    public Problem(String problem, Date date, String comment){
     }
 
     /**

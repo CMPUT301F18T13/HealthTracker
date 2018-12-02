@@ -75,8 +75,6 @@ public class LoginActivity extends AppCompatActivity {
             String userID = UserID.getText().toString();
             String emptyTest = accountCode.getText().toString();
             if (checkBox.isChecked()) {
-                android.support.v7.app.ActionBar bar = getSupportActionBar();
-                bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
                 if (!isEmpty(UserID.getText().toString())) {
                     CareProvider careProvider = UserDataController.loadCareProviderByID(this, userID);
                     if (careProvider != null) {

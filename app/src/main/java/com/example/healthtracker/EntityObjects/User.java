@@ -1,9 +1,6 @@
 package com.example.healthtracker.EntityObjects;
 
-import android.graphics.Bitmap;
-
 import java.io.Serializable;
-import java.util.List;
 
 import io.searchbox.annotations.JestId;
 
@@ -49,8 +46,11 @@ public class User implements Serializable {
 
     /**
      * user constructor that requires no parameters
+     * @param phone
+     * @param email
+     * @param userID
      */
-    public User(){
+    public User(String phone, String email, String userID){
     }
 
     /**

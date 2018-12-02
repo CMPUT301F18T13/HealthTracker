@@ -42,7 +42,6 @@ public class CreateAccountViewIntentTest {
         userID = solo.getEditText(0);
         email = solo.getEditText(1);
         phone = solo.getEditText(2);
-        password = solo.getEditText(3);
         checkBox = (CheckBox) solo.getView("caregiver_checkbox");
         createAccount = (Button) solo.getView("create_new_account_button");
     }
@@ -77,14 +76,6 @@ public class CreateAccountViewIntentTest {
     }
 
     @Test
-    public void textDisplayedByPassword() {
-        solo.enterText(password, "abc");
-        String text = password.getText().toString();
-
-        Assert.assertTrue(text.equals("abc"));
-    }
-
-    @Test
     public void selectCheckBox() {
         solo.clickOnCheckBox(0);
 
@@ -106,7 +97,6 @@ public class CreateAccountViewIntentTest {
         solo.enterText(userID, "jromans1");
         solo.enterText(phone, "7801234567");
         solo.enterText(email, "abc@gmail.com");
-        solo.enterText(password, "abc");
 
         solo.clearEditText(userID);
         solo.clickOnButton(0);
@@ -125,13 +115,6 @@ public class CreateAccountViewIntentTest {
         result = solo.searchText("All fields must be filled out");
         Assert.assertEquals(result, true);
         solo.enterText(email, "abc@gmail.com");
-
-        solo.clearEditText(password);
-        solo.clickOnButton(0);
-        result = solo.searchText("All fields must be filled out");
-        Assert.assertEquals(result, true);
-        solo.enterText(password, "abc");
-
     }
 
 

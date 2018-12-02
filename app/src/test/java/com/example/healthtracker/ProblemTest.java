@@ -23,14 +23,14 @@ import static org.junit.Assert.assertTrue;
 public class ProblemTest {
     private Problem problem;
     private String title;
-    private Date dateStarted;
+    private String dateStarted;
     private String description;
 
     @Before
     public void setUp() {
         // Create an instance of the Problem class
         title = "Rash";
-        dateStarted = new Date();
+        dateStarted = "2018-07-06";
         description = "A lot of red spots on my skin.";
         problem = new Problem(title,dateStarted,description);
     }
@@ -59,9 +59,7 @@ public class ProblemTest {
 
     @Test
     public void setDate() throws Exception {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-        String dateString = "2018/08/07";
-        Date date = sdf.parse(dateString);
+        String date = "2016-12-01";
         problem.setDate(date);
         assertEquals(problem.getDate(),date);
     }
@@ -75,9 +73,9 @@ public class ProblemTest {
     @Test
     public void update() throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-        String dateString = "2018/08/07";
+        String dateString = "2018-08-07";
         Date date = sdf.parse(dateString);
-        problem.update("Big Rash", date, "Red spots are gradually diminishing");
+        problem.update("Big Rash",dateString, "Red spots are gradually diminishing");
         assertEquals(problem.getTitle(),"Big Rash");
         assertEquals(problem.getDate(),date);
         assertEquals(problem.getDescription(),"Red spots are gradually diminishing");

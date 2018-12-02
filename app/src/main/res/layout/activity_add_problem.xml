@@ -118,7 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:onClick="datePicker"
-        android:text="Pick Date"
+        android:text="@string/pick_date2"
         app:layout_constraintBaseline_toBaselineOf="@+id/pickedDate2"
         app:layout_constraintEnd_toEndOf="parent" />
 

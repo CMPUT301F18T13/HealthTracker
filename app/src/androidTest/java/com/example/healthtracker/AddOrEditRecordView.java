@@ -9,6 +9,7 @@ import com.example.healthtracker.Activities.EditProblem;
 import com.example.healthtracker.Activities.LoginActivity;
 import com.example.healthtracker.View.AddProblemView;
 import com.example.healthtracker.View.AddorEditRecordView;
+import com.example.healthtracker.View.PatientHomeView;
 import com.example.healthtracker.View.ViewMyProblems;
 import com.robotium.solo.Solo;
 
@@ -18,6 +19,8 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static junit.framework.TestCase.assertTrue;
 
 @RunWith(AndroidJUnit4.class)
 public class AddOrEditRecordView {
@@ -38,10 +41,8 @@ public class AddOrEditRecordView {
 
         // login
         EditText name = (EditText) solo.getView("userID");
-        EditText pwd = (EditText) solo.getView("login_password");
-        solo.enterText(name, "George12");
-        solo.enterText(pwd, "password");
-        solo.clickOnView(solo.getView("login_button"));
+        solo.enterText(name, "testingcode12");
+        solo.clickOnButton(solo.getString(R.string.login));
     }
 
     @After
@@ -51,15 +52,15 @@ public class AddOrEditRecordView {
 
     @Test
     public void testAddAndEditRecordWhileAddingProblem() {
-
-        solo.clickOnView(solo.getView("add_problem"));
+        solo.clickOnButton(solo.getString(R.string.add_problem));
 
         solo.waitForActivity(AddProblemView.class, 2000);
         solo.assertCurrentActivity("Problem activity", AddProblemView.class);
-
+        EditText title = (EditText) solo.getView(R.id.title_text);
+        solo.enterText(title,"Rashes");
         solo.clickOnView(solo.getView("add_record_from_add_problem"));
-
         solo.waitForActivity(AddorEditRecordView.class, 2000);
+
         solo.assertCurrentActivity("Record activity", AddorEditRecordView.class);
 
         title = solo.getEditText(0);
@@ -87,8 +88,8 @@ public class AddOrEditRecordView {
 
     @Test
     public void testAddAndEditRecordWhileEditingProblem(){
-
-        solo.clickOnView(solo.getView("view_problems"));
+        solo.assertCurrentActivity("wrong activity", PatientHomeView.class);
+        solo.clickOnButton(solo.getString(R.string.view_myproblems));
 
         solo.waitForActivity(ViewMyProblems.class, 2000);
         solo.assertCurrentActivity("Should be problem list.", ViewMyProblems.class);
@@ -97,7 +98,7 @@ public class AddOrEditRecordView {
         solo.clickOnButton("Edit/View");
 
         solo.waitForActivity(EditProblem.class, 2000);
-        solo.assertCurrentActivity("Shold be edit problem activity.", EditProblem.class);
+        solo.assertCurrentActivity("Should be edit problem activity.", EditProblem.class);
 
         solo.clickOnView(solo.getView("add_record_from_edit_problem"));
 
@@ -124,6 +125,22 @@ public class AddOrEditRecordView {
 
         solo.waitForActivity(AddorEditRecordView.class, 2000);
         solo.assertCurrentActivity("Record activity", AddorEditRecordView.class);
+    }
 
+    @Test
+    public void testAddProblem(){
+        solo.assertCurrentActivity("wrong activity", PatientHomeView.class);
+        solo.clickOnButton(solo.getString(R.string.add_problem));
+
+        EditText title = (EditText) solo.getView(R.id.title_text);
+        EditText problemDescription = (EditText) solo.getView(R.id.problem_description_edit);
+        solo.clickOnButton(solo.getString(R.string.pick_date2));
+        solo.setDatePicker(0, 2012, 2, 16);
+        solo.clickOnText("OK");
+        solo.enterText(title,"Rashes");
+        solo.enterText(problemDescription,"Red spots on my left ear");
+
+        solo.clickOnView(solo.getView(R.id.add_problem_button));
+        assertTrue("Success message is not displayed",solo.searchText("Success"));
     }
 }

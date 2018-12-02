@@ -5,6 +5,8 @@ import com.example.healthtracker.EntityObjects.User;
 import org.junit.Before;
 import org.junit.Test;
 
+import io.searchbox.annotations.JestId;
+
 import static org.junit.Assert.assertEquals;
 
 public class UserTest {
@@ -12,7 +14,7 @@ public class UserTest {
     private String phone;
     private String email;
     private String userID;
-    private String password;
+    private String code;
 
 
     @Before
@@ -20,8 +22,7 @@ public class UserTest {
         phone = "7801234567";
         email = "abc@gmail.com";
         userID = "abc";
-        password = "abcd";
-
+        code = "VOXX3";
         u = new User(phone, email, userID);
     }
 

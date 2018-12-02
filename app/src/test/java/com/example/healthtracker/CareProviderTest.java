@@ -70,13 +70,16 @@ public class CareProviderTest {
         password3 = "Dave123";
         phone3 = "780-777-777";
         email3 = "Dave@ualberta.ca";
-        patient1 = new Patient(phone, email, userName);
-        patient2 = new Patient(phone2, email2, userName2);
-        patient3 = new Patient(phone3, email3, userName3);
+        String code1 = "CKAC9";
+        String code2 = "CKAC1";
+        String code3 = "CKAC2";
+        patient1 = new Patient(phone, email, userName, code1);
+        patient2 = new Patient(phone2, email2, userName2, code2);
+        patient3 = new Patient(phone3, email3, userName3, code3);
     }
     @Test
     public void addPatient(){
-        CareProvider c = new CareProvider(phone3, email3, userName3);
+        CareProvider c = new CareProvider(phone3, email3, userName3, "CKAC2");
 
         c.addPatient(patient2);
 
@@ -91,7 +94,7 @@ public class CareProviderTest {
 
     @Test
     public void getPatientList() {
-        CareProvider c = new CareProvider(phone3, email3, userName3);
+        CareProvider c = new CareProvider(phone3, email3, userName3, "CKAC2");
 
         c.addPatient(patient2);
         c.addPatient(patient1);
@@ -109,7 +112,7 @@ public class CareProviderTest {
 
     @Test
     public void setPatient(){
-        CareProvider c = new CareProvider(phone3, email3, userName3);
+        CareProvider c = new CareProvider(phone3, email3, userName3, "CKAC2");
 
         c.addPatient(patient2);
         c.addPatient(patient1);
@@ -128,7 +131,7 @@ public class CareProviderTest {
 
     @Test
     public void updateUserInfo(){
-        CareProvider c = new CareProvider(phone3, email3, userName3);
+        CareProvider c = new CareProvider(phone3, email3, userName3, "CKAC2");
         c.updateUserInfo(phone2, email2);
 
         assertEquals(c.getPhone(), phone2);
@@ -137,7 +140,7 @@ public class CareProviderTest {
 
     @Test
     public void createAccountTest(){
-        CareProvider c = new CareProvider(phone3, email3, userName3);
+        CareProvider c = new CareProvider(phone3, email3, userName3, "CKAC2");
         assertEquals(userName3, c.getUserID());
         //assertEquals(password, c.getPassword());
         assertEquals(phone3, c.getPhone());
@@ -147,16 +150,16 @@ public class CareProviderTest {
 
     @Test
     public void testCaretakerMap(){
-        CareProvider c = new CareProvider(phone3, email3, userName3);
+        CareProvider c = new CareProvider(phone3, email3, userName3, "CKAC2");
         Bitmap data = c.createMap(patient1);
         assertFalse(data == null);
     }
 
     @Test
     public void testCaretakerSearch(){
-        CareProvider c = new CareProvider(phone3, email3, userID3);
-        Patient patient1 = new Patient(phone, email, userID);
-        Patient patient2 = new Patient(phone2, email2, userID2);
+        CareProvider c = new CareProvider(phone3, email3, userID3, "CKAC2");
+        Patient patient1 = new Patient(phone, email, userID, "CKAC9");
+        Patient patient2 = new Patient(phone2, email2, userID2, "CKAC1");
         Problem p1 = new Problem(title, date, description);
         Problem p2 = new Problem(title2, date2, description2);
         patient2.addProblem(p2);

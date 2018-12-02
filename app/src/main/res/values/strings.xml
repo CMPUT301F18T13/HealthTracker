@@ -87,6 +87,8 @@
     <string name="add_reminder">Add Reminder</string>
     <string name="from_library">From Library</string>
     <string name="account_code_hint">Account Code</string>
+    <string name="pick_date2">Pick Date</string>
+    <string name="logout">Logout</string>
 
 
 </resources>

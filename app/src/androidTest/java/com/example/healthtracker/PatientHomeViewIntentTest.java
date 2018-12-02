@@ -6,6 +6,7 @@ import android.support.test.rule.ActivityTestRule;
 import android.widget.EditText;
 
 import com.example.healthtracker.Activities.LoginActivity;
+import com.example.healthtracker.Activities.SearchActivity;
 import com.example.healthtracker.Activities.UserSettingsActivity;
 import com.example.healthtracker.View.AddProblemView;
 import com.example.healthtracker.View.ViewMyProblems;
@@ -32,6 +33,10 @@ public class PatientHomeViewIntentTest {
     public void setUp() {
         solo = new Solo(InstrumentationRegistry.getInstrumentation(),
                 activityTestRule.getActivity());
+        // login
+        EditText name = (EditText) solo.getView("userID");
+        solo.enterText(name, "testingcode12");
+        solo.clickOnButton(solo.getString(R.string.login));
     }
 
     @After
@@ -41,33 +46,26 @@ public class PatientHomeViewIntentTest {
 
     @Test
     public void testButtons() {
-        EditText name = (EditText) solo.getView("userID");
-        EditText pwd = (EditText) solo.getView("login_password");
-        solo.enterText(name, "");
-        solo.enterText(pwd, "");
-        solo.enterText(name, "foreverznb");
-        solo.enterText(pwd, "ZHUNINGBO1234");
-        //solo.clickOnView(solo.getView("CareGiverLogin"));
-        solo.clickOnView(solo.getView("login_button"));
         //solo.clickOnButton("add_problem");
-        solo.clickOnView(solo.getView(R.id.add_problem));
+        solo.clickOnButton(solo.getString(R.string.add_problem));
         boolean result_1 = solo.waitForActivity(AddProblemView.class, 2000);
-        Assert.assertEquals(true, result_1);
+        Assert.assertTrue(result_1);
         solo.goBack();
-        solo.clickOnView(solo.getView(R.id.view_problems));
-        boolean result_2 = solo.waitForActivity(ViewMyProblems.class, 2000);
-        Assert.assertEquals(true, result_2);
+        solo.clickOnButton(solo.getString(R.string.view_myproblems));
+        boolean result_2 = solo.waitForActivity(ViewMyProblems.class, 6000);
+        Assert.assertTrue(result_2);
         solo.goBack();
-        //solo.goBack();
-        solo.clickOnView(solo.getView(R.id.patient_setting));
+        solo.clickOnButton(solo.getString(R.string.settings));
         boolean result_4 = solo.waitForActivity(UserSettingsActivity.class, 2000);
-        Assert.assertEquals(true, result_4);
+        Assert.assertTrue(result_4);
         solo.goBack();
-        solo.clickOnView(solo.getView(R.id.logout_button));
+        solo.clickOnButton(solo.getString(R.string.search));
+        boolean result_5 = solo.waitForActivity(SearchActivity.class, 2000);
+        Assert.assertTrue(result_5);
+        solo.goBack();
+        solo.clickOnButton(solo.getString(R.string.logout));
         boolean result_3 = solo.waitForActivity(LoginActivity.class, 2000);
-        Assert.assertEquals(true, result_3);
-
-
+        Assert.assertTrue(result_3);
     }
 }
 

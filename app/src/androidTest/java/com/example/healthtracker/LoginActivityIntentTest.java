@@ -39,28 +39,26 @@ public class LoginActivityIntentTest {
     }
 
     @Test
-    public void testLogin() {
-        //solo.clickOnView(solo.getView("create_account"));
-        solo.clickOnButton(0);
+    public void testPatientLogin() {
+        solo.clickOnButton(solo.getString(R.string.create_account));
         boolean result_2 = solo.waitForActivity(CreateAccountActivity.class, 1000);
-        Assert.assertEquals(true, result_2);
+        Assert.assertTrue(result_2);
         solo.goBack();
         EditText name = (EditText) solo.getView("userID");
-        EditText pwd = (EditText) solo.getView("login_password");
-        solo.enterText(name, "");
-        solo.enterText(pwd, "");
-        solo.enterText(name, "foreverznb");
-        solo.enterText(pwd, "ZHUNINGBO1234");
-        solo.clickOnView(solo.getView("login_button"));
+        solo.enterText(name, "testingcode12");
+        solo.clickOnButton(solo.getString(R.string.login));
         boolean result = solo.waitForActivity(PatientHomeView.class, 2000);
-        Assert.assertEquals(true, result);
-        solo.goBack();
-        solo.clickOnView(solo.getView("CareGiverLogin"));
-        solo.clickOnView(solo.getView("login_button"));
-        boolean result_1 = solo.waitForActivity(CareProviderHomeView.class, 2000);
-        Assert.assertEquals(true, result_1);
-
-
+        Assert.assertTrue(result);
     }
 
+    @Test
+    public void testCareLogin() {
+        // login
+        solo.clickOnCheckBox(0);
+        EditText name = (EditText) solo.getView("userID");
+        solo.enterText(name, "doctortyler");
+        solo.clickOnButton(solo.getString(R.string.login));
+        boolean result = solo.waitForActivity(CareProviderHomeView.class, 2000);
+        Assert.assertTrue(result);
+    }
 }

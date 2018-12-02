@@ -1,12 +1,12 @@
 package com.example.healthtracker;
 
-
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 import android.support.test.rule.ActivityTestRule;
 import android.widget.EditText;
 
 import com.example.healthtracker.Activities.LoginActivity;
+import com.example.healthtracker.View.PatientHomeView;
 import com.robotium.solo.Solo;
 
 import org.junit.After;
@@ -28,6 +28,10 @@ public class AddProblemViewTest {
     public void setUp() {
         solo = new Solo(InstrumentationRegistry.getInstrumentation(),
                 activityTestRule.getActivity());
+        // login
+        EditText name = (EditText) solo.getView("userID");
+        solo.enterText(name, "testingcode12");
+        solo.clickOnButton(solo.getString(R.string.login));
     }
 
     @After
@@ -37,21 +41,15 @@ public class AddProblemViewTest {
 
     @Test
     public void testAddProblem(){
-        // First step: Log in
-        EditText userID = (EditText) solo.getView("userID");
-        EditText password = (EditText) solo.getView("login_password");
-        solo.enterText(userID,"chenlinPatient");
-        solo.enterText(password,"passwords");
-        solo.clickOnView(solo.getView("login_button"));
-
-        // Second step: Add a problem
-        solo.clickOnView(solo.getView(R.id.add_problem));
+        solo.assertCurrentActivity("wrong activity", PatientHomeView.class);
+        solo.clickOnButton(solo.getString(R.string.add_problem));
 
         EditText title = (EditText) solo.getView(R.id.title_text);
-        EditText dateStarted = (EditText) solo.getView(R.id.date_started_editable);
         EditText problemDescription = (EditText) solo.getView(R.id.problem_description_edit);
+        solo.clickOnButton(solo.getString(R.string.pick_date2));
+        solo.setDatePicker(0, 2012, 2, 16);
+        solo.clickOnText("OK");
         solo.enterText(title,"Rashes");
-        solo.enterText(dateStarted,"2018-07-10");
         solo.enterText(problemDescription,"Red spots on my left ear");
 
         solo.clickOnView(solo.getView(R.id.add_problem_button));

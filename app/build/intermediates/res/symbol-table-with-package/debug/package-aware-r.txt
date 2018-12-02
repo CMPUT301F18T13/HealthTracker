@@ -1125,6 +1125,7 @@ id add_patient_button
 id add_problem
 id add_problem_button
 id add_record_from_add_problem
+id add_record_from_edit_problem
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1181,6 +1182,7 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id editSaveButton
 id editText
 id editText4
 id edit_email
@@ -1228,6 +1230,7 @@ id line1
 id line3
 id listMode
 id list_item
+id login_button
 id logout_button
 id logout_button2
 id map
@@ -1283,6 +1286,7 @@ id right_side
 id satellite
 id save_image_matrix
 id save_non_transition_alpha
+id save_record_button
 id save_scale_type
 id screen
 id scroll
@@ -1580,6 +1584,7 @@ string google_storage_bucket
 string hide_bottom_view_on_scroll_behavior
 string keywords
 string login
+string logout
 string max_descript_length
 string max_title_length
 string mayo_clinic
@@ -1593,6 +1598,7 @@ string path_password_strike_through
 string patient_id
 string phone_number
 string phone_settings
+string pick_date2
 string problem_description
 string problem_title
 string project_id

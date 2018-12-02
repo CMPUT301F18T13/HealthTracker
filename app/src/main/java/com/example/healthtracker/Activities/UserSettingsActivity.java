@@ -79,7 +79,7 @@ public class UserSettingsActivity extends AppCompatActivity {
         String phoneString = phone.getText().toString();
         String emailString = uemail.getText().toString().toLowerCase();
         // Check if the fields are empty
-        if(!isEmpty(phoneString) && !isEmpty(emailString)){
+        if(isEmpty(phoneString) && isEmpty(emailString)){
             // Validate the fields
             if(validateEmail(emailString)) {
                 if(validatePhone(phoneString)) {
@@ -87,15 +87,17 @@ public class UserSettingsActivity extends AppCompatActivity {
                     if (profileType.equals("Patient")) {
                         patient.updateUserInfo(phoneString, emailString);
                         UserDataController.savePatientData(this, patient);
+                        Toast.makeText(this, "Changes Saved", Toast.LENGTH_SHORT).show();
                     } else {
                         careProvider.updateUserInfo(phoneString, emailString);
                         UserDataController.saveCareProviderData(this, careProvider);
+                        Toast.makeText(this, "Changes Saved", Toast.LENGTH_SHORT).show();
                     }
                 }else{
-                    Toast.makeText(context, "Invalid Phone Number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Invalid Phone Number", Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(context, "Invalid Email", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Invalid Email", Toast.LENGTH_SHORT).show();
             } 
         } else {
             Toast.makeText(this, "All fields must be filled in.", Toast.LENGTH_SHORT).show();
@@ -114,7 +116,7 @@ public class UserSettingsActivity extends AppCompatActivity {
 
     // Check if the input string is empty
     private boolean isEmpty(String string) {
-        return string.equals("");
+        return !string.equals("");
     }
 
     // Load the icon for the CareProvider view

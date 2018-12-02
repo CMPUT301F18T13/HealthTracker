@@ -32,12 +32,6 @@ public class CareProvider extends User implements Serializable {
     }
 
     /**
-     * singleton method for CareProvider
-     */
-    public CareProvider() {
-    }
-
-    /**
      * gets a list object of the current CareProvider's assigned patients
      *
      * @return returns the CareProviders patient list

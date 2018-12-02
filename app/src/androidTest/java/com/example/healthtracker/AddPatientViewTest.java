@@ -30,6 +30,13 @@ public class AddPatientViewTest  {
     public void setUp() {
         solo = new Solo(InstrumentationRegistry.getInstrumentation(),
                 activityTestRule.getActivity());
+
+        // login
+        solo.clickOnCheckBox(0);
+        EditText name = (EditText) solo.getView("userID");
+        solo.enterText(name, "doctortyler");
+        solo.clickOnButton(solo.getString(R.string.login));
+        solo.clickOnView(solo.getView("add_patient"));
     }
 
     @After
@@ -38,36 +45,32 @@ public class AddPatientViewTest  {
     }
 
     @Test
-    public void testAddPatient(){
-        // First step: Log in
-        EditText userID = (EditText) solo.getView("userID");
-        EditText password = (EditText) solo.getView("login_password");
-        solo.enterText(userID,"chenlin2");
-        solo.enterText(password,"passwords");
-        solo.clickOnView(solo.getView("CareGiverLogin"));
-        solo.clickOnView(solo.getView("login_button"));
-
+    public void testAddinvalidPatient() {
         // Second step: Add a patient
         // Case 1: A care giver add a new patient with invalid id
-        solo.clickOnView(solo.getView(R.id.add_patient));
         EditText patientId = (EditText) solo.getView(R.id.editText4);
-        solo.enterText(patientId,"invalidPatient");
+        solo.enterText(patientId, "invalidPatient");
         solo.clickOnView(solo.getView(R.id.add_patient_button));
-        assertTrue("Could not find the dialog!", solo.searchText("The patient ID is not valid. Please try again."));
+        assertTrue("Could not find the dialog!", solo.searchText("Patient code invalid. Please try again."));
+    }
 
-        // Case 2: A care giver add a new patient with valid id
+    @Test
+    public void testAddAssignedPatient() {
+        // Case 2: A care giver tries to add an existing patient
+        EditText patientId = (EditText) solo.getView(R.id.editText4);
         solo.clearEditText(patientId);
-        solo.enterText(patientId,"chenlin");
+        solo.enterText(patientId,"MURH2");
         solo.clickOnView(solo.getView(R.id.add_patient_button));
-        assertTrue("Could not find the toast message",solo.searchText("Patient Added"));
+        assertTrue("Could not find the dialog!",solo.searchText("Patient already assigned to you."));
+    }
 
-        // Case 3: A care giver tries to add an existing patient
-        solo.clickOnView(solo.getView(R.id.add_patient));
-        solo.enterText(patientId,"chenlin");
+    @Test
+    public void testAddNewPatient() {
+        // Case 3: A care giver add a new patient with valid id. WILL FAIL DUE TO INABILITY TO PREDICT NEW ACCOUNT CODE
+        EditText patientId = (EditText) solo.getView(R.id.editText4);
+        solo.clearEditText(patientId);
+        solo.enterText(patientId,"VOXX5");
         solo.clickOnView(solo.getView(R.id.add_patient_button));
-        assertTrue("Could not find the dialog!",solo.searchText("This patient has already been assigned you."));
-
-
-
+        assertTrue("Could not find the toast message",solo.searchText("Success"));
     }
 }
