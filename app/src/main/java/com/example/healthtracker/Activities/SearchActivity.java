@@ -70,37 +70,7 @@ public class SearchActivity extends AppCompatActivity {
         }
     }
 
-    public void Search(View view) {
 
-        spinner = findViewById(R.id.search_type_dropdown);
-        keywords = findViewById(R.id.search_terms);
-        distance = findViewById(R.id.distance_edittext);
-        distance.setVisibility(View.INVISIBLE);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                if(position == 0){
-                    searchType = "keyword";
-                    distance.setVisibility(View.INVISIBLE);
-                } else if(position == 1){
-                    searchType = "geoLocation";
-                    distance.setVisibility(View.VISIBLE);
-                } else{
-                    searchType = "bodyLocation";
-                    distance.setVisibility(View.INVISIBLE);
-                }
-                keywords.setHint(searchType);
-            }
-
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                searchType = "keyword";
-
-            }
-
-        });
-    }
 
     public void Search(View view) {
         Object[] hits = null;
