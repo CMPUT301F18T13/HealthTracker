@@ -11,14 +11,18 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.healthtracker.Contollers.ElasticsearchController;
+import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.User;
 import com.example.healthtracker.R;
 import com.searchly.jestdroid.JestDroidClient;
 
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
+
+import io.searchbox.core.SearchResult;
 
 /* Idea and implemented code for testing interent connection from *binnyb(user:416412),   
 https://stackoverflow.com/questions/5474089/how-to-check-currently-internet-connection-is-available-or-not-in-android, 
@@ -139,7 +143,7 @@ public class CreateAccountActivity extends AppCompatActivity {
             // Save new user with elasticsearch
             if (checkBox.isChecked()) {
                 // save new care provider
-                CareProvider newCareProvider = new CareProvider(phone, email, userID, createCode());
+                CareProvider newCareProvider = new CareProvider(phone, email, userID);
                 ElasticsearchController.AddCareProvider addCareProviderTask = new ElasticsearchController.AddCareProvider();
                 addCareProviderTask.execute(newCareProvider);
             } else {
@@ -178,7 +182,19 @@ public class CreateAccountActivity extends AppCompatActivity {
             int index = (int) (rnd.nextFloat() * chars.length());
             salt.append(chars.charAt(index));
         }
-        return salt.toString();
+        String code = salt.toString();
+
+        if(!codeExists(code)){
+            return code;
+        } else {
+            Log.d("code", "code already exists");
+            return createCode();
+        }
+    }
+
+    private boolean codeExists(String code){
+        Patient patient = UserDataController.searchForPatient("code", code);
+        return (patient != null);
     }
 
 }

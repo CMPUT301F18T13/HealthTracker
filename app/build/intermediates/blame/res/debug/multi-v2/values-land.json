@@ -1,10 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ningbo\\Documents\\GitHub\\HealthTracker\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "/Users/caochenlin/Desktop/CMPUT301_intro_to_software_engineering/HealthTracker/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ningbo\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\53996395823d64b33d88cf4bfcd6a43f\\res\\values-land\\values-land.xml",
+                    "source": "/Users/caochenlin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/02996a9b35aaafa9bf7e6f4b46046455/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
+                    }
+                },
+                {
+                    "source": "/Users/caochenlin/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/1920aef827457562568272781b51eab3/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -20,16 +30,6 @@
                         "endLines": "8",
                         "endColumns": "10",
                         "endOffsets": "431"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ningbo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\fdcc2f11da9a56b673c5da6ac6bab693\\res\\values-land\\values-land.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,125,196",
-                        "endColumns": "69,70,67",
-                        "endOffsets": "120,191,259"
                     }
                 }
             ]

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ningbo\\Documents\\GitHub\\HealthTracker\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
+            "outputFile": "/Users/caochenlin/Desktop/CMPUT301_intro_to_software_engineering/HealthTracker/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ningbo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\fdcc2f11da9a56b673c5da6ac6bab693\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "/Users/caochenlin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/02996a9b35aaafa9bf7e6f4b46046455/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

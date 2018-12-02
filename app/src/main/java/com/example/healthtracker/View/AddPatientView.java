@@ -146,10 +146,7 @@ public class AddPatientView extends AppCompatActivity {
     public void Add(View view) {
         if(ValidatePatientId()) {
             Toast.makeText(this, "Patient Added", Toast.LENGTH_SHORT).show();
-            // Create an intent object containing the bridge to between the two activities
-            Intent intent = new Intent(AddPatientView.this, CareProviderHomeView.class);
-            // Launch the browse emotions activity
-            startActivity(intent);
+            finish();
         }
     }
 }

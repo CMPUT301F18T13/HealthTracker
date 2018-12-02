@@ -5,9 +5,13 @@ import android.location.Address;
 
 import com.example.healthtracker.EntityObjects.Photo;
 
+import org.elasticsearch.common.geo.GeoPoint;
+
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+
+import io.searchbox.annotations.JestId;
 
 /**
  * The patient record is a record added to a problem by a patient.
@@ -18,6 +22,7 @@ import java.util.ArrayList;
  */
 public class PatientRecord implements Serializable {
 
+    @JestId
     private String RecordTitle;
     private String comment;
     private Timestamp timestamp;
@@ -25,6 +30,7 @@ public class PatientRecord implements Serializable {
     private Double Lat;
     private ArrayList<Double> geoLocations = new ArrayList<>();
     private final ArrayList<Photo> photos;
+
 
     /**
      * Constructor for PatientRecord that sets the record title and comment.
@@ -38,8 +44,8 @@ public class PatientRecord implements Serializable {
         this.timestamp = new Timestamp(System.currentTimeMillis());
         this.Lat = Lat;
         this.Lon = Lon;
-        this.geoLocations.add(Lat);
         this.geoLocations.add(Lon);
+        this.geoLocations.add(Lat);
         photos = new ArrayList<Photo> ();
     }
 
@@ -60,9 +66,9 @@ public class PatientRecord implements Serializable {
      *
      * @param geoLocation The geoLocation to be added.
      */
-    public void setGeoLocation(Double Lat, Double Lon){
-        this.geoLocations.add(Lat);
+    public void setGeoLocation(Double Lon, Double Lat){
         this.geoLocations.add(Lon);
+        this.geoLocations.add(Lat);
     }
 
     /**

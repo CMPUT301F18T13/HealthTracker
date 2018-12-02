@@ -50,9 +50,9 @@ public class CareProviderProblemView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_care_provider_problem_view);
 
-        titleText = findViewById(R.id.viewTitle);
+        titleText = findViewById(R.id.titleView);
         dateText = findViewById(R.id.viewDate);
-        desText = findViewById(R.id.viewDes);
+        desText = findViewById(R.id.desView);
         recordList = findViewById(R.id.care_record_list);
 
         Intent intent = getIntent();

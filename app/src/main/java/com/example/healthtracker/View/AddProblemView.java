@@ -213,6 +213,7 @@ public class AddProblemView extends AppCompatActivity {
         patient.addProblem(problem);
 
         // save problem
+        UserDataController.saveProblemData(problem, this);
         UserDataController.savePatientData(context, patient);
 
         // done

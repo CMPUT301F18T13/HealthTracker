@@ -26,6 +26,7 @@ animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 array body_location_options
+array searchResults
 array searchTypes
 attr actionBarDivider
 attr actionBarItemBackground
@@ -1095,6 +1096,7 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
+id SearchTypeText
 id ViewPager
 id action0
 id action_bar
@@ -1136,7 +1138,6 @@ id beginning
 id blocking
 id bodylocation_button
 id bottom
-id button
 id button2
 id buttonPanel
 id cancel_action
@@ -1158,6 +1159,7 @@ id clip_horizontal
 id clip_vertical
 id code
 id collapseActionView
+id commentCategory
 id comment_list
 id container
 id content
@@ -1167,11 +1169,13 @@ id create_new_account_button
 id custom
 id customPanel
 id dark
+id dateView
 id date_started
 id date_started_editable
 id date_started_editscreen
 id decor_content_parent
 id default_activity_button
+id desView
 id description_edit_text
 id design_bottom_sheet
 id design_menu_item_action_area
@@ -1181,6 +1185,7 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id distance_edittext
 id editText
 id editText4
 id edit_email
@@ -1201,6 +1206,9 @@ id fill_vertical
 id filled
 id fixed
 id forever
+id found_comments
+id found_problems
+id found_records
 id ghost_view
 id gone
 id group_divider
@@ -1218,7 +1226,6 @@ id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
-id keywords
 id labeled
 id largeLabel
 id left
@@ -1262,6 +1269,7 @@ id percent
 id phone_number
 id photo_from_library_button
 id pin
+id problemCategory
 id problem_description
 id problem_description_edit
 id problem_description_editscreen
@@ -1270,6 +1278,7 @@ id problem_title
 id progress_circular
 id progress_horizontal
 id radio
+id recordCategory
 id record_list_addscreen
 id record_list_editscreen
 id right
@@ -1286,16 +1295,21 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
-id search
 id search_badge
 id search_bar
 id search_button
 id search_close_btn
+id search_comments
 id search_edit_frame
 id search_go_btn
+id search_imageButton2
 id search_mag_icon
 id search_plate
+id search_problem_to_comments
 id search_src_text
+id search_terms
+id search_type_dropdown
+id search_viewPRecord
 id search_voice_btn
 id select_dialog_listview
 id selected
@@ -1343,6 +1357,7 @@ id textinput_helper_text
 id time
 id title
 id titleDividerNoCustom
+id titleView
 id title_edit_text
 id title_template
 id title_text
@@ -1361,8 +1376,6 @@ id up
 id useLogo
 id userID
 id viewDate
-id viewDes
-id viewTitle
 id view_comments
 id view_offset_helper
 id view_problems
@@ -1434,7 +1447,10 @@ layout activity_login
 layout activity_map_view
 layout activity_patient_home
 layout activity_search
+layout activity_search_result_comments
 layout activity_search_results
+layout activity_search_results_problem
+layout activity_search_results_record_view
 layout activity_slide_show
 layout activity_take_photo
 layout activity_user_settings
@@ -1610,6 +1626,9 @@ string status_bar_notification_info_overflow
 string symptom_checker
 string timestamp
 string title_activity_care_provider_record_view
+string title_activity_search_result_comments
+string title_activity_search_results_problem
+string title_activity_search_results_record
 string title_activity_view_care_provider_comments
 string title_care_view
 string userID

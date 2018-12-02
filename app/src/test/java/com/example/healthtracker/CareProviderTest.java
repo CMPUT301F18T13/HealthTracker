@@ -70,9 +70,9 @@ public class CareProviderTest {
         password3 = "Dave123";
         phone3 = "780-777-777";
         email3 = "Dave@ualberta.ca";
-        patient1 = new Patient(phone, email, userName);
-        patient2 = new Patient(phone2, email2, userName2);
-        patient3 = new Patient(phone3, email3, userName3);
+        patient1 = new Patient(phone, email, userName, "XXXX");
+        patient2 = new Patient(phone2, email2, userName2, "AAAA");
+        patient3 = new Patient(phone3, email3, userName3, "BBBB");
     }
     @Test
     public void addPatient(){
@@ -155,12 +155,12 @@ public class CareProviderTest {
     @Test
     public void testCaretakerSearch(){
         CareProvider c = new CareProvider(phone3, email3, userID3);
-        Patient patient1 = new Patient(phone, email, userID);
-        Patient patient2 = new Patient(phone2, email2, userID2);
+        Patient patient1 = new Patient(phone, email, userID, "BBBB");
+        Patient patient2 = new Patient(phone2, email2, userID2, "XXXX");
         Problem p1 = new Problem(title, date, description);
         Problem p2 = new Problem(title2, date2, description2);
         patient2.addProblem(p2);
-        List<Problem> filteredProblems = ElasticsearchController.search("Bruise", "keyword");
+        List<Problem> filteredProblems = UserDataController.searchForProblem("problemList", "Bruise");
         assertNotNull(filteredProblems);
         assertEquals(filteredProblems.size(), 1);
         assertEquals(filteredProblems.get(0), p1);

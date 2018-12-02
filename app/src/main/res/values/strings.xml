@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">HealthTracker</string>
-    <!-- Strings related to login -->
+
     <string name="prompt_email">Email Address</string>
     <string name="create_account">Create Account</string>
     <string name="login">Login</string>
@@ -56,6 +56,10 @@
         <item>Geo-location</item>
         <item>Body-location</item>
     </string-array>
+    <string-array name="searchResults">
+        <item>Problems</item>
+        <item>Records</item>
+    </string-array>
     <string-array name="body_location_options">
         <item>Left foot</item>
         <item>Right foot</item>
@@ -84,7 +88,13 @@
     <string name="add_body_location_button">Add Body-Location</string>
     <string name="add_geo_location_button">Add Geo-Location</string>
     <string name="add_reminder">Add Reminder</string>
+
+    <string name="title_activity_search_results_problem">search_results_problem</string>
+    <string name="title_activity_search_results_record">search_results_record</string>
+    <string name="title_activity_search_result_comments">search_result_comments</string>
+
     <string name="from_library">From Library</string>
+
 
 
 </resources>
