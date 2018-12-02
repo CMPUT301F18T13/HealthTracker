@@ -18,7 +18,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 
-class AddCareProviderCommentViewTest {
+public class AddCareProviderCommentViewTest {
     @Rule
     public final ActivityTestRule<LoginActivity> activityTestRule =
             new ActivityTestRule<>(LoginActivity.class);

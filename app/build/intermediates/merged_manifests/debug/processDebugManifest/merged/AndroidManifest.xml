@@ -113,10 +113,6 @@
         <activity android:name="com.example.healthtracker.Activities.TakePhotoActivity" >
         </activity>
         <activity android:name="com.example.healthtracker.Contollers.PhotoController" />
-        <activity android:name="com.example.healthtracker.search_result_comments" />
-        <activity android:name="com.example.healthtracker.search_results_problem" />
-        <activity android:name="com.example.healthtracker.SearchActivity" />
-        <activity android:name="com.example.healthtracker.SearchResultsView" />
 
         <provider
             android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"

@@ -3,15 +3,17 @@ package com.example.healthtracker.Activities;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.PhoneNumberUtils;
+import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.healthtracker.Contollers.ElasticsearchController;
-import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.User;
@@ -21,8 +23,8 @@ import com.searchly.jestdroid.JestDroidClient;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
-/* Idea and implemented code for testing interent connection from *binnyb(user:416412),   
-https://stackoverflow.com/questions/5474089/how-to-check-currently-internet-connection-is-available-or-not-in-android, 
+/* Idea and implemented code for testing interent connection from *binnyb(user:416412),
+https://stackoverflow.com/questions/5474089/how-to-check-currently-internet-connection-is-available-or-not-in-android,
 2011/03/29, viewed 2018/11/16*
 */
 
@@ -72,28 +74,31 @@ public class CreateAccountActivity extends AppCompatActivity {
      * checked to see if it was left empty or not by calling the checkInputs method.
      */
     private void init(){
-        Register.setOnClickListener(view -> {
-            email = Email.getText().toString().toLowerCase();
-            phone = Phone.getText().toString();
-            userID = UserID.getText().toString();
-            if (checkInputs(email, userID, phone)) {
-                if(validateEmail(email)) {
-                    if (validatePhone(phone)) {
-                        try {
-                            if (!userExists(userID)) {
-                                addNewUser();
-                            } else {
-                                Toast.makeText(context, "User ID is taken", Toast.LENGTH_SHORT).show();
+        Register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                email = Email.getText().toString().toLowerCase();
+                phone = Phone.getText().toString();
+                userID = UserID.getText().toString();
+                if (checkInputs(email, userID, phone)) {
+                    if(validateEmail(email)) {
+                        if (validatePhone(phone)) {
+                            try {
+                                if (!userExists(userID)) {
+                                    addNewUser();
+                                } else {
+                                    Toast.makeText(context, "User ID is taken", Toast.LENGTH_SHORT).show();
+                                }
+                            } catch (ExecutionException | InterruptedException e) {
+                                e.printStackTrace();
                             }
-                        } catch (ExecutionException | InterruptedException e) {
-                            e.printStackTrace();
+                        } else {
+                            Toast.makeText(context, "Invalid Phone Number", Toast.LENGTH_SHORT).show();
                         }
-                    } else {
-                        Toast.makeText(context, "Invalid Phone Number", Toast.LENGTH_SHORT).show();
                     }
-                }
-                else{
-                    Toast.makeText(context, "Invalid Email", Toast.LENGTH_SHORT).show();
+                    else{
+                        Toast.makeText(context, "Invalid Email", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
@@ -146,7 +151,7 @@ public class CreateAccountActivity extends AppCompatActivity {
             // Save new user with elasticsearch
             if (checkBox.isChecked()) {
                 // save new care provider
-                CareProvider newCareProvider = new CareProvider();
+                CareProvider newCareProvider = new CareProvider(phone, email, userID, createCode());
                 ElasticsearchController.AddCareProvider addCareProviderTask = new ElasticsearchController.AddCareProvider();
                 addCareProviderTask.execute(newCareProvider);
             } else {
@@ -185,28 +190,16 @@ public class CreateAccountActivity extends AppCompatActivity {
             int index = (int) (rnd.nextFloat() * chars.length());
             salt.append(chars.charAt(index));
         }
-        String code = salt.toString();
-
-        if(!codeExists(code)){
-            return code;
-        } else {
-            Log.d("code", "code already exists");
-            return createCode();
-        }
-    }
-
-    private boolean codeExists(String code){
-        Patient patient = UserDataController.searchForPatient("code", code);
-        return (patient != null);
+        return salt.toString();
     }
 
     // Validate's the entered email address
-    private static boolean validateEmail(CharSequence target) {
+    public static boolean validateEmail(CharSequence target) {
         return Patterns.EMAIL_ADDRESS.matcher(target).matches();
     }
 
     // Validate's the entered phone number
-    private boolean validatePhone(String number) {
+    public boolean validatePhone(String number) {
         return Patterns.PHONE.matcher(number).matches();
     }
 }
