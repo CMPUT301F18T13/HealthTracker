@@ -140,14 +140,12 @@ public class AddorEditRecordView extends AppCompatActivity {
      */
     private void saveRecord(){
         // get Record info
-<<<<<<< HEAD
+
+
         String title = titleText.getText().toString();
         String comment = descriptionText.getText().toString();
-=======
-        title = titleText.getText().toString();
-        comment = descriptionText.getText().toString();
         //geo_location = saved_geoLocation.getText().toString();
->>>>>>> chenlin
+
 
         // fetch user data
         Patient patient = UserDataController.loadPatientData(context);
@@ -173,13 +171,13 @@ public class AddorEditRecordView extends AppCompatActivity {
         intent.putExtra("ProblemTitle",getExtraString());
         startActivity(intent);
     }
-<<<<<<< HEAD
+
 
     private String getExtraString(){
         Intent intent = getIntent();
         return intent.getStringExtra("ProblemTitle");
     }
-=======
+
     public void addGeoLocation(View view) {
         Intent intent = new Intent(AddorEditRecordView.this, AddGeoLocationActivity.class);
         startActivityForResult(intent,1);
@@ -209,5 +207,5 @@ public class AddorEditRecordView extends AppCompatActivity {
         //saved_geoLocation.setText(geo_location);
     }
 
->>>>>>> chenlin
+
 }

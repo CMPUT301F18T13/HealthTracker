@@ -1,11 +1,10 @@
 package com.example.healthtracker.EntityObjects;
 
 import android.graphics.Bitmap;
-<<<<<<< HEAD
+
 import android.support.annotation.NonNull;
-=======
 import android.location.Address;
->>>>>>> chenlin
+
 
 import com.example.healthtracker.EntityObjects.Photo;
 
@@ -46,16 +45,15 @@ public class PatientRecord implements Serializable {
         this.RecordTitle = title;
         this.comment = comment;
         this.timestamp = new Timestamp(System.currentTimeMillis());
-<<<<<<< HEAD
+
         geoLocations = new ArrayList<>();
-        photos = new ArrayList<>();
-=======
+
         this.Lat = Lat;
         this.Lon = Lon;
         this.geoLocations.add(Lon);
         this.geoLocations.add(Lat);
         photos = new ArrayList<Photo> ();
->>>>>>> chenlin
+
     }
 
     /**
@@ -66,13 +64,10 @@ public class PatientRecord implements Serializable {
         RecordTitle = "";
         comment = "";
         timestamp = new Timestamp(System.currentTimeMillis());
-<<<<<<< HEAD
-        geoLocations = new ArrayList<>();
-        photos = new ArrayList<>();
-=======
+
         geoLocations = new ArrayList<Double>();
         photos = new ArrayList<Photo> ();
->>>>>>> chenlin
+
     }
 
     /**

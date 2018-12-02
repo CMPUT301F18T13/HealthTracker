@@ -74,11 +74,8 @@
         app:layout_constraintTop_toBottomOf="@+id/description_edit_text" />
 
     <Button
-<<<<<<< HEAD
-        android:id="@+id/save_record_button"
-=======
+
         android:id="@+id/button2"
->>>>>>> chenlin
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"

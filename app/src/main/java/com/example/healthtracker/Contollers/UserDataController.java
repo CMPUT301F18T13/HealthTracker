@@ -17,10 +17,7 @@ import com.example.healthtracker.EntityObjects.CareProviderComment;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.EntityObjects.Problem;
-<<<<<<< HEAD
-=======
 
->>>>>>> chenlin
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -28,13 +25,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-<<<<<<< HEAD
-=======
+
 import java.util.ConcurrentModificationException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
->>>>>>> chenlin
+
 import java.util.concurrent.ExecutionException;
 
 
@@ -410,14 +406,11 @@ public class UserDataController<E> {
         searchProblemsTask.execute(searchInfo);
         try {
             hits[0] = searchProblemsTask.get().getSourceAsObjectList(Problem.class, false);
-<<<<<<< HEAD
-        } catch (InterruptedException | ExecutionException e) {
-=======
 
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
->>>>>>> chenlin
+
             e.printStackTrace();
         }
 
@@ -427,14 +420,12 @@ public class UserDataController<E> {
         searchRecordsTask.execute(searchInfo);
         try {
             hits[1] = searchRecordsTask.get().getSourceAsObjectList(PatientRecord.class, false);
-<<<<<<< HEAD
-        } catch (InterruptedException | ExecutionException e) {
-=======
+
 
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
->>>>>>> chenlin
+
             e.printStackTrace();
         }
 
@@ -443,23 +434,20 @@ public class UserDataController<E> {
         searchCommentsTask.execute(searchInfo);
         try {
             hits[2] = searchCommentsTask.get().getSourceAsObjectList(CareProviderComment.class, false);
-<<<<<<< HEAD
-        } catch (InterruptedException | ExecutionException e) {
-=======
+
 
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
->>>>>>> chenlin
+
             e.printStackTrace();
         }
 
         return hits;
     }
 
-<<<<<<< HEAD
-    public static void saveProblemData(Problem problem){
-=======
+
+
     // Search By Geo-Locations
     public static Object[] searchForGeoLocations(String distance,Double latitude,Double longitude,String identifier){
 
@@ -491,7 +479,7 @@ public class UserDataController<E> {
     }
 
     public static void saveProblemData(Problem problem, Context context){
->>>>>>> chenlin
+
         ElasticsearchController.AddProblem addProblem = new ElasticsearchController.AddProblem();
         addProblem.execute(problem);
         for(PatientRecord record: problem.getRecords()){

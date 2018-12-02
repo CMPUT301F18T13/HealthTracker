@@ -8,8 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 
-<<<<<<< HEAD
-=======
+
 import java.util.ArrayList;
 
 import com.example.healthtracker.Activities.SearchActivity;
@@ -17,7 +16,7 @@ import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.CareProviderComment;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.EntityObjects.Problem;
->>>>>>> chenlin
+
 import com.example.healthtracker.R;
 import com.example.healthtracker.search_results_problem;
 import com.example.healthtracker.search_results_record;

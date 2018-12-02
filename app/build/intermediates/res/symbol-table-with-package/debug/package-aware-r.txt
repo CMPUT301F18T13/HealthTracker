@@ -1189,11 +1189,8 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
-<<<<<<< HEAD
-id editSaveButton
-=======
 id distance_edittext
->>>>>>> chenlin
+id editSaveButton
 id editText
 id editText4
 id edit_email
@@ -1302,7 +1299,6 @@ id satellite
 id save_geo_location
 id save_image_matrix
 id save_non_transition_alpha
-id save_record_button
 id save_scale_type
 id screen
 id scroll
@@ -1391,10 +1387,7 @@ id up
 id useLogo
 id userID
 id viewDate
-<<<<<<< HEAD
 id viewTitle
-=======
->>>>>>> chenlin
 id view_comments
 id view_offset_helper
 id view_problems

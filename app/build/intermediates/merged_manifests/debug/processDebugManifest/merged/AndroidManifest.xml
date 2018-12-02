@@ -38,10 +38,8 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-<<<<<<< HEAD
-=======
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="com.example.healthtracker.permission.MAPS_RECEIVE" />
->>>>>>> chenlin
 
     <permission
         android:name="com.example.healthtracker.permission.MAPS_RECEIVE"
@@ -56,12 +54,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
-<<<<<<< HEAD
         android:theme="@style/AppTheme" >
-=======
-        android:theme="@style/Theme.AppCompat" >
->>>>>>> chenlin
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.example.android.fileprovider"
@@ -82,7 +75,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
         <activity
             android:name="com.example.healthtracker.View.CareProviderHomeView"
             android:icon="@drawable/care_provider_symbol"
@@ -98,20 +90,6 @@
         <activity android:name="com.example.healthtracker.View.AddCareProviderCommentView" />
         <activity android:name="com.example.healthtracker.View.PatientHomeView" />
         <activity
-=======
-        <activity android:name="com.example.healthtracker.View.CareProviderHomeView" />
-        <activity android:name="com.example.healthtracker.View.ViewPatients" />
-        <activity android:name="com.example.healthtracker.Activities.SearchActivity" />
-        <activity android:name="com.example.healthtracker.View.SearchResultsView" />
-        <activity android:name="com.example.healthtracker.View.AddPatientView" />
-        <activity android:name="com.example.healthtracker.Activities.CreateAccountActivity" />
-        <activity android:name="com.example.healthtracker.Activities.UserSettingsActivity" />
-        <activity android:name="com.example.healthtracker.View.ViewPatientsProblems" />
-        <activity android:name="com.example.healthtracker.View.CareProviderProblemView" />
-        <activity android:name="com.example.healthtracker.View.AddCareProviderCommentView" />
-        <activity android:name="com.example.healthtracker.View.PatientHomeView" />
-        <activity
->>>>>>> chenlin
             android:name="com.example.healthtracker.View.AddProblemView"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name="com.example.healthtracker.View.ViewMyProblems" />
@@ -137,17 +115,13 @@
             android:label="@string/title_activity_care_provider_record_view" />
         <activity android:name="com.example.healthtracker.Activities.TakePhotoActivity" >
         </activity>
-<<<<<<< HEAD
+        <activity android:name="com.example.healthtracker.Activities.AddGeoLocationActivity" >
+        </activity>
         <activity android:name="com.example.healthtracker.Contollers.PhotoController" />
         <activity android:name="com.example.healthtracker.search_result_comments" />
         <activity android:name="com.example.healthtracker.search_results_problem" />
         <activity android:name="com.example.healthtracker.SearchActivity" />
         <activity android:name="com.example.healthtracker.SearchResultsView" />
-=======
-        <activity android:name="com.example.healthtracker.Activities.AddGeoLocationActivity" >
-        </activity>
-        <activity android:name="com.example.healthtracker.Contollers.PhotoController" />
->>>>>>> chenlin
 
         <provider
             android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"

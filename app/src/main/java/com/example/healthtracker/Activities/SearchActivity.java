@@ -1,26 +1,27 @@
 package com.example.healthtracker.Activities;
 
 import android.content.Intent;
-<<<<<<< HEAD
+
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-=======
+
 import android.location.Address;
 import android.location.Geocoder;
 import android.support.v7.app.AlertDialog;
->>>>>>> chenlin
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-<<<<<<< HEAD
+
 import com.example.healthtracker.R;
 import com.example.healthtracker.View.SearchResultsView;
-=======
 
 import org.elasticsearch.common.geo.GeoPoint;
 
@@ -37,7 +38,7 @@ import com.example.healthtracker.R;
 import com.example.healthtracker.View.SearchResultsView;
 import com.example.healthtracker.View.CareProviderHomeView;
 
->>>>>>> chenlin
+
 
 /**
  * SearchActivity will enable patients and careproviders to search for problems and records.
@@ -45,18 +46,20 @@ import com.example.healthtracker.View.CareProviderHomeView;
 public class SearchActivity extends AppCompatActivity {
 
     private Spinner spinner;
-<<<<<<< HEAD
+
+    private String searchType;
+
     private String profileType;
-=======
+
     private EditText keywords;
     private EditText distance;
->>>>>>> chenlin
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-<<<<<<< HEAD
+
         Intent intent = getIntent();
         profileType = intent.getStringExtra("profileType");
         // Set the colour for the actionbar to differentiate current user type
@@ -68,12 +71,6 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     public void Search(View view) {
-        // Create an intent object containing the bridge to between the two activities
-        Intent intent = new Intent(SearchActivity.this, SearchResultsView.class);
-        intent.putExtra("profileType", profileType);
-        // Launch the browse emotions activity
-        startActivity(intent);
-=======
 
         spinner = findViewById(R.id.search_type_dropdown);
         keywords = findViewById(R.id.search_terms);
@@ -228,7 +225,7 @@ public class SearchActivity extends AppCompatActivity {
         }
 
         return myPoint;
->>>>>>> chenlin
+
     }
 
     // Load the icon for the CareProvider view
