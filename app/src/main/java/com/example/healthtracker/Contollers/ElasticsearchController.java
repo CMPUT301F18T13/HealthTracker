@@ -56,6 +56,7 @@ import io.searchbox.core.Get;
 import io.searchbox.core.Index;
 import io.searchbox.core.Search;
 import io.searchbox.core.SearchResult;
+import io.searchbox.indices.mapping.PutMapping;
 
 import static org.elasticsearch.index.query.QueryStringQueryBuilder.Operator.AND;
 import org.elasticsearch.common.geo.ShapeRelation;

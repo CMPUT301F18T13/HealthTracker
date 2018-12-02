@@ -478,7 +478,7 @@ public class UserDataController<E> {
 
     }
 
-    public static void saveProblemData(Problem problem, Context context){
+    public static void saveProblemData(Problem problem){
 
         ElasticsearchController.AddProblem addProblem = new ElasticsearchController.AddProblem();
         addProblem.execute(problem);

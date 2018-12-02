@@ -19,7 +19,7 @@ public class User implements Serializable {
     private String phone;
     @JestId
     private String userID;
-    private String code;
+    private transient String code;
 
     /**
      * a constructor for the user that takes several parameters that detail the user information
