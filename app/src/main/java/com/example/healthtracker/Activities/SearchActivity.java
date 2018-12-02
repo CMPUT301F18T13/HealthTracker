@@ -56,9 +56,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
                 searchType = "keyword";
-
             }
-
         });
     }
 
