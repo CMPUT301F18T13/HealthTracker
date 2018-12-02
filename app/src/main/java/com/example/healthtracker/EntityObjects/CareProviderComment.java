@@ -16,6 +16,20 @@ import io.searchbox.annotations.JestId;
  * @since 2018-10-28
  *
  */
+import java.io.Serializable;
+
+import io.searchbox.annotations.JestId;
+
+
+/**
+ * CareProviderComment represents the comment records that careproviders can leave on patient problems.
+ * It is useful to have these separated from records added by patients.
+ *
+ * @author caochenlin
+ * @version 1.0
+ * @since 2018-10-28
+ *
+ */
 public class CareProviderComment implements Serializable{
 
     @JestId
@@ -78,7 +92,7 @@ public class CareProviderComment implements Serializable{
         this.message = comment;
     }
 
-    @NonNull
+
     @Override
     public String toString(){
         return "Title: " + getTitle() + "\n\nComment: " + getComment();

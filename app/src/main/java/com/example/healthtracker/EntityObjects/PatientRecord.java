@@ -18,14 +18,30 @@ import io.searchbox.annotations.JestId;
  * @since 2018-11-10
  * @version 1.0
  */
+import android.graphics.Bitmap;
+
+import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Date;
+
+import io.searchbox.annotations.JestId;
+
+/**
+ * The patient record is a record added to a problem by a patient.
+ *
+ * @author Michael Boisvert
+ * @since 2018-11-10
+ * @version 1.0
+ */
 public class PatientRecord implements Serializable {
 
     @JestId
     private String RecordTitle;
     private String comment;
     private Timestamp timestamp;
-    private final ArrayList<Bitmap> geoLocations;
-    private final ArrayList<Photo> photos;
+    private ArrayList<Bitmap> geoLocations;
+    private ArrayList<Photo> photos;
 
     /**
      * Constructor for PatientRecord that sets the record title and comment.
@@ -37,8 +53,8 @@ public class PatientRecord implements Serializable {
         this.RecordTitle = title;
         this.comment = comment;
         this.timestamp = new Timestamp(System.currentTimeMillis());
-        geoLocations = new ArrayList<>();
-        photos = new ArrayList<>();
+        geoLocations = new ArrayList<Bitmap> ();
+        photos = new ArrayList<Photo> ();
     }
 
     /**
@@ -49,8 +65,8 @@ public class PatientRecord implements Serializable {
         RecordTitle = "";
         comment = "";
         timestamp = new Timestamp(System.currentTimeMillis());
-        geoLocations = new ArrayList<>();
-        photos = new ArrayList<>();
+        geoLocations = new ArrayList<Bitmap> ();
+        photos = new ArrayList<Photo> ();
     }
 
     /**
@@ -121,7 +137,7 @@ public class PatientRecord implements Serializable {
      * Get the current description of the record.
      *
      * @return A string that is the current description of the record.
-      */
+     */
     public String getComment(){
         return comment;
     }
@@ -151,12 +167,13 @@ public class PatientRecord implements Serializable {
         return this.timestamp;
     }
 
+    @Override
     /**
      * Display the record as a string. Will be used in listviews.
      */
-    @NonNull
-    @Override
     public String toString(){
         return " Title: " + getTitle() + "\n Comment: " + getComment() + "\n Timestamp: " + timestamp.toString();
     }
+
+
 }

@@ -106,6 +106,12 @@
         <activity android:name=".Activities.TakePhotoActivity">
         </activity>
         <activity android:name=".Contollers.PhotoController" />
+        <activity android:name=".search_results_problem" />
+        <activity android:name=".search_results_record" />
+        <activity android:name=".EntityObjects.search_results_problem" />
+        <activity android:name=".EntityObjects.search_results_record" />
+        <activity android:name=".EntityObjects.search_result_comments" />
+        <activity android:name=".EntityObjects.search_results_comments" />
     </application>
 
 </manifest>
