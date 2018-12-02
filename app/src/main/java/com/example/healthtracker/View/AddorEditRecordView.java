@@ -9,13 +9,16 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.healthtracker.Activities.AddGeoLocationActivity;
 import com.example.healthtracker.Contollers.UserDataController;
+import com.example.healthtracker.EntityObjects.BodyLocation;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.R;
@@ -48,6 +51,10 @@ public class AddorEditRecordView extends AppCompatActivity {
     private Double Lat;
     private Double Lon;
 
+    private Spinner chooseLoc;
+    private String bodyLocText;
+    private BodyLocation bodyLoc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +63,8 @@ public class AddorEditRecordView extends AppCompatActivity {
         descriptionText = findViewById(R.id.description_edit_text);
         timestampText = findViewById(R.id.patient_record_timestamp);
         //geoLocation = findViewById(R.id.add_geolocation);
+        chooseLoc = findViewById(R.id.choose_body_location);
+
         saved_geoLocation = findViewById(R.id.show_geo);
         context = this;
         record = new PatientRecord();
@@ -71,6 +80,29 @@ public class AddorEditRecordView extends AppCompatActivity {
             record.setTimestamp();
             timestampText.setText(record.getTimestamp().toString());
         }
+
+        //Prompt user choose a body location
+        chooseLoc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                if(pos == 0){
+                    Toast.makeText(AddorEditRecordView.this, "Please choose a body location!",Toast.LENGTH_LONG).show();
+                }
+                else {
+                    String[] bodyLocs = getResources().getStringArray(R.array.body_location_options);
+                    Toast.makeText(AddorEditRecordView.this, "Your choice:" + bodyLocs[pos], Toast.LENGTH_LONG).show();
+                    bodyLocText = bodyLocs[pos];
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Toast.makeText(AddorEditRecordView.this, "Please choose a body location!",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        bodyLoc.setLoc(bodyLocText);
+
+
     }
 
     @Override
@@ -185,31 +217,38 @@ public class AddorEditRecordView extends AppCompatActivity {
 
    // @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        List<Address> addressList = null;
-        String CurrentLocation;
-        if(resultCode==RESULT_OK) {
-            Lat = data.getExtras().getDouble("Lat");
-            Lon = data.getExtras().getDouble("Lon");
-            Geocoder geocoder = new Geocoder(this);
-            try {
-                addressList = geocoder.getFromLocation(Lat, Lon, 1);
-            } catch (IOException e) {
-                e.printStackTrace();
+        if(requestCode == 1) {
+            List<Address> addressList = null;
+            String CurrentLocation;
+            if (resultCode == RESULT_OK) {
+                Lat = data.getExtras().getDouble("Lat");
+                Lon = data.getExtras().getDouble("Lon");
+                Geocoder geocoder = new Geocoder(this);
+                try {
+                    addressList = geocoder.getFromLocation(Lat, Lon, 1);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Address address = addressList.get(0);
+                String city = address.getLocality();
+                String state = address.getAdminArea();
+                String country = address.getCountryName();
+                String postalCode = address.getPostalCode();
+                CurrentLocation = city + " " + state + " " + country + " " + postalCode;
+                saved_geoLocation.setText(CurrentLocation);
             }
-            Address address = addressList.get(0);
-            String city = address.getLocality();
-            String state = address.getAdminArea();
-            String country = address.getCountryName();
-            String postalCode = address.getPostalCode();
-            CurrentLocation = city + " " + state + " " + country + " " + postalCode;
-            saved_geoLocation.setText(CurrentLocation);
+            //saved_geoLocation.setText(geo_location);
         }
-        //saved_geoLocation.setText(geo_location);
+        else if(requestCode ==4){
+            //Save Body Location
+
+        }
     }
 
     public void addBodyLocation(View view) {
         Intent intent = new Intent(AddorEditRecordView.this, AddBodyLocationView.class);
-        startActivityForResult(intent,1);
+        startActivityForResult(intent,4);
+
     }
 
 }

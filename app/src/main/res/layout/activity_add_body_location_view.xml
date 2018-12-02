@@ -20,29 +20,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/choose_body_loc"
-        android:layout_width="210dp"
-        android:layout_height="31dp"
-        android:layout_marginBottom="124dp"
-        android:layout_marginStart="24dp"
-        android:entries="@array/body_location_options"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/add_pin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="116dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginBottom="108dp"
+        android:layout_marginEnd="16dp"
         android:onClick="addPin"
         android:text="@string/add_pin"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/choose_body_loc" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/changeB"
@@ -80,5 +68,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bodylocationfront" />
+
+    <EditText
+        android:id="@+id/bodyloc_text"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="@string/bodyloc_input"
+        android:inputType="text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/add_pin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/add_pin"
+        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -87,10 +87,10 @@
     <string name="add_reminder">Add Reminder</string>
     <string name="from_library">From Library</string>
     <string name="add_pin">Add a pin</string>
-    <string name="f_b">front or back</string>
-    <string name="change_pic">Change this body graphic</string>
+    <string name="change_pic">Change body graphic</string>
     <string name="save_body_loc">Save</string>
     <string name="change_side">Change body side</string>
+    <string name="bodyloc_input">Enter a body Loc</string>
 
 
 </resources>
