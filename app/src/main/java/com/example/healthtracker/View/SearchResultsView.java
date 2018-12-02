@@ -87,7 +87,6 @@ public class SearchResultsView extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     // Load the icon for the CareProvider view
