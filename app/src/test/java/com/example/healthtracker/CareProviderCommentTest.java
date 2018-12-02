@@ -7,8 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-import java.util.Date;
-
 import static org.junit.Assert.*;
 
 /**
@@ -16,14 +14,13 @@ import static org.junit.Assert.*;
  */
 public class CareProviderCommentTest {
     private String comment;
-    private Problem parentProblem;
     private CareProviderComment careProviderComment;
     private String title;
     @Before
     public void setUp() {
         title = "Rash";
         comment = "Get a rash after eating some seafood";
-        parentProblem = new Problem("Problem", new Date(), "comment");
+        Problem parentProblem = new Problem();
         careProviderComment = new CareProviderComment(title, comment);
     }
 

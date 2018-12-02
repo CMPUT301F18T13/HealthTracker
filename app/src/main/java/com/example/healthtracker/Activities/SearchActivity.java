@@ -12,7 +12,6 @@ import android.widget.Spinner;
 
 import com.example.healthtracker.R;
 import com.example.healthtracker.View.SearchResultsView;
-import com.example.healthtracker.View.CareProviderHomeView;
 
 /**
  * SearchActivity will enable patients and careproviders to search for problems and records.
@@ -31,6 +30,7 @@ public class SearchActivity extends AppCompatActivity {
         // Set the colour for the actionbar to differentiate current user type
         if(profileType.equals("CareProvider")){
             android.support.v7.app.ActionBar bar = getSupportActionBar();
+            assert bar != null;
             bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
         }
     }

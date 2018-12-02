@@ -1,7 +1,6 @@
 package com.example.healthtracker.View;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -30,9 +29,7 @@ public class AddorEditRecordView extends AppCompatActivity {
 
     private EditText titleText, descriptionText;
     private TextView timestampText;
-    private String title, comment;
     private Context context;
-    private Patient patient;
     String problemTitle;
     File capturedImages;
     private PatientRecord record;
@@ -72,21 +69,15 @@ public class AddorEditRecordView extends AppCompatActivity {
         ab.setMessage("Warning. You are about to go back without saving the record.");
         ab.setCancelable(true);
         // Set a button to return to the Home screen and don't save changes
-        ab.setNeutralButton("Exit And Lose Record", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Intent intent = getIntent();
-                setResult(RESULT_CANCELED, intent);
-                finish();
-            }
+        ab.setNeutralButton("Exit And Lose Record", (dialog, which) -> {
+            Intent intent = getIntent();
+            setResult(RESULT_CANCELED, intent);
+            finish();
         });
 
         // set a button which will close the alert dialog
-        ab.setNegativeButton("Return to Record", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+        ab.setNegativeButton("Return to Record", (dialog, which) -> {
 
-            }
         });
         // show the alert dialog on the screen
         ab.show();
@@ -115,11 +106,11 @@ public class AddorEditRecordView extends AppCompatActivity {
      */
     private void saveRecord(){
         // get Record info
-        title = titleText.getText().toString();
-        comment = descriptionText.getText().toString();
+        String title = titleText.getText().toString();
+        String comment = descriptionText.getText().toString();
 
         // fetch user data
-        patient = UserDataController.loadPatientData(context);
+        Patient patient = UserDataController.loadPatientData(context);
 
         // add record
         record.setComment(comment);
@@ -142,7 +133,7 @@ public class AddorEditRecordView extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public String getExtraString(){
+    private String getExtraString(){
         Intent intent = getIntent();
         return intent.getStringExtra("ProblemTitle");
     }

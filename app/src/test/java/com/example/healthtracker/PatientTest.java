@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class PatientTest {
     private Patient patient;
@@ -21,9 +22,9 @@ public class PatientTest {
     @Before
     public void setUp() {
         this.patient = new Patient("7801234567", "abc@gmail.com", "abc", "CA15A");
-        this.problem = new Problem("New Problem 1", new java.util.Date(( new java.util.Date()).getTime()), "This is a new problem1");
-        this.problem2 = new Problem("New Problem 2", new java.util.Date(( new java.util.Date()).getTime()), "This is a new problem2");
-        problemList = new ArrayList<Problem> ();
+        this.problem = new Problem();
+        this.problem2 = new Problem();
+        problemList = new ArrayList<>();
         problemList.add(problem);
         this.patient.addProblem(this.problem);
     }
@@ -56,7 +57,7 @@ public class PatientTest {
     public void noProblemsExist() {
         patient.deleteProblem(problem);
 
-        assertEquals(true, patient.noProblemsExist());
+        assertTrue(patient.noProblemsExist());
     }
 
     @Test

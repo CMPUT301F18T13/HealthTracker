@@ -2,15 +2,14 @@ package com.example.healthtracker;
 
 import android.graphics.Bitmap;
 
-import com.example.healthtracker.Contollers.ElasticsearchController;
 import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.Problem;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,23 +17,17 @@ import java.util.List;
 import static junit.framework.TestCase.assertNotNull;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 
 
 public class CareProviderTest {
     private String userID;
-    private String userName;
-    private String password;
     private String phone;
     private String email;
     private String userID2;
-    private String userName2;
-    private String password2;
     private String phone2;
     private String email2;
     private String userID3;
     private String userName3;
-    private String password3;
     private String email3;
     private String phone3;
     private String title;
@@ -50,14 +43,14 @@ public class CareProviderTest {
     @Before
     public void setUp() {
 
-        userName = "Nick";
+        String userName = "Nick";
         userID = "001";
-        password = "nickB";
+        String password = "nickB";
         phone = "780-777-2342";
         email = "nick@aol.ca";
-        userName2 = "Sara";
+        String userName2 = "Sara";
         userID2 = "001";
-        password2 = "password123";
+        String password2 = "password123";
         phone2 = "780-777-5555";
         email2 = "sara@hotmail.ca";
         title = "Bruise";
@@ -68,7 +61,7 @@ public class CareProviderTest {
         description2 = "Uncomfortable rash on my arm.";
         userName3 = "Dr. Dave";
         userID3 = "003";
-        password3 = "Dave123";
+        String password3 = "Dave123";
         phone3 = "780-777-777";
         email3 = "Dave@ualberta.ca";
         String code1 = "CKAC9";
@@ -84,7 +77,7 @@ public class CareProviderTest {
 
         c.addPatient(patient2);
 
-        ArrayList<Patient> arrayToTestAgainst = new ArrayList<Patient>();
+        ArrayList<Patient> arrayToTestAgainst = new ArrayList<>();
 
         arrayToTestAgainst.add(patient2);
 
@@ -101,7 +94,7 @@ public class CareProviderTest {
         c.addPatient(patient1);
         c.addPatient(patient3);
 
-        ArrayList<Patient> arrayToTestAgainst = new ArrayList<Patient>();
+        ArrayList<Patient> arrayToTestAgainst = new ArrayList<>();
 
         arrayToTestAgainst.add(patient2);
         arrayToTestAgainst.add(patient1);
@@ -119,7 +112,7 @@ public class CareProviderTest {
         c.addPatient(patient1);
         c.addPatient(patient3);
 
-        ArrayList<Patient> arrayToTestAgainst = new ArrayList<Patient>();
+        ArrayList<Patient> arrayToTestAgainst = new ArrayList<>();
 
         arrayToTestAgainst.add(patient2);
         arrayToTestAgainst.add(patient3);
@@ -152,8 +145,8 @@ public class CareProviderTest {
     @Test
     public void testCaretakerMap(){
         CareProvider c = new CareProvider(phone3, email3, userName3, "CKAC2");
-        Bitmap data = c.createMap(patient1);
-        assertFalse(data == null);
+        Bitmap data = c.createMap();
+        Assert.assertNotNull(data);
     }
 
     @Test
@@ -161,8 +154,8 @@ public class CareProviderTest {
         CareProvider c = new CareProvider(phone3, email3, userID3, "CKAC2");
         Patient patient1 = new Patient(phone, email, userID, "CKAC9");
         Patient patient2 = new Patient(phone2, email2, userID2, "CKAC1");
-        Problem p1 = new Problem(title, date, description);
-        Problem p2 = new Problem(title2, date2, description2);
+        Problem p1 = new Problem();
+        Problem p2 = new Problem();
         patient2.addProblem(p2);
         List<Problem> filteredProblems = UserDataController.searchForProblem("problemList", "Bruise");
         assertNotNull(filteredProblems);

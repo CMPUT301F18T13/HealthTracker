@@ -1,5 +1,7 @@
 package com.example.healthtracker.EntityObjects;
 
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 
 import io.searchbox.annotations.JestId;
@@ -76,6 +78,7 @@ public class CareProviderComment implements Serializable{
         this.message = comment;
     }
 
+    @NonNull
     @Override
     public String toString(){
         return "Title: " + getTitle() + "\n\nComment: " + getComment();

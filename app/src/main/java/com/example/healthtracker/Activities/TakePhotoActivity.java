@@ -28,8 +28,8 @@ public class TakePhotoActivity extends AppCompatActivity {
     Uri imageFileUri;
     private TextView textTargetUri;
     private ImageView imageView;
-    String pathLoaded;
-    String addPath = "";
+    private String pathLoaded;
+    private String addPath = "";
     String problemTitle;
     String path = "/storage/self/primary/Download/";
 
@@ -46,18 +46,8 @@ public class TakePhotoActivity extends AppCompatActivity {
 
         imageView = findViewById(R.id.imageView);
         getExtraString();
-        takePhotoButton.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                takeAPhoto();
-            }
-        });
-        loadPhotoButton.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadAPhoto();
-            }
-        });
+        takePhotoButton.setOnClickListener(v -> takeAPhoto());
+        loadPhotoButton.setOnClickListener(v -> loadAPhoto());
     }
 
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
@@ -139,7 +129,7 @@ public class TakePhotoActivity extends AppCompatActivity {
         }
     }
 
-    public String getExtraString(){
+    private String getExtraString(){
         Intent intent = getIntent();
         return intent.getStringExtra("ProblemTitle");
     }

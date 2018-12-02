@@ -25,7 +25,6 @@ import static junit.framework.TestCase.assertTrue;
 @RunWith(AndroidJUnit4.class)
 public class AddOrEditRecordView {
 
-    private EditText title;
     private EditText description;
 
     @Rule
@@ -70,7 +69,7 @@ public class AddOrEditRecordView {
         solo.enterText(description, "Ankle has become more swollen.");
 
         String text = title.getText().toString();
-        Assert.assertTrue(text.equals("Day after injury."));
+        Assert.assertEquals("Day after injury.", text);
         Assert.assertEquals("Ankle has become more swollen.", description.getText().toString());
 
         solo.clickOnView(solo.getView("save_record_button"));
@@ -105,14 +104,14 @@ public class AddOrEditRecordView {
         solo.waitForActivity(AddorEditRecordView.class, 2000);
         solo.assertCurrentActivity("Should be Add record activity.", AddorEditRecordView.class);
 
-        title = solo.getEditText(0);
+        EditText title = solo.getEditText(0);
         description = solo.getEditText(1);
 
         solo.enterText(title, "Day after injury.");
         solo.enterText(description, "Ankle has become more swollen.");
 
         String text = title.getText().toString();
-        Assert.assertTrue(text.equals("Day after injury."));
+        Assert.assertEquals("Day after injury.", text);
         Assert.assertEquals("Ankle has become more swollen.", description.getText().toString());
 
         solo.clickOnView(solo.getView("save_record_button"));

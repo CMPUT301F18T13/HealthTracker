@@ -46,6 +46,7 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+        assert mapFragment != null;
         mapFragment.getMapAsync(this);
     }
 
@@ -57,19 +58,18 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
         String location = locationSearch.getText().toString();
         List<Address> addressList = null;
 
-        if (location != null || !location.equals("")) {
-            Geocoder geocoder = new Geocoder(this);
-            try {
-                addressList = geocoder.getFromLocationName(location, 1);
+        Geocoder geocoder = new Geocoder(this);
+        try {
+            addressList = geocoder.getFromLocationName(location, 1);
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            Address address = addressList.get(0);
-            LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
-            mMap.addMarker(new MarkerOptions().position(latLng).title("Marker"));
-            mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        assert addressList != null;
+        Address address = addressList.get(0);
+        LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
+        mMap.addMarker(new MarkerOptions().position(latLng).title("Marker"));
+        mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
     }
 
     @Override

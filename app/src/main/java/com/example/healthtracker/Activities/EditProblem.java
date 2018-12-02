@@ -3,7 +3,6 @@ package com.example.healthtracker.Activities;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,10 +10,8 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,15 +23,10 @@ import com.example.healthtracker.EntityObjects.Problem;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.R;
 import com.example.healthtracker.View.AddorEditRecordView;
-import com.example.healthtracker.View.CareProviderProblemView;
 import com.example.healthtracker.View.ViewCareProviderComments;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
 
 /*
  * EditProblem enables a patient to alter the details of one of their problems and select any PatientRecord
@@ -47,20 +39,15 @@ public class EditProblem extends AppCompatActivity {
     private EditText descriptionText;
     private String title;
     private String description;
-    private String date;
     private String initial_entry;
     private Patient user;
-    private String initialTitle;
     private Problem problem;
     private int index;
-    private Context context;
     private ArrayList<PatientRecord> recordList;
     private ArrayAdapter<PatientRecord> adapter;
-    private ListView mListView;
-    private Button datePickButton;
-    Calendar calender;
-    DatePickerDialog datePickerDialog;
-    TextView pickedDate;
+    private Calendar calender;
+    private DatePickerDialog datePickerDialog;
+    private TextView pickedDate;
 
     @SuppressLint("Assert")
     @Override
@@ -69,10 +56,10 @@ public class EditProblem extends AppCompatActivity {
         setContentView(R.layout.activity_edit_problem);
 
         titleText = findViewById(R.id.title_text_editscreen);
-        initialTitle=titleText.getText().toString();
+        String initialTitle = titleText.getText().toString();
         //dateText = findViewById(R.id.date_started_editscreen);
         descriptionText = findViewById(R.id.problem_description_editscreen);
-        context = this;
+        Context context = this;
 
         // get current problem data
         user = UserDataController.loadPatientData(this);
@@ -81,7 +68,7 @@ public class EditProblem extends AppCompatActivity {
         assert index >= 0;
         problem = user.getProblem(index);
         recordList = problem.getRecords();
-        datePickButton = findViewById(R.id.pickDateButton);
+        Button datePickButton = findViewById(R.id.pickDateButton);
         pickedDate = findViewById(R.id.pickedDate);
 
         // display current data
@@ -96,10 +83,10 @@ public class EditProblem extends AppCompatActivity {
         super.onResume();
 
         // Create an instance of an array adapter
-        adapter = new ArrayAdapter<PatientRecord>(this, android.R.layout.simple_list_item_1, recordList);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, recordList);
 
         // Set an adapter for the list view
-        mListView = findViewById(R.id.record_list_editscreen);
+        ListView mListView = findViewById(R.id.record_list_editscreen);
         mListView.setAdapter(adapter);
 
         // Create a context menu to permit users to select and edit a problem
@@ -107,62 +94,48 @@ public class EditProblem extends AppCompatActivity {
         mListView.setOnCreateContextMenuListener(this);
 
         // Add listener to detect button click on items in listview
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            // method to initiate after listener detects click
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // create an alert dialog via the alert dialog builder to help build dialog to specifics
-                AlertDialog.Builder ab = new AlertDialog.Builder(EditProblem.this);
-                // set dialog message to edit entry to appear at grabbed position
-                ab.setMessage("Record Options:" + recordList.get(position).getTitle() + "\n");
-                // set the dialog to be cancelable outside of box
-                ab.setCancelable(true);
+        // method to initiate after listener detects click
+        mListView.setOnItemClickListener((parent, view, position, id) -> {
+            // create an alert dialog via the alert dialog builder to help build dialog to specifics
+            AlertDialog.Builder ab = new AlertDialog.Builder(EditProblem.this);
+            // set dialog message to edit entry to appear at grabbed position
+            ab.setMessage("Record Options:" + recordList.get(position).getTitle() + "\n");
+            // set the dialog to be cancelable outside of box
+            ab.setCancelable(true);
 
 
-                // set a negative button for deleting records
-                ab.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // delete problem
-                        recordList.remove(position);
+            // set a negative button for deleting records
+            ab.setPositiveButton("Delete", (dialog, which) -> {
+                // delete problem
+                recordList.remove(position);
 
-                        // update listview
-                        adapter.notifyDataSetChanged();
+                // update listview
+                adapter.notifyDataSetChanged();
 
-                        // done
-                        dialog.dismiss();
-                    }
-                });
+                // done
+                dialog.dismiss();
+            });
 
-                ab.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
+            ab.setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss());
 
-                // set a neutral button in the dialog which will open up the edit activity to modify the record
-                ab.setNeutralButton("Edit/View", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Create an intent object containing the bridge to between the two activities
-                        Intent intent = new Intent(EditProblem.this, AddorEditRecordView.class);
+            // set a neutral button in the dialog which will open up the edit activity to modify the record
+            ab.setNeutralButton("Edit/View", (dialog, which) -> {
+                // Create an intent object containing the bridge to between the two activities
+                Intent intent = new Intent(EditProblem.this, AddorEditRecordView.class);
 
-                        // store record index
-                        index = position;
-                        PatientRecord selectedRecord = recordList.get(position);
-                        intent.putExtra("Record", UserDataController
-                                .serializeRecord(EditProblem.this, selectedRecord));
-                        intent.putExtra("Index", position);
+                // store record index
+                index = position;
+                PatientRecord selectedRecord = recordList.get(position);
+                intent.putExtra("Record", UserDataController
+                        .serializeRecord(EditProblem.this, selectedRecord));
+                intent.putExtra("Index", position);
 
-                        // Launch the edit record activity
-                        startActivityForResult(intent, 2);
-                    }
-                });
+                // Launch the edit record activity
+                startActivityForResult(intent, 2);
+            });
 
-                // required in order for dialog object to appear on screen
-                ab.show();
-            }
+            // required in order for dialog object to appear on screen
+            ab.show();
         });
     }
 
@@ -170,7 +143,7 @@ public class EditProblem extends AppCompatActivity {
     private void displayData() {
         titleText.setText(problem.getTitle());
         descriptionText.setText(problem.getDescription());
-        date = problem.getDate();
+        String date = problem.getDate();
         pickedDate.setText(problem.getDate());
     }
 
@@ -187,17 +160,9 @@ public class EditProblem extends AppCompatActivity {
             ab.setMessage("Warning. Changes have been made to the problem." + "\n" + "Returning to the home screen will not save changes.");
             ab.setCancelable(true);
             // Set a button to return to the Home screen and don't save changes
-            ab.setNeutralButton("Exit And Lose Changes", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    finish();
-                }
-            });
+            ab.setNeutralButton("Exit And Lose Changes", (dialog, which) -> finish());
             // set a button which will close the alert dialog
-            ab.setNegativeButton("Return to Problem", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                }
+            ab.setNegativeButton("Return to Problem", (dialog, which) -> {
             });
             // show the alert dialog on the screen
             ab.show();
@@ -308,12 +273,9 @@ public class EditProblem extends AppCompatActivity {
         int month = calender.get(Calendar.MONTH);
         int year = calender.get(Calendar.YEAR);
 
-        datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int myear, int mmonth, int mday) {
-                mmonth+=1;
-                pickedDate.setText(myear+"-"+mmonth+"-"+mday);
-            }
+        datePickerDialog = new DatePickerDialog(this, (view1, myear, mmonth, mday) -> {
+            mmonth+=1;
+            pickedDate.setText(myear+"-"+mmonth+"-"+mday);
         }, year,month,day);
         datePickerDialog.show();
     }

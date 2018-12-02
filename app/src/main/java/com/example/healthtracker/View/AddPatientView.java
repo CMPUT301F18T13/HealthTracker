@@ -1,7 +1,6 @@
 package com.example.healthtracker.View;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -31,7 +30,6 @@ import java.util.concurrent.ExecutionException;
  */
 public class AddPatientView extends AppCompatActivity {
 
-    private ArrayList<Patient> patients;
     private Context context;
     private EditText inputId;
     private Patient mPatient;
@@ -41,6 +39,7 @@ public class AddPatientView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_patient);
         android.support.v7.app.ActionBar bar = getSupportActionBar();
+        assert bar != null;
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
 
         // Get context
@@ -63,11 +62,11 @@ public class AddPatientView extends AppCompatActivity {
         getAllMyPatients.execute();
 
         try {
-            patients = getAllMyPatients.get();
+            ArrayList<Patient> patients = getAllMyPatients.get();
             System.out.println(patients);
 
             // Check whether the patient ID exists
-            for(int i=0;i<patients.size();i++){
+            for(int i = 0; i< patients.size(); i++){
                 if(patientId.equals(patients.get(i).getCode())){
                     validID = true;
                     mPatient = patients.get(i);

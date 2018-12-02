@@ -30,8 +30,6 @@ public class CreateAccountViewIntentTest {
     private EditText email;
     private EditText phone;
     private EditText password;
-    private CheckBox checkBox;
-    private Button createAccount;
 
     @Before
     public void setUp() {
@@ -42,8 +40,8 @@ public class CreateAccountViewIntentTest {
         userID = solo.getEditText(0);
         email = solo.getEditText(1);
         phone = solo.getEditText(2);
-        checkBox = (CheckBox) solo.getView("caregiver_checkbox");
-        createAccount = (Button) solo.getView("create_new_account_button");
+        CheckBox checkBox = (CheckBox) solo.getView("caregiver_checkbox");
+        Button createAccount = (Button) solo.getView("create_new_account_button");
     }
 
     @After
@@ -56,7 +54,7 @@ public class CreateAccountViewIntentTest {
         solo.enterText(userID, "jromans1");
         String text = userID.getText().toString();
 
-        Assert.assertTrue(text.equals("jromans1"));
+        Assert.assertEquals("jromans1", text);
     }
 
     @Test
@@ -64,7 +62,7 @@ public class CreateAccountViewIntentTest {
         solo.enterText(phone, "7801234567");
         String text = phone.getText().toString();
 
-        Assert.assertTrue(text.equals("7801234567"));
+        Assert.assertEquals("7801234567", text);
     }
 
     @Test
@@ -72,7 +70,7 @@ public class CreateAccountViewIntentTest {
         solo.enterText(email, "abc@gmail.com");
         String text = email.getText().toString();
 
-        Assert.assertTrue(text.equals("abc@gmail.com"));
+        Assert.assertEquals("abc@gmail.com", text);
     }
 
     @Test
@@ -101,19 +99,19 @@ public class CreateAccountViewIntentTest {
         solo.clearEditText(userID);
         solo.clickOnButton(0);
         result = solo.searchText("All fields must be filled out");
-        Assert.assertEquals(result, true);
+        Assert.assertTrue(result);
         solo.enterText(userID, "jromans1");
 
         solo.clearEditText(phone);
         solo.clickOnButton(0);
         result = solo.searchText("All fields must be filled out");
-        Assert.assertEquals(result, true);
+        Assert.assertTrue(result);
         solo.enterText(phone, "7801234567");
 
         solo.clearEditText(email);
         solo.clickOnButton(0);
         result = solo.searchText("All fields must be filled out");
-        Assert.assertEquals(result, true);
+        Assert.assertTrue(result);
         solo.enterText(email, "abc@gmail.com");
     }
 

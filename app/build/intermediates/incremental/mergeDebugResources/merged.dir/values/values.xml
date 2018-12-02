@@ -2334,7 +2334,6 @@
     <integer name="mtrl_tab_indicator_anim_duration_ms">250</integer>
     <integer name="show_password_duration">200</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
-    <string name="a_record_care_view">A Record</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_up_description">Navigate up</string>
     <string name="abc_action_menu_overflow_description">More options</string>
@@ -2374,6 +2373,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="account_code_hint">Account Code</string>
     <string name="add_body_location_button">Add Body-Location</string>
     <string name="add_geo_location_button">Add Geo-Location</string>
     <string name="add_new_problem">Save</string>
@@ -2382,30 +2382,18 @@
     <string name="add_problem">Add Problem</string>
     <string name="add_record_from_add">Add Record</string>
     <string name="add_record_from_edit">Add Record</string>
-    <string name="add_record_to_problem">Add Record</string>
     <string name="add_reminder">Add Reminder</string>
     <string name="app_name">HealthTracker</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="back">Back</string>
     <string name="back1">Back</string>
-    <string name="back2">Back</string>
-    <string name="back3">Back</string>
-    <string name="back_from_add_problem">Back</string>
-    <string name="back_from_auser_info">Back</string>
-    <string name="back_from_careprovider_comment">Back</string>
-    <string name="back_from_myproblems">Back</string>
-    <string name="back_from_patient_p_view">Back</string>
-    <string name="back_from_problem">Back</string>
-    <string name="back_from_problem_view">Back</string>
-    <string name="back_from_record_view">Back</string>
-    <string name="back_from_settings">Back</string>
     <string name="bodyLocation">Body Location</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
-    <string name="cancel_problem_edit">Cancel</string>
     <string name="care_comment">Comment</string>
     <string name="care_comment_strict">Comment</string>
     <string name="care_comment_title">Title</string>
     <string name="care_title_strict">Title</string>
+    <string name="careimage">Search</string>
     <string name="character_counter_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
@@ -2431,21 +2419,17 @@
     <string name="date_started_care_view">Date Started</string>
     <string name="default_web_client_id" translatable="false">1048280239337-5dm7qbjpshag2re48vo8f8th5ok1j715.apps.googleusercontent.com</string>
     <string name="description_care_view">Description</string>
-    <string name="edit_problem_button">Edit</string>
-    <string name="edit_record_button_text">Edit</string>
-    <string name="email">Email Address</string>
     <string name="email_settings">Email Address</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">android.support.design.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">android.support.design.transformation.FabTransformationSheetBehavior</string>
     <string name="firebase_database_url" translatable="false">https://healthtrackermap.firebaseio.com</string>
+    <string name="from_library">From Library</string>
     <string name="gcm_defaultSenderId" translatable="false">1048280239337</string>
     <string name="google_api_key" translatable="false">AIzaSyBWzQ6xJupJffrMeKRNx-E6I7WWRaVioi0</string>
     <string name="google_app_id" translatable="false">1:1048280239337:android:5cc92b432dd1372c</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBWzQ6xJupJffrMeKRNx-E6I7WWRaVioi0</string>
     <string name="google_storage_bucket" translatable="false">healthtrackermap.appspot.com</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">android.support.design.behavior.HideBottomViewOnScrollBehavior</string>
-    <string name="home">Home</string>
-    <string name="home_from_userlist">Home</string>
     <string name="keywords">Keywords</string>
     <string name="login">Login</string>
     <string name="logout">Logout</string>
@@ -2453,32 +2437,23 @@
     <string name="max_title_length">Enter Title(Max 30 chars)</string>
     <string name="mayo_clinic">Mayo Clinic</string>
     <string name="mtrl_chip_close_icon_content_description">Remove %1$s</string>
-    <string name="name_hint">Name</string>
     <string name="newUserID">User ID(min 8 characters)</string>
-    <string name="password_hint">Password</string>
-    <string name="password_login_hint">Password</string>
     <string name="password_toggle_content_description">Show password</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
-    <string name="patient_id">Patient ID</string>
-    <string name="patient_id_strict">Patient ID</string>
+    <string name="patient_id">Patient ID Code</string>
     <string name="phone_number">Phone Number</string>
     <string name="phone_settings">Phone Number</string>
+    <string name="pick_date2">Pick Date</string>
     <string name="problem_description">Description</string>
     <string name="problem_title">Title</string>
     <string name="project_id" translatable="false">healthtrackermap</string>
     <string name="prompt_email">Email Address</string>
-    <string name="prompt_username">Username</string>
     <string name="provider_add_comment">Add Comment</string>
     <string name="record_strict_care_view">Records</string>
-    <string name="record_view_body_location">Body Location</string>
-    <string name="record_view_comment">Comment</string>
-    <string name="record_view_geo_location">Geo-location</string>
-    <string name="record_view_timestamp">Timestamp</string>
     <string name="record_view_title">Title</string>
-    <string name="records_care_provider">Records</string>
     <string name="save">Save</string>
     <string name="save_care_comment">Save</string>
     <string name="save_edited_problem">Save</string>
@@ -2491,7 +2466,6 @@
     <string name="startdate_edit">yyyy-mm-dd</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="symptom_checker">Symptom Checker</string>
-    <string name="test_login_checkbox">Care Provider</string>
     <string name="timestamp">Timestamp</string>
     <string name="title_activity_care_provider_record_view">CareProviderRecordView</string>
     <string name="title_activity_search_result_comments">search_result_comments</string>
@@ -2500,15 +2474,10 @@
     <string name="title_activity_view_care_provider_comments">ViewCareProviderComments</string>
     <string name="title_activity_view_comments">ViewComments</string>
     <string name="title_care_view">Title</string>
-    <string name="track_users"/>
     <string name="userID">User ID</string>
-    <string name="user_id_settings">User ID</string>
-    <string name="username">Username(email address)</string>
-    <string name="usernameSettings">Username</string>
     <string name="view_map">View Map</string>
     <string name="view_myproblems">View Problems</string>
     <string name="view_patients">View Patients</string>
-    <string name="view_users">View Users</string>
     <string name="webmd">webMD</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
@@ -2519,7 +2488,7 @@
     <item name="android:windowEnterAnimation">@anim/design_bottom_sheet_slide_in</item>
     <item name="android:windowExitAnimation">@anim/design_bottom_sheet_slide_out</item>
   </style>
-    <style name="AppTheme" parent="android:Theme.Material.NoActionBar">
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

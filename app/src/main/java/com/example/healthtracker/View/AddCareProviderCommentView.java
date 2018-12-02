@@ -1,19 +1,15 @@
 package com.example.healthtracker.View;
 
-import android.app.ActionBar;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.healthtracker.EntityObjects.CareProviderComment;
@@ -44,8 +40,6 @@ public class AddCareProviderCommentView extends AppCompatActivity {
 
     private EditText commentText;
     private EditText titleText;
-    private String title;
-    private String comment;
 
 
     @Override
@@ -53,18 +47,20 @@ public class AddCareProviderCommentView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_care_provider_comment);
         android.support.v7.app.ActionBar bar = getSupportActionBar();
+        assert bar != null;
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
 
         careProvider = UserDataController.loadCareProviderData(this);
         Intent intent = getIntent();
         Bundle bd = intent.getExtras();
+        assert bd != null;
         patientNum = bd.getInt("patientNum");
         problemNum = bd.getInt("problemNum");
         myPatient = careProvider.getPatientList().get(patientNum);
         pProblem = myPatient.getProblem(problemNum);
         careProviderComments = pProblem.getcaregiverRecords();
         if (careProviderComments == null){
-            careProviderComments = new ArrayList<CareProviderComment>();
+            careProviderComments = new ArrayList<>();
         }
         newComment = new CareProviderComment();
         titleText = findViewById(R.id.care_comment_title);
@@ -80,18 +76,10 @@ public class AddCareProviderCommentView extends AppCompatActivity {
             ab.setMessage("Warning. Changes have been made to the comment." + "\n" + "Returning to the home screen will not save changes.");
             ab.setCancelable(true);
             // Set a button to return to the Home screen and don't save changes
-            ab.setNeutralButton("Exit And Lose Changes", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    finish();
-                }
-            });
+            ab.setNeutralButton("Exit And Lose Changes", (dialog, which) -> finish());
 
             // set a button which will close the alert dialog
-            ab.setNegativeButton("Return to Comment", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                }
+            ab.setNegativeButton("Return to Comment", (dialog, which) -> {
             });
             // show the alert dialog on the screen
             ab.show();
@@ -104,8 +92,8 @@ public class AddCareProviderCommentView extends AppCompatActivity {
     public void saveCareProviderComment(View view) {
 
         // get data
-        title = titleText.getText().toString();
-        comment = commentText.getText().toString();
+        String title = titleText.getText().toString();
+        String comment = commentText.getText().toString();
 
         // set data
         newComment.setTitle(title);

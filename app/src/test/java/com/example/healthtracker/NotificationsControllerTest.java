@@ -12,8 +12,6 @@ import java.sql.Time;
 import static org.junit.Assert.assertEquals;
 
 public class NotificationsControllerTest {
-    private Boolean isOn;
-    private Problem parentProblem;
     private String repeatType;
     private Time time;
     private Date startDate;
@@ -26,8 +24,8 @@ public class NotificationsControllerTest {
         java.util.Date ud_time = new java.util.Date();
         time = new Time(ud_time.getTime());
         repeatType = "week";
-        isOn = true;
-        parentProblem = new Problem("testproblem",new java.util.Date(), "test");
+        Boolean isOn = true;
+        Problem parentProblem = new Problem();
        // n = new NotificationsController(startDate, time, repeatType);
 
     }

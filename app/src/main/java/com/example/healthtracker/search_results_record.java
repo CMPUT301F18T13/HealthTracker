@@ -4,13 +4,14 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.widget.TextView;
 
-import java.sql.Timestamp;
+import com.example.healthtracker.Contollers.UserDataController;
+import com.example.healthtracker.EntityObjects.PatientRecord;
+
 import java.util.ArrayList;
-import java.util.Date;
 
 public class search_results_record extends Activity {
 
-    Object[] hits;
+    private Object[] hits;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

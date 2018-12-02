@@ -10,13 +10,12 @@ import static org.junit.Assert.assertEquals;
 
 public class BodyPhotoTest {
 
-    private String fileLocation;
     private PatientRecord parentRecord;
     private BodyPhoto bodyPhoto;
 
     @Before
     public void setUp() {
-        fileLocation = "file location";
+        String fileLocation = "file location";
         bodyPhoto = new BodyPhoto(fileLocation);
     }
 

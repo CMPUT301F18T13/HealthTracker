@@ -1,6 +1,7 @@
 package com.example.healthtracker.EntityObjects;
 
 import android.graphics.Bitmap;
+import android.support.annotation.NonNull;
 
 import com.example.healthtracker.EntityObjects.Photo;
 
@@ -36,8 +37,8 @@ public class PatientRecord implements Serializable {
         this.RecordTitle = title;
         this.comment = comment;
         this.timestamp = new Timestamp(System.currentTimeMillis());
-        geoLocations = new ArrayList<Bitmap> ();
-        photos = new ArrayList<Photo> ();
+        geoLocations = new ArrayList<>();
+        photos = new ArrayList<>();
     }
 
     /**
@@ -48,8 +49,8 @@ public class PatientRecord implements Serializable {
         RecordTitle = "";
         comment = "";
         timestamp = new Timestamp(System.currentTimeMillis());
-        geoLocations = new ArrayList<Bitmap> ();
-        photos = new ArrayList<Photo> ();
+        geoLocations = new ArrayList<>();
+        photos = new ArrayList<>();
     }
 
     /**
@@ -153,6 +154,7 @@ public class PatientRecord implements Serializable {
     /**
      * Display the record as a string. Will be used in listviews.
      */
+    @NonNull
     @Override
     public String toString(){
         return " Title: " + getTitle() + "\n Comment: " + getComment() + "\n Timestamp: " + timestamp.toString();

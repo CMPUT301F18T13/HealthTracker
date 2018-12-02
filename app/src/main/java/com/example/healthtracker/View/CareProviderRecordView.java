@@ -30,10 +30,12 @@ public class CareProviderRecordView extends Activity {
         desText = findViewById(R.id.care_record_comment);
         timestampText = findViewById(R.id.care_record_timestamp);
         ActionBar bar = getActionBar();
+        assert bar != null;
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
 
 
         Bundle bd = getIntent().getExtras();
+        assert bd != null;
         int patientNum = bd.getInt("patientNum");
         int problemNum = bd.getInt("problemNum");
         int recordNum = bd.getInt("recordNum");

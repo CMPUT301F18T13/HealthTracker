@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -22,10 +21,7 @@ import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.R;
 import com.example.healthtracker.Activities.SlideShowActivity;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Locale;
 
 /*
  * CareProviderProblemView enables a careprovider to view the current details of a patient's problems
@@ -39,12 +35,9 @@ public class CareProviderProblemView extends AppCompatActivity {
     private TextView desText;
     private ListView recordList;
 
-    private ArrayList<PatientRecord> records;
-
     private ArrayAdapter<PatientRecord> rArrayAdapter;
 
     private Patient myPatient;
-    private Problem pProblem;
     private int patientNum;
     private int problemNum;
     private Bundle bd;
@@ -54,6 +47,7 @@ public class CareProviderProblemView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_care_provider_problem_view);
         android.support.v7.app.ActionBar bar = getSupportActionBar();
+        assert bar != null;
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
 
 
@@ -65,6 +59,7 @@ public class CareProviderProblemView extends AppCompatActivity {
         Intent intent = getIntent();
         bd = intent.getExtras();
 
+        assert bd != null;
         patientNum = bd.getInt("patientNum");
         problemNum = bd.getInt("problemNum");
     }
@@ -75,8 +70,8 @@ public class CareProviderProblemView extends AppCompatActivity {
 
         CareProvider careProvider = UserDataController.loadCareProviderData(this);
         myPatient = careProvider.getPatientList().get(patientNum);
-        pProblem = myPatient.getProblem(problemNum);
-        records = pProblem.getRecords();
+        Problem pProblem = myPatient.getProblem(problemNum);
+        ArrayList<PatientRecord> records = pProblem.getRecords();
 
         String title = pProblem.getTitle();
         String date = pProblem.getDate();
@@ -84,21 +79,18 @@ public class CareProviderProblemView extends AppCompatActivity {
 
         showProblem(title,date,des);
 
-        ArrayAdapter<PatientRecord> adapter = new ArrayAdapter<PatientRecord>
+        ArrayAdapter<PatientRecord> adapter = new ArrayAdapter<>
                 (this, android.R.layout.simple_list_item_1, records);
         recordList.setAdapter(adapter);
 
 
         // Add listener to detect button click on items in listview
-        recordList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            // method to initiate after listener detects click
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(CareProviderProblemView.this, CareProviderRecordView.class);
-                bd.putInt("recordNum", position);
-                intent.putExtras(bd);
-                startActivity(intent);
-            }
+        // method to initiate after listener detects click
+        recordList.setOnItemClickListener((parent, view, position, id) -> {
+            Intent intent = new Intent(CareProviderProblemView.this, CareProviderRecordView.class);
+            bd.putInt("recordNum", position);
+            intent.putExtras(bd);
+            startActivity(intent);
         });
     }
 

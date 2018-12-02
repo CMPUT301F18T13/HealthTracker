@@ -49,6 +49,7 @@ public class UserSettingsActivity extends AppCompatActivity {
         // Set the colour for the actionbar to differentiate current user type
         if(profileType.equals("CareProvider")){
             android.support.v7.app.ActionBar bar = getSupportActionBar();
+            assert bar != null;
             bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
             loadCurrentCareProviderData();
         }
@@ -105,12 +106,12 @@ public class UserSettingsActivity extends AppCompatActivity {
     }
 
     // Validate the user provided email
-    public static boolean validateEmail(CharSequence target) {
+    private static boolean validateEmail(CharSequence target) {
         return Patterns.EMAIL_ADDRESS.matcher(target).matches();
     }
 
     // Validate the user provided phone number
-    public boolean validatePhone(String number) {
+    private boolean validatePhone(String number) {
         return Patterns.PHONE.matcher(number).matches();
     }
 

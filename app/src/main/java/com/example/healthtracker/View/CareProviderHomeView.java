@@ -1,16 +1,13 @@
 package com.example.healthtracker.View;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.R;
@@ -28,6 +25,7 @@ public class CareProviderHomeView extends AppCompatActivity {
         setContentView(R.layout.activity_careprovider_home);
         // Set the colour for the action bar
         android.support.v7.app.ActionBar bar = getSupportActionBar();
+        assert bar != null;
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
     }
 

@@ -3,12 +3,14 @@ package com.example.healthtracker;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.healthtracker.Contollers.UserDataController;
+import com.example.healthtracker.EntityObjects.PatientRecord;
+import com.example.healthtracker.EntityObjects.Problem;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -17,8 +19,8 @@ import java.util.Locale;
 
 public class search_results_problem extends Activity {
 
-    Object[] hits;
-    int index;
+    private Object[] hits;
+    private int index;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,7 @@ public class search_results_problem extends Activity {
         ArrayList<PatientRecord> records = problem.getRecords();
 
         String title = problem.getTitle();
-        Date date = problem.getDate();
+        String date = problem.getDate();
         String des = problem.getDescription();
 
         TextView titleText = findViewById(R.id.titleView);
@@ -44,44 +46,37 @@ public class search_results_problem extends Activity {
         ListView recordList = findViewById(R.id.care_record_list);
 
         titleText.setText(title);
-        dateText.setText(dateToString(date));
+        dateText.setText(date);
         desText.setText(des);
 
-        ArrayAdapter<PatientRecord> adapter = new ArrayAdapter<PatientRecord>
+        ArrayAdapter<PatientRecord> adapter = new ArrayAdapter<>
                 (this, android.R.layout.simple_list_item_1, records);
         recordList.setAdapter(adapter);
 
 
         // Add listener to detect button click on items in listview
-        recordList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            // method to initiate after listener detects click
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(search_results_problem.this, search_results_record.class);
-                intent.putExtra("hits", UserDataController.serializeObjectArray(search_results_problem.this, hits));
-                intent.putExtra("recordIndex", position);
-                startActivity(intent);
-            }
+        // method to initiate after listener detects click
+        recordList.setOnItemClickListener((parent, view, position, id) -> {
+            Intent intent = new Intent(search_results_problem.this, search_results_record.class);
+            intent.putExtra("hits", UserDataController.serializeObjectArray(search_results_problem.this, hits));
+            intent.putExtra("recordIndex", position);
+            startActivity(intent);
         });
 
         Button view_comments = findViewById(R.id.search_problem_to_comments);
 
-        view_comments.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(search_results_problem.this, search_result_comments.class);
-                intent.putExtra("hits", UserDataController.serializeObjectArray(search_results_problem.this, hits));
-                intent.putExtra("problemIndex", index);
-                startActivity(intent);
-            }
+        view_comments.setOnClickListener(v -> {
+            Intent intent = new Intent(search_results_problem.this, search_result_comments.class);
+            intent.putExtra("hits", UserDataController.serializeObjectArray(search_results_problem.this, hits));
+            intent.putExtra("problemIndex", index);
+            startActivity(intent);
         });
 
     }
 
     private String dateToString(Date date){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.CANADA);
-        String dateString = format.format(date);
-        return dateString;
+        return format.format(date);
     }
 
 }

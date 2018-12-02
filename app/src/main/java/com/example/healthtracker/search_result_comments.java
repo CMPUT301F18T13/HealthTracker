@@ -5,12 +5,16 @@ import android.app.Activity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.healthtracker.Contollers.UserDataController;
+import com.example.healthtracker.EntityObjects.CareProviderComment;
+import com.example.healthtracker.EntityObjects.Problem;
+
 import java.util.ArrayList;
 
 public class search_result_comments extends Activity {
 
-    Object[] hits;
-    int index;
+    private Object[] hits;
+    private int index;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +29,7 @@ public class search_result_comments extends Activity {
         ArrayList<CareProviderComment> comments = problems.get(index).getcaregiverRecords();
 
         ArrayAdapter<CareProviderComment> adapter =
-                new ArrayAdapter<CareProviderComment>(this, android.R.layout.simple_list_item_1, comments);
+                new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, comments);
 
         ListView commentList = findViewById(R.id.search_comments);
         commentList.setAdapter(adapter);

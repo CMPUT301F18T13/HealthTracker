@@ -19,21 +19,18 @@ public class PatientRecordTest {
 
     private String title;
     private String comment;
-    private Problem parentProblem;
-    private String timestamp;
     private ArrayList<Bitmap> geoLocations;
     private ArrayList<Photo> photos;
-    private Photo photo;
     private PatientRecord patientRecord;
 
     @Before
     public void setUp() {
         title = "PatientRecord";
         comment = "My finger is hurt.";
-        photo = new Photo("file location");
+        Photo photo = new Photo("file location");
         Date dateStarted = new Date(( new java.util.Date()).getTime());
-        timestamp = "16:00:00";
-        parentProblem = new Problem("SaveMyFinger",dateStarted,"I felt bad on my finger.");
+        String timestamp = "16:00:00";
+        Problem parentProblem = new Problem();
 
         patientRecord = new PatientRecord(title, comment);
     }

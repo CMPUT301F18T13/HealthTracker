@@ -1,6 +1,7 @@
 package com.example.healthtracker.EntityObjects;
 
 import android.graphics.Bitmap;
+import android.support.annotation.NonNull;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -20,14 +21,11 @@ public class CareProvider extends User implements Serializable {
     /**
      * constructor for creating a new CareProvider user and their appropriate profile information designated by parameter values
      *
-     * @param phone  the phone number provided by the CareProvider which is associated with their account
-     * @param email  the email address provided by the CareProvider which is associated with their account
-     * @param userID the userID generated for the CareProvider which is associated with their account
      *
      */
-    public CareProvider(String phone, String email, String userID) {
-        super(phone, email, userID);
-        this.patientList = new ArrayList<Patient>();
+    public CareProvider() {
+        super();
+        this.patientList = new ArrayList<>();
     }
 
     /**
@@ -80,12 +78,12 @@ public class CareProvider extends User implements Serializable {
     /**
      * Create map visual of all the geolocation records for a patient.
      *
-     * @param patient The patient whose geolocation records will appear on the map.
      * @return byte code of map visual.
      */
-    public Bitmap createMap(Patient patient){
+    public Bitmap createMap(){
         return null;
     }
+    @NonNull
     @Override
     public String toString() {
         if(getUserID() == null) {

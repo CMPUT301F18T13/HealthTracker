@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -28,30 +26,25 @@ import java.util.ArrayList;
  */
 public class ViewPatientsProblems extends AppCompatActivity {
 
-    private ArrayList<Problem> pProblems;
-    private ListView pListView;
-    private TextView idText, phoneText, emailText;
-    private ArrayAdapter<Problem> pArrayAdapter;
-    private Patient myPatient;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_patients_problems);
         android.support.v7.app.ActionBar bar = getSupportActionBar();
+        assert bar != null;
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
 
         // get patient#
         Intent intent = getIntent();
         CareProvider careProvider = UserDataController.loadCareProviderData(this);
         int patientNum = intent.getIntExtra("patientNum", -1);
-        myPatient = careProvider.getPatientList().get(patientNum);
+        Patient myPatient = careProvider.getPatientList().get(patientNum);
 
         //Load patient data
-        pProblems = myPatient.getProblemList();
-        idText = findViewById(R.id.selected_patient_ID);
-        phoneText = findViewById(R.id.patient_phone);
-        emailText = findViewById(R.id.patient_email);
+        ArrayList<Problem> pProblems = myPatient.getProblemList();
+        TextView idText = findViewById(R.id.selected_patient_ID);
+        TextView phoneText = findViewById(R.id.patient_phone);
+        TextView emailText = findViewById(R.id.patient_email);
 
         String patientID = myPatient.getUserID();
         idText.setText("Patient: " + patientID);
@@ -59,26 +52,23 @@ public class ViewPatientsProblems extends AppCompatActivity {
         emailText.setText("Patient Email Address: " + myPatient.getEmail());
 
         // Create an instance of an array adapter
-        pArrayAdapter = new ArrayAdapter<Problem>(this, android.R.layout.simple_list_item_1, pProblems);
+        ArrayAdapter<Problem> pArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, pProblems);
 
         // Set an adapter for the list view
-        pListView = findViewById(R.id.pProblem_list_view);
+        ListView pListView = findViewById(R.id.pProblem_list_view);
         pListView.setAdapter(pArrayAdapter);
 
         // Select a PatientProblem to view
-        pListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(ViewPatientsProblems.this,CareProviderProblemView.class);
+        pListView.setOnItemClickListener((parent, view, position, id) -> {
+            Intent intent1 = new Intent(ViewPatientsProblems.this,CareProviderProblemView.class);
 
-                Bundle bd = new Bundle();
-                bd.putInt("patientNum", patientNum);
-                bd.putInt("problemNum", position);
-                intent.putExtras(bd);
+            Bundle bd = new Bundle();
+            bd.putInt("patientNum", patientNum);
+            bd.putInt("problemNum", position);
+            intent1.putExtras(bd);
 
 
-                startActivity(intent);
-            }
+            startActivity(intent1);
         });
     }
 

@@ -7,7 +7,6 @@ import android.widget.EditText;
 
 import com.example.healthtracker.Activities.LoginActivity;
 import com.example.healthtracker.Activities.SearchActivity;
-import com.example.healthtracker.Activities.UserSettingsActivity;
 import com.robotium.solo.Solo;
 
 import org.junit.After;
@@ -16,8 +15,6 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import static junit.framework.TestCase.assertTrue;
 
 @RunWith(AndroidJUnit4.class)
 public class SearchTest {

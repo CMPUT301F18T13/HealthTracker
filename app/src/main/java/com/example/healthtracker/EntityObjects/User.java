@@ -1,5 +1,7 @@
 package com.example.healthtracker.EntityObjects;
 
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 
 import io.searchbox.annotations.JestId;
@@ -39,6 +41,7 @@ public class User implements Serializable {
      *
      * @return a concatenated string of the user's information
      */
+    @NonNull
     @Override
     public String toString() {
         return "userId: "+userID+"|email: "+email+"|phone: "+phone+"|code: "+code;
@@ -46,11 +49,9 @@ public class User implements Serializable {
 
     /**
      * user constructor that requires no parameters
-     * @param phone
-     * @param email
-     * @param userID
+     *
      */
-    public User(String phone, String email, String userID){
+    public User(){
     }
 
     /**

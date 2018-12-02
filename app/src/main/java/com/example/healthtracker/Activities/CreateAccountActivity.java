@@ -3,28 +3,23 @@ package com.example.healthtracker.Activities;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.telephony.PhoneNumberUtils;
-import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.healthtracker.Contollers.ElasticsearchController;
+import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.User;
 import com.example.healthtracker.R;
 import com.searchly.jestdroid.JestDroidClient;
 
-import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
-
-import io.searchbox.core.SearchResult;
 
 /* Idea and implemented code for testing interent connection from *binnyb(user:416412),   
 https://stackoverflow.com/questions/5474089/how-to-check-currently-internet-connection-is-available-or-not-in-android, 
@@ -77,31 +72,28 @@ public class CreateAccountActivity extends AppCompatActivity {
      * checked to see if it was left empty or not by calling the checkInputs method.
      */
     private void init(){
-        Register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                email = Email.getText().toString().toLowerCase();
-                phone = Phone.getText().toString();
-                userID = UserID.getText().toString();
-                if (checkInputs(email, userID, phone)) {
-                    if(validateEmail(email)) {
-                        if (validatePhone(phone)) {
-                            try {
-                                if (!userExists(userID)) {
-                                    addNewUser();
-                                } else {
-                                    Toast.makeText(context, "User ID is taken", Toast.LENGTH_SHORT).show();
-                                }
-                            } catch (ExecutionException | InterruptedException e) {
-                                e.printStackTrace();
+        Register.setOnClickListener(view -> {
+            email = Email.getText().toString().toLowerCase();
+            phone = Phone.getText().toString();
+            userID = UserID.getText().toString();
+            if (checkInputs(email, userID, phone)) {
+                if(validateEmail(email)) {
+                    if (validatePhone(phone)) {
+                        try {
+                            if (!userExists(userID)) {
+                                addNewUser();
+                            } else {
+                                Toast.makeText(context, "User ID is taken", Toast.LENGTH_SHORT).show();
                             }
-                        } else {
-                            Toast.makeText(context, "Invalid Phone Number", Toast.LENGTH_SHORT).show();
+                        } catch (ExecutionException | InterruptedException e) {
+                            e.printStackTrace();
                         }
+                    } else {
+                        Toast.makeText(context, "Invalid Phone Number", Toast.LENGTH_SHORT).show();
                     }
-                    else{
-                        Toast.makeText(context, "Invalid Email", Toast.LENGTH_SHORT).show();
-                    }
+                }
+                else{
+                    Toast.makeText(context, "Invalid Email", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -154,7 +146,7 @@ public class CreateAccountActivity extends AppCompatActivity {
             // Save new user with elasticsearch
             if (checkBox.isChecked()) {
                 // save new care provider
-                CareProvider newCareProvider = new CareProvider(phone, email, userID);
+                CareProvider newCareProvider = new CareProvider();
                 ElasticsearchController.AddCareProvider addCareProviderTask = new ElasticsearchController.AddCareProvider();
                 addCareProviderTask.execute(newCareProvider);
             } else {
@@ -209,12 +201,12 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
     // Validate's the entered email address
-    public static boolean validateEmail(CharSequence target) {
+    private static boolean validateEmail(CharSequence target) {
         return Patterns.EMAIL_ADDRESS.matcher(target).matches();
     }
 
     // Validate's the entered phone number
-    public boolean validatePhone(String number) {
+    private boolean validatePhone(String number) {
         return Patterns.PHONE.matcher(number).matches();
     }
 }

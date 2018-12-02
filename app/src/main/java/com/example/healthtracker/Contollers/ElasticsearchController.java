@@ -7,7 +7,8 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.google.gson.JsonObject;
+import com.example.healthtracker.EntityObjects.CareProviderComment;
+import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.Problem;
@@ -15,21 +16,12 @@ import com.searchly.jestdroid.DroidClientConfig;
 import com.searchly.jestdroid.JestClientFactory;
 import com.searchly.jestdroid.JestDroidClient;
 
-import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import io.searchbox.client.JestResult;
 import io.searchbox.core.DocumentResult;
@@ -37,7 +29,6 @@ import io.searchbox.core.Get;
 import io.searchbox.core.Index;
 import io.searchbox.core.Search;
 import io.searchbox.core.SearchResult;
-import io.searchbox.indices.mapping.PutMapping;
 
 import static org.elasticsearch.index.query.QueryStringQueryBuilder.Operator.AND;
 
@@ -304,7 +295,7 @@ public class ElasticsearchController {
     public static class getAllPatients extends AsyncTask<Void,Void,ArrayList<Patient>> {
         @Override
         protected ArrayList<Patient> doInBackground(Void...params){
-            ArrayList<Patient> patients = new ArrayList<Patient>() ;
+            ArrayList<Patient> patients = new ArrayList<>() ;
             List<Patient> patients_list;
             String query = "{\n"+
                     "           \"size\": 10000,"+
@@ -368,8 +359,7 @@ public class ElasticsearchController {
                 return null;
             }
 
-            Patient patient = result.getSourceAsObject(Patient.class, false);
-            return patient;
+            return result.getSourceAsObject(Patient.class, false);
         }
     }
 

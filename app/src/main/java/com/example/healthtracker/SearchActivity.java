@@ -8,7 +8,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import java.util.List;
+import com.example.healthtracker.Contollers.UserDataController;
 
 /**
  * SearchActivity will enable patients and careproviders to search for problems and records.
@@ -16,7 +16,6 @@ import java.util.List;
 public class SearchActivity extends AppCompatActivity {
 
     private String searchType;
-    private Spinner spinner;
     private EditText keywords;
 
     @Override
@@ -24,7 +23,7 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        spinner = findViewById(R.id.search_type_dropdown);
+        Spinner spinner = findViewById(R.id.search_type_dropdown);
         keywords = findViewById(R.id.search_terms);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -49,12 +48,16 @@ public class SearchActivity extends AppCompatActivity {
 
     public void Search(View view) {
         Object[] hits = null;
-        if(searchType.equals("keyword")){
-            hits = UserDataController.searchForKeywords(keywords.getText().toString());
-        } else if(searchType.equals("geoLocation")){
+        switch (searchType) {
+            case "keyword":
+                hits = UserDataController.searchForKeywords(keywords.getText().toString());
+                break;
+            case "geoLocation":
 
-        } else if(searchType.equals("bodyLocation")){
+                break;
+            case "bodyLocation":
 
+                break;
         }
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(SearchActivity.this, SearchResultsView.class);

@@ -7,16 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.View;
 
-import com.example.healthtracker.Activities.SearchActivity;
 import com.example.healthtracker.R;
 
 /**
  * SearchResultsView enables patients and careproviders to view the results of their search queries.
  */
 public class SearchResultsView extends AppCompatActivity {
-    String profileType;
+    private String profileType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +25,7 @@ public class SearchResultsView extends AppCompatActivity {
         // Set the colour for the actionbar to differentiate current user type
         if(profileType.equals("CareProvider")){
             android.support.v7.app.ActionBar bar = getSupportActionBar();
+            assert bar != null;
             bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
         }
     }

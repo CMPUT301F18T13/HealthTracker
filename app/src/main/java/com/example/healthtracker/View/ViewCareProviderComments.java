@@ -16,27 +16,25 @@ import java.util.ArrayList;
 
 public class ViewCareProviderComments extends Activity {
 
-    private Patient patient;
-    private CareProvider careProvider;
-    private ArrayList<CareProviderComment> comments;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_care_provider_comments);
-        comments = new ArrayList<CareProviderComment>();
+        ArrayList<CareProviderComment> comments;
 
         Intent intent = getIntent();
         Bundle bd = intent.getExtras();
+        assert bd != null;
         String profileType = bd.getString("profileType");
         int problemNum = bd.getInt("problemNum");
 
+        assert profileType != null;
         if(profileType.equals("Patient")){
-            patient = UserDataController.loadPatientData(this);
+            Patient patient = UserDataController.loadPatientData(this);
             comments = patient.getProblem(problemNum).getcaregiverRecords();
         } else{
-            careProvider = UserDataController.loadCareProviderData(this);
+            CareProvider careProvider = UserDataController.loadCareProviderData(this);
             int patientNum = bd.getInt("patientNum");
             comments = careProvider.
                     getPatient(patientNum).
@@ -44,7 +42,7 @@ public class ViewCareProviderComments extends Activity {
                     getcaregiverRecords();
         }
 
-        ArrayAdapter adapter = new ArrayAdapter<CareProviderComment>
+        ArrayAdapter adapter = new ArrayAdapter<>
                 (this, android.R.layout.simple_list_item_1, comments);
 
         ListView list = findViewById(R.id.comment_list);

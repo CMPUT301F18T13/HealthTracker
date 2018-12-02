@@ -8,8 +8,6 @@ import com.example.healthtracker.EntityObjects.Problem;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Date;
-
 import static org.junit.Assert.assertEquals;
 
 public class PhotoTest {
@@ -21,7 +19,7 @@ public class PhotoTest {
     @Before
     public void setUp() {
         fileLocation = "file location";
-        Problem p1 = new Problem("Rash", new Date(),"Uncomfortable rash on arm.");
+        Problem p1 = new Problem();
         photo = new Photo(fileLocation);
     }
     @Test

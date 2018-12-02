@@ -10,11 +10,9 @@ import org.junit.Test;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Created by caochenlin on 2018/10/28.
@@ -22,14 +20,13 @@ import static org.junit.Assert.assertTrue;
 
 public class ProblemTest {
     private Problem problem;
-    private String title;
     private String dateStarted;
     private String description;
 
     @Before
     public void setUp() {
         // Create an instance of the Problem class
-        title = "Rash";
+        String title = "Rash";
         dateStarted = "2018-07-06";
         description = "A lot of red spots on my skin.";
         problem = new Problem(title,dateStarted,description);
@@ -58,7 +55,7 @@ public class ProblemTest {
     }
 
     @Test
-    public void setDate() throws Exception {
+    public void setDate() {
         String date = "2016-12-01";
         problem.setDate(date);
         assertEquals(problem.getDate(),date);
@@ -71,19 +68,18 @@ public class ProblemTest {
     }
 
     @Test
-    public void update() throws ParseException {
+    public void update() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         String dateString = "2018-08-07";
-        Date date = sdf.parse(dateString);
         problem.update("Big Rash",dateString, "Red spots are gradually diminishing");
         assertEquals(problem.getTitle(),"Big Rash");
-        assertEquals(problem.getDate(),date);
+        assertEquals(problem.getDate(),dateString);
         assertEquals(problem.getDescription(),"Red spots are gradually diminishing");
     }
 
     @Test
     public void setRecords() {
-        ArrayList<PatientRecord> patientRecords = new ArrayList<PatientRecord> ();
+        ArrayList<PatientRecord> patientRecords = new ArrayList<>();
         patientRecords.add(new PatientRecord("Record", "I'm a record"));
         problem.setRecords(patientRecords);
 
@@ -91,25 +87,25 @@ public class ProblemTest {
     }
 
     public void getRecords() {
-        ArrayList<PatientRecord> patientRecords = new ArrayList<PatientRecord> ();
+        ArrayList<PatientRecord> patientRecords = new ArrayList<>();
 
         assertArrayEquals(patientRecords.toArray(), problem.getRecords().toArray());
     }
 
     @Test
     public void countRecords() {
-        assertTrue(problem.countRecords() == 0);
+        assertEquals(0, (int) problem.countRecords());
 
-        ArrayList<PatientRecord> patientRecords = new ArrayList<PatientRecord> ();
+        ArrayList<PatientRecord> patientRecords = new ArrayList<>();
         patientRecords.add(new PatientRecord("Record", "I'm a record"));
         problem.setRecords(patientRecords);
 
-        assertTrue(problem.countRecords() == 1);
+        assertEquals(1, (int) problem.countRecords());
     }
 
     @Test
     public void setCaregiverRecords() {
-        ArrayList<CareProviderComment> careGiverRecords = new ArrayList<CareProviderComment> ();
+        ArrayList<CareProviderComment> careGiverRecords = new ArrayList<>();
         careGiverRecords.add(new CareProviderComment("Record", "I'm a record"));
         problem.setCaregiverRecords(careGiverRecords);
 
@@ -118,7 +114,7 @@ public class ProblemTest {
 
     @Test
     public void getCaregiverRecords() {
-        ArrayList<CareProviderComment> careGiverRecords = new ArrayList<CareProviderComment> ();
+        ArrayList<CareProviderComment> careGiverRecords = new ArrayList<>();
 
         assertArrayEquals(careGiverRecords.toArray(), problem.getcaregiverRecords().toArray());
     }
@@ -175,7 +171,7 @@ public class ProblemTest {
 
     @Test
     public void notificationStatus() {
-        
+
     }
 
 

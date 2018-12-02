@@ -5,11 +5,8 @@ import android.support.annotation.NonNull;
 import com.example.healthtracker.Contollers.NotificationsController;
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import io.searchbox.annotations.JestId;
 
@@ -32,16 +29,14 @@ public class Problem implements Serializable {
     // if we use the android built in notifications then they cant be here or elastic search will break
     private List<NotificationsController> notifications;
     private Boolean notificationsOn = FALSE;
-    private ArrayList<PatientRecord> patientRecords = new ArrayList<PatientRecord>();
+    private ArrayList<PatientRecord> patientRecords = new ArrayList<>();
     private ArrayList<CareProviderComment> caregiverRecords = new ArrayList<>();
 
     /**
      * An empty constructor for Problem that requires no parameters.
-     * @param problem
-     * @param date
-     * @param comment
+     *
      */
-    public Problem(String problem, Date date, String comment){
+    public Problem(){
     }
 
     /**

@@ -15,7 +15,6 @@ import java.sql.Time;
  */
 public class NotificationsController {
     private Context context;
-    private final String ID;
     private Boolean isOn;
     private String repeatType;
     private Time time;
@@ -32,7 +31,6 @@ public class NotificationsController {
         this.startDate = startDate;
         this.time = time;
         this.repeatType = repeatType;
-        this.ID = ID;
     }
 
     /**

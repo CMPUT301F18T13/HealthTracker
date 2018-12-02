@@ -15,8 +15,7 @@ import com.robotium.solo.Solo;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
-
-import static junit.framework.TestCase.assertTrue;
+import org.junit.Test;
 
 
 class AddCareProviderCommentViewTest {
@@ -38,6 +37,7 @@ class AddCareProviderCommentViewTest {
         solo.finishOpenedActivities();
     }
 
+    @Test
     public void testAddCareProviderCommentView(){
         // First step: Log in
         EditText userID = (EditText) solo.getView("userID");

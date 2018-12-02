@@ -3,25 +3,20 @@ package com.example.healthtracker.Activities;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.healthtracker.Contollers.ElasticsearchController;
 import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.Patient;
-import com.example.healthtracker.View.AddPatientView;
 import com.example.healthtracker.View.PatientHomeView;
 import com.example.healthtracker.R;
 import com.example.healthtracker.View.CareProviderHomeView;
@@ -180,7 +175,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     // Handles logging in the patient when a the user provides a UserId rather than an account code
-    public void patientLogin(String userID) throws ExecutionException, InterruptedException {
+    private void patientLogin(String userID) throws ExecutionException, InterruptedException {
         Patient patient;
         ElasticsearchController.GetPatient getPatient = new ElasticsearchController.GetPatient();
         getPatient.execute(userID);
