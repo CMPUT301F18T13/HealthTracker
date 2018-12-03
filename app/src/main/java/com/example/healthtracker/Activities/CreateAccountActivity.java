@@ -26,6 +26,13 @@ https://stackoverflow.com/questions/5474089/how-to-check-currently-internet-conn
 2011/03/29, viewed 2018/11/16*
 */
 
+/* Idea and code implementation knowledge for random string generation for account code from
+url: https://stackoverflow.com/questions/20536566/creating-a-random-string-with-a-z-and-0-9-in-java 
+Author: SURESH ATTA(user:1927832) 
+posted: 2013/12/12 
+viewed: 2018/11/23
+*/
+
 /*
  * CreateAccountActivity enables a user to create a new account for the HealthTracker app by filling in the required account details.
  * The user's data will be stored in an ElasticSearch database and partially stored locally.
