@@ -5,6 +5,7 @@ import android.support.test.runner.AndroidJUnit4;
 import android.support.test.rule.ActivityTestRule;
 import android.widget.EditText;
 
+import com.example.healthtracker.Activities.EditProblem;
 import com.example.healthtracker.Activities.LoginActivity;
 import com.example.healthtracker.View.PatientHomeView;
 import com.robotium.solo.Solo;
@@ -53,6 +54,7 @@ public class AddProblemViewTest {
         solo.enterText(problemDescription, "Red spots on my left ear");
 
         solo.clickOnView(solo.getView(R.id.add_problem_button));
-        assertTrue("Success message is not displayed", solo.searchText("Success"));
+        solo.waitForActivity(PatientHomeView.class, 6000);
+        solo.assertCurrentActivity("Should be edit problem activity.", PatientHomeView.class);
     }
 }
