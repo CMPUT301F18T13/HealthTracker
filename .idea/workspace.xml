@@ -16,16 +16,22 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/healthtracker/Activities/SearchActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/healthtracker/Activities/SearchActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/healthtracker/View/CareProviderHomeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/healthtracker/View/CareProviderHomeView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/healthtracker/View/PatientHomeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/example/healthtracker/View/PatientHomeView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/Activities/SearchActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/Activities/SearchActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/Contollers/UserDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/Contollers/UserDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/View/CareProviderHomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/View/CareProviderHomeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/View/PatientHomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/View/PatientHomeView.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,78 +53,30 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="SearchActivity.java" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SearchActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/Activities/SearchActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="216" column="64" selection-start-line="216" selection-start-column="64" selection-end-line="216" selection-end-column="64" />
-              <folding>
-                <element signature="e#3235#3250#0" expanded="true" />
-                <element signature="e#4795#4810#0" expanded="true" />
-                <element signature="e#6632#6647#0" expanded="true" />
-                <element signature="e#6943#6958#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="167" column="73" selection-start-line="167" selection-start-column="73" selection-end-line="167" selection-end-column="73" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search_results_record.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/search_results_record.java">
+      <file leaf-file-name="CareProviderHomeView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/View/CareProviderHomeView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+            <state relative-caret-position="99">
+              <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BodyLocation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/EntityObjects/BodyLocation.java">
+      <file leaf-file-name="PatientHomeView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/View/PatientHomeView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#762#763#0" expanded="true" />
-                <element signature="e#802#803#0" expanded="true" />
-                <element signature="e#836#837#0" expanded="true" />
-                <element signature="e#870#871#0" expanded="true" />
-                <element signature="e#903#904#0" expanded="true" />
-                <element signature="e#937#938#0" expanded="true" />
-                <element signature="e#977#978#0" expanded="true" />
-                <element signature="e#1019#1020#0" expanded="true" />
-                <element signature="e#1048#1049#0" expanded="true" />
-                <element signature="e#1088#1089#0" expanded="true" />
-                <element signature="e#1198#1199#0" expanded="true" />
-                <element signature="e#1225#1226#0" expanded="true" />
-                <element signature="e#1253#1254#0" expanded="true" />
-                <element signature="e#1280#1281#0" expanded="true" />
-                <element signature="e#1351#1352#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PatientRecord.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/EntityObjects/PatientRecord.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-832">
-              <caret line="84" column="7" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
-              <folding>
-                <element signature="e#2027#2028#0" expanded="true" />
-                <element signature="e#2073#2074#0" expanded="true" />
-                <element signature="e#2184#2185#0" expanded="true" />
-                <element signature="e#2219#2220#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDataController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/Contollers/UserDataController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="488" column="86" selection-start-line="488" selection-start-column="86" selection-end-line="488" selection-end-column="86" />
+            <state relative-caret-position="448">
+              <caret line="64" column="45" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -2418,13 +2376,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/EntityObjects/PatientRecord.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/EntityObjects/BodyLocation.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/Contollers/ElasticsearchController.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/Activities/SearchActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/Contollers/UserDataController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/View/PatientHomeView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/View/CareProviderHomeView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/Activities/SearchActivity.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="44" />
+  <component name="ProjectFrameBounds">
     <option name="y" value="24" />
     <option name="width" value="1280" />
     <option name="height" value="740" />
@@ -2485,8 +2444,8 @@
         </subPane>
       </pane>
       <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2650,45 +2609,72 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="24" width="1280" height="740" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="24" width="1280" height="740" extended-state="6" />
     <layout>
+      <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Android Profiler" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info id="Image Layers" />
-      <window_info id="Build Variants" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="right" id="Preview" weight="0.32956383" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.41213062" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Logcat" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Build Variants" order="2" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41213062" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Logcat" order="7" />
       <window_info id="Captures" order="2" weight="0.25" />
-      <window_info id="Capture Tool" />
-      <window_info id="Designer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959612" />
-      <window_info anchor="bottom" id="Build" weight="0.32970452" />
-      <window_info anchor="right" id="Gradle" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24959612" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32970452" />
+      <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Preview" order="3" weight="0.32956383" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/Activities/SearchActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2835">
+          <caret line="216" column="35" selection-start-line="216" selection-start-column="35" selection-end-line="216" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/search_results_record.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/EntityObjects/PatientRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="84" column="6" lean-forward="true" selection-start-line="84" selection-start-column="6" selection-end-line="84" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/Contollers/UserDataController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6855">
+          <caret line="488" column="1" lean-forward="true" selection-start-line="488" selection-start-column="1" selection-end-line="488" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/View/MapView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
@@ -2704,75 +2690,60 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_search_results_record_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/search_results_record.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-        </state>
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/Activities/SearchActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="216" column="64" selection-start-line="216" selection-start-column="64" selection-end-line="216" selection-end-column="64" />
-          <folding>
-            <element signature="e#3235#3250#0" expanded="true" />
-            <element signature="e#4795#4810#0" expanded="true" />
-            <element signature="e#6632#6647#0" expanded="true" />
-            <element signature="e#6943#6958#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/EntityObjects/BodyLocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#762#763#0" expanded="true" />
-            <element signature="e#802#803#0" expanded="true" />
-            <element signature="e#836#837#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
-            <element signature="e#937#938#0" expanded="true" />
-            <element signature="e#977#978#0" expanded="true" />
-            <element signature="e#1019#1020#0" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
-            <element signature="e#1088#1089#0" expanded="true" />
-            <element signature="e#1198#1199#0" expanded="true" />
-            <element signature="e#1225#1226#0" expanded="true" />
-            <element signature="e#1253#1254#0" expanded="true" />
-            <element signature="e#1280#1281#0" expanded="true" />
-            <element signature="e#1351#1352#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/EntityObjects/BodyLocation.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/EntityObjects/PatientRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-832">
-          <caret line="84" column="7" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
-          <folding>
-            <element signature="e#2027#2028#0" expanded="true" />
-            <element signature="e#2073#2074#0" expanded="true" />
-            <element signature="e#2184#2185#0" expanded="true" />
-            <element signature="e#2219#2220#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1065">
+          <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/Contollers/UserDataController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="488" column="86" selection-start-line="488" selection-start-column="86" selection-end-line="488" selection-end-column="86" />
+        <state relative-caret-position="488">
+          <caret line="513" column="1" selection-start-line="513" selection-start-column="1" selection-end-line="513" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/search_results_record.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/View/CareProviderProblemView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/View/CareProviderHomeView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/View/PatientHomeView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="64" column="45" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/healthtracker/Activities/SearchActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="167" column="73" selection-start-line="167" selection-start-column="73" selection-end-line="167" selection-end-column="73" />
         </state>
       </provider>
     </entry>
