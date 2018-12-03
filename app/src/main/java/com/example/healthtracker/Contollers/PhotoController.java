@@ -22,6 +22,27 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
+/*  Idea and code implementation knowledge for Saving/reading photo bitmaps from 
+url: https://stackoverflow.com/questions/17674634/saving-and-reading-bitmaps-images-from-internal-memory-in-android 
+Author: Brijesh Thakur(user:898459) 
+posted: 2013/07/16 
+viewed: 2018/11/24
+*/
+
+/* Idea and code implementation knowledge for converting BitMap to string from
+url: https://stackoverflow.com/questions/8710515/reading-an-image-file-into-bitmap-from-sdcard-why-am-i-getting-a-nullpointerexc 
+Author: Priyank Desai(user:2445777) 
+posted: 2013/07/14 
+viewed: 2018/11/24
+*/
+
+/* Idea and code implementation knowledge for converting BitMap from string from
+url: https://stackoverflow.com/questions/4837110/how-to-convert-a-base64-string-into-a-bitmap-image-to-show-it-in-a-imageview 
+Author: user432209(user:432209) 
+posted: 2011/01/29 
+viewed: 2018/11/24
+*/
+
 
 /**
  * PhotoController handles saving images taken or selected by the Patient to both local and remote storage.

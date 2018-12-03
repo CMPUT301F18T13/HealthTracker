@@ -24,6 +24,21 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.util.Objects;
 
+/* Idea and code implementation knowledge for rotating a bit bitmap from
+url: https://stackoverflow.com/questions/9015372/how-to-rotate-a-bitmap-90-degrees, Author: Aryan(user:2032325), 
+posted: 2013/02/01, viewed: 2018/11/24
+*/
+
+/* Idea and code implementation knowledge for takeing a Photo  from url: https://github.com/vingk/cameratest2, 
+Author: Vinaykumar Kulkarni, posted: 2018/11/21, viewed: 2018/11/24
+*/
+
+/* Idea and code implementation knowledge for loading Photo From Gallery from
+ url: https://stackoverflow.com/questions/11144783/how-to-access-an-image-from-the-phones-photo-gallery,
+ Author: K_Anas(user:1327899), posted: 2012/06/21,viewed: 2018/11/24.
+*/
+
+// Takes a photo using the built in camera or allows the patient to load a photo from their phones gallery
 public class TakePhotoActivity extends AppCompatActivity {
 
     Uri imageFileUri;

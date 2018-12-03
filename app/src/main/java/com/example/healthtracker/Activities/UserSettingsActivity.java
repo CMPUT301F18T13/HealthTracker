@@ -18,6 +18,13 @@ import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.R;
 
+/* Idea and code implementation knowledge for User info validation from
+url: https://developer.android.com/reference/android/util/Patterns 
+Author: Android Developers 
+posted: 2018/06/16 
+viewed: 2018/11/29
+*/
+
 
 /*
  * UserSettingsActivity enables users to modify their account information. The changes to their local account are modified in the
