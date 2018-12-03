@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -60,7 +61,7 @@ public class EditProblem extends AppCompatActivity {
         setContentView(R.layout.activity_edit_problem);
 
         titleText = findViewById(R.id.title_text_editscreen);
-        initialTitle=titleText.getText().toString();
+        //initialTitle=titleText.getText().toString();
         dateText = findViewById(R.id.date_started_editscreen);
         descriptionText = findViewById(R.id.problem_description_editscreen);
         context = this;
@@ -75,6 +76,8 @@ public class EditProblem extends AppCompatActivity {
 
         // display current data
         displayData();
+
+        initialTitle = problem.getTitle();
 
         // initial entry to check if changes have been made
         initial_entry = getEntry();
@@ -228,6 +231,12 @@ public class EditProblem extends AppCompatActivity {
         } else {
             // get changes
             String titleString = titleText.getText().toString();
+
+            // If title has been changed, photos must be too...
+            if (!titleString.equals(initialTitle)) {
+                ContextWrapper cw = new ContextWrapper(getApplicationContext());
+                PhotoController.renamePhotosByProblem(cw, initialTitle, titleString);
+            }
             String descriptionString = descriptionText.getText().toString();
             Date date = null;
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.CANADA);

@@ -118,6 +118,41 @@ public class PhotoController extends AppCompatActivity {
         return bitmapArray;
     }
 
+    public static ArrayList<String> getFilesNamesOfProblemPhotos(ContextWrapper cw, String problemName) {
+        ArrayList<String> files = new ArrayList<String> ();
+
+        File dir = new File(cw.getCacheDir().toString() + File.separator + "images");
+        File[] directoryListing = dir.listFiles();
+
+        if (directoryListing != null) {
+            for (File child : directoryListing) {
+                if (child.toString().split("_")[0].equals(dir.toString() + File.separator + problemName)) {
+                    System.out.println("Found file");
+                    files.add(child.toString());
+                }
+            }
+        }
+        return files;
+    }
+
+    public static void renamePhotosByProblem(ContextWrapper cw, String oldProblemTitle, String newProblemTitle) {
+        ArrayList<Bitmap> bitmapArray = new ArrayList<Bitmap>();
+
+        File dir = new File(cw.getCacheDir().toString() + File.separator + "images");
+        File[] directoryListing = dir.listFiles();
+
+        if (directoryListing != null) {
+            for (File child : directoryListing) {
+                // Found an old problem title
+                if (child.toString().split("_")[0].equals(dir.toString() + File.separator + oldProblemTitle)) {
+                    File newFile = new File(dir.toString() + File.separator + newProblemTitle + "_" + child.toString().split("_")[1] + "_" + child.toString().split("_")[2] + "_" + child.toString().split("_")[3]);
+                    System.out.println("Old file was " + child.toString() + '\n' + "New file is " + newFile.toString());
+                    child.renameTo(newFile);
+                }
+            }
+        }
+    }
+
     public static ArrayList<Bitmap> loadImagesByRecord(ContextWrapper cw, String problemName, String record) {
 
         ArrayList<Bitmap> bitmapArray = new ArrayList<Bitmap>();
@@ -208,6 +243,23 @@ public class PhotoController extends AppCompatActivity {
             for (File child : directoryListing) {
                 if ((child.toString().split("_")[0] + "_" + child.toString().split("_")[1]).equals(dir.toString() + File.separator + problemName + "_" + record)) {
                     System.out.println("Found match");
+                    child.delete();
+                }
+            }
+        }
+    }
+
+    public static void removePhotosByProblem(ContextWrapper cw, String problemName) {
+        ArrayList<Bitmap> bitmapArray = new ArrayList<Bitmap>();
+
+        File dir = new File(cw.getCacheDir().toString() + File.separator + "images");
+        File[] directoryListing = dir.listFiles();
+
+        if (directoryListing != null) {
+            for (File child : directoryListing) {
+                // Found an old problem title
+                if (child.toString().split("_")[0].equals(dir.toString() + File.separator + problemName)) {
+                    System.out.println("Deleted file is " + child.toString());
                     child.delete();
                 }
             }

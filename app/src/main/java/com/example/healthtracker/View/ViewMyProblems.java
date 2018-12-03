@@ -1,6 +1,7 @@
 package com.example.healthtracker.View;
 
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.healthtracker.Activities.EditProblem;
+import com.example.healthtracker.Contollers.PhotoController;
 import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.Problem;
@@ -79,6 +81,8 @@ public class ViewMyProblems extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // delete problem
+                        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+                        PhotoController.removePhotosByProblem(cw, mProblems.get(position).getTitle());
                         mProblems.remove(position);
                         user.setProblems(mProblems);
                         UserDataController.savePatientData(context, user);
