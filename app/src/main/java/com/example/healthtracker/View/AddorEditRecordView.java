@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -62,6 +63,8 @@ public class AddorEditRecordView extends AppCompatActivity {
     //private String bodyLocText;
     private BodyLocation bodyLoc;
     private ImageView locGraph;
+    private Bitmap showPic;
+    //private ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +78,10 @@ public class AddorEditRecordView extends AppCompatActivity {
 
         saved_geoLocation = findViewById(R.id.show_geo);
         saved_bodyLocation = findViewById(R.id.show_body);
+        saved_bodyLocation.setText("No BodyLocation.");
+        saved_bodyLocation.setClickable(true);
         locGraph = findViewById(R.id.show_graph);
+        showPic = BitmapFactory.decodeResource(getResources(), R.drawable.bodylocationfront);
 
         context = this;
         record = new PatientRecord();
@@ -91,6 +97,39 @@ public class AddorEditRecordView extends AppCompatActivity {
             record.setTimestamp();
             timestampText.setText(record.getTimestamp().toString());
         }
+
+
+        saved_bodyLocation.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+
+            public void onClick(View view) {
+                if(record.getBodyLoc() != null) {
+                    AlertDialog.Builder ab = new AlertDialog.Builder(AddorEditRecordView.this);
+                    ab.setMessage("Do you want to delete this bodyLocation?");
+                    ab.setCancelable(true);
+                    // Set a button to return to the Home screen and don't save changes
+                    ab.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            record.setBodyLoc(null);
+                            saved_bodyLocation.setText("No BodyLocation.");
+                            locGraph.setImageBitmap(showPic);
+                        }
+                    });
+                    ab.setNegativeButton("Cancle", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+
+                    ab.show();
+                }
+
+            }
+
+        });
+
 
 
     }
@@ -175,6 +214,10 @@ public class AddorEditRecordView extends AppCompatActivity {
             bodyText = record.getBodyLoc().getLoc();
             saved_bodyLocation.setText(bodyText);
             locGraph.setImageBitmap(bodygraphic);
+        }
+        else{
+            saved_bodyLocation.setText("No BodyLocation.");
+            locGraph.setImageBitmap(showPic);
         }
 
 

@@ -21,6 +21,7 @@ public class BodyLocation implements Serializable {
         bodyGraphic = "";
     }
 
+
     public void addGraphic(String newGraphic){
         bodyGraphic = newGraphic;
     }
