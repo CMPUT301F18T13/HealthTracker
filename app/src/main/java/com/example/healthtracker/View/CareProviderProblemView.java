@@ -83,9 +83,7 @@ public class CareProviderProblemView extends AppCompatActivity {
                 (this, android.R.layout.simple_list_item_1, records);
         recordList.setAdapter(adapter);
 
-
-        // Add listener to detect button click on items in listview
-        // method to initiate after listener detects click
+        // Add listener to detect button click on items in listView
         recordList.setOnItemClickListener((parent, view, position, id) -> {
             Intent intent = new Intent(CareProviderProblemView.this, CareProviderRecordView.class);
             bd.putInt("recordNum", position);
@@ -94,6 +92,7 @@ public class CareProviderProblemView extends AppCompatActivity {
         });
     }
 
+    // Display the values from the chosen problem
     private void showProblem(String title, String date, String des) {
         titleText.setText(title);
         dateText.setText(date);
@@ -112,12 +111,12 @@ public class CareProviderProblemView extends AppCompatActivity {
         bd.putInt("patientNum", patientNum);
         bd.putInt("problemNum", problemNum);
         intent.putExtras(bd);
-        // Launch the browse emotions activity
         startActivity(intent);
     }
 
+    // View the Comment Records created by a care provider
     public void viewCareProviderComments(View view){
-        // Create an intent object containing the bridge to between the two activities
+        // Create an intent object containing the bridge to between the two activities passing in the profile ID data
         if(myPatient.getProblem(problemNum).getcaregiverRecords().size() > 0){
             Intent intent = new Intent(CareProviderProblemView.this, ViewCareProviderComments.class);
             Bundle bd = new Bundle();
@@ -125,16 +124,13 @@ public class CareProviderProblemView extends AppCompatActivity {
             bd.putInt("problemNum", problemNum);
             bd.putString("profileType", "CareProvider");
             intent.putExtras(bd);
-            // Launch the browse emotions activity
             startActivity(intent);
         } else{
             Toast.makeText(this, "No comments to view!", Toast.LENGTH_SHORT).show();
         }
     }
 
-    /*
-     * Initiate a slidshow of all of the photos associated with the currently viewed problem.
-     */
+    // Initiate a slideshow of all of the photos associated with the currently viewed problem.
     public void viewProblemsPhotos(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(CareProviderProblemView.this, SlideShowActivity.class);
@@ -142,11 +138,11 @@ public class CareProviderProblemView extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // Form the CareProvider logo at the top right of the actionbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.actionbar, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
 }

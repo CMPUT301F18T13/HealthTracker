@@ -72,31 +72,28 @@ public class CreateAccountActivity extends AppCompatActivity {
      * checked to see if it was left empty or not by calling the checkInputs method.
      */
     private void init(){
-        Register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                email = Email.getText().toString().toLowerCase();
-                phone = Phone.getText().toString();
-                userID = UserID.getText().toString();
-                if (checkInputs(email, userID, phone)) {
-                    if(validateEmail(email)) {
-                        if (validatePhone(phone)) {
-                            try {
-                                if (!userExists(userID)) {
-                                    addNewUser();
-                                } else {
-                                    Toast.makeText(context, "User ID is taken", Toast.LENGTH_SHORT).show();
-                                }
-                            } catch (ExecutionException | InterruptedException e) {
-                                e.printStackTrace();
+        Register.setOnClickListener(view -> {
+            email = Email.getText().toString().toLowerCase();
+            phone = Phone.getText().toString();
+            userID = UserID.getText().toString();
+            if (checkInputs(email, userID, phone)) {
+                if(validateEmail(email)) {
+                    if (validatePhone(phone)) {
+                        try {
+                            if (!userExists(userID)) {
+                                addNewUser();
+                            } else {
+                                Toast.makeText(context, "User ID is taken", Toast.LENGTH_SHORT).show();
                             }
-                        } else {
-                            Toast.makeText(context, "Invalid Phone Number", Toast.LENGTH_SHORT).show();
+                        } catch (ExecutionException | InterruptedException e) {
+                            e.printStackTrace();
                         }
+                    } else {
+                        Toast.makeText(context, "Invalid Phone Number", Toast.LENGTH_SHORT).show();
                     }
-                    else{
-                        Toast.makeText(context, "Invalid Email", Toast.LENGTH_SHORT).show();
-                    }
+                }
+                else{
+                    Toast.makeText(context, "Invalid Email", Toast.LENGTH_SHORT).show();
                 }
             }
         });

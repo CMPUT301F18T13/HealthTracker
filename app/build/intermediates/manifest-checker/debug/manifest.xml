@@ -119,9 +119,8 @@
         <activity android:name="com.example.healthtracker.Activities.AddGeoLocationActivity" >
         </activity>
         <activity android:name="com.example.healthtracker.Contollers.PhotoController" />
-        <activity android:name="com.example.healthtracker.EntityObjects.search_result_comments" />
+        <activity android:name="com.example.healthtracker.EntityObjects.search_results_comments" />
         <activity android:name="com.example.healthtracker.EntityObjects.search_results_problem" />
-        <activity android:name="com.example.healthtracker.EntityObjects.SearchResultsView" />
         <activity android:name="com.example.healthtracker.EntityObjects.search_results_record" />
 
         <provider

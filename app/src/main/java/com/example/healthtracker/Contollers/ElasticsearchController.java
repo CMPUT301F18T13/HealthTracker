@@ -62,7 +62,7 @@ license identified and documented at https://github.com/CMPUT301W18T17/TheProfes
  */
 public class ElasticsearchController {
     private static JestDroidClient client;
-    private static String Index = "cmput301f18t13";
+    private static final String Index = "cmput301f18t13";
 
 
     /**
@@ -342,7 +342,7 @@ public class ElasticsearchController {
     public static class getAllPatients extends AsyncTask<Void,Void,ArrayList<Patient>> {
         @Override
         protected ArrayList<Patient> doInBackground(Void...params){
-            ArrayList<Patient> patients = new ArrayList<Patient>() ;
+            ArrayList<Patient> patients = new ArrayList<>() ;
             List<Patient> patients_list;
             String query = "{\n"+
                     "           \"size\": 10000,"+
@@ -367,9 +367,7 @@ public class ElasticsearchController {
                 patients_list = result.getSourceAsObjectList(Patient.class);
                 System.out.println(patients_list);
                 // Convert patients_list (List) to patients (ArrayList)
-                for(int i=0;i<patients_list.size();i++){
-                    patients.add(patients_list.get(i));
-                }
+                patients.addAll(patients_list);
 
             }catch(IOException e){
                 Log.i("error","search failed");
@@ -490,9 +488,7 @@ public class ElasticsearchController {
             }catch (IOException e){
                 e.printStackTrace();
                 }
-
             return null;
-
         }
     }
 }

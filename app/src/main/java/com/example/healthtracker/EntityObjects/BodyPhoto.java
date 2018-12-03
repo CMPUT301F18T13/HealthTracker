@@ -1,7 +1,5 @@
 package com.example.healthtracker.EntityObjects;
 
-import com.example.healthtracker.EntityObjects.Photo;
-
 /**
  * A body photo which is used by a Patient to indicate where on their problem is located on their body.
  *

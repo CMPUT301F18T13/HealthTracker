@@ -117,7 +117,6 @@
         <activity android:name=".Contollers.PhotoController" />
         <activity android:name=".EntityObjects.search_results_comments" />
         <activity android:name=".EntityObjects.search_results_problem" />
-        <activity android:name=".EntityObjects.SearchResultsView" />
         <activity android:name=".EntityObjects.search_results_record" />
     </application>
 

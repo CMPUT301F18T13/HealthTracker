@@ -26,7 +26,6 @@ import java.util.concurrent.ExecutionException;
  * AddPatientView enables a CareProvider to add a patient to their patient list by entering their
  * user ID. A user ID is entered into a textview and a button is pressed to add that patient.
  * Shows a toast message to indicate if the patient was successfully added.
- *
  */
 public class AddPatientView extends AppCompatActivity {
 
@@ -45,7 +44,6 @@ public class AddPatientView extends AppCompatActivity {
         // Get context
         context = this;
         inputId = findViewById(R.id.editText4);
-
     }
 
     /*
@@ -73,9 +71,7 @@ public class AddPatientView extends AppCompatActivity {
                 }
             }
 
-
             if (!ElasticsearchController.testConnection(this)) {
-
                 AlertDialog.Builder alertBuilder = new AlertDialog.Builder(AddPatientView.this);
                 alertBuilder.setMessage("Please connect to a network to add a patient.");
                 alertBuilder.setPositiveButton("OK",null);
@@ -106,7 +102,6 @@ public class AddPatientView extends AppCompatActivity {
             try{
                 mPatient = getPatient.get();
             }catch (ExecutionException | InterruptedException ignored){
-
             }
 
             System.out.println("reaches here!");
@@ -115,7 +110,6 @@ public class AddPatientView extends AppCompatActivity {
             if(mPatient.getCareProviderString().contains(careProvider.getUserID())){
                 careProviderExist = true;
             }
-
 
             System.out.println("careProviderExist"+careProviderExist);
             if (!careProviderExist) {
@@ -134,10 +128,8 @@ public class AddPatientView extends AppCompatActivity {
                 Toast.makeText(context, "Patient already assigned to you.", Toast.LENGTH_SHORT).show();
                 return false;
             }
-
         }
         return true;
-
     }
 
     /*

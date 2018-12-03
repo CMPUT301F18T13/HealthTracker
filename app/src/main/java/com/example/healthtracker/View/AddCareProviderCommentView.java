@@ -28,16 +28,13 @@ import java.util.ArrayList;
  * record by selecting the save button.
  */
 public class AddCareProviderCommentView extends AppCompatActivity {
-
     private CareProviderComment newComment;
     private ArrayList<CareProviderComment> careProviderComments;
-
     private CareProvider careProvider;
     private Patient myPatient;
     private Problem pProblem;
     private int patientNum;
     private int problemNum;
-
     private EditText commentText;
     private EditText titleText;
 

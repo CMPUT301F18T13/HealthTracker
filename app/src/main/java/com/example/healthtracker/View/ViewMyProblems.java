@@ -22,7 +22,6 @@ import java.util.ArrayList;
  * EditProblem activity.
  */
 public class ViewMyProblems extends AppCompatActivity {
-
     private ArrayList<Problem> mProblems;
     private Context context;
     private ArrayAdapter<Problem> mArrayAdapter;
@@ -35,7 +34,6 @@ public class ViewMyProblems extends AppCompatActivity {
 
         // get context
         context = this;
-
     }
 
     @Override
@@ -67,7 +65,6 @@ public class ViewMyProblems extends AppCompatActivity {
             // set the dialog to be cancelable outside of box
             ab.setCancelable(true);
 
-
             // set a negative button for deleting problem
             ab.setPositiveButton("Delete", (dialog, which) -> {
                 // delete problem
@@ -80,11 +77,9 @@ public class ViewMyProblems extends AppCompatActivity {
 
                 // done
                 dialog.dismiss();
-
             });
 
             ab.setNegativeButton("Cancel", (dialog, which) -> {
-
             });
 
             // set a neutral button in the dialog which will open up the edit activity to edit problem
@@ -102,6 +97,5 @@ public class ViewMyProblems extends AppCompatActivity {
             // required in order for dialog object to appear on screen
             ab.show();
         });
-
     }
 }

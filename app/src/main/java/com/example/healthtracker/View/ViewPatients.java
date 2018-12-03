@@ -24,7 +24,6 @@ import java.util.ArrayList;
  * problems activity.
  */
 public class ViewPatients extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +41,6 @@ public class ViewPatients extends AppCompatActivity {
         // Fetch assigned patients
         if(careProvider.getPatientList().size() > 0) {
             mPatients.addAll(careProvider.getPatientList());
-
         }
         else{
             // Create an alert dialog
@@ -53,13 +51,10 @@ public class ViewPatients extends AppCompatActivity {
             alertDialog.show();
         }
 
-        // Display all assigned patients
-
-            // Create an instance of array adapter
+        // Display all assigned patient and create an instance of array adapter
         ArrayAdapter<Patient> mArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, mPatients);
             // Combine the array adapter with the list view
         patientsListView.setAdapter(mArrayAdapter);
-
 
         // Event for selecting a Patient
         patientsListView.setOnItemClickListener((parent, view, position, id) -> {
@@ -69,6 +64,7 @@ public class ViewPatients extends AppCompatActivity {
         });
     }
 
+    // Form the CareProvider logo at the top right of the actionbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
