@@ -486,7 +486,7 @@ public class UserDataController<E> {
         searchRecordTask.execute(searchInfo);
 
         try{
-            hits[0] = searchRecordTask.get().getSourceAsObjectList(BodyLocation.class,false);
+            hits[0] = searchRecordTask.get().getSourceAsObjectList(PatientRecord.class,false);
 
         }catch (ExecutionException e){
             e.printStackTrace();

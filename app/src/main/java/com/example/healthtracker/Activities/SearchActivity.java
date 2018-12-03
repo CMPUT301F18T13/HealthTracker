@@ -213,6 +213,8 @@ public class SearchActivity extends AppCompatActivity {
                         allReceivedRecords.add(temp.get(n));
                     }
                 }
+
+                System.out.println("All received records are: "+allReceivedRecords);
             }
 
             hits[1] = allReceivedRecords;
