@@ -21,6 +21,13 @@ import com.searchly.jestdroid.JestDroidClient;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
+/* Idea and code implementation knowledge for User info validation from
+url: https://developer.android.com/reference/android/util/Patterns 
+Author: Android Developers 
+posted: 2018/06/16 
+viewed: 2018/11/29
+*/
+
 /* Idea and implemented code for testing interent connection from *binnyb(user:416412),
 https://stackoverflow.com/questions/5474089/how-to-check-currently-internet-connection-is-available-or-not-in-android,
 2011/03/29, viewed 2018/11/16*
