@@ -119,10 +119,10 @@
         <activity android:name="com.example.healthtracker.Activities.AddGeoLocationActivity" >
         </activity>
         <activity android:name="com.example.healthtracker.Contollers.PhotoController" />
-        <activity android:name="com.example.healthtracker.search_result_comments" />
-        <activity android:name="com.example.healthtracker.search_results_problem" />
+        <activity android:name="com.example.healthtracker.EntityObjects.search_result_comments" />
+        <activity android:name="com.example.healthtracker.EntityObjects.search_results_problem" />
         <activity android:name="com.example.healthtracker.SearchActivity" />
-        <activity android:name="com.example.healthtracker.SearchResultsView" />
+        <activity android:name="com.example.healthtracker.EntityObjects.SearchResultsView" />
 
         <provider
             android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"

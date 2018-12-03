@@ -1,5 +1,6 @@
 package com.example.healthtracker.Activities;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 
 import android.graphics.Color;
@@ -7,10 +8,8 @@ import android.graphics.drawable.ColorDrawable;
 
 import android.location.Address;
 import android.location.Geocoder;
-import android.support.v7.app.AlertDialog;
-
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -166,8 +165,6 @@ public class SearchActivity extends AppCompatActivity {
             // Launch the browse activity
             startActivity(intent);
         }
-
-
     }
 
     public GeoPoint getLocationFromAddress(String strAddress){
@@ -185,8 +182,8 @@ public class SearchActivity extends AppCompatActivity {
             location.getLatitude();
             location.getLongitude();
 
-            myPoint = new GeoPoint((double) (location.getLatitude() * 1E6),
-                    (double) (location.getLongitude() * 1E6));
+            myPoint = new GeoPoint(location.getLatitude() * 1E6,
+                    location.getLongitude() * 1E6);
 
 
         }catch (IOException e){

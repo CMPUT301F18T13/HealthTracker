@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="19"
+        android:minSdkVersion="26"
         android:targetSdkVersion="28" />
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
@@ -17,6 +17,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature android:name="android.hardware.location.gps" />
     <uses-feature
@@ -36,6 +38,7 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="com.example.healthtracker.permission.MAPS_RECEIVE" />
 
     <permission
@@ -43,7 +46,6 @@
         android:protectionLevel="signature" />
 
     <application
-        android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
         android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:debuggable="true"
@@ -74,7 +76,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.healthtracker.View.CareProviderHomeView" />
+        <activity
+            android:name="com.example.healthtracker.View.CareProviderHomeView"
+            android:icon="@drawable/care_provider_symbol"
+            android:label="@string/app_name" />
         <activity android:name="com.example.healthtracker.View.ViewPatients" />
         <activity android:name="com.example.healthtracker.Activities.SearchActivity" />
         <activity android:name="com.example.healthtracker.View.SearchResultsView" />
@@ -114,6 +119,10 @@
         <activity android:name="com.example.healthtracker.Activities.AddGeoLocationActivity" >
         </activity>
         <activity android:name="com.example.healthtracker.Contollers.PhotoController" />
+        <activity android:name="com.example.healthtracker.EntityObjects.search_result_comments" />
+        <activity android:name="com.example.healthtracker.EntityObjects.search_results_problem" />
+        <activity android:name="com.example.healthtracker.SearchActivity" />
+        <activity android:name="com.example.healthtracker.EntityObjects.SearchResultsView" />
 
         <provider
             android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"

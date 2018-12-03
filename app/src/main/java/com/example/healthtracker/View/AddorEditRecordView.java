@@ -26,6 +26,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.app.Activity.RESULT_OK;
+
 /*
  * AddorEditRecordView enables a patient to add a new record to one of their problems or edit an
  * existing record. This activity will finish with a positive result code if a record was successfully

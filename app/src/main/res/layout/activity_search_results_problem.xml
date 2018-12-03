@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".search_results_problem">
+    tools:context=".EntityObjects.search_results_problem">
 
     <TextView
         android:id="@+id/desView"
