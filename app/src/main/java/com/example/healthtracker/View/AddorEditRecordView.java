@@ -107,27 +107,28 @@ public class AddorEditRecordView extends AppCompatActivity {
         titleText.setText(record.getTitle());
         descriptionText.setText(record.getComment());
         timestampText.setText(record.getTimestamp().toString());
-        //saved_geoLocation.setText(geo_location);
-            List<Address> addressList = null;
-            String CurrentLocation;
-            Lat = record.getGeoLocation().get(0);
-            Lon = record.getGeoLocation().get(1);
-            Geocoder geocoder = new Geocoder(this);
-            try {
-                addressList = geocoder.getFromLocation(Lat, Lon, 1);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            assert addressList != null;
-            Address address = addressList.get(0);
-            String city = address.getLocality();
-            String state = address.getAdminArea();
-            String country = address.getCountryName();
-            String postalCode = address.getPostalCode();
-            CurrentLocation = city + " " + state + " " + country + " " + postalCode;
-            saved_geoLocation.setText(CurrentLocation);
 
-        //TODO show geomap, photos, bodlocation
+        if(record.getGeoLocation().size()<2){
+            return;
+        }
+
+        List<Address> addressList = null;
+        String CurrentLocation;
+        Lon = record.getGeoLocation().get(0);
+        Lat = record.getGeoLocation().get(1);
+        Geocoder geocoder = new Geocoder(this);
+        try {
+            addressList = geocoder.getFromLocation(Lat, Lon, 1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Address address = addressList.get(0);
+        String city = address.getLocality();
+        String state = address.getAdminArea();
+        String country = address.getCountryName();
+        String postalCode = address.getPostalCode();
+        CurrentLocation = city + " " + state + " " + country + " " + postalCode;
+        saved_geoLocation.setText(CurrentLocation);
     }
 
     /*

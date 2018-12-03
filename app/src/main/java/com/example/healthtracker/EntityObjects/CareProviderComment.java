@@ -84,4 +84,17 @@ public class CareProviderComment implements Serializable{
     public String toString(){
         return "Title: " + getTitle() + "\n\nComment: " + getComment();
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if(obj == null || !(obj instanceof CareProviderComment)) {
+            return false;
+        }
+        CareProviderComment comment = (CareProviderComment) obj;
+        if(comment.getTitle().equals(this.getTitle())){
+            return true;
+        } else{
+            return false;
+        }
+    }
 }

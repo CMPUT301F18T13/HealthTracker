@@ -31,16 +31,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/search_geo"
+        android:id="@+id/distance_search"
         android:layout_width="252dp"
         android:layout_height="75dp"
         android:layout_marginTop="140dp"
         android:hint="Distance(km)"
+        android:importantForAutofill="no"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/search_terms"
