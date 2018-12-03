@@ -167,11 +167,6 @@ public class ElasticsearchController {
             PatientRecord record = records[0];
 
 
-            Index index = new Index.Builder(record)
-                    .index(Index)
-                    .type("Record")
-                    .build();
-
 
             // Create an Index Mapping
             PutMapping putMapping = new PutMapping.Builder(
@@ -202,6 +197,11 @@ public class ElasticsearchController {
             }catch (IOException e){
                 Log.i("Error", "The application failed to build the mapping");
             }
+
+            Index index = new Index.Builder(record)
+                    .index(Index)
+                    .type("Record")
+                    .build();
 
 
             try {
