@@ -54,7 +54,12 @@ public class PatientHomeView extends AppCompatActivity {
     public void Search(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(PatientHomeView.this, SearchActivity.class);
+<<<<<<< HEAD
         intent.putExtra("profileType", "Patient");
+=======
+        intent.putExtra("profile","Patient");
+        // Launch the browse emotions activity
+>>>>>>> chenlin
         startActivity(intent);
     }
 

@@ -24,9 +24,17 @@ public class PatientRecord implements Serializable {
     private String RecordTitle;
     private String comment;
     private Timestamp timestamp;
+<<<<<<< HEAD
     private final ArrayList<Double> geoLocations;
     private ArrayList<String> photos;
     private ArrayList<String> timeStamps;
+=======
+    private Double Lon;
+    private Double Lat;
+    private ArrayList<Double> geoLocations = new ArrayList<>();
+    private final ArrayList<Photo> photos;
+    private BodyLocation bodyLoc;
+>>>>>>> chenlin
 
 
     /**
@@ -35,7 +43,7 @@ public class PatientRecord implements Serializable {
      * @param title A string for the title of the record
      * @param comment A string for description of the problem
      */
-    public PatientRecord(String title, String comment, Double Lon, Double Lat){
+    public PatientRecord(String title, String comment, Double Lon, Double Lat,BodyLocation bodyLocation){
         this.RecordTitle = title;
         this.comment = comment;
         this.timestamp = new Timestamp(System.currentTimeMillis());
@@ -44,7 +52,12 @@ public class PatientRecord implements Serializable {
 
         this.geoLocations.add(Lon);
         this.geoLocations.add(Lat);
+<<<<<<< HEAD
         photos = new ArrayList<String> ();
+=======
+        photos = new ArrayList<Photo> ();
+        this.bodyLoc = bodyLocation;
+>>>>>>> chenlin
     }
 
     /**
@@ -55,8 +68,33 @@ public class PatientRecord implements Serializable {
         RecordTitle = "";
         comment = "";
         timestamp = new Timestamp(System.currentTimeMillis());
+<<<<<<< HEAD
         geoLocations = new ArrayList<>();
         photos = new ArrayList<String> ();
+=======
+        geoLocations = new ArrayList<Double>();
+        photos = new ArrayList<Photo> ();
+        bodyLoc = new BodyLocation();
+    }
+
+    /**
+     * Add a bodyLocation to the record
+     * @param newBodyLocation
+     */
+
+    public void setBodyLoc(BodyLocation newBodyLocation){
+        this.bodyLoc = newBodyLocation;
+    }
+
+    /**
+     * Get a bodyLocation of the record
+     * @return BodyLocation
+     */
+
+    public BodyLocation getBodyLoc(){
+        return this.bodyLoc;
+    }
+>>>>>>> chenlin
 
     }
     /**
