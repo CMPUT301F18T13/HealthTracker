@@ -202,10 +202,16 @@ public class AddorEditRecordView extends AppCompatActivity {
         //takenPhoto.compress(Bitmap.CompressFormat.PNG, 100, bStream);
         //byte[] byteArray = bStream.toByteArray();
 
-        Intent intent = new Intent(AddorEditRecordView.this, TakePhotoActivity.class);
-        intent.putExtra("ProblemTitle",getExtraString());
+        if (takenPhoto.size() >= 10) {
+            Toast.makeText(this, "Error, number of photos cannot exceed 10.", Toast.LENGTH_LONG).show();
+        }
+        else {
 
-        startActivityForResult(intent, 1);
+            Intent intent = new Intent(AddorEditRecordView.this, TakePhotoActivity.class);
+            intent.putExtra("ProblemTitle",getExtraString());
+
+            startActivityForResult(intent, 1);
+        }
 
     }
 
