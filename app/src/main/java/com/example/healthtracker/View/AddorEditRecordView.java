@@ -220,6 +220,12 @@ public class AddorEditRecordView extends AppCompatActivity {
 
             Intent intent = new Intent(AddorEditRecordView.this, TakePhotoActivity.class);
             intent.putExtra("ProblemTitle",getExtraString());
+            if (takenPhoto.size() != 0) {
+                intent.putExtra("OldPhoto", PhotoController.imageToString(takenPhoto.get(takenPhoto.size() - 1)));
+            }
+            else {
+                intent.putExtra("OldPhoto", "");
+            }
 
             startActivityForResult(intent, 50);
         }

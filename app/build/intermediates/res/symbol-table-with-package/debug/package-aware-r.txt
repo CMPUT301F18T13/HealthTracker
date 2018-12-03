@@ -1254,6 +1254,8 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id oldPhoto
+id oldPhotoImage
 id outline
 id pProblem_list_view
 id packed

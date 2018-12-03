@@ -28,7 +28,9 @@ public class TakePhotoActivity extends AppCompatActivity {
 
     Uri imageFileUri;
     private TextView textTargetUri;
+    private TextView oldPhotoText;
     private ImageView imageView;
+    private ImageView oldPhoto;
     private String addPath = "";
     String pathLoaded;
     String problemTitle;
@@ -44,9 +46,19 @@ public class TakePhotoActivity extends AppCompatActivity {
         ImageButton takePhotoButton = findViewById(R.id.take_photo_button);
         Button loadPhotoButton = findViewById(R.id.photo_from_library_button);
         textTargetUri = findViewById(R.id.textView);
-        textTargetUri.setText(getExtraString());
+        oldPhotoText = findViewById(R.id.oldPhoto);
+        oldPhotoText.setText("Last Photo Taken");
+        textTargetUri.setText("New Photo");
 
         imageView = findViewById(R.id.imageView);
+        oldPhoto = findViewById(R.id.oldPhotoImage);
+
+        Intent intent = getIntent();
+        String oldPhotoBytes = intent.getStringExtra("OldPhoto");
+        if (oldPhotoBytes.length() != 0) {
+            oldPhoto.setImageBitmap(PhotoController.stringToImage(oldPhotoBytes));
+        }
+
         getExtraString();
         takePhotoButton.setOnClickListener(v -> takeAPhoto());
         loadPhotoButton.setOnClickListener(v -> loadAPhoto());
