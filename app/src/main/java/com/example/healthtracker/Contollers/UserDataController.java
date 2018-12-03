@@ -446,9 +446,6 @@ public class UserDataController<E> {
             e.printStackTrace();
         }
 
-        // Search for commentRecords
-        hits[2] = new ArrayList<CareProviderComment>();
-
         return hits;
 
     }

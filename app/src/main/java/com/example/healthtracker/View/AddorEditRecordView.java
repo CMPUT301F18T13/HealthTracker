@@ -130,11 +130,11 @@ public class AddorEditRecordView extends AppCompatActivity {
         timestampText.setText(record.getTimestamp().toString());
         oldTitle = record.getTitle();
 
-        /*if(record.getGeoLocation().size()<2){
+        if(record.getGeoLocation().size()<2){
             return;
-        } */
+        }
 
-        /* List<Address> addressList = null;
+        List<Address> addressList = null;
         String CurrentLocation;
         Lon = record.getGeoLocation().get(0);
         Lat = record.getGeoLocation().get(1);
@@ -151,7 +151,7 @@ public class AddorEditRecordView extends AppCompatActivity {
         String postalCode = address.getPostalCode();
         CurrentLocation = city + " " + state + " " + country + " " + postalCode;
         saved_geoLocation.setText(CurrentLocation);
-        */
+
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
         takenPhoto = PhotoController.loadImagesByRecord(cw, this.getExtraString(), oldTitle);
         timeStamps = PhotoController.getTimestampsByRecord(cw, this.getExtraString(), oldTitle);

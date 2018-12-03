@@ -26,9 +26,6 @@ public class Problem implements Serializable {
     private String ProblemTitle;
     private String dateStarted;
     private String description;
-    // if we use the android built in notifications then they cant be here or elastic search will break
-    private List<NotificationsController> notifications;
-    private Boolean notificationsOn = FALSE;
     private ArrayList<PatientRecord> patientRecords = new ArrayList<>();
     private ArrayList<CareProviderComment> caregiverRecords = new ArrayList<>();
 

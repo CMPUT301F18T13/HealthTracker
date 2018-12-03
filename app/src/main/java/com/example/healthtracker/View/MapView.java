@@ -144,6 +144,9 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
             if(mRecords.get(counter).getGeoLocation().size() != 0) {
                 Lon = mRecords.get(counter).getGeoLocation().get(0);
                 Lat =  mRecords.get(counter).getGeoLocation().get(1);
+                if(Lat == null || Lon == null){
+                    continue;
+                }
                 LatLng LatLng = new LatLng(Lat, Lon);
                 Geocoder geocoder = new Geocoder(this);
                 try {
