@@ -1313,7 +1313,9 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id show_body
 id show_geo
+id show_graph
 id smallLabel
 id snackbar_action
 id snackbar_text
@@ -1542,6 +1544,7 @@ string appbar_scrolling_view_behavior
 string back
 string back1
 string bodyLocation
+string body_location
 string bodyloc_input
 string bottom_sheet_behavior
 string care_comment

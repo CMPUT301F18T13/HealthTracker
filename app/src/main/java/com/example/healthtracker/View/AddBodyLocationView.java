@@ -115,8 +115,10 @@ public class AddBodyLocationView extends AppCompatActivity  implements EasyPermi
         bodyLocsText.add(0, "Choose a Body Location");
         bodyLocsText.add("+Add New BodyLocation+");
 
-        chooseLoc.setPrompt("Choose a Body Location");
-        chooseLoc.setSelected(true);
+        //chooseLoc.setPrompt("Choose a Body Location");
+        //chooseLoc.setSelected(true);
+        chooseLoc.setFocusable(true);
+        chooseLoc.setFocusableInTouchMode(true);
         locAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,bodyLocsText);
         chooseLoc.setAdapter(locAdapter);
         locAdapter.notifyDataSetChanged();
@@ -125,17 +127,23 @@ public class AddBodyLocationView extends AppCompatActivity  implements EasyPermi
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                 if(bodyLocsText.get(pos).equals("Choose a Body Location")){
                     Toast.makeText(AddBodyLocationView.this, "Please choose a Body Location!!" , Toast.LENGTH_LONG).show();
+                    //locAdapter.notifyDataSetChanged();
+                    //chooseLoc.setAdapter(locAdapter);
                 }
                 else if(bodyLocsText.get(pos).equals("+Add New BodyLocation+")){
+                    //locAdapter.notifyDataSetChanged();
                     addNewLoc();
                     locAdapter.notifyDataSetChanged();
+                    //chooseLoc.setAdapter(locAdapter);
                 }
                 else {
+                    //locAdapter.notifyDataSetChanged();
                      //= getResources().getStringArray(R.array.body_location_options);
                     Toast.makeText(AddBodyLocationView.this, "Your choice:" + bodyLocsText.get(pos), Toast.LENGTH_LONG).show();
                     bodyLocText = bodyLocsText.get(pos);
                 }
                 locAdapter.notifyDataSetChanged();
+                //chooseLoc.setAdapter(locAdapter);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -477,6 +485,7 @@ public class AddBodyLocationView extends AppCompatActivity  implements EasyPermi
                 boolean isSaveSuccess = saveImageToGallery(this, PhotoController.stringToImage(addPath),name);
                 if (isSaveSuccess) {
                     Log.d("Take photo saved", name);
+                    Toast.makeText(AddBodyLocationView.this, "Save Photo First", Toast.LENGTH_SHORT).show();
                 } else {
                     Log.d("Failed! Try again!", name);
                 }

@@ -9,25 +9,19 @@ import java.util.ArrayList;
 
 public class BodyLocation implements Serializable {
     private String locationText;
-    //private float pinX;
-    //private float pinY;
-    private Bitmap bodyGraphic;
+    private String bodyGraphic;
 
-    public BodyLocation(String locationText, Bitmap bodyGraphic){
+    public BodyLocation(String locationText, String bodyGraphic){
         this.locationText = locationText;
-        //this.pinX = x;
-        //this.pinY = y;
         this.bodyGraphic = bodyGraphic;
     }
 
     public BodyLocation(){
         locationText = "";
-        //pinX = 0;
-        //pinY = 0;
-        bodyGraphic = null;
+        bodyGraphic = "";
     }
 
-    public void addGraphic(Bitmap newGraphic){
+    public void addGraphic(String newGraphic){
         bodyGraphic = newGraphic;
     }
 
@@ -35,7 +29,7 @@ public class BodyLocation implements Serializable {
         bodyGraphic = null;
     }
 
-    public Bitmap getGraphic(){
+    public String getGraphic(){
         return bodyGraphic;
     }
 
@@ -49,11 +43,11 @@ public class BodyLocation implements Serializable {
 
 
 
-/*
+
     @Override
     public String toString(){
-        return " Title: " + getTitle() + "\n Comment: " + getComment() + "\n Timestamp: " + timestamp.toString();
+        return " BodyLocation: "+ getLoc() + "\n Graphic: " + getGraphic();
     }
-*/
+
 
 }

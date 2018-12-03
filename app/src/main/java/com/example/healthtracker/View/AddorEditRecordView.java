@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +32,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.healthtracker.Contollers.PhotoController.imageToString;
+import static com.example.healthtracker.Contollers.PhotoController.stringToImage;
 
 /*
  * AddorEditRecordView enables a patient to add a new record to one of their problems or edit an
@@ -57,6 +61,7 @@ public class AddorEditRecordView extends AppCompatActivity {
     //private Spinner chooseLoc;
     //private String bodyLocText;
     private BodyLocation bodyLoc;
+    private ImageView locGraph;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +74,9 @@ public class AddorEditRecordView extends AppCompatActivity {
         //chooseLoc = findViewById(R.id.choose_body_location);
 
         saved_geoLocation = findViewById(R.id.show_geo);
-        saved_geoLocation = findViewById(R.id.show_body);
+        saved_bodyLocation = findViewById(R.id.show_body);
+        locGraph = findViewById(R.id.show_graph);
+
         context = this;
         record = new PatientRecord();
 
@@ -140,25 +147,37 @@ public class AddorEditRecordView extends AppCompatActivity {
         descriptionText.setText(record.getComment());
         timestampText.setText(record.getTimestamp().toString());
         //saved_geoLocation.setText(geo_location);
-            List<Address> addressList = null;
-            String CurrentLocation;
-            Lat = record.getGeoLocation().get(0);
-            Lon = record.getGeoLocation().get(1);
-            Geocoder geocoder = new Geocoder(this);
-            try {
-                addressList = geocoder.getFromLocation(Lat, Lon, 1);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            Address address = addressList.get(0);
-            String city = address.getLocality();
-            String state = address.getAdminArea();
-            String country = address.getCountryName();
-            String postalCode = address.getPostalCode();
-            CurrentLocation = city + " " + state + " " + country + " " + postalCode;
-            saved_geoLocation.setText(CurrentLocation);
+        List<Address> addressList = null;
+        String CurrentLocation;
+        Lat = record.getGeoLocation().get(0);
+        Lon = record.getGeoLocation().get(1);
+        Geocoder geocoder = new Geocoder(this);
+        try {
+            addressList = geocoder.getFromLocation(Lat, Lon, 1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Address address = addressList.get(0);
+        String city = address.getLocality();
+        String state = address.getAdminArea();
+        String country = address.getCountryName();
+        String postalCode = address.getPostalCode();
+        CurrentLocation = city + " " + state + " " + country + " " + postalCode;
+        saved_geoLocation.setText(CurrentLocation);
 
-        //TODO show geomap, photos, bodlocation
+        if (record.getBodyLoc() != null) {
+            //show bodyLoc
+            String bodyText;
+            Bitmap bodygraphic;
+            bodyLoc = new BodyLocation();
+            String bodygraphicText = record.getBodyLoc().getGraphic();
+            bodygraphic = stringToImage(bodygraphicText);
+            bodyText = record.getBodyLoc().getLoc();
+            saved_bodyLocation.setText(bodyText);
+            locGraph.setImageBitmap(bodygraphic);
+        }
+
+
     }
 
     /*
@@ -231,10 +250,12 @@ public class AddorEditRecordView extends AppCompatActivity {
             if (resultCode == 88) {
                 byte[] byteArray = data.getByteArrayExtra("graphic");
                 bodygraphic = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+                String bodygraphicText = imageToString(bodygraphic);
                 bodyText = data.getStringExtra("text");
                 bodyLoc.setLoc(bodyText);
-                bodyLoc.addGraphic(bodygraphic);
-                saved_geoLocation.setText(bodyText);
+                bodyLoc.addGraphic(bodygraphicText);
+                saved_bodyLocation.setText(bodyText);
+                locGraph.setImageBitmap(bodygraphic);
             }
 
 

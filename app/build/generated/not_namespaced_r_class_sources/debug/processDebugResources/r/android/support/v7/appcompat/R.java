@@ -699,31 +699,31 @@ public final class R {
         public static final int search_voice_btn = 0x7f0900d6;
         public static final int select_dialog_listview = 0x7f0900d7;
         public static final int shortcut = 0x7f0900db;
-        public static final int spacer = 0x7f0900e5;
-        public static final int split_action_bar = 0x7f0900e6;
-        public static final int src_atop = 0x7f0900e9;
-        public static final int src_in = 0x7f0900ea;
-        public static final int src_over = 0x7f0900eb;
-        public static final int start = 0x7f0900ed;
-        public static final int submenuarrow = 0x7f0900f0;
-        public static final int submit_area = 0x7f0900f1;
-        public static final int tabMode = 0x7f0900f2;
-        public static final int tag_transition_group = 0x7f0900f3;
-        public static final int tag_unhandled_key_event_manager = 0x7f0900f4;
-        public static final int tag_unhandled_key_listeners = 0x7f0900f5;
-        public static final int text = 0x7f0900f9;
-        public static final int text2 = 0x7f0900fa;
-        public static final int textSpacerNoButtons = 0x7f0900fb;
-        public static final int textSpacerNoTitle = 0x7f0900fc;
-        public static final int time = 0x7f090102;
-        public static final int title = 0x7f090103;
-        public static final int titleDividerNoCustom = 0x7f090104;
-        public static final int title_template = 0x7f090106;
-        public static final int top = 0x7f090109;
-        public static final int topPanel = 0x7f09010a;
-        public static final int uniform = 0x7f090111;
-        public static final int up = 0x7f090113;
-        public static final int wrap_content = 0x7f090121;
+        public static final int spacer = 0x7f0900e7;
+        public static final int split_action_bar = 0x7f0900e8;
+        public static final int src_atop = 0x7f0900eb;
+        public static final int src_in = 0x7f0900ec;
+        public static final int src_over = 0x7f0900ed;
+        public static final int start = 0x7f0900ef;
+        public static final int submenuarrow = 0x7f0900f2;
+        public static final int submit_area = 0x7f0900f3;
+        public static final int tabMode = 0x7f0900f4;
+        public static final int tag_transition_group = 0x7f0900f5;
+        public static final int tag_unhandled_key_event_manager = 0x7f0900f6;
+        public static final int tag_unhandled_key_listeners = 0x7f0900f7;
+        public static final int text = 0x7f0900fb;
+        public static final int text2 = 0x7f0900fc;
+        public static final int textSpacerNoButtons = 0x7f0900fd;
+        public static final int textSpacerNoTitle = 0x7f0900fe;
+        public static final int time = 0x7f090104;
+        public static final int title = 0x7f090105;
+        public static final int titleDividerNoCustom = 0x7f090106;
+        public static final int title_template = 0x7f090108;
+        public static final int top = 0x7f09010b;
+        public static final int topPanel = 0x7f09010c;
+        public static final int uniform = 0x7f090113;
+        public static final int up = 0x7f090115;
+        public static final int wrap_content = 0x7f090123;
     }
     public static final class integer {
         private integer() {}
@@ -818,8 +818,8 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 0x7f0e0024;
         public static final int abc_shareactionprovider_share_with_application = 0x7f0e0025;
         public static final int abc_toolbar_collapse_description = 0x7f0e0026;
-        public static final int search_menu_title = 0x7f0e0082;
-        public static final int status_bar_notification_info_overflow = 0x7f0e0085;
+        public static final int search_menu_title = 0x7f0e0083;
+        public static final int status_bar_notification_info_overflow = 0x7f0e0086;
     }
     public static final class style {
         private style() {}
