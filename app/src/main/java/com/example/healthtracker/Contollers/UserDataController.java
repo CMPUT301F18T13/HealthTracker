@@ -4,7 +4,8 @@ import android.content.SharedPreferences;
 
 import android.util.Base64;
 import android.widget.Toast;
-
+import org.elasticsearch.common.geo.GeoPoint;
+import com.example.healthtracker.EntityObjects.BodyLocation;
 import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.CareProviderComment;
 import com.example.healthtracker.EntityObjects.Patient;
@@ -186,7 +187,7 @@ public class UserDataController<E> {
             ElasticsearchController.AddPatient addPatientTask = new ElasticsearchController.AddPatient();
             addPatientTask.execute(patient);
             for(Problem problem: patient.getProblemList()){
-                saveProblemData(problem);
+                saveProblemData(problem, context);
             }
         } else {
             Toast.makeText(context, "Could not reach server. Changes saved locally.", Toast.LENGTH_LONG).show();
@@ -308,7 +309,7 @@ public class UserDataController<E> {
             UserDataController.savePatientData(context, user);
             assert user != null;
             for(Problem problem: user.getProblemList()){
-                UserDataController.saveProblemData(problem);
+                UserDataController.saveProblemData(problem, context);
             }
         } else {
             Toast.makeText(context, "No internet connection available. Unable to sync.", Toast.LENGTH_LONG).show();
@@ -433,7 +434,7 @@ public class UserDataController<E> {
         // Search for problem
         hits[0] = new ArrayList<Problem>();
 
-        // Search for records: Initialize a String Array
+        // Search for records
         String searchInfo[] = new String[]{"Record",distance,latitude.toString(),longitude.toString(),identifier};
         ElasticsearchController.SearchByGeoLocations searchRecordsTask = new ElasticsearchController.SearchByGeoLocations();
         searchRecordsTask.execute(searchInfo);
@@ -452,8 +453,31 @@ public class UserDataController<E> {
 
     }
 
-    private static void saveProblemData(Problem problem){
+    public static Object[] searchForBodyLocations(String locationText,String identifier){
 
+        // Create an Object array which can hold 1 item
+        Object hits[] = new Object[1];
+
+        //Search for records
+        String searchInfo[] = new String[]{"Record",locationText,identifier};
+        ElasticsearchController.SearchByBodyLocations searchRecordTask = new ElasticsearchController.SearchByBodyLocations();
+        searchRecordTask.execute(searchInfo);
+
+        try{
+            hits[0] = searchRecordTask.get().getSourceAsObjectList(PatientRecord.class,false);
+
+        }catch (ExecutionException e){
+            e.printStackTrace();
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
+        return hits;
+
+
+    }
+
+    public static void saveProblemData(Problem problem, Context context){
         ElasticsearchController.AddProblem addProblem = new ElasticsearchController.AddProblem();
         addProblem.execute(problem);
         for(PatientRecord record: problem.getRecords()){
