@@ -86,6 +86,13 @@ public class SearchTest {
     }
 
         // Test Searching Geo location
+    @Test
+    public void testPatientCorrectGeoLocationSearchActivity() {
+        // Login
+        EditText name = (EditText) solo.getView("userID");
+        solo.enterText(name,"chenlinPatient2");
+        solo.clickOnButton("Login");
+    }
 
         // Test Searching Body Location
 
@@ -138,4 +145,5 @@ public class SearchTest {
         boolean result_2 = solo.waitForActivity(SearchResultsView.class, 2000);
         Assert.assertTrue(result_2);
     }
+
 }

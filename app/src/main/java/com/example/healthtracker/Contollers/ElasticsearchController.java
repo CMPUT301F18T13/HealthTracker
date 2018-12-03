@@ -149,9 +149,6 @@ public class ElasticsearchController {
             PatientRecord record = records[0];
 
 
-
-
-
             // Create an Index Mapping
             PutMapping putMapping = new PutMapping.Builder(
                     Index,
