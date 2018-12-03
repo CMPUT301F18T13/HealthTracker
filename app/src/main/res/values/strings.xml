@@ -92,6 +92,7 @@
     <string name="save_pic_to_local">Save Photo</string>
     <string name="change_side">Change body side</string>
     <string name="bodyloc_input">Enter a body Loc</string>
+    <string name="body_location">BodyLocation</string>
 
 
 </resources>

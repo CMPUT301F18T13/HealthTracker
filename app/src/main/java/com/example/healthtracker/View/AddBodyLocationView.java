@@ -253,20 +253,25 @@ public class AddBodyLocationView extends AppCompatActivity  implements EasyPermi
 
     public void saveButton(View view){
         //graphic
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bodyGraphic.compress(Bitmap.CompressFormat.PNG, 100, stream);
-        byte[] gra_byteArray = stream.toByteArray();
+        if(bodyGraphic!=null && bodyLocsText.contains(bodyLocText)) {
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bodyGraphic.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            byte[] gra_byteArray = stream.toByteArray();
 
-        Intent intent = new Intent();
-        intent.putExtra("graphic", gra_byteArray);
-        intent.putExtra("text",bodyLocText);
-        //intent.putExtra("BodyLoc",bodyLoc);
+            Intent intent = new Intent();
+            intent.putExtra("graphic", gra_byteArray);
+            intent.putExtra("text", bodyLocText);
 
-        AddBodyLocationView.this.setResult(88, intent);
-        AddBodyLocationView.this.finish();
+
+            AddBodyLocationView.this.setResult(88, intent);
+            AddBodyLocationView.this.finish();
+        }
+        else{
+            Toast.makeText(AddBodyLocationView.this, "You must choose a body location and add pin on your uploaded photo!", Toast.LENGTH_LONG).show();
+        }
     }
 
-    //TODO
+
     public void switchForB(View view){
         switch (i) {
             case 0:bodyLocPhoto.setImageBitmap(showPicBack);i++;break;
