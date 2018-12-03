@@ -527,7 +527,7 @@ public class ElasticsearchController {
             String matchBodyLocationQuery = "{\t\n" +
                     "\t\"query\" : {\n" +
                     "\t\t\"bool\" : {\n" +
-                    "\t\t\t\"should\" : [\n" +
+                    "\t\t\t\"must\" : [\n" +
                     "\t\t\t\t{ \"match\" : { \"bodyLocation.locationText\" : \"" + locationText +"\" }},\n" +
                     "\t\t\t\t{ \"match\" : {\"_id\" : \"" +identifier +"\" }}\n" +
                     "\t\t\t]\n" +
