@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.healthtracker.Contollers.UserDataController;
+import com.example.healthtracker.EntityObjects.BodyLocation;
 import com.example.healthtracker.EntityObjects.CareProviderComment;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.PatientRecord;
@@ -157,6 +158,64 @@ public class SearchActivity extends AppCompatActivity {
             }
 
         } else if(searchType.equals("bodyLocation")){
+
+            String bodyLocation = keywords.getText().toString();
+            System.out.println("bodyLocation entered is + "+bodyLocation);
+
+            Object preHits[] = null;
+
+            hits = new Object[3];
+            hits[0] = new ArrayList<Problem>();
+            hits[1] = new ArrayList<PatientRecord>();
+            hits[2] = new ArrayList<CareProviderComment>();
+
+            ArrayList<PatientRecord> allReceivedRecords = new ArrayList<PatientRecord>();
+
+
+            // Find all records of the current patient
+
+                // Fetch user data
+            Patient mPatient = UserDataController.loadPatientData(this);
+            System.out.println("mPatient is "+mPatient.toString());
+
+                // Find all problems and then find all records for each problem
+            ArrayList<Problem> mPatientProblems = mPatient.getProblemList();
+            System.out.println("mPatient Problems is "+mPatientProblems);
+
+                // Go through each problem and find all records of each problem
+            ArrayList<PatientRecord> mPatientRecords = new ArrayList<PatientRecord>();
+            for(int i=0;i<mPatientProblems.size();i++){
+                Problem mPatientProblem = mPatientProblems.get(i);
+                for(int j=0;j<mPatientProblem.countRecords();j++){
+                    mPatientRecords.add(mPatientProblem.getPatientRecord(j));
+                }
+            }
+
+            System.out.println("mPatient Record is "+mPatientRecords);
+
+            // Match the saved body locations with the search keyword
+            for (int r=0;r<mPatientRecords.size();r++){
+                // Identifier is the record title of the current record
+                String identifier = mPatientRecords.get(r).getTitle();
+                System.out.println("identifier / record title is "+identifier);
+
+                identifier = "time1";
+                System.out.println(identifier);
+
+                preHits = UserDataController.searchForBodyLocations(bodyLocation,identifier);
+
+                // Add all valid results to an array list called allReceivedRecords
+                ArrayList<PatientRecord> temp;
+                temp = (ArrayList<PatientRecord>) preHits[0];
+
+                for(int n=0;n<temp.size();n++){
+                    if (temp.get(n) != null){
+                        allReceivedRecords.add(temp.get(n));
+                    }
+                }
+            }
+
+            hits[1] = allReceivedRecords;
 
         }
 

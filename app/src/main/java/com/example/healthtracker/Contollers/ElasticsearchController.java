@@ -468,7 +468,7 @@ public class ElasticsearchController {
             String longitude = params[3];
             String identifier = params[4];
 
-            SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+            //SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
 
             // Create a geoLocationQuery
 
@@ -490,7 +490,7 @@ public class ElasticsearchController {
 
             Search search = new Search.Builder(geoLocationQuery)
                     .addIndex(Index)
-                    .addType("Record")
+                    .addType(searchType)
                     .build();
 
             try {
@@ -507,6 +507,53 @@ public class ElasticsearchController {
             }catch (IOException e){
                 e.printStackTrace();
                 }
+
+            return null;
+
+        }
+    }
+
+    public static class SearchByBodyLocations extends AsyncTask<String,Void,SearchResult>{
+        @Override
+        protected SearchResult doInBackground(String...params){
+            verifySettings();
+
+            String searchType = params[0];
+            String locationText = params[1];
+            String identifier = params[2];
+
+            // Create a matchBodyLocationQuery
+
+            String matchBodyLocationQuery = "{\t\n" +
+                    "\t\"query\" : {\n" +
+                    "\t\t\"bool\" : {\n" +
+                    "\t\t\t\"should\" : [\n" +
+                    "\t\t\t\t{ \"match\" : { \"bodyLocation.locationText\" : \"" + locationText +"\" }},\n" +
+                    "\t\t\t\t{ \"match\" : {\"_id\" : \"" +identifier +"\" }}\n" +
+                    "\t\t\t]\n" +
+                    "\t\t}\n" +
+                    "\t}\n" +
+                    "}";
+
+            Search search = new Search.Builder(matchBodyLocationQuery)
+                    .addIndex(Index)
+                    .addType(searchType)
+                    .build();
+
+            try{
+                SearchResult result = client.execute(search);
+                if(result == null){
+                    System.out.println("result is NULL");
+                }
+                else{
+                    System.out.println("result is NOT null");
+                    System.out.println("result is "+result);
+                }
+                return result;
+
+            }catch (IOException e){
+                e.printStackTrace();
+            }
 
             return null;
 
