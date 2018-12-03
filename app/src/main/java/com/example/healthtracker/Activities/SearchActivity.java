@@ -226,8 +226,6 @@ public class SearchActivity extends AppCompatActivity {
                     String identifier = mPatientRecords.get(r).getTitle();
                     System.out.println("identifier / record title is " + identifier);
 
-                    identifier = "time1";
-
                     preHits = UserDataController.searchForBodyLocations(bodyLocation, identifier);
 
                     // Add all valid results to an array list called allReceivedRecords
@@ -269,7 +267,6 @@ public class SearchActivity extends AppCompatActivity {
                             String identifier = mPatientRecords.get(k).getTitle();
                             System.out.println("identifier is " + identifier);
 
-                            identifier = "time1";
 
                             preHits = UserDataController.searchForBodyLocations(bodyLocation, identifier);
 
