@@ -16,9 +16,6 @@ import java.util.ArrayList;
  */
 public class SearchResultsView extends AppCompatActivity {
     private Object[] hits;
-    private ArrayList<Problem> problems;
-    private ArrayList<PatientRecord> records;
-    private ArrayList<CareProviderComment> comments;
 
 
     @Override
@@ -29,9 +26,9 @@ public class SearchResultsView extends AppCompatActivity {
         hits = UserDataController
                 .unserializeObjectArray(this, getIntent().getStringExtra("hits"));
 
-        problems = (ArrayList<Problem>) hits[0];
-        records = (ArrayList<PatientRecord>) hits[1];
-        comments = (ArrayList<CareProviderComment>) hits[2];
+        ArrayList<Problem> problems = (ArrayList<Problem>) hits[0];
+        ArrayList<PatientRecord> records = (ArrayList<PatientRecord>) hits[1];
+        ArrayList<CareProviderComment> comments = (ArrayList<CareProviderComment>) hits[2];
 
         ArrayAdapter<Problem> problemArrayAdapter =
                 new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, problems);

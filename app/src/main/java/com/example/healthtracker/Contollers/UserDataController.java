@@ -1,18 +1,9 @@
 package com.example.healthtracker.Contollers;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 
-import android.location.Address;
-import android.location.Geocoder;
-import android.support.v7.app.AlertDialog;
-
-import android.support.v7.app.AlertDialog;
 import android.util.Base64;
-import android.view.View;
 import android.widget.Toast;
-
-import org.elasticsearch.common.geo.GeoPoint;
 
 import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.CareProviderComment;
@@ -27,14 +18,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import java.util.ConcurrentModificationException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import java.util.concurrent.ExecutionException;
 
@@ -476,7 +459,7 @@ public class UserDataController<E> {
 
     }
 
-    public static void saveProblemData(Problem problem){
+    private static void saveProblemData(Problem problem){
 
         ElasticsearchController.AddProblem addProblem = new ElasticsearchController.AddProblem();
         addProblem.execute(problem);

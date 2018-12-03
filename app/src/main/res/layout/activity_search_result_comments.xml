@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EntityObjects.search_result_comments">
+    tools:context=".EntityObjects.search_results_comments">
 
     <ListView
         android:id="@+id/search_comments"

@@ -1,17 +1,9 @@
 package com.example.healthtracker.View;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
-import android.icu.text.AlphabeticIndex;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.healthtracker.Contollers.UserDataController;
@@ -48,8 +40,6 @@ posted: Apr 25, 2016, viewed: Oct 23, 2018*
 public class MapView extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private Patient user;
-    private ArrayList<Problem> mProblems;
     private ArrayList<PatientRecord> mRecords = new ArrayList<>();
 
 
@@ -68,9 +58,9 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
 
 
 
-    public void createRecordArray(){
-        user = UserDataController.loadPatientData(this);
-        mProblems = user.getProblemList();
+    private void createRecordArray(){
+        Patient user = UserDataController.loadPatientData(this);
+        ArrayList<Problem> mProblems = user.getProblemList();
         for (int counter = 0; counter < mProblems.size(); counter++) {
             for (int counter_1 = 0; counter_1 < mProblems.get(counter).countRecords(); counter_1++) {
                 if(mProblems.get(counter).getRecords().get(counter_1) != null){
@@ -198,7 +188,7 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
         //goToLocation(27.700769, 85.300140, 0);
     }
 
-    public void goToLocation(double latitude, double longitude, int zoom ){
+    private void goToLocation(double latitude, double longitude, int zoom){
         LatLng LatLng = new LatLng(latitude, longitude );
         CameraUpdate update = CameraUpdateFactory.newLatLngZoom(LatLng,zoom);
         //mMap.addMarker(new MarkerOptions().position(LatLng).title("Marker"));

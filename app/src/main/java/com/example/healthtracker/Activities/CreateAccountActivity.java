@@ -192,12 +192,12 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
     // Validate's the entered email address
-    public static boolean validateEmail(CharSequence target) {
+    private static boolean validateEmail(CharSequence target) {
         return Patterns.EMAIL_ADDRESS.matcher(target).matches();
     }
 
     // Validate's the entered phone number
-    public boolean validatePhone(String number) {
+    private boolean validatePhone(String number) {
         return Patterns.PHONE.matcher(number).matches();
     }
 }

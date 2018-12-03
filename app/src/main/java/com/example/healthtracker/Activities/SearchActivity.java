@@ -16,15 +16,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-
-import com.example.healthtracker.R;
-import com.example.healthtracker.View.SearchResultsView;
 
 import org.elasticsearch.common.geo.GeoPoint;
 
-import com.example.healthtracker.Contollers.UserDataController;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +31,6 @@ import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.EntityObjects.Problem;
 import com.example.healthtracker.R;
 import com.example.healthtracker.View.SearchResultsView;
-import com.example.healthtracker.View.CareProviderHomeView;
-
 
 
 /**
@@ -46,7 +39,6 @@ import com.example.healthtracker.View.CareProviderHomeView;
 public class SearchActivity extends AppCompatActivity {
 
     private String searchType;
-    private Spinner spinner;
     private EditText keywords;
     private String profileType;
     private EditText distance;
@@ -60,22 +52,22 @@ public class SearchActivity extends AppCompatActivity {
         Intent intent = getIntent();
         profileType = intent.getStringExtra("profileType");
         // Set the colour for the actionbar to differentiate current user type
-        if(profileType.equals("CareProvider")){
+        if (profileType.equals("CareProvider")) {
             android.support.v7.app.ActionBar bar = getSupportActionBar();
             assert bar != null;
             bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
         }
 
-        spinner = findViewById(R.id.search_type_dropdown);
+        Spinner spinner = findViewById(R.id.search_type_dropdown);
         keywords = findViewById(R.id.search_terms);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                if(position == 0){
+                if (position == 0) {
                     searchType = "keyword";
-                } else if(position == 1){
+                } else if (position == 1) {
                     searchType = "geoLocation";
-                } else{
+                } else {
                     searchType = "bodyLocation";
                 }
             }
@@ -88,17 +80,16 @@ public class SearchActivity extends AppCompatActivity {
     }
 
 
-
     public void Search(View view) {
         Object[] hits = null;
 
-        System.out.println("Search type is "+searchType);
+        System.out.println("Search type is " + searchType);
         Boolean addressFound = true;
 
-        if(searchType.equals("keyword")){
+        if (searchType.equals("keyword")) {
             hits = UserDataController.searchForKeywords(keywords.getText().toString());
 
-        } else if(searchType.equals("geoLocation")){
+        } else if (searchType.equals("geoLocation")) {
 
             String address = keywords.getText().toString();
 
@@ -118,52 +109,51 @@ public class SearchActivity extends AppCompatActivity {
                 // Use an alert dialog to let the user try again
                 AlertDialog.Builder alertBuilder = new AlertDialog.Builder(SearchActivity.this);
                 alertBuilder.setMessage("The Internet connection is poor or the address is not valid. Please try again.");
-                alertBuilder.setPositiveButton("OK",null);
+                alertBuilder.setPositiveButton("OK", null);
                 AlertDialog alertDialog = alertBuilder.create();
                 alertDialog.show();
-            }
-            else {
+            } else {
                 Double latitude = getLocationFromAddress(keywords.getText().toString()).getLat() / 1E6;
                 Double longitude = getLocationFromAddress(keywords.getText().toString()).getLon() / 1E6;
 
                 // Retrieve all records associated with this Patient and provide titles of all records for geoLocationQuery
 
-                    // Fetch user data
+                // Fetch user data
                 Patient mPatient = UserDataController.loadPatientData(this);
 
-                System.out.println("mPatient is "+mPatient.toString());
+                System.out.println("mPatient is " + mPatient.toString());
 
-                    // Find all problems and then find all records for each problem
+                // Find all problems and then find all records for each problem
                 ArrayList<Problem> mPatientProblems = mPatient.getProblemList();
-                System.out.println("mPatient Problems is "+mPatientProblems);
+                System.out.println("mPatient Problems is " + mPatientProblems);
 
-                    // Go through each problem and find all records of each problem
+                // Go through each problem and find all records of each problem
                 ArrayList<PatientRecord> mPatientRecords = new ArrayList<PatientRecord>();
-                for(int i=0;i<mPatientProblems.size();i++){
+                for (int i = 0; i < mPatientProblems.size(); i++) {
                     Problem mPatientProblem = mPatientProblems.get(i);
-                    for(int j=0;j<mPatientProblem.countRecords();j++){
+                    for (int j = 0; j < mPatientProblem.countRecords(); j++) {
                         mPatientRecords.add(mPatientProblem.getPatientRecord(j));
                     }
                 }
 
-                System.out.println("mPatient Record is "+mPatientRecords);
+                System.out.println("mPatient Record is " + mPatientRecords);
 
                 // For each record, check whether the geo location fits the search REQUEST
 
-                for(int k=0;k<mPatientRecords.size();k++){
+                for (int k = 0; k < mPatientRecords.size(); k++) {
                     String identifier = mPatientRecords.get(k).getTitle();
-                    System.out.println("identifier is "+identifier);
+                    System.out.println("identifier is " + identifier);
 
-                    preHits = UserDataController.searchForGeoLocations(distance.getText().toString(),latitude,longitude,identifier);
+                    preHits = UserDataController.searchForGeoLocations(distance.getText().toString(), latitude, longitude, identifier);
 
                     // Add all valid results to an arrayList allReceivedRecords
                     ArrayList<PatientRecord> temp;
                     temp = (ArrayList<PatientRecord>) preHits[1];
 
-                    if(temp.size() != 0){
-                       for(int m=0;m<temp.size();m++){
-                           allReceivedRecords.add(temp.get(m));
-                       }
+                    if (temp.size() != 0) {
+                        for (int m = 0; m < temp.size(); m++) {
+                            allReceivedRecords.add(temp.get(m));
+                        }
                     }
                 }
 
@@ -171,7 +161,7 @@ public class SearchActivity extends AppCompatActivity {
 
             }
 
-        } else if(searchType.equals("bodyLocation")){
+        } else if (searchType.equals("bodyLocation")) {
 
         }
 
@@ -202,18 +192,18 @@ public class SearchActivity extends AppCompatActivity {
         startActivity(intent);*/
     }
 
-    public GeoPoint getLocationFromAddress(String strAddress){
+    private GeoPoint getLocationFromAddress(String strAddress) {
 
         Geocoder coder = new Geocoder(this);
         List<Address> address;
         GeoPoint myPoint = null;
 
         try {
-            address = coder.getFromLocationName(strAddress,5);
-            if (address==null) {
+            address = coder.getFromLocationName(strAddress, 5);
+            if (address == null) {
                 return null;
             }
-            Address location=address.get(0);
+            Address location = address.get(0);
             location.getLatitude();
             location.getLongitude();
 
@@ -221,7 +211,7 @@ public class SearchActivity extends AppCompatActivity {
                     location.getLongitude() * 1E6);
 
 
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
 
         }

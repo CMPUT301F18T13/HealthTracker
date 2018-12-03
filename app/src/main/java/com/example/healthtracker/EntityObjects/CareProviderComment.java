@@ -1,11 +1,5 @@
 package com.example.healthtracker.EntityObjects;
 
-import android.support.annotation.NonNull;
-
-import java.io.Serializable;
-
-import io.searchbox.annotations.JestId;
-
 
 /**
  * CareProviderComment represents the comment records that careproviders can leave on patient problems.

@@ -12,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -25,12 +24,8 @@ import com.example.healthtracker.EntityObjects.Problem;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.R;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
 
 /*
  * AddProblemView enables a patient to add a new problem to their account. The patient must fill in
@@ -44,16 +39,13 @@ public class AddProblemView extends AppCompatActivity {
 
     private EditText titleText;
     private EditText descriptionText;
-    private String title;
-    private String description;
     private Context context;
     private ArrayList<PatientRecord> recordList;
     private ArrayAdapter<PatientRecord> adapter;
-    private ListView mListView;
     private int index;
-    Calendar calender;
-    DatePickerDialog datePickerDialog;
-    TextView pickedDate;
+    private Calendar calender;
+    private DatePickerDialog datePickerDialog;
+    private TextView pickedDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +66,7 @@ public class AddProblemView extends AppCompatActivity {
         adapter = new ArrayAdapter<PatientRecord>(this, android.R.layout.simple_list_item_1, recordList);
 
         // Set an adapter for the list view
-        mListView = findViewById(R.id.record_list_addscreen);
+        ListView mListView = findViewById(R.id.record_list_addscreen);
         mListView.setAdapter(adapter);
 
         // Create a context menu to permit users to select and edit a problem
@@ -187,9 +179,9 @@ public class AddProblemView extends AppCompatActivity {
     // Save's the patient's problem both locally and remotely
     private void saveProblem(){
         // get Problem info
-        title = titleText.getText().toString();
+        String title = titleText.getText().toString();
         String date =pickedDate.getText().toString();
-        description = descriptionText.getText().toString();
+        String description = descriptionText.getText().toString();
 
 
         // fetch user data

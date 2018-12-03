@@ -5,7 +5,6 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -52,22 +51,22 @@ public class AddGeoLocationActivity extends FragmentActivity implements OnMapRea
                 Geocoder geocoder = new Geocoder(this);
                 addressList = geocoder.getFromLocationName(location, 1);
                 //Log.d("array",addressList.toString());
-                if  (!addressList.isEmpty()){
+                if (!addressList.isEmpty()) {
                     Address address = addressList.get(0);
                     String city = address.getLocality();
                     String state = address.getAdminArea();
                     String country = address.getCountryName();
                     String postalCode = address.getPostalCode();
-                    CurrentLocation = city+ " " + state + " " + country + " " + postalCode;
+                    CurrentLocation = city + " " + state + " " + country + " " + postalCode;
                     Lat = address.getLatitude();
                     Lon = address.getLongitude();
                     String Locality = address.getLocality();
-                    Toast.makeText(getApplicationContext(),Locality,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), Locality, Toast.LENGTH_SHORT).show();
                     //LatLng LatLng = new LatLng(address.getLatitude(), address.getLongitude());
-                    goToLocation(address.getLatitude(), address.getLongitude(),15);}
-                else{
+                    goToLocation(address.getLatitude(), address.getLongitude());
+                } else {
                     String no_address = "No address found";
-                    Toast.makeText(getApplicationContext(),no_address,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), no_address, Toast.LENGTH_SHORT).show();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -98,10 +97,9 @@ public class AddGeoLocationActivity extends FragmentActivity implements OnMapRea
         List<Address> addressList = null;
 
 
-
         Geocoder geocoder = new Geocoder(this);
         try {
-            addressList = geocoder.getFromLocationName(location,1);
+            addressList = geocoder.getFromLocationName(location, 1);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -119,18 +117,16 @@ public class AddGeoLocationActivity extends FragmentActivity implements OnMapRea
             String Locality = address.getLocality();
             Toast.makeText(getApplicationContext(), Locality, Toast.LENGTH_SHORT).show();
 
-            goToLocation(address.getLatitude(), address.getLongitude(), 15);
+            goToLocation(address.getLatitude(), address.getLongitude());
         }
-
-
 
 
         //goToLocation(27.700769, 85.300140, 15);
     }
 
-    public void goToLocation(double latitude, double longitude, int zoom ){
-        LatLng LatLng = new LatLng(latitude, longitude );
-        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(LatLng,15);
+    private void goToLocation(double latitude, double longitude) {
+        LatLng LatLng = new LatLng(latitude, longitude);
+        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(LatLng, 15);
         mMap.addMarker(new MarkerOptions().position(LatLng).title("Marker"));
         mMap.moveCamera(update);
 
@@ -144,7 +140,7 @@ public class AddGeoLocationActivity extends FragmentActivity implements OnMapRea
         AddGeoLocationActivity.this.finish();
     }
 
-    public void Save_current(View view){
+    public void Save_current(View view) {
         Intent intent = new Intent();
         intent.putExtra("Lat", Lat);
         intent.putExtra("Lon", Lon);

@@ -37,7 +37,7 @@ public class UserSettingsViewTest {
     }
 
     @Test
-    public void testPatientInfo(){
+    public void testPatientInfo() {
         // login
         EditText name = (EditText) solo.getView("userID");
         solo.enterText(name, "testingcode12");
@@ -51,52 +51,52 @@ public class UserSettingsViewTest {
         EditText phone = (EditText) solo.getView(R.id.edit_phone);
         solo.clearEditText(email);
         solo.clearEditText(phone);
-        solo.enterText(email,"patienttest@gmail.com");
-        solo.enterText(phone,"780-268-1234");
+        solo.enterText(email, "patienttest@gmail.com");
+        solo.enterText(phone, "780-268-1234");
 
         // Third step: Save Changes with correct info
         solo.clickOnView(solo.getView(R.id.editSaveButton));
-        assertTrue("Changes Saved message is not displayed",solo.searchText("Changes Saved"));
+        assertTrue("Changes Saved message is not displayed", solo.searchText("Changes Saved"));
 
         // 4th case: Test empty email
         solo.clearEditText(email);
         solo.clickOnView(solo.getView(R.id.editSaveButton));
-        assertTrue("Empty message is not displayed",solo.searchText("All fields must be filled in."));
+        assertTrue("Empty message is not displayed", solo.searchText("All fields must be filled in."));
 
         // 5th case: Test empty phone
         solo.clearEditText(phone);
         solo.clickOnView(solo.getView(R.id.editSaveButton));
-        assertTrue("Empty message is not displayed",solo.searchText("All fields must be filled in."));
+        assertTrue("Empty message is not displayed", solo.searchText("All fields must be filled in."));
 
         // 6th case: Test both empty
         solo.clickOnView(solo.getView(R.id.editSaveButton));
-        assertTrue("Empty message is not displayed",solo.searchText("All fields must be filled in."));
+        assertTrue("Empty message is not displayed", solo.searchText("All fields must be filled in."));
 
         // 7th case: Test invalid emails
-        solo.enterText(phone,"780-268-1234");
-        solo.enterText(email,"test@gmail");
+        solo.enterText(phone, "780-268-1234");
+        solo.enterText(email, "test@gmail");
         solo.clickOnView(solo.getView(R.id.editSaveButton));
-        assertTrue("Invalid email message is not displayed",solo.searchText("Invalid Email"));
+        assertTrue("Invalid email message is not displayed", solo.searchText("Invalid Email"));
         solo.clearEditText(email);
-        solo.enterText(email,"testgmail");
+        solo.enterText(email, "testgmail");
         solo.clickOnView(solo.getView(R.id.editSaveButton));
-        assertTrue("Invalid email message is not displayed",solo.searchText("Invalid Email"));
+        assertTrue("Invalid email message is not displayed", solo.searchText("Invalid Email"));
 
         // 8th case: Test invalid phone numbers
         solo.clearEditText(phone);
         solo.clearEditText(email);
-        solo.enterText(phone,"1");
-        solo.enterText(email,"test@gmail.com");
+        solo.enterText(phone, "1");
+        solo.enterText(email, "test@gmail.com");
         solo.clickOnView(solo.getView(R.id.editSaveButton));
-        assertTrue("Changes Saved message is not displayed",solo.searchText("Invalid Phone Number"));
+        assertTrue("Changes Saved message is not displayed", solo.searchText("Invalid Phone Number"));
         solo.clearEditText(phone);
-        solo.enterText(phone,"testseata");
+        solo.enterText(phone, "testseata");
         solo.clickOnView(solo.getView(R.id.editSaveButton));
-        assertTrue("Changes Saved message is not displayed",solo.searchText("Invalid Phone Number"));
+        assertTrue("Changes Saved message is not displayed", solo.searchText("Invalid Phone Number"));
     }
 
     @Test
-    public void testCareProviderInfo(){
+    public void testCareProviderInfo() {
         /// login
         solo.clickOnCheckBox(0);
         EditText name = (EditText) solo.getView("userID");
@@ -111,47 +111,47 @@ public class UserSettingsViewTest {
         EditText phone = (EditText) solo.getView(R.id.edit_phone);
         solo.clearEditText(phone);
         solo.clearEditText(email);
-        solo.enterText(email,"caretest@gmail.com");
-        solo.enterText(phone,"780-268-1235");
+        solo.enterText(email, "caretest@gmail.com");
+        solo.enterText(phone, "780-268-1235");
 
         // Third step: Save Changes with correct info
         solo.clickOnView(solo.getView(R.id.editSaveButton));
-        assertTrue("Changes Saved message is not displayed",solo.searchText("Changes Saved"));
+        assertTrue("Changes Saved message is not displayed", solo.searchText("Changes Saved"));
 
         // 4th case: Test empty email
         solo.clearEditText(email);
         solo.clickOnView(solo.getView(R.id.editSaveButton));
-        assertTrue("Changes Saved message is not displayed",solo.searchText("All fields must be filled in."));
+        assertTrue("Changes Saved message is not displayed", solo.searchText("All fields must be filled in."));
 
         // 5th case: Test empty phone
         solo.clearEditText(phone);
         solo.clickOnView(solo.getView(R.id.editSaveButton));
-        assertTrue("Changes Saved message is not displayed",solo.searchText("All fields must be filled in."));
+        assertTrue("Changes Saved message is not displayed", solo.searchText("All fields must be filled in."));
 
         // 6th case: Test both empty
         solo.clickOnView(solo.getView(R.id.editSaveButton));
-        assertTrue("Changes Saved message is not displayed",solo.searchText("All fields must be filled in."));
+        assertTrue("Changes Saved message is not displayed", solo.searchText("All fields must be filled in."));
 
         // 7th case: Test invalid emails
-        solo.enterText(phone,"780-268-1234");
-        solo.enterText(email,"test@gmail");
+        solo.enterText(phone, "780-268-1234");
+        solo.enterText(email, "test@gmail");
         solo.clickOnView(solo.getView(R.id.editSaveButton));
-        assertTrue("Invalid email message is not displayed",solo.searchText("Invalid Email"));
+        assertTrue("Invalid email message is not displayed", solo.searchText("Invalid Email"));
         solo.clearEditText(email);
-        solo.enterText(email,"testgmail");
+        solo.enterText(email, "testgmail");
         solo.clickOnView(solo.getView(R.id.editSaveButton));
-        assertTrue("Invalid email message is not displayed",solo.searchText("Invalid Email"));
+        assertTrue("Invalid email message is not displayed", solo.searchText("Invalid Email"));
 
         // 8th case: Test invalid phone numbers
         solo.clearEditText(phone);
         solo.clearEditText(email);
-        solo.enterText(phone,"1");
-        solo.enterText(email,"test@gmail.com");
+        solo.enterText(phone, "1");
+        solo.enterText(email, "test@gmail.com");
         solo.clickOnView(solo.getView(R.id.editSaveButton));
-        assertTrue("Invalid phone is not displayed",solo.searchText("Invalid Phone Number"));
+        assertTrue("Invalid phone is not displayed", solo.searchText("Invalid Phone Number"));
         solo.clearEditText(phone);
-        solo.enterText(phone,"testseata");
+        solo.enterText(phone, "testseata");
         solo.clickOnView(solo.getView(R.id.editSaveButton));
-        assertTrue("Invalid phone message is not displayed",solo.searchText("Invalid Phone Number"));
+        assertTrue("Invalid phone message is not displayed", solo.searchText("Invalid Phone Number"));
     }
 }

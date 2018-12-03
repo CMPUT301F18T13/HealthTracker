@@ -56,7 +56,7 @@ public class AddOrEditRecordView {
         solo.waitForActivity(AddProblemView.class, 2000);
         solo.assertCurrentActivity("Problem activity", AddProblemView.class);
         EditText title = (EditText) solo.getView(R.id.title_text);
-        solo.enterText(title,"Rashes");
+        solo.enterText(title, "Rashes");
         solo.clickOnView(solo.getView("add_record_from_add_problem"));
         solo.waitForActivity(AddorEditRecordView.class, 2000);
 
@@ -86,7 +86,7 @@ public class AddOrEditRecordView {
     }
 
     @Test
-    public void testAddAndEditRecordWhileEditingProblem(){
+    public void testAddAndEditRecordWhileEditingProblem() {
         solo.assertCurrentActivity("wrong activity", PatientHomeView.class);
         solo.clickOnButton(solo.getString(R.string.view_myproblems));
 
@@ -127,7 +127,7 @@ public class AddOrEditRecordView {
     }
 
     @Test
-    public void testAddProblem(){
+    public void testAddProblem() {
         solo.assertCurrentActivity("wrong activity", PatientHomeView.class);
         solo.clickOnButton(solo.getString(R.string.add_problem));
 
@@ -136,10 +136,10 @@ public class AddOrEditRecordView {
         solo.clickOnButton(solo.getString(R.string.pick_date2));
         solo.setDatePicker(0, 2012, 2, 16);
         solo.clickOnText("OK");
-        solo.enterText(title,"Rashes");
-        solo.enterText(problemDescription,"Red spots on my left ear");
+        solo.enterText(title, "Rashes");
+        solo.enterText(problemDescription, "Red spots on my left ear");
 
         solo.clickOnView(solo.getView(R.id.add_problem_button));
-        assertTrue("Success message is not displayed",solo.searchText("Success"));
+        assertTrue("Success message is not displayed", solo.searchText("Success"));
     }
 }

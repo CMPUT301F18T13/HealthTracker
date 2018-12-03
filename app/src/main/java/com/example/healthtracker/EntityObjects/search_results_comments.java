@@ -13,19 +13,16 @@ import java.util.ArrayList;
 
 public class search_results_comments extends Activity {
 
-    Object[] hits;
-    int index;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result_comments);
 
-        hits = UserDataController
+        Object[] hits = UserDataController
                 .unserializeObjectArray(this, getIntent().getStringExtra("hits"));
-        index = getIntent().getIntExtra("problemIndex", -1);
+        int index = getIntent().getIntExtra("problemIndex", -1);
 
-        ArrayList<Problem> problems = (ArrayList<Problem>)hits[0];
+        ArrayList<Problem> problems = (ArrayList<Problem>) hits[0];
         ArrayList<CareProviderComment> comments = problems.get(index).getcaregiverRecords();
 
         ArrayAdapter<CareProviderComment> adapter =

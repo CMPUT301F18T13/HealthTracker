@@ -113,7 +113,7 @@
         <activity android:name=".Activities.AddGeoLocationActivity">
         </activity>
         <activity android:name=".Contollers.PhotoController" />
-        <activity android:name=".EntityObjects.search_result_comments" />
+        <activity android:name=".EntityObjects.search_results_comments" />
         <activity android:name=".EntityObjects.search_results_problem" />
         <activity android:name=".EntityObjects.SearchResultsView" />
         <activity android:name=".EntityObjects.search_results_record" />

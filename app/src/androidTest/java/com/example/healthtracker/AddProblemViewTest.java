@@ -40,7 +40,7 @@ public class AddProblemViewTest {
     }
 
     @Test
-    public void testAddProblem(){
+    public void testAddProblem() {
         solo.assertCurrentActivity("wrong activity", PatientHomeView.class);
         solo.clickOnButton(solo.getString(R.string.add_problem));
 
@@ -49,10 +49,10 @@ public class AddProblemViewTest {
         solo.clickOnButton(solo.getString(R.string.pick_date2));
         solo.setDatePicker(0, 2012, 2, 16);
         solo.clickOnText("OK");
-        solo.enterText(title,"Rashes");
-        solo.enterText(problemDescription,"Red spots on my left ear");
+        solo.enterText(title, "Rashes");
+        solo.enterText(problemDescription, "Red spots on my left ear");
 
         solo.clickOnView(solo.getView(R.id.add_problem_button));
-        assertTrue("Success message is not displayed",solo.searchText("Success"));
+        assertTrue("Success message is not displayed", solo.searchText("Success"));
     }
 }

@@ -87,10 +87,9 @@ public class CareProvider extends User implements Serializable {
     /**
      * Create map visual of all the geolocation records for a patient.
      *
-     * @param patient The patient whose geolocation records will appear on the map.
      * @return byte code of map visual.
      */
-    public Bitmap createMap(Patient patient){
+    public Bitmap createMap(){
         return null;
     }
     @Override

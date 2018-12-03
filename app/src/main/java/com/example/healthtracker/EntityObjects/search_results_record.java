@@ -6,25 +6,19 @@ import android.widget.TextView;
 
 import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.PatientRecord;
+
 import com.example.healthtracker.R;
 
-import java.sql.Timestamp;
-import com.example.healthtracker.R;
-
-import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class search_results_record extends Activity {
-
-    private Object[] hits;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_results_record_view);
 
-        hits = UserDataController
+        Object[] hits = UserDataController
                 .unserializeObjectArray(this, getIntent().getStringExtra("hits"));
 
         ArrayList<PatientRecord> records = (ArrayList<PatientRecord>) hits[1];

@@ -47,16 +47,15 @@ public class ViewPatientsTest {
     }
 
     @Test
-    public void testViewPatients(){
+    public void testViewPatients() {
         // Second step: Check whether patients assigned to this care provider shows up
         solo.clickOnView(solo.getView(R.id.view_problems));
         boolean result_2 = solo.waitForActivity(ViewPatients.class, 6000);
         Assert.assertTrue(result_2);
         if (solo.searchText("P")) {
             assertTrue("Patient info is not found!", solo.searchText("Patient:"));
-        }
-        else{
-            assertTrue("Alert message is not displayed!",solo.searchText("No Patients Assigned!"));
+        } else {
+            assertTrue("Alert message is not displayed!", solo.searchText("No Patients Assigned!"));
         }
     }
 }

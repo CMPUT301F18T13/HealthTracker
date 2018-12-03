@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
 import static junit.framework.TestCase.assertTrue;
 
 @RunWith(AndroidJUnit4.class)
-public class AddPatientViewTest  {
+public class AddPatientViewTest {
 
     @Rule
     public final ActivityTestRule<LoginActivity> activityTestRule =
@@ -59,9 +59,9 @@ public class AddPatientViewTest  {
         // Case 2: A care giver tries to add an existing patient
         EditText patientId = (EditText) solo.getView(R.id.editText4);
         solo.clearEditText(patientId);
-        solo.enterText(patientId,"MURH2");
+        solo.enterText(patientId, "MURH2");
         solo.clickOnView(solo.getView(R.id.add_patient_button));
-        assertTrue("Could not find the dialog!",solo.searchText("Patient already assigned to you."));
+        assertTrue("Could not find the dialog!", solo.searchText("Patient already assigned to you."));
     }
 
     @Test
@@ -69,8 +69,8 @@ public class AddPatientViewTest  {
         // Case 3: A care giver add a new patient with valid id. WILL FAIL DUE TO INABILITY TO PREDICT NEW ACCOUNT CODE
         EditText patientId = (EditText) solo.getView(R.id.editText4);
         solo.clearEditText(patientId);
-        solo.enterText(patientId,"VOXX5");
+        solo.enterText(patientId, "VOXX5");
         solo.clickOnView(solo.getView(R.id.add_patient_button));
-        assertTrue("Could not find the toast message",solo.searchText("Success"));
+        assertTrue("Could not find the toast message", solo.searchText("Success"));
     }
 }

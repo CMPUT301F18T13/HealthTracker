@@ -48,7 +48,7 @@ public class User implements Serializable {
      * user constructor that requires no parameters
      *
      */
-    public User(){
+    User(){
     }
 
     /**

@@ -19,7 +19,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/problemCategory"
         android:layout_width="123dp"
         android:layout_height="26dp"
         android:layout_marginStart="8dp"

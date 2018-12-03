@@ -26,10 +26,10 @@ import java.util.ArrayList;
  * SearchResultsView enables patients and careproviders to view the results of their search queries.
  */
 public class SearchResultsView extends AppCompatActivity {
-    Object[] hits;
-    ArrayList<Problem> problems;
-    ArrayList<PatientRecord> records;
-    ArrayList<CareProviderComment> comments;
+    private Object[] hits;
+    private ArrayList<Problem> problems;
+    private ArrayList<PatientRecord> records;
+    private ArrayList<CareProviderComment> comments;
 
     private String profileType;
 

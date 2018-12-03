@@ -1,20 +1,9 @@
 package com.example.healthtracker.EntityObjects;
 
-import android.graphics.Bitmap;
-
 import android.support.annotation.NonNull;
-import android.location.Address;
 
 
 import com.example.healthtracker.EntityObjects.Photo;
-
-import org.elasticsearch.common.geo.GeoPoint;
-
-import java.io.Serializable;
-import java.sql.Timestamp;
-import java.util.ArrayList;
-
-import io.searchbox.annotations.JestId;
 
 /**
  * The patient record is a record added to a problem by a patient.
@@ -23,12 +12,10 @@ import io.searchbox.annotations.JestId;
  * @since 2018-11-10
  * @version 1.0
  */
-import android.graphics.Bitmap;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 
 import io.searchbox.annotations.JestId;
 
@@ -45,8 +32,6 @@ public class PatientRecord implements Serializable {
     private String RecordTitle;
     private String comment;
     private Timestamp timestamp;
-    private Double Lon;
-    private Double Lat;
     private ArrayList<Double> geoLocations = new ArrayList<>();
     private final ArrayList<Photo> photos;
 
@@ -64,8 +49,8 @@ public class PatientRecord implements Serializable {
 
         geoLocations = new ArrayList<Double>();
 
-        this.Lat = Lat;
-        this.Lon = Lon;
+        Double lat = Lat;
+        Double lon = Lon;
         this.geoLocations.add(Lon);
         this.geoLocations.add(Lat);
         photos = new ArrayList<Photo> ();
@@ -83,21 +68,22 @@ public class PatientRecord implements Serializable {
         photos = new ArrayList<Photo> ();
 
     }
-
     /**
      * Add a geoLocation to the record.
      *
-     * @param geoLocation The geoLocation to be added.
+     * @param Lon Longitude for geo location
+     * @param Lat Latitude for geo location
      */
     public void setGeoLocation(Double Lon, Double Lat){
         this.geoLocations.add(Lon);
         this.geoLocations.add(Lat);
     }
 
+
     /**
-     * Delete a geoLocation from this record.
+     * Gets a geo location and returns it
      *
-     * @param geoLocation The geoLocation to be deleted.
+     * @return geoLocation
      */
     public ArrayList<Double> getGeoLocation(){
         return this.geoLocations;

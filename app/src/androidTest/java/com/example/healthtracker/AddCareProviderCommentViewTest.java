@@ -38,12 +38,12 @@ public class AddCareProviderCommentViewTest {
     }
 
     @Test
-    public void testAddCareProviderCommentView(){
+    public void testAddCareProviderCommentView() {
         // First step: Log in
         EditText userID = (EditText) solo.getView("userID");
         EditText password = (EditText) solo.getView("login_password");
-        solo.enterText(userID,"chenlin2");
-        solo.enterText(password,"passwords");
+        solo.enterText(userID, "chenlin2");
+        solo.enterText(password, "passwords");
         solo.clickOnView(solo.getView("CareGiverLogin"));
         solo.clickOnView(solo.getView("login_button"));
 

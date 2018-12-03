@@ -45,8 +45,6 @@ public class EditProblem extends AppCompatActivity {
     private int index;
     private ArrayList<PatientRecord> recordList;
     private ArrayAdapter<PatientRecord> adapter;
-    private Calendar calender;
-    private DatePickerDialog datePickerDialog;
     private TextView pickedDate;
 
     @SuppressLint("Assert")
@@ -268,15 +266,15 @@ public class EditProblem extends AppCompatActivity {
     // Creates and opens a datePicker widget to allow the Patient to more easily choose a date
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void datePicker(View view){
-        calender=Calendar.getInstance();
+        Calendar calender = Calendar.getInstance();
         int day = calender.get(Calendar.DAY_OF_MONTH);
         int month = calender.get(Calendar.MONTH);
         int year = calender.get(Calendar.YEAR);
 
-        datePickerDialog = new DatePickerDialog(this, (view1, myear, mmonth, mday) -> {
-            mmonth+=1;
-            pickedDate.setText(myear+"-"+mmonth+"-"+mday);
-        }, year,month,day);
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, (view1, myear, mmonth, mday) -> {
+            mmonth += 1;
+            pickedDate.setText(myear + "-" + mmonth + "-" + mday);
+        }, year, month, day);
         datePickerDialog.show();
     }
 }

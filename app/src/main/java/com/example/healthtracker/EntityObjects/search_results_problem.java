@@ -14,7 +14,6 @@ import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.EntityObjects.Problem;
 import com.example.healthtracker.R;
-import com.example.healthtracker.R;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -23,8 +22,8 @@ import java.util.Locale;
 
 public class search_results_problem extends Activity {
 
-    Object[] hits;
-    int index;
+    private Object[] hits;
+    private int index;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,8 +85,7 @@ public class search_results_problem extends Activity {
 
     private String dateToString(Date date){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.CANADA);
-        String dateString = format.format(date);
-        return dateString;
+        return format.format(date);
     }
 
 }

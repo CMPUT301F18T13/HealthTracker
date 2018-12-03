@@ -7,19 +7,9 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.healthtracker.EntityObjects.CareProvider;
-
-import com.example.healthtracker.EntityObjects.CareProviderComment;
-import com.example.healthtracker.EntityObjects.Patient;
-import com.example.healthtracker.EntityObjects.PatientRecord;
-import com.example.healthtracker.EntityObjects.Problem;
-import com.google.gson.JsonObject;
-
 
 import com.example.healthtracker.EntityObjects.CareProviderComment;
 import com.example.healthtracker.EntityObjects.PatientRecord;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonSyntaxException;
 
 import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.Patient;
@@ -30,34 +20,12 @@ import com.searchly.jestdroid.DroidClientConfig;
 import com.searchly.jestdroid.JestClientFactory;
 import com.searchly.jestdroid.JestDroidClient;
 
-import org.elasticsearch.index.query.QueryBuilder;
-
-import org.apache.lucene.queryparser.xml.builders.BooleanQueryBuilder;
-import org.elasticsearch.common.unit.DistanceUnit;
-import org.elasticsearch.index.query.GeoDistanceFilterBuilder;
-import org.elasticsearch.index.query.QueryBuilder;
-
 import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.search.aggregations.bucket.range.geodistance.GeoDistanceBuilder;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import java.util.Map;
-import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 
 
 import io.searchbox.client.JestResult;
@@ -69,9 +37,6 @@ import io.searchbox.core.SearchResult;
 import io.searchbox.indices.mapping.PutMapping;
 
 import static org.elasticsearch.index.query.QueryStringQueryBuilder.Operator.AND;
-import org.elasticsearch.common.geo.ShapeRelation;
-import org.elasticsearch.common.geo.builders.ShapeBuilder;
-import org.elasticsearch.common.geo.GeoDistance;
 
 
 
@@ -97,7 +62,6 @@ license identified and documented at https://github.com/CMPUT301W18T17/TheProfes
  */
 public class ElasticsearchController {
     private static JestDroidClient client;
-    private static String server = "http://cmput301.softwareprocess.es:8080";
     private static String Index = "cmput301f18t13";
 
 
@@ -108,9 +72,10 @@ public class ElasticsearchController {
      * Method taken from CMPUT301 lab tutorial: https://github.com/watts1/lonelyTwitter.git
      *
      */
-    public static void verifySettings() {
+    private static void verifySettings() {
         if (client == null) {
             // if the client is not yet created, build the client factory, establish connection to the DB, and finally set the client and its factory
+            String server = "http://cmput301.softwareprocess.es:8080";
             DroidClientConfig.Builder builder = new DroidClientConfig.Builder(server);
             DroidClientConfig config = builder.build();
             JestClientFactory factory = new JestClientFactory();
@@ -443,8 +408,7 @@ public class ElasticsearchController {
                 return null;
             }
 
-            Patient patient = result.getSourceAsObject(Patient.class, false);
-            return patient;
+            return result.getSourceAsObject(Patient.class, false);
         }
     }
 

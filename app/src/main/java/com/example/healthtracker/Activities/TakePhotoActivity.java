@@ -28,7 +28,6 @@ public class TakePhotoActivity extends AppCompatActivity {
     Uri imageFileUri;
     private TextView textTargetUri;
     private ImageView imageView;
-    private String pathLoaded;
     private String addPath = "";
     String problemTitle;
     String path = "/storage/self/primary/Download/";
@@ -77,7 +76,7 @@ public class TakePhotoActivity extends AppCompatActivity {
 
 
                 ContextWrapper cw = new ContextWrapper(getApplicationContext());
-                pathLoaded=PhotoController.saveToInternalStorage(rotatedBitmap,cw);
+                String pathLoaded = PhotoController.saveToInternalStorage(rotatedBitmap, cw);
                 //SlideShowActivity.add(addPath);
                // Bitmap test1 = PhotoController.loadImageFromStorage(pathLoaded,imageName);
                 //textTargetUri.setText(pathLoaded);

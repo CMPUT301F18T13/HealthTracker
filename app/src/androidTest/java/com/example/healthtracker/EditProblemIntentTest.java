@@ -22,7 +22,6 @@ import org.junit.runner.RunWith;
 public class EditProblemIntentTest {
 
 
-
     @Rule
     public final ActivityTestRule<LoginActivity> activityTestRule =
             new ActivityTestRule<>(LoginActivity.class);
@@ -79,7 +78,7 @@ public class EditProblemIntentTest {
         boolean result_2 = solo.waitForActivity(AddorEditRecordView.class, 2000);
         Assert.assertTrue(result_2);
         solo.goBack();
-        
+
 
     }
 }
