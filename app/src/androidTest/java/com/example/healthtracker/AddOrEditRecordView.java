@@ -53,34 +53,31 @@ public class AddOrEditRecordView {
     public void testAddAndEditRecordWhileAddingProblem() {
         solo.clickOnButton(solo.getString(R.string.add_problem));
 
-        solo.waitForActivity(AddProblemView.class, 2000);
+        solo.waitForActivity(AddProblemView.class, 6000);
         solo.assertCurrentActivity("Problem activity", AddProblemView.class);
         EditText title = (EditText) solo.getView(R.id.title_text);
         solo.enterText(title, "Rashes");
-        solo.clickOnView(solo.getView("add_record_from_add_problem"));
-        solo.waitForActivity(AddorEditRecordView.class, 2000);
-
+        solo.clickOnButton(solo.getString(R.string.add_record_from_add));
+        solo.waitForActivity(AddorEditRecordView.class, 6000);
         solo.assertCurrentActivity("Record activity", AddorEditRecordView.class);
 
-        title = solo.getEditText(0);
-        description = solo.getEditText(1);
 
-        solo.enterText(title, "Day after injury.");
-        solo.enterText(description, "Ankle has become more swollen.");
+        EditText title1 = (EditText) solo.getView(R.id.title_edit_text);
+        EditText comment2 = (EditText) solo.getView(R.id.description_edit_text);
+        solo.enterText(title1,"Day after injury.");
+        solo.enterText(comment2,"Ankle has become more swollen.");
+        Assert.assertEquals("Day after injury.", title1.getText().toString());
+        Assert.assertEquals("Ankle has become more swollen.",comment2.getText().toString());
 
-        String text = title.getText().toString();
-        Assert.assertEquals("Day after injury.", text);
-        Assert.assertEquals("Ankle has become more swollen.", description.getText().toString());
+        solo.clickOnButton(solo.getString(R.string.save_record_button));
 
-        solo.clickOnView(solo.getView("save_record_button"));
-
-        solo.waitForActivity(AddProblemView.class, 2000);
+        solo.waitForActivity(AddProblemView.class, 6000);
         solo.assertCurrentActivity("Problem", AddProblemView.class);
 
         solo.clickInList(0);
         solo.clickOnButton("Edit/View");
 
-        solo.waitForActivity(AddorEditRecordView.class, 2000);
+        solo.waitForActivity(AddorEditRecordView.class, 6000);
         solo.assertCurrentActivity("Record activity", AddorEditRecordView.class);
 
     }
@@ -90,39 +87,35 @@ public class AddOrEditRecordView {
         solo.assertCurrentActivity("wrong activity", PatientHomeView.class);
         solo.clickOnButton(solo.getString(R.string.view_myproblems));
 
-        solo.waitForActivity(ViewMyProblems.class, 2000);
+        solo.waitForActivity(ViewMyProblems.class, 6000);
         solo.assertCurrentActivity("Should be problem list.", ViewMyProblems.class);
 
         solo.clickInList(0);
         solo.clickOnButton("Edit/View");
 
-        solo.waitForActivity(EditProblem.class, 2000);
+        solo.waitForActivity(EditProblem.class, 6000);
         solo.assertCurrentActivity("Should be edit problem activity.", EditProblem.class);
 
-        solo.clickOnView(solo.getView("add_record_from_edit_problem"));
+        solo.clickOnButton(solo.getString(R.string.add_record_from_edit));
 
-        solo.waitForActivity(AddorEditRecordView.class, 2000);
+        solo.waitForActivity(AddorEditRecordView.class, 6000);
         solo.assertCurrentActivity("Should be Add record activity.", AddorEditRecordView.class);
 
-        EditText title = solo.getEditText(0);
-        description = solo.getEditText(1);
+        EditText title1 = (EditText) solo.getView(R.id.title_edit_text);
+        EditText comment2 = (EditText) solo.getView(R.id.description_edit_text);
+        solo.enterText(title1,"Day after injury.");
+        solo.enterText(comment2,"Ankle has become more swollen.");
+        Assert.assertEquals("Day after injury.", title1.getText().toString());
+        Assert.assertEquals("Ankle has become more swollen.",comment2.getText().toString());
+        solo.clickOnButton(solo.getString(R.string.save_record_button));
 
-        solo.enterText(title, "Day after injury.");
-        solo.enterText(description, "Ankle has become more swollen.");
-
-        String text = title.getText().toString();
-        Assert.assertEquals("Day after injury.", text);
-        Assert.assertEquals("Ankle has become more swollen.", description.getText().toString());
-
-        solo.clickOnView(solo.getView("save_record_button"));
-
-        solo.waitForActivity(EditProblem.class, 2000);
+        solo.waitForActivity(EditProblem.class, 6000);
         solo.assertCurrentActivity("Problem", EditProblem.class);
 
         solo.clickInList(0);
         solo.clickOnButton("Edit/View");
 
-        solo.waitForActivity(AddorEditRecordView.class, 2000);
+        solo.waitForActivity(AddorEditRecordView.class, 6000);
         solo.assertCurrentActivity("Record activity", AddorEditRecordView.class);
     }
 

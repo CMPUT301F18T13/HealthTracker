@@ -182,7 +182,7 @@ public class UserDataController<E> {
     public static void savePatientData(Context context, Patient patient) {
         // save online if possible
         if (ElasticsearchController.testConnection(context)) {
-            Toast.makeText(context, "Success", Toast.LENGTH_LONG).show();
+            //Toast.makeText(context, "Success", Toast.LENGTH_LONG).show();
             ElasticsearchController.AddPatient addPatientTask = new ElasticsearchController.AddPatient();
             addPatientTask.execute(patient);
             for(Problem problem: patient.getProblemList()){
@@ -208,7 +208,7 @@ public class UserDataController<E> {
     public static void saveCareProviderData(Context context, CareProvider careProvider) {
         // save online if possible
         if (ElasticsearchController.testConnection(context)) {
-            Toast.makeText(context, "Success", Toast.LENGTH_LONG).show();
+            //Toast.makeText(context, "Success", Toast.LENGTH_LONG).show();
             ElasticsearchController.AddCareProvider addCareProviderTask = new ElasticsearchController.AddCareProvider();
             addCareProviderTask.execute(careProvider);
             // update patient data

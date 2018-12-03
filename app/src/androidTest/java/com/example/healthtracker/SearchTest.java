@@ -5,8 +5,10 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.widget.EditText;
 
+import com.example.healthtracker.Activities.EditProblem;
 import com.example.healthtracker.Activities.LoginActivity;
 import com.example.healthtracker.Activities.SearchActivity;
+import com.example.healthtracker.EntityObjects.search_results_problem;
 import com.example.healthtracker.View.SearchResultsView;
 import com.robotium.solo.Solo;
 
@@ -48,13 +50,17 @@ public class SearchTest {
 
         // Test Existing Search terms
         EditText keyword = (EditText) solo.getView("search_terms");
-        solo.enterText(keyword, "test");
+        solo.enterText(keyword, "Rashes");
         solo.pressSpinnerItem(0, 0);
         Boolean actual = solo.isSpinnerTextSelected(0, "Keywords");
         Assert.assertEquals("spinner item selected", true, actual);
         solo.clickOnButton(solo.getString(R.string.search));
-        boolean result_2 = solo.waitForActivity(SearchResultsView.class, 2000);
+        boolean result_2 = solo.waitForActivity(SearchResultsView.class, 4000);
         Assert.assertTrue(result_2);
+
+        solo.clickInList(0,0);
+        solo.waitForActivity(search_results_problem.class, 2000);
+        solo.assertCurrentActivity("Should be edit problem activity.", search_results_problem.class);
     }
 
     @Test
@@ -97,13 +103,17 @@ public class SearchTest {
 
         // Test Existing Search terms
         EditText keyword = (EditText) solo.getView("search_terms");
-        solo.enterText(keyword, "test");
+        solo.enterText(keyword, "Rashes");
         solo.pressSpinnerItem(0, 0);
         Boolean actual = solo.isSpinnerTextSelected(0, "Keywords");
         Assert.assertEquals("spinner item selected", true, actual);
         solo.clickOnButton(solo.getString(R.string.search));
-        boolean result_2 = solo.waitForActivity(SearchResultsView.class, 2000);
+        boolean result_2 = solo.waitForActivity(SearchResultsView.class, 4000);
         Assert.assertTrue(result_2);
+
+        solo.clickInList(0,0);
+        solo.waitForActivity(search_results_problem.class, 2000);
+        solo.assertCurrentActivity("Should be edit problem activity.", search_results_problem.class);
     }
 
     @Test
