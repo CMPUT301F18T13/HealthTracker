@@ -228,7 +228,7 @@ public class AddorEditRecordView extends AppCompatActivity {
             String bodyText;
             Bitmap bodygraphic;
             bodyLoc = new BodyLocation();
-            if (resultCode == RESULT_OK) {
+            if (resultCode == 88) {
                 byte[] byteArray = data.getByteArrayExtra("graphic");
                 bodygraphic = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                 bodyText = data.getStringExtra("text");
