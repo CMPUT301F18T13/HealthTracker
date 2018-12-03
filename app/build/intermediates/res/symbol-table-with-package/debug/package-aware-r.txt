@@ -1300,6 +1300,7 @@ id search_button
 id search_close_btn
 id search_comments
 id search_edit_frame
+id search_geo
 id search_go_btn
 id search_mag_icon
 id search_plate
