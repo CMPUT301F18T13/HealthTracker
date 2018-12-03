@@ -404,9 +404,7 @@ public class UserDataController<E> {
         searchRecordsTask.execute(searchInfo);
         try {
             hits[1] = searchRecordsTask.get().getSourceAsObjectList(PatientRecord.class, false);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
 
@@ -417,10 +415,7 @@ public class UserDataController<E> {
             hits[2] = searchCommentsTask.get().getSourceAsObjectList(CareProviderComment.class, false);
 
 
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
 
@@ -446,9 +441,7 @@ public class UserDataController<E> {
         try {
             hits[1] = searchRecordsTask.get().getSourceAsObjectList(PatientRecord.class,false);
 
-        }catch (ExecutionException e){
-            e.printStackTrace();
-        }catch (InterruptedException e){
+        }catch (ExecutionException | InterruptedException e){
             e.printStackTrace();
         }
 

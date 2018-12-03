@@ -1,5 +1,6 @@
 package com.example.healthtracker.View;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -25,7 +26,7 @@ import java.util.ArrayList;
  * any of the problems from the list.
  */
 public class ViewPatientsProblems extends AppCompatActivity {
-
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,7 @@ public class ViewPatientsProblems extends AppCompatActivity {
         TextView phoneText = findViewById(R.id.patient_phone);
         TextView emailText = findViewById(R.id.patient_email);
 
+        // Fill the text fields with the loaded data
         String patientID = myPatient.getUserID();
         idText.setText("Patient: " + patientID);
         phoneText.setText("Patient Phone Number: " + myPatient.getPhone());
@@ -61,17 +63,15 @@ public class ViewPatientsProblems extends AppCompatActivity {
         // Select a PatientProblem to view
         pListView.setOnItemClickListener((parent, view, position, id) -> {
             Intent intent1 = new Intent(ViewPatientsProblems.this,CareProviderProblemView.class);
-
             Bundle bd = new Bundle();
             bd.putInt("patientNum", patientNum);
             bd.putInt("problemNum", position);
             intent1.putExtras(bd);
-
-
             startActivity(intent1);
         });
     }
 
+    // Form the CareProvider logo at the top right of the actionbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

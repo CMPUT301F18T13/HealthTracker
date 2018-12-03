@@ -1,6 +1,7 @@
 package com.example.healthtracker.EntityObjects;
 
 import android.graphics.Bitmap;
+import android.support.annotation.NonNull;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class CareProvider extends User implements Serializable {
      */
     public CareProvider(String phone, String email, String userID, String code) {
         super(phone, email, userID, code);
-        this.patientList = new ArrayList<Patient>();
+        this.patientList = new ArrayList<>();
     }
 
     /**
@@ -92,6 +93,13 @@ public class CareProvider extends User implements Serializable {
     public Bitmap createMap(){
         return null;
     }
+
+    /**
+     * Concatenates the care provider info into a single string
+     *
+     * @return concatendated string of CareProvider info
+     */
+    @NonNull
     @Override
     public String toString() {
         if(getUserID() == null) {

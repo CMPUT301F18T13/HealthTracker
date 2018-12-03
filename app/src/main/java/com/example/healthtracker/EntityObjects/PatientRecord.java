@@ -2,17 +2,6 @@ package com.example.healthtracker.EntityObjects;
 
 import android.support.annotation.NonNull;
 
-
-import com.example.healthtracker.EntityObjects.Photo;
-
-/**
- * The patient record is a record added to a problem by a patient.
- *
- * @author Michael Boisvert
- * @since 2018-11-10
- * @version 1.0
- */
-
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -32,9 +21,8 @@ public class PatientRecord implements Serializable {
     private String RecordTitle;
     private String comment;
     private Timestamp timestamp;
-    private ArrayList<Double> geoLocations = new ArrayList<>();
+    private final ArrayList<Double> geoLocations;
     private final ArrayList<Photo> photos;
-
 
     /**
      * Constructor for PatientRecord that sets the record title and comment.
@@ -47,13 +35,11 @@ public class PatientRecord implements Serializable {
         this.comment = comment;
         this.timestamp = new Timestamp(System.currentTimeMillis());
 
-        geoLocations = new ArrayList<Double>();
+        geoLocations = new ArrayList<>();
 
-        Double lat = Lat;
-        Double lon = Lon;
         this.geoLocations.add(Lon);
         this.geoLocations.add(Lat);
-        photos = new ArrayList<Photo> ();
+        photos = new ArrayList<> ();
     }
 
     /**
@@ -64,8 +50,8 @@ public class PatientRecord implements Serializable {
         RecordTitle = "";
         comment = "";
         timestamp = new Timestamp(System.currentTimeMillis());
-        geoLocations = new ArrayList<Double> ();
-        photos = new ArrayList<Photo> ();
+        geoLocations = new ArrayList<>();
+        photos = new ArrayList<>();
 
     }
     /**
@@ -78,7 +64,6 @@ public class PatientRecord implements Serializable {
         this.geoLocations.add(Lon);
         this.geoLocations.add(Lat);
     }
-
 
     /**
      * Gets a geo location and returns it
@@ -174,9 +159,6 @@ public class PatientRecord implements Serializable {
      */
     @NonNull
     @Override
-    /**
-     * Display the record as a string. Will be used in listviews.
-     */
     public String toString(){
         return " Title: " + getTitle() + "\n Comment: " + getComment() + "\n Timestamp: " + timestamp.toString();
     }

@@ -19,9 +19,9 @@ import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.R;
 import com.example.healthtracker.Activities.TakePhotoActivity;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -30,17 +30,13 @@ import static android.app.Activity.RESULT_OK;
  * existing record. This activity will finish with a positive result code if a record was successfully
  * saved. The current Record data will be displayed if a record is being edited. The new
  * or changed record can be saved by selecting the save button.
- *
  */
 public class AddorEditRecordView extends AppCompatActivity {
 
     private EditText titleText, descriptionText;
     private TextView timestampText;
     private Context context;
-    String problemTitle;
-    File capturedImages;
     private PatientRecord record;
-    //private Button geoLocation;
     private TextView saved_geoLocation;
     private Double Lat;
     private Double Lon;
@@ -122,6 +118,7 @@ public class AddorEditRecordView extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            assert addressList != null;
             Address address = addressList.get(0);
             String city = address.getLocality();
             String state = address.getAdminArea();
@@ -139,12 +136,8 @@ public class AddorEditRecordView extends AppCompatActivity {
      */
     private void saveRecord(){
         // get Record info
-
-
         String title = titleText.getText().toString();
         String comment = descriptionText.getText().toString();
-        //geo_location = saved_geoLocation.getText().toString();
-
 
         // fetch user data
         Patient patient = UserDataController.loadPatientData(context);
@@ -171,23 +164,23 @@ public class AddorEditRecordView extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    // Get the string put into the intent from the previous activity
     private String getExtraString(){
         Intent intent = getIntent();
         return intent.getStringExtra("ProblemTitle");
     }
 
+    // Add a geo-location to a record
     public void addGeoLocation(View view) {
         Intent intent = new Intent(AddorEditRecordView.this, AddGeoLocationActivity.class);
         startActivityForResult(intent,1);
     }
 
-   // @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         List<Address> addressList = null;
         String CurrentLocation;
         if(resultCode==RESULT_OK) {
-            Lat = data.getExtras().getDouble("Lat");
+            Lat = Objects.requireNonNull(data.getExtras()).getDouble("Lat");
             Lon = data.getExtras().getDouble("Lon");
             Geocoder geocoder = new Geocoder(this);
             try {
@@ -195,6 +188,7 @@ public class AddorEditRecordView extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            assert addressList != null;
             Address address = addressList.get(0);
             String city = address.getLocality();
             String state = address.getAdminArea();
@@ -203,8 +197,5 @@ public class AddorEditRecordView extends AppCompatActivity {
             CurrentLocation = city + " " + state + " " + country + " " + postalCode;
             saved_geoLocation.setText(CurrentLocation);
         }
-        //saved_geoLocation.setText(geo_location);
     }
-
-
 }

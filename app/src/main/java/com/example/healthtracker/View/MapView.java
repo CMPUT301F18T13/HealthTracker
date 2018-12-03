@@ -40,7 +40,7 @@ posted: Apr 25, 2016, viewed: Oct 23, 2018*
 public class MapView extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private ArrayList<PatientRecord> mRecords = new ArrayList<>();
+    private final ArrayList<PatientRecord> mRecords = new ArrayList<>();
 
 
 
@@ -54,9 +54,6 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
         assert mapFragment != null;
         mapFragment.getMapAsync(this);
     }
-
-
-
 
     private void createRecordArray(){
         Patient user = UserDataController.loadPatientData(this);
@@ -115,7 +112,6 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
         mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
     }
     */
-
 
     @Override
     /*

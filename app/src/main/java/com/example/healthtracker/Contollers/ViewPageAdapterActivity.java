@@ -18,8 +18,6 @@ import java.util.ArrayList;
 *EDMT Dev, https://www.youtube.com/watch?v=SX8l9vv-N_4, 2016/07/13, viewed 2018/10/20*
 */
 
-// ViewPageAdapterActivity helps handle the slide show activities and behaviour
-
 /**
  * ViewPageAdapterActivity handles loading the arrayList containing the images to be displayed when a problem's
  * slideshow is desired to be seen. After the array list is loaded each image view is put into a container object

@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class Patient extends User implements Serializable {
 
-    private ArrayList<Problem> problemList = new ArrayList<Problem>();
+    private ArrayList<Problem> problemList = new ArrayList<>();
     private String careProviders = "";
 
     /**
@@ -71,7 +71,7 @@ public class Patient extends User implements Serializable {
      */
     public void addProblem(Problem newProblem){
         if (this.problemList == null){
-            this.problemList = new ArrayList<Problem>();
+            this.problemList = new ArrayList<>();
         }
         this.problemList.add(newProblem);
     }

@@ -1,15 +1,7 @@
 package com.example.healthtracker.EntityObjects;
 
+import android.support.annotation.NonNull;
 
-/**
- * CareProviderComment represents the comment records that careproviders can leave on patient problems.
- * It is useful to have these separated from records added by patients.
- *
- * @author caochenlin
- * @version 1.0
- * @since 2018-10-28
- *
- */
 import java.io.Serializable;
 
 import io.searchbox.annotations.JestId;
@@ -87,6 +79,7 @@ public class CareProviderComment implements Serializable{
     }
 
 
+    @NonNull
     @Override
     public String toString(){
         return "Title: " + getTitle() + "\n\nComment: " + getComment();

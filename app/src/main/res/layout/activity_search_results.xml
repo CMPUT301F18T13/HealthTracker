@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EntityObjects.SearchResultsView">
+    tools:context=".View.SearchResultsView">
 
     <ListView
         android:id="@+id/found_problems"

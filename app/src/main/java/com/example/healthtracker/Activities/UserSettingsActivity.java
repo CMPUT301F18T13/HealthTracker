@@ -1,6 +1,5 @@
 package com.example.healthtracker.Activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -17,10 +16,7 @@ import android.widget.Toast;
 import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.Patient;
-import com.example.healthtracker.EntityObjects.User;
 import com.example.healthtracker.R;
-
-import java.util.List;
 
 
 /*
@@ -28,15 +24,11 @@ import java.util.List;
  * ElasticSearch database as well as stored locally after adjustment.
  */
 public class UserSettingsActivity extends AppCompatActivity {
-    private static final String TAG = "Settings";
-    String userID;
     private String profileType;
-    List<User> userInfo;
     private EditText uemail;
     private EditText phone;
     private Patient patient;
     private CareProvider careProvider;
-    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

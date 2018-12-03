@@ -16,7 +16,6 @@ import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.R;
 
 public class CareProviderRecordView extends Activity {
-
     private TextView titleText;
     private TextView desText;
     private TextView timestampText;
@@ -45,10 +44,10 @@ public class CareProviderRecordView extends Activity {
                 .getPatient(patientNum)
                 .getProblem(problemNum)
                 .getPatientRecord(recordNum);
-
         displayRecord();
     }
 
+    // Set the text fields
     @SuppressLint("SetTextI18n")
     private void displayRecord(){
         desText.setText("Comment: \n" + record.getComment());
@@ -56,6 +55,7 @@ public class CareProviderRecordView extends Activity {
         timestampText.setText("Timestamp: \n" + record.getTimestamp().toString());
     }
 
+    // Form the CareProvider logo at the top right of the actionbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

@@ -18,19 +18,15 @@ import com.example.healthtracker.Activities.SearchActivity;
 import com.example.healthtracker.Activities.UserSettingsActivity;
 
 /* Idea and implemented code for learning how to make a textview clickable to bring to an
-external website from *Bebin T.N (user:1485235),  
-https://stackoverflow.com/questions/2734270/how-do-i-make-links-in-a-textview-clickable, 2013/06/18, viewed 2018/11/03*
+* external website from *Bebin T.N (user:1485235),
+* https://stackoverflow.com/questions/2734270/how-do-i-make-links-in-a-textview-clickable, 2013/06/18, viewed 2018/11/03*
 */
 
-
-/*
- * PatientHomeView acts as a home screen interface for Patient users to navigate to different app activities.
- */
+// PatientHomeView acts as a home screen interface for Patient users to navigate to different app activities.
 public class PatientHomeView extends AppCompatActivity {
 
-    /*
-     * onCreate launched on activity creation. Contains the code for generating links to external medical resources allowing the patient
-     * to help identify and better document their medical issues.
+    /* onCreate launched on activity creation. Contains the code for generating links to external medical
+     * resources allowing the patient to help identify and better document their medical issues.
      */
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -46,19 +42,15 @@ public class PatientHomeView extends AppCompatActivity {
         TextView mayoTV = findViewById(R.id.mayoLink);
         mayoTV.setMovementMethod(LinkMovementMethod.getInstance());
         String mayoText = "<a href='https://www.mayoclinic.org/symptom-checker/select-symptom/itt-20009075'> Mayo Clinic </a>";
-        //String mayoText = "<a href='https://www.mayoclinic.org'> Mayo Clinic </a>";
         mayoTV.setText(Html.fromHtml(mayoText));
 
         TextView checkTV = findViewById(R.id.checkLink);
         checkTV.setMovementMethod(LinkMovementMethod.getInstance());
         String checkText = "<a href='https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page'> Symptom Checker </a>";
-        //String checkText = "<a href='https://www.symptomchecker.isabelhealthcare.com'> Symptom Checker </a>";
         checkTV.setText(Html.fromHtml(checkText, Html.FROM_HTML_MODE_COMPACT));
     }
 
-    /*
-     * Method containing the new intent which will bring user to the search activity layout
-     */
+    // Method containing the new intent which will bring user to the search activity layout
     public void Search(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(PatientHomeView.this, SearchActivity.class);
@@ -67,9 +59,7 @@ public class PatientHomeView extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /*
-     * finish's the current activity and returns the user the main login screen, logging out the user
-     */
+    // Finish's the current activity and returns the user the main login screen, logging out the user
     public void Sync(View view) {
         UserDataController.syncPatientData(this);
     }
@@ -78,9 +68,7 @@ public class PatientHomeView extends AppCompatActivity {
         finish();
     }
 
-    /*
-     * Method containing the new intent which will bring the patient to the add problem activity layout
-     */
+    // Method containing the new intent which will bring the patient to the add problem activity layout
     public void addProblem(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(PatientHomeView.this, AddProblemView.class);
@@ -88,13 +76,8 @@ public class PatientHomeView extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /**
-     * Method containing the new intent which will bring the patient to the view problems activity layout
-     *
-     * @param view the view for the Patient home screen layout included for onClick methods in XML
-     */
+    // Method containing the new intent which will bring the patient to the view problems activity layout
     public void viewMyProblems(View view) {
-
         // load current user
         Patient user = UserDataController.loadPatientData(this);
 
@@ -109,12 +92,9 @@ public class PatientHomeView extends AppCompatActivity {
             // Launch the ViewMyProblems activity
             startActivity(intent);
         }
-
     }
 
-    /*
-     * Method containing the new intent which will bring user to the user settings activity layout
-     */
+    // Method containing the new intent which will bring user to the user settings activity layout
     public void Settings(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(PatientHomeView.this, UserSettingsActivity.class);
@@ -123,9 +103,7 @@ public class PatientHomeView extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /*
-     * Method containing the new intent which will bring user to the geo map activity layout
-     */
+    // Method containing the new intent which will bring user to the geo map activity layout
     public void viewMap(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(PatientHomeView.this, MapView.class);
