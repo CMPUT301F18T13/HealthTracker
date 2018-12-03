@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/caochenlin/Desktop/CMPUT301_intro_to_software_engineering/HealthTracker/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
+            "outputFile": "C:\\Users\\ningbo\\Documents\\GitHub\\HealthTracker\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "/Users/caochenlin/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/a00ebf6cae9df621a801e40ee3acfc14/res/values-v21/values-v21.xml",
+                    "source": "C:\\Users\\ningbo\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\929150adf67ad7beb1826c828cc7e552\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,5,8,11",
                         "startColumns": "4,4,4,4",
@@ -23,26 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/caochenlin/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/e4dc7a3584ad2f25084021348e13c2ab/res/values-v21/values-v21.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,13",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,159,223,290,354,470,596,722,850,1022",
-                        "endLines": "2,3,4,5,6,7,8,9,12,17",
-                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
-                        "endOffsets": "154,218,285,349,465,591,717,845,1017,1355"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,263,264,271,275,311,314",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,159,223,290,19262,19378,19835,20129,22137,22309",
-                        "endLines": "2,3,4,5,263,264,271,275,313,318",
-                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
-                        "endOffsets": "154,218,285,349,19373,19499,19956,20252,22304,22642"
-                    }
-                },
-                {
-                    "source": "/Users/caochenlin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/02996a9b35aaafa9bf7e6f4b46046455/res/values-v21/values-v21.xml",
+                    "source": "C:\\Users\\ningbo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\fdcc2f11da9a56b673c5da6ac6bab693\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,19,20,21,22,24,26,27,28,29,30,32,34,36,38,40,42,43,48,50,52,53,54,56,58,59,60,61,62,63,107,110,154,157,160,162,164,166,169,171,174,175,176,179,180,181,182,183,184,187,188,190,192,194,196,200,202,203,204,205,207,211,213,215,216,217,218,219,221,222,223,233,234,235,247",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -61,7 +42,26 @@
                     }
                 },
                 {
-                    "source": "/Users/caochenlin/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/1920aef827457562568272781b51eab3/res/values-v21/values-v21.xml",
+                    "source": "C:\\Users\\ningbo\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\7f55983391e6f63c3358daf4b700e169\\res\\values-v21\\values-v21.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,159,223,290,354,470,596,722,850,1022",
+                        "endLines": "2,3,4,5,6,7,8,9,12,17",
+                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
+                        "endOffsets": "154,218,285,349,465,591,717,845,1017,1355"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,263,264,271,275,311,314",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,159,223,290,19262,19378,19835,20129,22137,22309",
+                        "endLines": "2,3,4,5,263,264,271,275,313,318",
+                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
+                        "endOffsets": "154,218,285,349,19373,19499,19956,20252,22304,22642"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ningbo\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\53996395823d64b33d88cf4bfcd6a43f\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,10,18,26",
                         "startColumns": "4,4,4,4",

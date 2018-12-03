@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/caochenlin/Desktop/CMPUT301_intro_to_software_engineering/HealthTracker/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "C:\\Users\\ningbo\\Documents\\GitHub\\HealthTracker\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/caochenlin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/02996a9b35aaafa9bf7e6f4b46046455/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\ningbo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\fdcc2f11da9a56b673c5da6ac6bab693\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/caochenlin/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/1920aef827457562568272781b51eab3/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\ningbo\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\53996395823d64b33d88cf4bfcd6a43f\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
