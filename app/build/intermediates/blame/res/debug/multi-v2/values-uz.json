@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\mikey\\AndroidStudioProjects\\HealthTracker\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+            "outputFile": "C:\\Users\\mikey\\AndroidStudioProjects\\HealthTrackerNew\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mikey\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.0.1.aar\\9347d4b365f4528423e093ad960016b9\\res\\values-uz\\values.xml",

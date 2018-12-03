@@ -1,7 +1,10 @@
 package com.example.healthtracker.View;
 
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Address;
 import android.location.Geocoder;
 import android.support.v7.app.AlertDialog;
@@ -13,14 +16,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.healthtracker.Activities.AddGeoLocationActivity;
+import com.example.healthtracker.Activities.SlideShowActivity;
+import com.example.healthtracker.Contollers.PhotoController;
 import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.R;
 import com.example.healthtracker.Activities.TakePhotoActivity;
 
+import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 import static android.app.Activity.RESULT_OK;
@@ -37,6 +47,14 @@ public class AddorEditRecordView extends AppCompatActivity {
     private int index;
     private TextView timestampText;
     private Context context;
+
+    String problemTitle;
+    File capturedImages;
+
+    private ArrayList<Bitmap> takenPhoto = new ArrayList<Bitmap>();
+    private ArrayList<String> timeStamps = new ArrayList<String>();
+    private String oldTitle = "";
+
     private PatientRecord record;
     private TextView saved_geoLocation;
     private Double Lat;
@@ -82,6 +100,8 @@ public class AddorEditRecordView extends AppCompatActivity {
         ab.setNeutralButton("Exit And Lose Record", (dialog, which) -> {
             Intent intent = getIntent();
             setResult(RESULT_CANCELED, intent);
+            ContextWrapper cw = new ContextWrapper(getApplicationContext());
+            PhotoController.removePhotosFromTemporaryStorage(cw);
             finish();
         });
 
@@ -108,12 +128,13 @@ public class AddorEditRecordView extends AppCompatActivity {
         titleText.setText(record.getTitle());
         descriptionText.setText(record.getComment());
         timestampText.setText(record.getTimestamp().toString());
+        oldTitle = record.getTitle();
 
-        if(record.getGeoLocation().size()<2){
+        /*if(record.getGeoLocation().size()<2){
             return;
-        }
+        } */
 
-        List<Address> addressList = null;
+        /* List<Address> addressList = null;
         String CurrentLocation;
         Lon = record.getGeoLocation().get(0);
         Lat = record.getGeoLocation().get(1);
@@ -130,6 +151,15 @@ public class AddorEditRecordView extends AppCompatActivity {
         String postalCode = address.getPostalCode();
         CurrentLocation = city + " " + state + " " + country + " " + postalCode;
         saved_geoLocation.setText(CurrentLocation);
+        */
+        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+        takenPhoto = PhotoController.loadImagesByRecord(cw, this.getExtraString(), oldTitle);
+        timeStamps = PhotoController.getTimestampsByRecord(cw, this.getExtraString(), oldTitle);
+        for (int i = 0; i < takenPhoto.size(); i++) {
+            System.out.println("Adding back to temp photos!!!");
+            Bitmap photo = takenPhoto.get(i);
+            PhotoController.saveToTemporaryStorage(photo, cw, timeStamps.get(i));
+        }
     }
 
     /*
@@ -147,6 +177,7 @@ public class AddorEditRecordView extends AppCompatActivity {
         // add record
         record.setComment(comment);
         record.setTitle(title);
+
         if(index == -1){
             record.addGeoLocation(Lon, Lat);
         } else{
@@ -155,6 +186,22 @@ public class AddorEditRecordView extends AppCompatActivity {
 
 
         // TODO set photos, geomap, bodylocation once they are implemented
+
+        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+        for (int i = 0; i < takenPhoto.size(); i++) {
+            Bitmap photo = takenPhoto.get(i);
+            String pathLoaded= PhotoController.saveToInternalStorage(photo,cw, this.getExtraString(), title, timeStamps.get(i));
+        }
+        PhotoController.removePhotosFromTemporaryStorage(cw);
+        System.out.println(this.getExtraString());
+        record.setPhotos(takenPhoto, timeStamps);
+
+        // Remove photos if title has changed...
+        System.out.println("Old title is... " + oldTitle + '\n' + "New title is... " + title);
+        if (!oldTitle.equals(title)) {
+            System.out.println("Removing old photos...");
+            PhotoController.removePhotosFromInternalStorage(cw, this.getExtraString(), oldTitle);
+        }
 
         // return to add problem with record result
         Intent intent = getIntent();
@@ -166,15 +213,37 @@ public class AddorEditRecordView extends AppCompatActivity {
 
     // Intent initiated to add a photo to a record
     public void addPhoto(View view) {
-        Intent intent = new Intent(AddorEditRecordView.this, TakePhotoActivity.class);
-        intent.putExtra("ProblemTitle",getExtraString());
-        startActivity(intent);
+        if (takenPhoto.size() >= 10) {
+            Toast.makeText(this, "Error, number of photos cannot exceed 10.", Toast.LENGTH_LONG).show();
+        }
+        else {
+
+            Intent intent = new Intent(AddorEditRecordView.this, TakePhotoActivity.class);
+            intent.putExtra("ProblemTitle",getExtraString());
+            if (takenPhoto.size() != 0) {
+                intent.putExtra("OldPhoto", PhotoController.imageToString(takenPhoto.get(takenPhoto.size() - 1)));
+            }
+            else {
+                intent.putExtra("OldPhoto", "");
+            }
+
+            startActivityForResult(intent, 50);
+        }
     }
 
     // Get the string put into the intent from the previous activity
     private String getExtraString(){
         Intent intent = getIntent();
         return intent.getStringExtra("ProblemTitle");
+    }
+
+    public void viewPhotos(View view) {
+        // Create an intent object containing the bridge to between the two activities
+        Intent intent = new Intent(AddorEditRecordView.this, SlideShowActivity.class);
+        intent.putExtra("ProblemTitle", this.getExtraString());
+        intent.putExtra("isProblem", "Record");
+        // Launch the browse emotions activity
+        startActivity(intent);
     }
 
     // Add a geo-location to a record
@@ -203,6 +272,14 @@ public class AddorEditRecordView extends AppCompatActivity {
             String postalCode = address.getPostalCode();
             CurrentLocation = city + " " + state + " " + country + " " + postalCode;
             saved_geoLocation.setText(CurrentLocation);
+        }
+        if (resultCode == 50) {
+            byte[] byteArray = data.getByteArrayExtra("image");
+            takenPhoto.add(BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length));
+            ContextWrapper cw = new ContextWrapper(getApplicationContext());
+            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",Locale.CANADA).format(new Date());
+            PhotoController.saveToTemporaryStorage(BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length), cw, timeStamp);
+            timeStamps.add(timeStamp);
         }
     }
 }

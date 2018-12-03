@@ -1246,6 +1246,7 @@ id mini
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id myflipper
 id navigation_header_container
 id never
 id none
@@ -1253,6 +1254,8 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id oldPhoto
+id oldPhotoImage
 id outline
 id pProblem_list_view
 id packed
@@ -1374,6 +1377,7 @@ id up
 id useLogo
 id userID
 id viewDate
+id viewPhotos
 id viewTitle
 id view_comments
 id view_offset_helper
@@ -1491,6 +1495,7 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout slide_show
 layout support_simple_spinner_dropdown_item
 layout viewpager_item
 menu actionbar

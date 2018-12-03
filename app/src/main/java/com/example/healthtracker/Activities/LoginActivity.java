@@ -1,6 +1,7 @@
 package com.example.healthtracker.Activities;
 
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
@@ -14,6 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.healthtracker.Contollers.ElasticsearchController;
+import com.example.healthtracker.Contollers.PhotoController;
 import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.Patient;
@@ -152,6 +154,8 @@ public class LoginActivity extends AppCompatActivity {
                     patientID = patients.get(i).getUserID() ;
                     validID = true;
                     Patient mPatient = patients.get(i);
+                    ContextWrapper cw = new ContextWrapper(getApplicationContext());
+                    PhotoController.savePatientPhotos(cw, mPatient);
                 }
             }
             if (!ElasticsearchController.testConnection(this)) {
@@ -186,6 +190,8 @@ public class LoginActivity extends AppCompatActivity {
             editor.putString("userID", userID);
             editor.apply();
             UserDataController.savePatientData(this, patient);
+            ContextWrapper cw = new ContextWrapper(getApplicationContext());
+            PhotoController.savePatientPhotos(cw, patient);
             Intent intent = new Intent(LoginActivity.this, PatientHomeView.class);
             startActivity(intent);
         } else {
