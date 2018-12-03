@@ -133,6 +133,6 @@ public class AddOrEditRecordView {
         solo.enterText(problemDescription, "Red spots on my left ear");
 
         solo.clickOnView(solo.getView(R.id.add_problem_button));
-        assertTrue("Success message is not displayed", solo.searchText("Success"));
+        solo.assertCurrentActivity("wrong activity", PatientHomeView.class);
     }
 }
