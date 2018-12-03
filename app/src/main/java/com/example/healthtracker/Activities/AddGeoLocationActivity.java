@@ -26,8 +26,6 @@ public class AddGeoLocationActivity extends FragmentActivity implements OnMapRea
 
     private GoogleMap mMap;
     private String CurrentLocation;
-    private Double Lat;
-    private Double Lon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +57,6 @@ public class AddGeoLocationActivity extends FragmentActivity implements OnMapRea
                     String country = address.getCountryName();
                     String postalCode = address.getPostalCode();
                     CurrentLocation = city+ " " + state + " " + country + " " + postalCode;
-                    Lat = address.getLatitude();
-                    Lon = address.getLongitude();
                     String Locality = address.getLocality();
                     Toast.makeText(getApplicationContext(),Locality,Toast.LENGTH_SHORT).show();
                     //LatLng LatLng = new LatLng(address.getLatitude(), address.getLongitude());
@@ -106,6 +102,7 @@ public class AddGeoLocationActivity extends FragmentActivity implements OnMapRea
             e.printStackTrace();
         }
 
+<<<<<<< HEAD
         if (addressList != null) {
 
             Address address = addressList.get(0);
@@ -121,6 +118,19 @@ public class AddGeoLocationActivity extends FragmentActivity implements OnMapRea
 
             goToLocation(address.getLatitude(), address.getLongitude(), 15);
         }
+=======
+
+        Address address = addressList.get(0);
+        String city = address.getLocality();
+        String state = address.getAdminArea();
+        String country = address.getCountryName();
+        String postalCode = address.getPostalCode();
+        CurrentLocation = city+ " " + state + " " + country + " " + postalCode;
+        String Locality = address.getLocality();
+        Toast.makeText(getApplicationContext(),Locality,Toast.LENGTH_SHORT).show();
+
+        goToLocation(address.getLatitude(), address.getLongitude(),15);
+>>>>>>> parent of 41b79e9d... fix small bug
 
 
 
@@ -146,8 +156,7 @@ public class AddGeoLocationActivity extends FragmentActivity implements OnMapRea
 
     public void Save_current(View view){
         Intent intent = new Intent();
-        intent.putExtra("Lat", Lat);
-        intent.putExtra("Lon", Lon);
+        intent.putExtra("result", CurrentLocation);
         AddGeoLocationActivity.this.setResult(RESULT_OK, intent);
         AddGeoLocationActivity.this.finish();
     }
