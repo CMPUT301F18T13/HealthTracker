@@ -310,5 +310,5 @@ public class AddorEditRecordView extends AppCompatActivity {
         startActivityForResult(intent,4);
 
     }
-
+    // Bug fix
 }
