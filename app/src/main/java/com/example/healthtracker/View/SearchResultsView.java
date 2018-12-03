@@ -2,6 +2,7 @@ package com.example.healthtracker.View;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -93,6 +94,15 @@ public class SearchResultsView extends AppCompatActivity {
             if (userComments.contains(comment)){
                 commentsToShow.add(comment);
             }
+        }
+
+        if(commentsToShow.isEmpty() && recordsToShow.isEmpty() && problemsToShow.isEmpty()){
+            AlertDialog.Builder ab = new AlertDialog.Builder(this);
+            ab.setMessage("No search results found.");
+            ab.setCancelable(false);
+            ab.setPositiveButton("Okay", (dialog, which) -> {
+                finish();
+            }).show();
         }
 
        ArrayAdapter<Problem> problemArrayAdapter =
