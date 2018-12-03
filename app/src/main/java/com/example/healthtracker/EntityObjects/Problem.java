@@ -185,4 +185,17 @@ public class Problem implements Serializable {
         return "title: "+ProblemTitle+"\n"+"start date: "+dateStarted+"\n"+"description: "+
                 description+"\n"+"number of records: "+String.valueOf(patientRecords.size() + caregiverRecords.size());
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if(obj == null || !(obj instanceof Problem)) {
+            return false;
+        }
+        Problem problem = (Problem) obj;
+        if(problem.getTitle().equals(this.getTitle())){
+            return true;
+        } else{
+            return false;
+        }
+    }
 }

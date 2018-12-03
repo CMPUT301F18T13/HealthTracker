@@ -26,7 +26,6 @@ animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 array body_location_options
-array searchResults
 array searchTypes
 attr actionBarDivider
 attr actionBarItemBackground
@@ -1097,7 +1096,6 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
-id SearchTypeText
 id ViewPager
 id action0
 id action_bar
@@ -1128,7 +1126,6 @@ id add_patient_button
 id add_problem
 id add_problem_button
 id add_record_from_add_problem
-id add_record_from_edit_problem
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1146,7 +1143,6 @@ id buttonPanel
 id cancel_action
 id care_comment
 id care_comment_title
-id care_image
 id care_record_comment
 id care_record_list
 id care_record_timestamp
@@ -1163,7 +1159,6 @@ id clip_horizontal
 id clip_vertical
 id code
 id codeLogin
-id codeLoginMessage
 id collapseActionView
 id commentCategory
 id comment_list
@@ -1189,7 +1184,7 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
-id distance_edittext
+id distance_search
 id editSaveButton
 id editText
 id editText4
@@ -1226,7 +1221,6 @@ id icon_group
 id icon_only
 id ifRoom
 id image
-id imageButton
 id imageView
 id info
 id invisible
@@ -1240,7 +1234,6 @@ id line1
 id line3
 id listMode
 id list_item
-id login_button
 id logout_button
 id logout_button2
 id map
@@ -1270,17 +1263,14 @@ id parent_matrix
 id patient_email
 id patient_phone
 id patient_record_timestamp
-id patient_setting
 id patients_list_view
 id percent
 id phone_number
 id photo_from_library_button
 id pickDateButton
-id pickDateButton2
 id pickedDate
 id pickedDate2
 id pin
-id problemCategory
 id problem_description
 id problem_description_edit
 id problem_description_editscreen
@@ -1296,7 +1286,6 @@ id right
 id right_icon
 id right_side
 id satellite
-id save_geo_location
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1313,7 +1302,6 @@ id search_close_btn
 id search_comments
 id search_edit_frame
 id search_go_btn
-id search_imageButton2
 id search_mag_icon
 id search_plate
 id search_problem_to_comments
@@ -1325,7 +1313,6 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selected_patient_ID
-id setting
 id shortcut
 id showCustom
 id showHome
@@ -1553,15 +1540,12 @@ string add_body_location_button
 string add_geo_location_button
 string add_new_problem
 string add_patient
-string add_photo_button
 string add_problem
 string add_record_from_add
 string add_record_from_edit
 string add_reminder
 string app_name
 string appbar_scrolling_view_behavior
-string back
-string back1
 string bodyLocation
 string bottom_sheet_behavior
 string care_comment
@@ -1603,7 +1587,6 @@ string gcm_defaultSenderId
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
-string google_maps_key
 string google_storage_bucket
 string hide_bottom_view_on_scroll_behavior
 string keywords
@@ -1639,16 +1622,11 @@ string search
 string searchType
 string search_menu_title
 string settings
-string startdate_edit
 string status_bar_notification_info_overflow
 string symptom_checker
 string timestamp
 string title_activity_care_provider_record_view
-string title_activity_search_result_comments
-string title_activity_search_results_problem
-string title_activity_search_results_record
 string title_activity_view_care_provider_comments
-string title_activity_view_comments
 string title_care_view
 string userID
 string view_map

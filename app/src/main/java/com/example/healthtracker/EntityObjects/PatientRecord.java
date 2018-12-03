@@ -75,8 +75,8 @@ public class PatientRecord implements Serializable {
      * @param Lat Latitude for geo location
      */
     public void setGeoLocation(Double Lon, Double Lat){
-        this.geoLocations.add(Lon);
-        this.geoLocations.add(Lat);
+        this.geoLocations.set(0, Lon);
+        this.geoLocations.set(1, Lat);
     }
 
 
@@ -179,6 +179,19 @@ public class PatientRecord implements Serializable {
      */
     public String toString(){
         return " Title: " + getTitle() + "\n Comment: " + getComment() + "\n Timestamp: " + timestamp.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if(obj == null || !(obj instanceof PatientRecord)) {
+            return false;
+        }
+        PatientRecord record = (PatientRecord)obj;
+        if(record.getTitle().equals(this.getTitle())){
+            return true;
+        } else{
+            return false;
+        }
     }
 
 

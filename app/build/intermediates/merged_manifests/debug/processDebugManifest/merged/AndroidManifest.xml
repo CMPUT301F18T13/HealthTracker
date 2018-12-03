@@ -56,6 +56,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.example.android.fileprovider"
@@ -119,7 +123,7 @@
         <activity android:name="com.example.healthtracker.Activities.AddGeoLocationActivity" >
         </activity>
         <activity android:name="com.example.healthtracker.Contollers.PhotoController" />
-        <activity android:name="com.example.healthtracker.EntityObjects.search_result_comments" />
+        <activity android:name="com.example.healthtracker.EntityObjects.search_results_comments" />
         <activity android:name="com.example.healthtracker.EntityObjects.search_results_problem" />
         <activity android:name="com.example.healthtracker.EntityObjects.SearchResultsView" />
         <activity android:name="com.example.healthtracker.EntityObjects.search_results_record" />
