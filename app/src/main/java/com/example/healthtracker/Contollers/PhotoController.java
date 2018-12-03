@@ -4,8 +4,13 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.icu.text.AlphabeticIndex;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
+
+import com.example.healthtracker.EntityObjects.Patient;
+import com.example.healthtracker.EntityObjects.PatientRecord;
+import com.example.healthtracker.EntityObjects.Problem;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -216,6 +221,24 @@ public class PhotoController extends AppCompatActivity {
         }
 
         return bitmapArray;
+    }
+
+    public static void savePatientPhotos(ContextWrapper cw, Patient patient) {
+        ArrayList<Problem> problems = patient.getProblemList();
+        ArrayList<PatientRecord> records;
+        ArrayList<String> photos;
+        ArrayList<String> timestamps;
+        for (Problem problem: problems) {
+            records = problem.getRecords();
+            for (PatientRecord record: records) {
+                photos = record.getPhotos();
+                timestamps = record.getPhotoTimestamps();
+                for (int i = 0; i < photos.size(); i++) {
+                    PhotoController.removePhotosFromInternalStorage(cw, problem.getTitle(), record.getTitle());
+                    PhotoController.saveToInternalStorage(PhotoController.stringToImage(photos.get(i)), cw, problem.getTitle(), record.getTitle(), timestamps.get(i));
+                }
+            }
+        }
     }
 
     // Encode a bitmap to a string

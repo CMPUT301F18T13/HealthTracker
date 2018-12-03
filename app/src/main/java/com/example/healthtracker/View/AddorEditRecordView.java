@@ -166,7 +166,7 @@ public class AddorEditRecordView extends AppCompatActivity {
         }
         PhotoController.removePhotosFromTemporaryStorage(cw);
         System.out.println(this.getExtraString());
-        //record.addPhoto(new Photo());
+        record.setPhotos(takenPhoto, timeStamps);
 
         // Remove photos if title has changed...
         System.out.println("Old title is... " + oldTitle + '\n' + "New title is... " + title);

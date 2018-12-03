@@ -236,6 +236,9 @@ public class EditProblem extends AppCompatActivity {
             if (!titleString.equals(initialTitle)) {
                 ContextWrapper cw = new ContextWrapper(getApplicationContext());
                 PhotoController.renamePhotosByProblem(cw, initialTitle, titleString);
+                for (PatientRecord record: this.recordList) {
+
+                }
             }
             String descriptionString = descriptionText.getText().toString();
             Date date = null;

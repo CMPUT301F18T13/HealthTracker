@@ -2,6 +2,7 @@ package com.example.healthtracker.EntityObjects;
 
 import android.graphics.Bitmap;
 
+import com.example.healthtracker.Contollers.PhotoController;
 import com.example.healthtracker.EntityObjects.Photo;
 
 import java.io.Serializable;
@@ -21,7 +22,8 @@ public class PatientRecord implements Serializable {
     private String comment;
     private Timestamp timestamp;
     private final ArrayList<Bitmap> geoLocations;
-    private final ArrayList<Photo> photos;
+    private ArrayList<String> photos;
+    private ArrayList<String> timeStamps;
 
     /**
      * Constructor for PatientRecord that sets the record title and comment.
@@ -34,7 +36,7 @@ public class PatientRecord implements Serializable {
         this.comment = comment;
         this.timestamp = new Timestamp(System.currentTimeMillis());
         geoLocations = new ArrayList<Bitmap> ();
-        photos = new ArrayList<Photo> ();
+        photos = new ArrayList<String> ();
     }
 
     /**
@@ -46,7 +48,7 @@ public class PatientRecord implements Serializable {
         comment = "";
         timestamp = new Timestamp(System.currentTimeMillis());
         geoLocations = new ArrayList<Bitmap> ();
-        photos = new ArrayList<Photo> ();
+        photos = new ArrayList<String> ();
     }
 
     /**
@@ -72,9 +74,9 @@ public class PatientRecord implements Serializable {
      *
      * @param photo The photo to be added.
      */
-    public void addPhoto(Photo photo){
-        photos.add(photo);
-    }
+    //public void addPhoto(Bitmap photo){
+       // photos.add(photo);
+    //}
 
     /**
      * Delete a photo from the record.
@@ -91,9 +93,9 @@ public class PatientRecord implements Serializable {
      * @param index The index of the photo in the list of photos.
      * @return Returns the photo in the photo list that corresponds to the index input.
      */
-    public Photo getPhoto(int index){
-        return photos.get(index);
-    }
+    //public Bitmap getPhoto(int index){
+        //return photos.get(index);
+    //}
 
     /**
      * Set the title of the record to a new title.
@@ -104,6 +106,28 @@ public class PatientRecord implements Serializable {
         this.RecordTitle = newTitle;
     }
 
+
+    public void setPhotos(ArrayList<Bitmap> photos, ArrayList<String> timeStamps) {
+        this.photos = new ArrayList<String>();
+        for (Bitmap photo: photos) {
+            this.photos.add(PhotoController.imageToString(photo));
+        }
+        this.timeStamps = timeStamps;
+    }
+
+    public ArrayList<String> getPhotos() {
+        return this.photos;
+    }
+
+    public ArrayList<String> getPhotoTimestamps() {
+        return this.timeStamps;
+    }
+
+    public void renamePhotosByProblem(String newProblem) {
+        for (String bitmapString: this.getPhotos()) {
+            PhotoController.stringToImage(bitmapString);
+        }
+    }
     /**
      * Get the current title of the record.
      *
