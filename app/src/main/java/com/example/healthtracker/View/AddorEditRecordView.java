@@ -155,23 +155,25 @@ public class AddorEditRecordView extends AppCompatActivity {
             return;
         }
 
-        List<Address> addressList = null;
-        String CurrentLocation;
-        Lon = record.getGeoLocation().get(0);
-        Lat = record.getGeoLocation().get(1);
-        Geocoder geocoder = new Geocoder(this);
-        try {
-            addressList = geocoder.getFromLocation(Lat, Lon, 1);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(record.getGeoLocation().size()>1 && record.getGeoLocation().get(0) != null && record.getGeoLocation().get(1) != null){
+            List<Address> addressList = null;
+            String CurrentLocation;
+            Lon = record.getGeoLocation().get(0);
+            Lat = record.getGeoLocation().get(1);
+            Geocoder geocoder = new Geocoder(this);
+            try {
+                addressList = geocoder.getFromLocation(Lat, Lon, 1);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Address address = addressList.get(0);
+            String city = address.getLocality();
+            String state = address.getAdminArea();
+            String country = address.getCountryName();
+            String postalCode = address.getPostalCode();
+            CurrentLocation = city + " " + state + " " + country + " " + postalCode;
+            saved_geoLocation.setText(CurrentLocation);
         }
-        Address address = addressList.get(0);
-        String city = address.getLocality();
-        String state = address.getAdminArea();
-        String country = address.getCountryName();
-        String postalCode = address.getPostalCode();
-        CurrentLocation = city + " " + state + " " + country + " " + postalCode;
-        saved_geoLocation.setText(CurrentLocation);
 
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
         takenPhoto = PhotoController.loadImagesByRecord(cw, this.getExtraString(), oldTitle);
