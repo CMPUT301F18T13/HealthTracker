@@ -197,10 +197,10 @@ public class SearchActivity extends AppCompatActivity {
 
             }
 
-        } else if(searchType.equals("bodyLocation")){
+        } else if(searchType.equals("bodyLocation")) {
 
             String bodyLocation = keywords.getText().toString();
-            System.out.println("bodyLocation entered is + "+bodyLocation);
+            System.out.println("bodyLocation entered is + " + bodyLocation);
 
             Object preHits[] = null;
 
@@ -211,54 +211,84 @@ public class SearchActivity extends AppCompatActivity {
 
             ArrayList<PatientRecord> allReceivedRecords = new ArrayList<PatientRecord>();
 
+            if (profile.equals("Patient")) {
 
-            // Find all records of the current patient
+
+                // Find all records of the current patient
 
                 // Fetch user data
-            Patient mPatient = UserDataController.loadPatientData(this);
-            System.out.println("mPatient is "+mPatient.toString());
+                Patient mPatient = UserDataController.loadPatientData(this);
+                ArrayList<PatientRecord> mPatientRecords = getAllRecords(mPatient);
 
-                // Find all problems and then find all records for each problem
-            ArrayList<Problem> mPatientProblems = mPatient.getProblemList();
-            System.out.println("mPatient Problems is "+mPatientProblems);
+                // Match the saved body locations with the search keyword
+                for (int r = 0; r < mPatientRecords.size(); r++) {
+                    // Identifier is the record title of the current record
+                    String identifier = mPatientRecords.get(r).getTitle();
+                    System.out.println("identifier / record title is " + identifier);
 
-                // Go through each problem and find all records of each problem
-            ArrayList<PatientRecord> mPatientRecords = new ArrayList<PatientRecord>();
-            for(int i=0;i<mPatientProblems.size();i++){
-                Problem mPatientProblem = mPatientProblems.get(i);
-                for(int j=0;j<mPatientProblem.countRecords();j++){
-                    mPatientRecords.add(mPatientProblem.getPatientRecord(j));
-                }
-            }
+                    identifier = "time1";
 
-            System.out.println("mPatient Record is "+mPatientRecords);
+                    preHits = UserDataController.searchForBodyLocations(bodyLocation, identifier);
 
-            // Match the saved body locations with the search keyword
-            for (int r=0;r<mPatientRecords.size();r++){
-                // Identifier is the record title of the current record
-                String identifier = mPatientRecords.get(r).getTitle();
-                System.out.println("identifier / record title is "+identifier);
+                    // Add all valid results to an array list called allReceivedRecords
+                    ArrayList<PatientRecord> temp;
+                    temp = (ArrayList<PatientRecord>) preHits[0];
 
-                identifier = "time1";
-                System.out.println(identifier);
-
-                preHits = UserDataController.searchForBodyLocations(bodyLocation,identifier);
-
-                // Add all valid results to an array list called allReceivedRecords
-                ArrayList<PatientRecord> temp;
-                temp = (ArrayList<PatientRecord>) preHits[0];
-
-                for(int n=0;n<temp.size();n++){
-                    if (temp.get(n) != null){
-                        allReceivedRecords.add(temp.get(n));
+                    for (int n = 0; n < temp.size(); n++) {
+                        if (temp.get(n) != null) {
+                            allReceivedRecords.add(temp.get(n));
+                        }
                     }
+
+                    System.out.println("All received records are: " + allReceivedRecords);
                 }
 
-                System.out.println("All received records are: "+allReceivedRecords);
+                hits[1] = allReceivedRecords;
+
+            } else {
+
+                // Fetch user data
+                CareProvider careProvider = UserDataController.loadCareProviderData(this);
+
+                // Fetch all patients
+                ArrayList<Patient> patients = careProvider.getPatientList();
+
+                if (patients.size() == 0) {
+                    System.out.println("No patient assigned");
+                } else {
+                    for (int i = 0; i < patients.size(); i++) {
+                        System.out.println("patients are " + patients);
+                        // Fetch user data
+                        Patient mPatient = patients.get(i);
+
+                        ArrayList<PatientRecord> mPatientRecords = getAllRecords(mPatient);
+
+                        // For each record, check whether the geo location fits the search REQUEST
+
+                        for (int k = 0; k < mPatientRecords.size(); k++) {
+                            String identifier = mPatientRecords.get(k).getTitle();
+                            System.out.println("identifier is " + identifier);
+
+                            identifier = "time1";
+
+                            preHits = UserDataController.searchForBodyLocations(bodyLocation, identifier);
+
+                            // Add all valid results to an arrayList allReceivedRecords
+                            ArrayList<PatientRecord> temp;
+                            temp = (ArrayList<PatientRecord>) preHits[0];
+
+                            if (temp.size() != 0) {
+                                for (int m = 0; m < temp.size(); m++) {
+                                    allReceivedRecords.add(temp.get(m));
+                                }
+                            }
+                        }
+
+                    }
+
+                    hits[1] = allReceivedRecords;
+                }
             }
-
-            hits[1] = allReceivedRecords;
-
         }
 
         if (addressFound) {
@@ -301,6 +331,7 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     public ArrayList<PatientRecord> getAllRecords(Patient mPatient){
+
         System.out.println("mPatient is "+mPatient.toString());
 
         // Find all problems and then find all records for each problem
