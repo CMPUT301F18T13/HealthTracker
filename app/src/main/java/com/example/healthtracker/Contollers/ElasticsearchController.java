@@ -526,6 +526,8 @@ public class ElasticsearchController {
 
             // Create a matchBodyLocationQuery
 
+            /*
+
             String matchBodyLocationQuery = "{\t\n" +
                     "\t\"query\" : {\n" +
                     "\t\t\"bool\" : {\n" +
@@ -537,10 +539,33 @@ public class ElasticsearchController {
                     "\t}\n" +
                     "}";
 
+
+
             Search search = new Search.Builder(matchBodyLocationQuery)
                     .addIndex(Index)
                     .addType(searchType)
                     .build();
+
+            */
+
+            String matchBodyLocationQuery = "{\n" +
+                    "\t\"query\" : {\n" +
+                    "\t\t\"bool\" : {\n" +
+                    "\t\t\t\"must\" : [\n" +
+                    "\t\t\t\t{\"match\" : {\"_id\" : \"" + identifier +"\" }},\n" +
+                    "\t\t\t\t{\"match\" : {\"locationText\" : \"" + locationText +"\"}}\n" +
+                    "\t\t\t\t\n" +
+                    "\t\t\t]\n" +
+                    "\t\t}\n" +
+                    "\t}\n" +
+                    "\t\n" +
+                    "}";
+
+            Search search = new Search.Builder(matchBodyLocationQuery)
+                    .addIndex(Index)
+                    .addType("Patient")
+                    .build();
+
 
             try{
                 SearchResult result = client.execute(search);

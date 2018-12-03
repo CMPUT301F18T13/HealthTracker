@@ -199,6 +199,97 @@ public class SearchActivity extends AppCompatActivity {
 
         } else if(searchType.equals("bodyLocation")) {
 
+            /*
+
+            String bodyLocation = keywords.getText().toString();
+            System.out.println("bodyLocation entered is + " + bodyLocation);
+
+            Object preHits[] = null;
+
+            hits = new Object[3];
+            hits[0] = new ArrayList<Problem>();
+            hits[1] = new ArrayList<PatientRecord>();
+            hits[2] = new ArrayList<CareProviderComment>();
+
+            ArrayList<PatientRecord> allReceivedRecords = new ArrayList<PatientRecord>();
+
+            if (profile.equals("Patient")) {
+
+
+                // Find all records of the current patient
+
+                // Fetch user data
+                Patient mPatient = UserDataController.loadPatientData(this);
+                ArrayList<PatientRecord> mPatientRecords = getAllRecords(mPatient);
+
+                // Match the saved body locations with the search keyword
+                for (int r = 0; r < mPatientRecords.size(); r++) {
+                    // Identifier is the record title of the current record
+                    String identifier = mPatientRecords.get(r).getTitle();
+                    System.out.println("identifier / record title is " + identifier);
+
+                    preHits = UserDataController.searchForBodyLocations(bodyLocation, identifier);
+
+                    // Add all valid results to an array list called allReceivedRecords
+                    ArrayList<PatientRecord> temp;
+                    temp = (ArrayList<PatientRecord>) preHits[0];
+
+                    for (int n = 0; n < temp.size(); n++) {
+                        if (temp.get(n) != null) {
+                            allReceivedRecords.add(temp.get(n));
+                        }
+                    }
+
+                    System.out.println("All received records are: " + allReceivedRecords);
+                }
+
+                hits[1] = allReceivedRecords;
+
+            } else {
+
+                // Fetch user data
+                CareProvider careProvider = UserDataController.loadCareProviderData(this);
+
+                // Fetch all patients
+                ArrayList<Patient> patients = careProvider.getPatientList();
+
+                if (patients.size() == 0) {
+                    System.out.println("No patient assigned");
+                } else {
+                    for (int i = 0; i < patients.size(); i++) {
+                        System.out.println("patients are " + patients);
+                        // Fetch user data
+                        Patient mPatient = patients.get(i);
+
+                        ArrayList<PatientRecord> mPatientRecords = getAllRecords(mPatient);
+
+                        // For each record, check whether the geo location fits the search REQUEST
+
+                        for (int k = 0; k < mPatientRecords.size(); k++) {
+                            String identifier = mPatientRecords.get(k).getTitle();
+                            System.out.println("identifier is " + identifier);
+
+
+                            preHits = UserDataController.searchForBodyLocations(bodyLocation, identifier);
+
+                            // Add all valid results to an arrayList allReceivedRecords
+                            ArrayList<PatientRecord> temp;
+                            temp = (ArrayList<PatientRecord>) preHits[0];
+
+                            if (temp.size() != 0) {
+                                for (int m = 0; m < temp.size(); m++) {
+                                    allReceivedRecords.add(temp.get(m));
+                                }
+                            }
+                        }
+
+                    }
+
+                    hits[1] = allReceivedRecords;
+                }
+            }
+            */
+
             String bodyLocation = keywords.getText().toString();
             System.out.println("bodyLocation entered is + " + bodyLocation);
 

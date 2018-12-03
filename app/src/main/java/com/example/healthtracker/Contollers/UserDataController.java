@@ -485,6 +485,7 @@ public class UserDataController<E> {
         ElasticsearchController.SearchByBodyLocations searchRecordTask = new ElasticsearchController.SearchByBodyLocations();
         searchRecordTask.execute(searchInfo);
 
+        /*
         try{
             hits[0] = searchRecordTask.get().getSourceAsObjectList(PatientRecord.class,false);
 
@@ -493,6 +494,24 @@ public class UserDataController<E> {
         }catch (InterruptedException e){
             e.printStackTrace();
         }
+        */
+
+        try{
+            hits[0] = searchRecordTask.get().getSourceAsObjectList(Patient.class,false);
+            if(hits[0] != null){
+                Patient patient = (Patient) hits[0];
+                for(int i=0;i<patient.getProblemList().size();i++){
+                    hits[0] = patient.getProblem(i).getRecords();
+                }
+            }
+
+        }catch (ExecutionException e){
+            e.printStackTrace();
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
+
 
         return hits;
 
