@@ -9,12 +9,15 @@ import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.R;
 
 import java.sql.Timestamp;
+import com.example.healthtracker.R;
+
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class search_results_record extends Activity {
 
-    Object[] hits;
+    private Object[] hits;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

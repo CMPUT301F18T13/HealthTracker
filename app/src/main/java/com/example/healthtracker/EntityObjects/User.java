@@ -119,7 +119,6 @@ public class User implements Serializable {
      *
      * @param phone A string that will be the user's new listed phone number.
      * @param email A string that will be the user's new listed email address.
-
      */
     public void updateUserInfo(String phone, String email){
         this.setEmail(email);

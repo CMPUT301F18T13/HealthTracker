@@ -2,16 +2,24 @@ package com.example.healthtracker.Contollers;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+
+import android.location.Address;
+import android.location.Geocoder;
+import android.support.v7.app.AlertDialog;
+
 import android.support.v7.app.AlertDialog;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Toast;
+
+import org.elasticsearch.common.geo.GeoPoint;
 
 import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.CareProviderComment;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.EntityObjects.Problem;
+
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -22,6 +30,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import java.util.ConcurrentModificationException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import java.util.concurrent.ExecutionException;
 
 
@@ -44,9 +58,9 @@ public class UserDataController<E> {
 
 
     final private static String userKey = "Key";
-    private Context context;
+    private final Context context;
 
-    UserDataController(Context context) {
+    private UserDataController(Context context) {
         this.context = context;
     }
 
@@ -70,11 +84,10 @@ public class UserDataController<E> {
             CareProvider careProvider = null;
             try {
                 careProvider = getCareProvider.get();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
+            } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
             }
+            assert careProvider != null;
             ArrayList<Patient> patients = careProvider.getPatientList();
             for(int i = 0; i<patients.size(); i++){
                 Patient patient = loadPatientById(context, patients.get(i).getUserID());
@@ -91,6 +104,7 @@ public class UserDataController<E> {
     /**
      * Retrieves the CareProvider object to who the ID input belongs to. Retrieves from server
      * if an internet connection is available or from the local cache otherwise.
+     *
      * @param context The context in which to access local cache if necessary.
      * @param ID The ID of the desired CareProvider.
      * @return The CareProvider to whom the ID input belongs to.
@@ -104,9 +118,7 @@ public class UserDataController<E> {
             CareProvider careProvider = null;
             try {
                 careProvider = getCareProvider.get();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
+            } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
             }
             if(careProvider != null){
@@ -141,9 +153,7 @@ public class UserDataController<E> {
             Patient patient = null;
             try {
                 patient = getPatient.get();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
+            } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
             }
             return patient;
@@ -160,7 +170,7 @@ public class UserDataController<E> {
      * @param ID input the ID of the patient to be returned
      * @return Patient to who the ID input belongs to
      */
-    public static Patient loadPatientById(Context context, String ID) {
+    private static Patient loadPatientById(Context context, String ID) {
         if (ElasticsearchController.testConnection(context)) {
             // Download user data with elastic search
             ElasticsearchController.GetPatient getPatient = new ElasticsearchController.GetPatient();
@@ -168,9 +178,7 @@ public class UserDataController<E> {
             Patient patient = null;
             try {
                 patient = getPatient.get();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
+            } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
             }
             return patient;
@@ -195,7 +203,7 @@ public class UserDataController<E> {
             ElasticsearchController.AddPatient addPatientTask = new ElasticsearchController.AddPatient();
             addPatientTask.execute(patient);
             for(Problem problem: patient.getProblemList()){
-                saveProblemData(problem, context);
+                saveProblemData(problem);
             }
         } else {
             Toast.makeText(context, "Could not reach server. Changes saved locally.", Toast.LENGTH_LONG).show();
@@ -315,8 +323,9 @@ public class UserDataController<E> {
             // upload cached user data
             Patient user = new UserDataController<Patient>(context).loadUserLocally();
             UserDataController.savePatientData(context, user);
+            assert user != null;
             for(Problem problem: user.getProblemList()){
-                UserDataController.saveProblemData(problem, context);
+                UserDataController.saveProblemData(problem);
             }
         } else {
             Toast.makeText(context, "No internet connection available. Unable to sync.", Toast.LENGTH_LONG).show();
@@ -334,6 +343,7 @@ public class UserDataController<E> {
             // upload cached user data
             CareProvider user = new UserDataController<CareProvider>(context).loadUserLocally();
             UserDataController.saveCareProviderData(context, user);
+            assert user != null;
             for(Patient patient: user.getPatientList()){
                 for(Problem problem: patient.getProblemList()){
                     for(CareProviderComment comment: problem.getcaregiverRecords()){
@@ -355,7 +365,7 @@ public class UserDataController<E> {
      * @return serialized string of record
      */
     public static String serializeRecord(Context context, PatientRecord record){
-        return new UserDataController<PatientRecord>(context).objectToString(record);
+      return new UserDataController<PatientRecord>(context).objectToString(record);
     }
 
     public static String serializeObjectArray(Context context, Object[] objects){
@@ -368,6 +378,7 @@ public class UserDataController<E> {
 
     /**
      * Convert serialized record string back into a PatientRecord object
+     *
      * @param context input context to initialize a new UserDataController
      * @param recordString input serialized string of record to convert back into a PatientRecord object
      * @return PatientRecord object corresponding to serialized record string
@@ -383,9 +394,7 @@ public class UserDataController<E> {
         Patient patient = null;
         try {
             patient = searchTask.get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
 
@@ -402,9 +411,7 @@ public class UserDataController<E> {
         searchProblemsTask.execute(searchInfo);
         try {
             hits[0] = searchProblemsTask.get().getSourceAsObjectList(Problem.class, false);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
 
@@ -425,16 +432,52 @@ public class UserDataController<E> {
         searchCommentsTask.execute(searchInfo);
         try {
             hits[2] = searchCommentsTask.get().getSourceAsObjectList(CareProviderComment.class, false);
+
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
+
             e.printStackTrace();
         }
 
         return hits;
     }
 
-    public static void saveProblemData(Problem problem, Context context){
+
+
+    // Search By Geo-Locations
+    public static Object[] searchForGeoLocations(String distance,Double latitude,Double longitude,String identifier){
+
+        // Create an Object array which can hold 3 items
+        Object[] hits = new Object[3];
+
+        // Search for problem
+        hits[0] = new ArrayList<Problem>();
+
+        // Search for records: Initialize a String Array
+        String searchInfo[] = new String[]{"Record",distance,latitude.toString(),longitude.toString(),identifier};
+        ElasticsearchController.SearchByGeoLocations searchRecordsTask = new ElasticsearchController.SearchByGeoLocations();
+        searchRecordsTask.execute(searchInfo);
+
+        try {
+            hits[1] = searchRecordsTask.get().getSourceAsObjectList(PatientRecord.class,false);
+
+        }catch (ExecutionException e){
+            e.printStackTrace();
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
+        // Search for commentRecords
+        hits[2] = new ArrayList<CareProviderComment>();
+
+        return hits;
+
+    }
+
+    public static void saveProblemData(Problem problem){
+
         ElasticsearchController.AddProblem addProblem = new ElasticsearchController.AddProblem();
         addProblem.execute(problem);
         for(PatientRecord record: problem.getRecords()){
@@ -442,5 +485,8 @@ public class UserDataController<E> {
             addRecord.execute(record);
         }
     }
+
+
+
 
 }

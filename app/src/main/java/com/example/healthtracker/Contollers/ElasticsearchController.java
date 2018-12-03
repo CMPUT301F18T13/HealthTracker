@@ -8,17 +8,37 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.example.healthtracker.EntityObjects.CareProvider;
+
 import com.example.healthtracker.EntityObjects.CareProviderComment;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.EntityObjects.Problem;
 import com.google.gson.JsonObject;
+
+
+import com.example.healthtracker.EntityObjects.CareProviderComment;
+import com.example.healthtracker.EntityObjects.PatientRecord;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonSyntaxException;
+
+import com.example.healthtracker.EntityObjects.CareProvider;
+import com.example.healthtracker.EntityObjects.Patient;
+import com.example.healthtracker.EntityObjects.Problem;
+
+
 import com.searchly.jestdroid.DroidClientConfig;
 import com.searchly.jestdroid.JestClientFactory;
 import com.searchly.jestdroid.JestDroidClient;
 
 import org.elasticsearch.index.query.QueryBuilder;
+
+import org.apache.lucene.queryparser.xml.builders.BooleanQueryBuilder;
+import org.elasticsearch.common.unit.DistanceUnit;
+import org.elasticsearch.index.query.GeoDistanceFilterBuilder;
+import org.elasticsearch.index.query.QueryBuilder;
+
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.aggregations.bucket.range.geodistance.GeoDistanceBuilder;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,6 +53,13 @@ import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import java.util.Map;
+import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
+
 import io.searchbox.client.JestResult;
 import io.searchbox.core.DocumentResult;
 import io.searchbox.core.Get;
@@ -42,6 +69,11 @@ import io.searchbox.core.SearchResult;
 import io.searchbox.indices.mapping.PutMapping;
 
 import static org.elasticsearch.index.query.QueryStringQueryBuilder.Operator.AND;
+import org.elasticsearch.common.geo.ShapeRelation;
+import org.elasticsearch.common.geo.builders.ShapeBuilder;
+import org.elasticsearch.common.geo.GeoDistance;
+
+
 
 /* General ideas for how to implement basic elastic search features from
 *CMPUT301W18T17, https://github.com/CMPUT301W18T17/TheProfessionals , 2018/04/09, viewed 2018/10/13* with apache
@@ -151,10 +183,43 @@ public class ElasticsearchController {
             verifySettings();
             PatientRecord record = records[0];
 
+
             Index index = new Index.Builder(record)
                     .index(Index)
                     .type("Record")
                     .build();
+
+
+            // Create an Index Mapping
+            PutMapping putMapping = new PutMapping.Builder(
+                    Index,
+                    "Record",
+                    "{ \"Record\" : { " +
+                            "   \"properties\" : { " +
+                            "       \"RecordTitle\" : { " +
+                            "           \"type\" : " + "\"string\" " +
+                            "         }," +
+                            "        \"comment\" : { " +
+                            "           \"type\" : " + "\"string\" " +
+                            "         }," +
+                            "        \"geoLocations\" : { "+
+                            "           \"type\" : " + "\"geo_point\" " +
+                            "         }," +
+                            "        \"timestamp\" : { " +
+                            "           \"type\" : " + " \"date\" " +
+                            "         } " +
+                            "     } " +
+                            "   } " +
+                            "}"
+            ).build();
+
+            try{
+                client.execute(putMapping);
+
+            }catch (IOException e){
+                Log.i("Error", "The application failed to build the mapping");
+            }
+
 
             try {
                 // where is the client?
@@ -166,8 +231,13 @@ public class ElasticsearchController {
             } catch (Exception e) {
                 Log.i("Error", "The application failed to build and add the record");
             }
+
             return null;
+
         }
+
+
+
     }
 
     public static class AddComment extends AsyncTask<CareProviderComment, Void, Void> {
@@ -250,6 +320,7 @@ public class ElasticsearchController {
             } catch (Exception e) {
                 Log.i("Error", "Could not access the server to get the patient");
             }
+
             return patient;
         }
     }
@@ -327,6 +398,7 @@ public class ElasticsearchController {
                 else{
                     System.out.println("result not null");
                 }
+                assert result != null;
                 patients_list = result.getSourceAsObjectList(Patient.class);
                 System.out.println(patients_list);
                 // Convert patients_list (List) to patients (ArrayList)
@@ -403,4 +475,61 @@ public class ElasticsearchController {
             return result;
         }
     }
+
+    public static class SearchByGeoLocations extends AsyncTask<String,Void,SearchResult> {
+        @Override
+        protected SearchResult doInBackground(String...params) {
+            verifySettings();
+
+            String searchType = params[0];
+            String keyDistance = params[1];
+            String latitude = params[2];
+            String longitude = params[3];
+            String identifier = params[4];
+
+            SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+
+            // Create a geoLocationQuery
+
+            String geoLocationQuery = "{\n" +
+                    "    \"query\" : {\n" +
+                    "        \"filtered\" : {\n" +
+                    "            \"query\" : {\n" +
+                    "            \t\"term\" : {\"_id\" : \"" + identifier + "\" " + "}\n" +
+                    "            },\n" +
+                    "            \"filter\" : {\n" +
+                    "                \"geo_distance\" : {\n" +
+                    "                    \"distance\" : \" " + keyDistance + "km\",\n" +
+                    "                    \"geoLocations\" : [" + longitude + "," + latitude+ "]\n" +
+                    "                }\n" +
+                    "            }\n" +
+                    "        }\n" +
+                    "    }\n" +
+                    "}";
+
+            Search search = new Search.Builder(geoLocationQuery)
+                    .addIndex(Index)
+                    .addType("Record")
+                    .build();
+
+            try {
+                SearchResult result = client.execute(search);
+                if (result == null) {
+                    System.out.println("result is null");
+                } else {
+                    System.out.println("result not null");
+                    System.out.println("result is "+result);
+                }
+
+                return result;
+
+            }catch (IOException e){
+                e.printStackTrace();
+                }
+
+            return null;
+
+        }
+    }
 }
+

@@ -20,7 +20,7 @@ public class UserTest {
         email = "abc@gmail.com";
         userID = "abc";
         String code = "VOXX3";
-        u = new User();
+        u = new User(phone, email, userID, code);
     }
 
     @Test

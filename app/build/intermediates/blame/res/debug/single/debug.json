@@ -1040,6 +1040,10 @@
         "source": "C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\d8aa778db67327851be6d1ae1dab44f1\\res\\color\\mtrl_btn_stroke_color_selector.xml"
     },
     {
+        "merged": "C:\\Users\\tyler\\AndroidStudioProjects\\HealthTracker1\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_add_geo_location.xml.flat",
+        "source": "C:\\Users\\tyler\\AndroidStudioProjects\\HealthTracker1\\app\\src\\main\\res\\layout\\activity_add_geo_location.xml"
+    },
+    {
         "merged": "C:\\Users\\tyler\\AndroidStudioProjects\\HealthTracker1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_design_ic_visibility_off.png.flat",
         "source": "C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\d8aa778db67327851be6d1ae1dab44f1\\res\\drawable-xxxhdpi-v4\\design_ic_visibility_off.png"
     },

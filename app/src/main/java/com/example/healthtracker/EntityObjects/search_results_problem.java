@@ -14,6 +14,7 @@ import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.EntityObjects.Problem;
 import com.example.healthtracker.R;
+import com.example.healthtracker.R;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

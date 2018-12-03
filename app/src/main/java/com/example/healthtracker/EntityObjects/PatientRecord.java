@@ -1,9 +1,14 @@
 package com.example.healthtracker.EntityObjects;
 
 import android.graphics.Bitmap;
+
 import android.support.annotation.NonNull;
+import android.location.Address;
+
 
 import com.example.healthtracker.EntityObjects.Photo;
+
+import org.elasticsearch.common.geo.GeoPoint;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -40,8 +45,11 @@ public class PatientRecord implements Serializable {
     private String RecordTitle;
     private String comment;
     private Timestamp timestamp;
-    private ArrayList<Bitmap> geoLocations;
-    private ArrayList<Photo> photos;
+    private Double Lon;
+    private Double Lat;
+    private ArrayList<Double> geoLocations = new ArrayList<>();
+    private final ArrayList<Photo> photos;
+
 
     /**
      * Constructor for PatientRecord that sets the record title and comment.
@@ -49,11 +57,17 @@ public class PatientRecord implements Serializable {
      * @param title A string for the title of the record
      * @param comment A string for description of the problem
      */
-    public PatientRecord(String title, String comment){
+    public PatientRecord(String title, String comment, Double Lon, Double Lat){
         this.RecordTitle = title;
         this.comment = comment;
         this.timestamp = new Timestamp(System.currentTimeMillis());
-        geoLocations = new ArrayList<Bitmap> ();
+
+        geoLocations = new ArrayList<Double>();
+
+        this.Lat = Lat;
+        this.Lon = Lon;
+        this.geoLocations.add(Lon);
+        this.geoLocations.add(Lat);
         photos = new ArrayList<Photo> ();
     }
 
@@ -65,8 +79,9 @@ public class PatientRecord implements Serializable {
         RecordTitle = "";
         comment = "";
         timestamp = new Timestamp(System.currentTimeMillis());
-        geoLocations = new ArrayList<Bitmap> ();
+        geoLocations = new ArrayList<Double> ();
         photos = new ArrayList<Photo> ();
+
     }
 
     /**
@@ -74,8 +89,9 @@ public class PatientRecord implements Serializable {
      *
      * @param geoLocation The geoLocation to be added.
      */
-    public void addGeoLocation(Bitmap geoLocation){
-        geoLocations.add(geoLocation);
+    public void setGeoLocation(Double Lon, Double Lat){
+        this.geoLocations.add(Lon);
+        this.geoLocations.add(Lat);
     }
 
     /**
@@ -83,8 +99,8 @@ public class PatientRecord implements Serializable {
      *
      * @param geoLocation The geoLocation to be deleted.
      */
-    public void deleteGeoLocation(Bitmap geoLocation){
-        geoLocations.remove(geoLocation);
+    public ArrayList<Double> getGeoLocation(){
+        return this.geoLocations;
     }
 
     /**
@@ -167,6 +183,10 @@ public class PatientRecord implements Serializable {
         return this.timestamp;
     }
 
+    /**
+     * Display the record as a string. Will be used in listviews.
+     */
+    @NonNull
     @Override
     /**
      * Display the record as a string. Will be used in listviews.

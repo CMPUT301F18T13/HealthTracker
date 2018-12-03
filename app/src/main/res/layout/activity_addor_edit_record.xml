@@ -53,10 +53,12 @@
         tools:ignore="Autofill" />
 
     <Button
+        android:id="@+id/add_geolocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:onClick="addGeoLocation"
         android:text="@string/add_geo_location_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bodylocation_button" />
@@ -72,11 +74,12 @@
         app:layout_constraintTop_toBottomOf="@+id/description_edit_text" />
 
     <Button
-        android:id="@+id/save_record_button"
+
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
         android:layout_marginBottom="30dp"
+        android:layout_marginEnd="10dp"
         android:onClick="saveButton"
         android:text="@string/save_record_button"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,5 +127,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/add32"
         tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/show_geo"
+        android:layout_width="265dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="GeoLocation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_geolocation"
+        app:layout_constraintVertical_bias="0.074" />
 
 </android.support.constraint.ConstraintLayout>

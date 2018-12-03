@@ -17,6 +17,7 @@ import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.EntityObjects.Problem;
 import com.example.healthtracker.EntityObjects.search_results_problem;
 import com.example.healthtracker.EntityObjects.search_results_record;
+
 import com.example.healthtracker.R;
 
 import java.util.ArrayList;

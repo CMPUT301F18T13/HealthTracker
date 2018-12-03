@@ -12,6 +12,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature android:name="android.hardware.location.gps" />
     <uses-feature android:name="android.hardware.camera"
@@ -31,6 +33,9 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.example.healthtracker.permission.MAPS_RECEIVE" />
 
     <permission
         android:name="com.example.healthtracker.permission.MAPS_RECEIVE"
@@ -94,7 +99,7 @@
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDppOAUxXEBGrsc_gg8bw392b4QdyzlzYw" />
+            android:value="AIzaSyD1QEFjtCNEqiOiJ-zKC761PXvjlNHJbsg" />
 
         <activity
             android:name=".View.ViewCareProviderComments"
@@ -105,13 +110,13 @@
 
         <activity android:name=".Activities.TakePhotoActivity">
         </activity>
+        <activity android:name=".Activities.AddGeoLocationActivity">
+        </activity>
         <activity android:name=".Contollers.PhotoController" />
-        <activity android:name=".search_results_problem" />
-        <activity android:name=".search_results_record" />
-        <activity android:name=".EntityObjects.search_results_problem" />
-        <activity android:name=".EntityObjects.search_results_record" />
         <activity android:name=".EntityObjects.search_result_comments" />
-        <activity android:name=".EntityObjects.search_results_comments" />
+        <activity android:name=".EntityObjects.search_results_problem" />
+        <activity android:name=".EntityObjects.SearchResultsView" />
+        <activity android:name=".EntityObjects.search_results_record" />
     </application>
 
 </manifest>
