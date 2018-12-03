@@ -46,9 +46,6 @@ public class EditProblemIntentTest {
 
     @Test
     public void testEditProblem() {
-        EditText name = (EditText) solo.getView("userID");
-        solo.enterText(name, "testingcode12");
-        solo.clickOnView(solo.getView("login_button"));
 
         solo.clickOnView(solo.getView("view_problems"));
         solo.clickInList(1);
