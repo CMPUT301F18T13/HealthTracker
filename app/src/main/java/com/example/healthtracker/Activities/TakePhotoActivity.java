@@ -90,7 +90,7 @@ public class TakePhotoActivity extends AppCompatActivity {
                 Bitmap scaledBitmap = Bitmap.createScaledBitmap(image, 300, 300, true);
                 rotatedBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
 
-                addPath= PhotoController.imageToString(rotatedBitmap);
+                addPath= PhotoController.imageToString(scaledBitmap);
                 imageView.setImageBitmap(PhotoController.stringToImage(addPath));
 
 
@@ -139,7 +139,11 @@ public class TakePhotoActivity extends AppCompatActivity {
         if (addPath.equals("")){
             Toast.makeText(this, "No Photo Selected", Toast.LENGTH_SHORT).show();
         }
+        else if (addPath.length() >= 65536) {
+            Toast.makeText(this, "Photo size exceeds the 65535 byte limit (is " + addPath.length() + "). Please try again", Toast.LENGTH_SHORT).show();
+        }
         else {
+
             Toast.makeText(this, "Photo Recorded", Toast.LENGTH_SHORT).show();
 
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
