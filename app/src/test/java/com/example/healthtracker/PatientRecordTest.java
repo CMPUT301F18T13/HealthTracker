@@ -2,6 +2,7 @@ package com.example.healthtracker;
 
 import android.graphics.Bitmap;
 
+import com.example.healthtracker.EntityObjects.BodyLocation;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.EntityObjects.Photo;
 import com.example.healthtracker.EntityObjects.Problem;
@@ -9,6 +10,7 @@ import com.example.healthtracker.EntityObjects.Problem;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -22,6 +24,10 @@ public class PatientRecordTest {
     private ArrayList<Bitmap> geoLocations;
     private ArrayList<Photo> photos;
     private PatientRecord patientRecord;
+    private Double lon;
+    private Double lat;
+    private Timestamp testTime;
+    private BodyLocation bodyLocation;
 
     @Before
     public void setUp() {
@@ -31,10 +37,25 @@ public class PatientRecordTest {
         Date dateStarted = new Date(( new java.util.Date()).getTime());
         String timestamp = "16:00:00";
         Problem parentProblem = new Problem();
+        lat = 52.301293 ;
+        lon = 43.321341;
+        bodyLocation = new BodyLocation();
 
-        patientRecord = new PatientRecord(title, comment);
+        patientRecord = new PatientRecord(title, comment, lon, lat,bodyLocation);
     }
 
+    @Test
+    public void setGeoLocation() {
+        patientRecord.setGeoLocation(lon,lat);
+        assertEquals(patientRecord.getGeoLocation().toString(),"[43.321341, 52.301293]");
+    }
+
+    @Test
+    public void getGeoLocation() {
+        assertEquals(patientRecord.getGeoLocation().toString(),"[43.321341, 52.301293]");
+    }
+
+    /*
     @Test
     public void addPhoto() {
         int index = 0;
@@ -53,7 +74,6 @@ public class PatientRecordTest {
         assertEquals(patientRecord.getPhoto(1),newPhoto2);
     }
 
-
     @Test
     public void deletePhoto() {
         Photo newPhoto = new Photo("file location 1");
@@ -64,8 +84,7 @@ public class PatientRecordTest {
 
         patientRecord.deletePhoto(0);
         assertEquals(patientRecord.getPhoto(0), newPhoto2);
-    }
-
+    }*/
 
     @Test
     public void getTitle() {
@@ -93,8 +112,14 @@ public class PatientRecordTest {
         assertEquals("New Comment", patientRecord.getComment());
     }
 
+    @Test
+    public void setTimeStamp(){
+        patientRecord.setTimestamp();
+        assertNotEquals(patientRecord.getTimestamp(),null);
+    }
 
-
+    @Test
+    public void getTimeStamp(){
+       assertNotEquals(patientRecord.getTimestamp(),null);
+    }
 }
-
-
