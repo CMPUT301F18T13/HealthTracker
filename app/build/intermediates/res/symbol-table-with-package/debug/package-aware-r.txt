@@ -1038,6 +1038,8 @@ drawable abc_vector_test
 drawable add32
 drawable avd_hide_password
 drawable avd_show_password
+drawable bodylocationback
+drawable bodylocationfront
 drawable care_provider_symbol
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -1137,6 +1139,7 @@ id barrier
 id beginning
 id blocking
 id bodylocation_button
+id bodylocphoto
 id bottom
 id button2
 id buttonPanel
@@ -1152,8 +1155,11 @@ id center
 id center_horizontal
 id center_vertical
 id chains
+id changeB
 id checkLink
 id checkbox
+id choose_front_back
+id choose_spinner
 id chronometer
 id clip_horizontal
 id clip_vertical
@@ -1204,6 +1210,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id final_save
 id fixed
 id forever
 id found_comments
@@ -1292,6 +1299,7 @@ id satellite
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
+id save_to_local
 id screen
 id scroll
 id scrollIndicatorDown
@@ -1320,7 +1328,9 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id show_body
 id show_geo
+id show_graph
 id smallLabel
 id snackbar_action
 id snackbar_text
@@ -1436,6 +1446,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_body_location_view
 layout activity_add_care_provider_comment
 layout activity_add_geo_location
 layout activity_add_patient
@@ -1545,6 +1556,7 @@ string add_body_location_button
 string add_geo_location_button
 string add_new_problem
 string add_patient
+string add_pin
 string add_problem
 string add_record_from_add
 string add_record_from_edit
@@ -1552,12 +1564,16 @@ string add_reminder
 string app_name
 string appbar_scrolling_view_behavior
 string bodyLocation
+string body_location
+string bodyloc_input
 string bottom_sheet_behavior
 string care_comment
 string care_comment_strict
 string care_comment_title
 string care_title_strict
 string careimage
+string change_pic
+string change_side
 string character_counter_content_description
 string character_counter_pattern
 string common_google_play_services_enable_button
@@ -1616,11 +1632,14 @@ string problem_title
 string project_id
 string prompt_email
 string provider_add_comment
+string rationale_ask_again
 string record_strict_care_view
 string record_view_title
 string save
+string save_body_loc
 string save_care_comment
 string save_edited_problem
+string save_pic_to_local
 string save_record_button
 string save_settings
 string search
@@ -1633,6 +1652,7 @@ string timestamp
 string title_activity_care_provider_record_view
 string title_activity_view_care_provider_comments
 string title_care_view
+string title_settings_dialog
 string userID
 string view_map
 string view_myproblems
@@ -1836,6 +1856,8 @@ style Base_Widget_MaterialComponents_TextInputLayout
 style CardView
 style CardView_Dark
 style CardView_Light
+style EasyPermissions
+style EasyPermissions_Transparent
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents

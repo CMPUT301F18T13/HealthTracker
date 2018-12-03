@@ -2,8 +2,6 @@ package com.example.healthtracker.EntityObjects;
 
 import android.support.annotation.NonNull;
 
-import com.example.healthtracker.Contollers.NotificationsController;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

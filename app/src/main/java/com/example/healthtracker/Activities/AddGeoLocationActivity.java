@@ -144,7 +144,7 @@ public class AddGeoLocationActivity extends FragmentActivity implements OnMapRea
         Intent intent = new Intent();
         intent.putExtra("Lat", Lat);
         intent.putExtra("Lon", Lon);
-        AddGeoLocationActivity.this.setResult(RESULT_OK, intent);
+        AddGeoLocationActivity.this.setResult(1, intent);
         AddGeoLocationActivity.this.finish();
     }
 }

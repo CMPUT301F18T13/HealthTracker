@@ -55,6 +55,7 @@
         <item>Body-location</item>
     </string-array>
     <string-array name="body_location_options">
+        <item> Choose a body location </item>
         <item>Left foot</item>
         <item>Right foot</item>
         <item>Left leg</item>
@@ -82,8 +83,14 @@
     <string name="add_body_location_button">Add Body-Location</string>
     <string name="add_geo_location_button">Add Geo-Location</string>
     <string name="add_reminder">Add Reminder</string>
-
     <string name="from_library">From Library</string>
+    <string name="add_pin">Add a pin</string>
+    <string name="change_pic">Change body graphic</string>
+    <string name="save_body_loc">Save</string>
+    <string name="save_pic_to_local">Save Photo</string>
+    <string name="change_side">Change body side</string>
+    <string name="bodyloc_input">Enter a body Loc</string>
+    <string name="body_location">BodyLocation</string>
     <string name="account_code_hint">Account Code</string>
     <string name="pick_date2">Pick Date</string>
     <string name="logout">Logout</string>

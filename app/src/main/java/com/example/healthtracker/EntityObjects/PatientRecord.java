@@ -31,14 +31,14 @@ public class PatientRecord implements Serializable {
     private Double Lat;
     private BodyLocation bodyLoc;
 
-
     /**
      * Constructor for PatientRecord that sets the record title and comment.
      *
      * @param title A string for the title of the record
      * @param comment A string for description of the problem
      */
-    public PatientRecord(String title, String comment, Double Lon, Double Lat,BodyLocation bodyLocation){
+
+    public PatientRecord(String title, String comment, Double Lon, Double Lat, BodyLocation bodyLocation){
         this.RecordTitle = title;
         this.comment = comment;
         this.timestamp = new Timestamp(System.currentTimeMillis());
@@ -63,24 +63,6 @@ public class PatientRecord implements Serializable {
     }
 
     /**
-     * Add a bodyLocation to the record
-     * @param newBodyLocation
-     */
-
-    public void setBodyLoc(BodyLocation newBodyLocation){
-        this.bodyLoc = newBodyLocation;
-    }
-
-    /**
-     * Get a bodyLocation of the record
-     * @return BodyLocation
-     */
-
-    public BodyLocation getBodyLoc(){
-        return this.bodyLoc;
-    }
-
-    /**
      * Add a geoLocation to the record.
      *
      * @param Lon Longitude for geo location
@@ -94,6 +76,14 @@ public class PatientRecord implements Serializable {
     public void addGeoLocation(Double Lon, Double Lat){
         this.geoLocations.add(Lon);
         this.geoLocations.add(Lat);
+    }
+
+    public void setBodyLoc(BodyLocation newBodyLocation){
+        this.bodyLoc = newBodyLocation;
+    }
+
+    public BodyLocation getBodyLoc(){
+        return this.bodyLoc;
     }
 
     /**

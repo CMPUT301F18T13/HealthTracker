@@ -11,7 +11,11 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +23,7 @@ import com.example.healthtracker.Activities.AddGeoLocationActivity;
 import com.example.healthtracker.Activities.SlideShowActivity;
 import com.example.healthtracker.Contollers.PhotoController;
 import com.example.healthtracker.Contollers.UserDataController;
+import com.example.healthtracker.EntityObjects.BodyLocation;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.R;
@@ -34,6 +39,9 @@ import java.util.Locale;
 import java.util.Objects;
 
 import static android.app.Activity.RESULT_OK;
+
+import static com.example.healthtracker.Contollers.PhotoController.imageToString;
+import static com.example.healthtracker.Contollers.PhotoController.stringToImage;
 
 /*
  * AddorEditRecordView enables a patient to add a new record to one of their problems or edit an
@@ -57,8 +65,14 @@ public class AddorEditRecordView extends AppCompatActivity {
 
     private PatientRecord record;
     private TextView saved_geoLocation;
+    private TextView saved_bodyLocation;
     private Double Lat;
     private Double Lon;
+
+    //private Spinner chooseLoc;
+    //private String bodyLocText;
+    private BodyLocation bodyLoc;
+    private ImageView locGraph;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +82,12 @@ public class AddorEditRecordView extends AppCompatActivity {
         descriptionText = findViewById(R.id.description_edit_text);
         timestampText = findViewById(R.id.patient_record_timestamp);
         //geoLocation = findViewById(R.id.add_geolocation);
+        //chooseLoc = findViewById(R.id.choose_body_location);
+
         saved_geoLocation = findViewById(R.id.show_geo);
+        saved_bodyLocation = findViewById(R.id.show_body);
+        locGraph = findViewById(R.id.show_graph);
+
         context = this;
         record = new PatientRecord();
         getExtraString();
@@ -84,6 +103,8 @@ public class AddorEditRecordView extends AppCompatActivity {
             record.setTimestamp();
             timestampText.setText(record.getTimestamp().toString());
         }
+
+
     }
 
     @Override
@@ -160,6 +181,18 @@ public class AddorEditRecordView extends AppCompatActivity {
             Bitmap photo = takenPhoto.get(i);
             PhotoController.saveToTemporaryStorage(photo, cw, timeStamps.get(i));
         }
+
+        if (record.getBodyLoc() != null) {
+            //show bodyLoc
+            String bodyText;
+            Bitmap bodygraphic;
+            bodyLoc = new BodyLocation();
+            String bodygraphicText = record.getBodyLoc().getGraphic();
+            bodygraphic = stringToImage(bodygraphicText);
+            bodyText = record.getBodyLoc().getLoc();
+            saved_bodyLocation.setText(bodyText);
+            locGraph.setImageBitmap(bodygraphic);
+        }
     }
 
     /*
@@ -184,8 +217,7 @@ public class AddorEditRecordView extends AppCompatActivity {
             record.setGeoLocation(Lon,Lat);
         }
 
-
-        // TODO set photos, geomap, bodylocation once they are implemented
+        record.setBodyLoc(bodyLoc);
 
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
         for (int i = 0; i < takenPhoto.size(); i++) {
@@ -255,7 +287,7 @@ public class AddorEditRecordView extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         List<Address> addressList = null;
         String CurrentLocation;
-        if(resultCode==RESULT_OK) {
+        if(resultCode==1) {
             Lat = Objects.requireNonNull(data.getExtras()).getDouble("Lat");
             Lon = data.getExtras().getDouble("Lon");
             Geocoder geocoder = new Geocoder(this);
@@ -280,6 +312,28 @@ public class AddorEditRecordView extends AppCompatActivity {
             String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",Locale.CANADA).format(new Date());
             PhotoController.saveToTemporaryStorage(BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length), cw, timeStamp);
             timeStamps.add(timeStamp);
+        } else if(requestCode ==4){
+            //Save Body Location
+            String bodyText;
+            Bitmap bodygraphic;
+            bodyLoc = new BodyLocation();
+            if (resultCode == 88) {
+                byte[] byteArray = data.getByteArrayExtra("graphic");
+                bodygraphic = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+                String bodygraphicText = imageToString(bodygraphic);
+                bodyText = data.getStringExtra("text");
+                bodyLoc.setLoc(bodyText);
+                bodyLoc.addGraphic(bodygraphicText);
+                saved_bodyLocation.setText(bodyText);
+                locGraph.setImageBitmap(bodygraphic);
+            }
+
+
         }
+    }
+
+    public void addBodyLocation(View view) {
+        Intent intent = new Intent(AddorEditRecordView.this, AddBodyLocationView.class);
+        startActivityForResult(intent,4);
     }
 }
