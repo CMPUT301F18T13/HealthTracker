@@ -1,8 +1,11 @@
 package com.example.healthtracker;
 
+import com.example.healthtracker.EntityObjects.BodyLocation;
 import com.example.healthtracker.EntityObjects.CareProviderComment;
+import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.EntityObjects.Problem;
+import com.example.healthtracker.EntityObjects.User;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,6 +24,11 @@ public class ProblemTest {
     private Problem problem;
     private String dateStarted;
     private String description;
+    private String phone = "780-123-123";
+    private String email = "test@gmail.com";
+    private String userID = "testingprob";
+    private String code = "ACJA1";
+    private BodyLocation bodyLocation;
 
     @Before
     public void setUp() {
@@ -29,6 +37,7 @@ public class ProblemTest {
         dateStarted = "2018-07-06";
         description = "A lot of red spots on my skin.";
         problem = new Problem(title,dateStarted,description);
+        bodyLocation = new BodyLocation();
     }
 
 
@@ -79,15 +88,14 @@ public class ProblemTest {
     @Test
     public void setRecords() {
         ArrayList<PatientRecord> patientRecords = new ArrayList<>();
-        patientRecords.add(new PatientRecord("Record", "I'm a record"));
+        patientRecords.add(new PatientRecord("Record", "I'm a record",32.00212,21.21212,bodyLocation));
         problem.setRecords(patientRecords);
-
         assertArrayEquals(patientRecords.toArray(), problem.getRecords().toArray());
     }
 
+    @Test
     public void getRecords() {
         ArrayList<PatientRecord> patientRecords = new ArrayList<>();
-
         assertArrayEquals(patientRecords.toArray(), problem.getRecords().toArray());
     }
 
@@ -96,7 +104,7 @@ public class ProblemTest {
         assertEquals(0, (int) problem.countRecords());
 
         ArrayList<PatientRecord> patientRecords = new ArrayList<>();
-        patientRecords.add(new PatientRecord("Record", "I'm a record"));
+        patientRecords.add(new PatientRecord("Record", "I'm a record",43.23123,31.31232,bodyLocation));
         problem.setRecords(patientRecords);
 
         assertEquals(1, (int) problem.countRecords());
@@ -114,78 +122,12 @@ public class ProblemTest {
     @Test
     public void getCaregiverRecords() {
         ArrayList<CareProviderComment> careGiverRecords = new ArrayList<>();
-
         assertArrayEquals(careGiverRecords.toArray(), problem.getcaregiverRecords().toArray());
     }
 
     @Test
-    public void getPatientRecords() {
-
+    public void getPatientRecord() {
+        ArrayList<PatientRecord> patientRecords = new ArrayList<>();
+        assertArrayEquals(patientRecords.toArray(), problem.getcaregiverRecords().toArray());
     }
-
-
-    @Test
-    public void addPatientRecord() {
-    }
-
-    @Test
-    public void addCareGiverRecord() {
-    }
-
-
-    @Test
-    public void deleteRecord() {
-    }
-
-    @Test
-    public void getNotifications() {
-        /*Notification myNotification = new Notification();
-        ArrayList<Notification> notifications = new ArrayList<Notification>();
-        notifications.add(myNotification);
-        problem.addNotification(myNotification);
-        assertEquals(notifications,problem.getNotifications()); */
-    }
-
-    @Test
-    public void addNotification() {
-        /*Notification myNotification = new Notification();
-        ArrayList<Notification> notifications = new ArrayList<Notification>();
-        notifications.add(myNotification);
-        problem.addNotification(myNotification);
-        assertEquals(notifications,problem.getNotifications()); */
-    }
-
-    @Test
-    public void deleteNotification() {
-
-    }
-
-    @Test
-    public void switchNotification() {
-        /* Boolean myNotification = problem.notificationStatus();
-        switchNotification();
-        Boolean myNotification2 = problem.notificationStatus();
-        assertFalse(myNotification == myNotification2); */
-    }
-
-    @Test
-    public void notificationStatus() {
-
-    }
-
-
-    @Test
-    public void getPatient() {
-        /* Patient patient = new Patient("P001","P001","123-456-789","patient1@health.com", "Sara");
-        problem.setPatient(patient);
-        assertEquals(problem.getPatient(),patient); */
-    }
-
-    @Test
-    public void setPatient() {
-       /* Patient newPatient = new Patient("P002","P002","111-222-333","patient2@health.com", "Nick");
-        problem.setPatient(newPatient);
-        assertEquals(problem.getPatient(),newPatient); */
-    }
-
 }

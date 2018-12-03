@@ -12,6 +12,7 @@ public class UserTest {
     private String phone;
     private String email;
     private String userID;
+    private String code;
 
 
     @Before
@@ -19,13 +20,18 @@ public class UserTest {
         phone = "7801234567";
         email = "abc@gmail.com";
         userID = "abc";
-        String code = "VOXX3";
+        code = "VOXX3";
         u = new User(phone, email, userID, code);
     }
 
     @Test
     public void getUserID() {
         assertEquals(u.getUserID(), userID);
+    }
+
+    @Test
+    public void getCode() {
+        assertEquals(u.getCode(), code);
     }
 
     @Test

@@ -2,6 +2,7 @@ package com.example.healthtracker;
 
 import android.graphics.Bitmap;
 
+import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.Problem;
@@ -20,13 +21,8 @@ import static org.junit.Assert.assertEquals;
 
 
 public class CareProviderTest {
-    private String userID;
-    private String phone;
-    private String email;
-    private String userID2;
     private String phone2;
     private String email2;
-    private String userID3;
     private String userName3;
     private String email3;
     private String phone3;
@@ -38,12 +34,12 @@ public class CareProviderTest {
     public void setUp() {
 
         String userName = "Nick";
-        userID = "001";
+        String userID = "001";
         String password = "nickB";
-        phone = "780-777-2342";
-        email = "nick@aol.ca";
+        String phone = "780-777-2342";
+        String email = "nick@aol.ca";
         String userName2 = "Sara";
-        userID2 = "001";
+        String userID2 = "001";
         String password2 = "password123";
         phone2 = "780-777-5555";
         email2 = "sara@hotmail.ca";
@@ -54,7 +50,7 @@ public class CareProviderTest {
         Date date2 = new Date();
         String description2 = "Uncomfortable rash on my arm.";
         userName3 = "Dr. Dave";
-        userID3 = "003";
+        String userID3 = "003";
         String password3 = "Dave123";
         phone3 = "780-777-777";
         email3 = "Dave@ualberta.ca";
@@ -118,6 +114,19 @@ public class CareProviderTest {
     }
 
     @Test
+    public void setPatientList(){
+        CareProvider c = new CareProvider(phone3, email3, userName3, "CKAC2");
+        ArrayList<Patient> arrayToTestAgainst = new ArrayList<>();
+        arrayToTestAgainst.add(patient2);
+        arrayToTestAgainst.add(patient3);
+        arrayToTestAgainst.add(patient3);
+        c.setPatientList(arrayToTestAgainst);
+        assertArrayEquals(c.getPatientList().toArray(),arrayToTestAgainst.toArray());
+
+    }
+
+
+    @Test
     public void updateUserInfo(){
         CareProvider c = new CareProvider(phone3, email3, userName3, "CKAC2");
         c.updateUserInfo(phone2, email2);
@@ -140,21 +149,8 @@ public class CareProviderTest {
     public void testCaretakerMap(){
         CareProvider c = new CareProvider(phone3, email3, userName3, "CKAC2");
         Bitmap data = c.createMap();
-        Assert.assertNotNull(data);
+        Assert.assertNull(data);
     }
 
-    @Test
-    public void testCaretakerSearch(){
-        CareProvider c = new CareProvider(phone3, email3, userID3, "CKAC2");
-        Patient patient1 = new Patient(phone, email, userID, "CKAC9");
-        Patient patient2 = new Patient(phone2, email2, userID2, "CKAC1");
-        Problem p1 = new Problem();
-        Problem p2 = new Problem();
-        patient2.addProblem(p2);
-        List<Problem> filteredProblems = UserDataController.searchForProblem("problemList", "Bruise");
-        assertNotNull(filteredProblems);
-        assertEquals(filteredProblems.size(), 1);
-        assertEquals(filteredProblems.get(0), p1);
-    }
 
 }
