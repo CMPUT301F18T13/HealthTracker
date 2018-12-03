@@ -14,8 +14,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 import org.elasticsearch.common.geo.GeoPoint;
@@ -86,6 +88,12 @@ public class SearchActivity extends AppCompatActivity {
 
 
     public void Search(View view) {
+
+        if(keywords.getText().toString().equals("")){
+            Toast.makeText(this, "Please enter at least one keyword.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         Object[] hits = null;
 
         System.out.println("Search type is " + searchType);
@@ -97,6 +105,11 @@ public class SearchActivity extends AppCompatActivity {
 
                 break;
             case "geoLocation":
+
+                if(distance.getText().toString().equals("")){
+                    Toast.makeText(this, "Please enter a valid distance.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 String address = keywords.getText().toString();
 
@@ -175,26 +188,8 @@ public class SearchActivity extends AppCompatActivity {
             Intent intent = new Intent(SearchActivity.this, SearchResultsView.class);
             intent.putExtra("hits", UserDataController.serializeObjectArray(this, hits));
             intent.putExtra("profileType", profileType);
-
-            // Launch the browse activity
             startActivity(intent);
         }
-        /*
-        Object[] hits = null;
-        if(searchType.equals("keyword")){
-            hits = UserDataController.searchForKeywords(keywords.getText().toString());
-        } else if(searchType.equals("geoLocation")){
-
-        } else if(searchType.equals("bodyLocation")){
-
-        }
-        // Create an intent object containing the bridge to between the two activities
-        Intent intent = new Intent(SearchActivity.this, SearchResultsView.class);
-        intent.putExtra("profileType", profileType);
-        intent.putExtra("hits", UserDataController.serializeObjectArray(this, hits));
-
-        // Launch the browse activity
-        startActivity(intent);*/
     }
 
     private GeoPoint getLocationFromAddress(String strAddress) {
@@ -205,7 +200,7 @@ public class SearchActivity extends AppCompatActivity {
 
         try {
             address = coder.getFromLocationName(strAddress, 5);
-            if (address == null) {
+            if (address == null || address.isEmpty()) {
                 return null;
             }
             Address location = address.get(0);

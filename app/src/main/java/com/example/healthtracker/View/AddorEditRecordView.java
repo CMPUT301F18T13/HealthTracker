@@ -44,6 +44,7 @@ import static android.app.Activity.RESULT_OK;
 public class AddorEditRecordView extends AppCompatActivity {
 
     private EditText titleText, descriptionText;
+    private int index;
     private TextView timestampText;
     private Context context;
 
@@ -74,7 +75,7 @@ public class AddorEditRecordView extends AppCompatActivity {
 
         // if editing a record show its current details
         Intent intent = getIntent();
-        int index = intent.getIntExtra("Index", -1);
+        index = intent.getIntExtra("Index", -1);
         if (index != -1) {
             String recordString = intent.getStringExtra("Record");
             record = UserDataController.unSerializeRecord(this, recordString);
@@ -176,7 +177,13 @@ public class AddorEditRecordView extends AppCompatActivity {
         // add record
         record.setComment(comment);
         record.setTitle(title);
-        //record.setGeoLocation(Lon,Lat);
+
+        if(index == -1){
+            record.addGeoLocation(Lon, Lat);
+        } else{
+            record.setGeoLocation(Lon,Lat);
+        }
+
 
         // TODO set photos, geomap, bodylocation once they are implemented
 

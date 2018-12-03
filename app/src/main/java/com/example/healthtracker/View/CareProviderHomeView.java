@@ -34,7 +34,6 @@ public class CareProviderHomeView extends AppCompatActivity {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(CareProviderHomeView.this, SearchActivity.class);
         intent.putExtra("profileType", "CareProvider");
-        // Launch the browse emotions activity
         startActivity(intent);
     }
 
@@ -55,7 +54,6 @@ public class CareProviderHomeView extends AppCompatActivity {
     public void ViewPatients(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(CareProviderHomeView.this, ViewPatients.class);
-        // Launch the browse emotions activity
         startActivity(intent);
     }
 
@@ -64,7 +62,6 @@ public class CareProviderHomeView extends AppCompatActivity {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(CareProviderHomeView.this, UserSettingsActivity.class);
         intent.putExtra("profileType", "CareProvider");
-        // Launch the browse emotions activity
         startActivity(intent);
     }
 
@@ -77,7 +74,7 @@ public class CareProviderHomeView extends AppCompatActivity {
     public void careViewMap(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(CareProviderHomeView.this, MapView.class);
-        // Launch the browse emotions activity
+        intent.putExtra("profileType", "CareProvider");
         startActivity(intent);
     }
 

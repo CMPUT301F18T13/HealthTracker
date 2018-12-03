@@ -70,6 +70,11 @@ public class PatientRecord implements Serializable {
         this.geoLocations.set(1, Lat);
     }
 
+    public void addGeoLocation(Double Lon, Double Lat){
+        this.geoLocations.add(Lon);
+        this.geoLocations.add(Lat);
+    }
+
     /**
      * Gets a geo location and returns it
      *

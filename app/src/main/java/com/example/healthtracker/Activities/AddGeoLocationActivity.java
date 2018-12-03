@@ -46,7 +46,7 @@ public class AddGeoLocationActivity extends FragmentActivity implements OnMapRea
         String location = locationSearch.getText().toString();
         List<Address> addressList = null;
 
-        if (location != null || !location.equals("")) {
+        if (location != null && !location.equals("")) {
             try {
                 Geocoder geocoder = new Geocoder(this);
                 addressList = geocoder.getFromLocationName(location, 1);

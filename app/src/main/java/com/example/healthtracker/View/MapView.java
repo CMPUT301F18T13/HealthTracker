@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import android.widget.Toast;
 
 import com.example.healthtracker.Contollers.UserDataController;
+import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.EntityObjects.Problem;
@@ -41,6 +42,7 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private final ArrayList<PatientRecord> mRecords = new ArrayList<>();
+    private String profileType;
 
 
 
@@ -48,7 +50,7 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_view);
-
+        profileType = getIntent().getStringExtra("profileType");
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         assert mapFragment != null;
@@ -56,15 +58,28 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
     }
 
     private void createRecordArray(){
-        Patient user = UserDataController.loadPatientData(this);
-        ArrayList<Problem> mProblems = user.getProblemList();
-        for (int counter = 0; counter < mProblems.size(); counter++) {
-            for (int counter_1 = 0; counter_1 < mProblems.get(counter).countRecords(); counter_1++) {
-                if(mProblems.get(counter).getRecords().get(counter_1) != null){
-                    mRecords.add(mProblems.get(counter).getRecords().get(counter_1));
+        if(profileType.equals("Patient")){
+            Patient user = UserDataController.loadPatientData(this);
+            ArrayList<Problem> mProblems = user.getProblemList();
+            for (int counter = 0; counter < mProblems.size(); counter++) {
+                for (int counter_1 = 0; counter_1 < mProblems.get(counter).countRecords(); counter_1++) {
+                    if(mProblems.get(counter).getRecords().get(counter_1) != null){
+                        mRecords.add(mProblems.get(counter).getRecords().get(counter_1));
+                    }
+                }
+            }
+        } else{
+            CareProvider user = UserDataController.loadCareProviderData(this);
+            ArrayList<Patient> mPatients = user.getPatientList();
+            for(Patient patient: mPatients){
+                for(Problem problem: patient.getProblemList()){
+                    for(PatientRecord record: problem.getRecords()){
+                        mRecords.add(record);
+                    }
                 }
             }
         }
+
     }
 
     /*
@@ -127,12 +142,12 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
         createRecordArray();
         for (int counter = 0; counter < mRecords.size(); counter++) {
             if(mRecords.get(counter).getGeoLocation().size() != 0) {
-                Lat = mRecords.get(counter).getGeoLocation().get(0);
-                Lon =  mRecords.get(counter).getGeoLocation().get(1);
-                LatLng LatLng = new LatLng(Lat,Lon );
+                Lon = mRecords.get(counter).getGeoLocation().get(0);
+                Lat =  mRecords.get(counter).getGeoLocation().get(1);
+                LatLng LatLng = new LatLng(Lat, Lon);
                 Geocoder geocoder = new Geocoder(this);
                 try {
-                    addressList = geocoder.getFromLocation(Lat,Lon,1);
+                    addressList = geocoder.getFromLocation(Lat, Lon,1);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
