@@ -104,6 +104,7 @@ public class PatientHomeView extends AppCompatActivity {
     public void viewMap(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(PatientHomeView.this, MapView.class);
+        intent.putExtra("profileType", "Patient");
         startActivity(intent);
     }
 }
