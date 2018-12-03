@@ -30,6 +30,13 @@ import com.example.healthtracker.View.ViewCareProviderComments;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+/* Idea and code implementation knowledge for the date picker from the tutorial at,
+url: https://www.youtube.com/watch?v=-mJmScTAWyQ 
+Author: Atif Pervaiz 
+posted: 2018/01/05 
+viewed: 2018/11/29
+*/
+
 /*
  * EditProblem enables a patient to alter the details of one of their problems and select any PatientRecord
  * associated with it to edit. The altered problem is saved by selecting the "save" button.
