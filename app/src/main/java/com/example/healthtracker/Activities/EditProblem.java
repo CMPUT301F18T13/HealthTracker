@@ -3,6 +3,7 @@ package com.example.healthtracker.Activities;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.healthtracker.Contollers.PhotoController;
 import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.Problem;
@@ -42,6 +44,7 @@ public class EditProblem extends AppCompatActivity {
     private String initial_entry;
     private Patient user;
     private Problem problem;
+    private String initialTitle;
     private int index;
     private ArrayList<PatientRecord> recordList;
     private ArrayAdapter<PatientRecord> adapter;
@@ -71,6 +74,8 @@ public class EditProblem extends AppCompatActivity {
 
         // display current data
         displayData();
+
+        initialTitle = problem.getTitle();
 
         // initial entry to check if changes have been made
         initial_entry = getEntry();
@@ -104,7 +109,9 @@ public class EditProblem extends AppCompatActivity {
 
             // set a negative button for deleting records
             ab.setPositiveButton("Delete", (dialog, which) -> {
-                // delete problem
+                ContextWrapper cw = new ContextWrapper(getApplicationContext());
+                PhotoController.removePhotosFromInternalStorage(cw, problem.getTitle(), recordList.get(position).getTitle());
+                // delete record
                 recordList.remove(position);
 
                 // update listview
@@ -127,6 +134,7 @@ public class EditProblem extends AppCompatActivity {
                 intent.putExtra("Record", UserDataController
                         .serializeRecord(EditProblem.this, selectedRecord));
                 intent.putExtra("Index", position);
+                intent.putExtra("ProblemTitle",problem.getTitle());
 
                 // Launch the edit record activity
                 startActivityForResult(intent, 2);
@@ -184,6 +192,14 @@ public class EditProblem extends AppCompatActivity {
             String date = pickedDate.getText().toString();
 
 
+            // If title has been changed, photos must be too...
+            if (!titleString.equals(initialTitle)) {
+                ContextWrapper cw = new ContextWrapper(getApplicationContext());
+                PhotoController.renamePhotosByProblem(cw, initialTitle, titleString);
+
+            }
+
+
             // save changes
             user = UserDataController.loadPatientData(this);
             problem = user.getProblem(index);
@@ -204,6 +220,7 @@ public class EditProblem extends AppCompatActivity {
     public void addRecordFromAdd(View view) {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(EditProblem.this, AddorEditRecordView.class);
+        intent.putExtra("ProblemTitle",problem.getTitle());
         // Launch the activity
         startActivityForResult(intent, 1);
     }
@@ -259,6 +276,7 @@ public class EditProblem extends AppCompatActivity {
         // Create an intent object containing the bridge to between the two activities
         Intent intent = new Intent(EditProblem.this, SlideShowActivity.class);
         intent.putExtra("ProblemTitle",problem.getTitle());
+        intent.putExtra("isProblem", "Problem");
         // Launch the browse emotions activity
         startActivity(intent);
     }

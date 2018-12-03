@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.healthtracker.Contollers.PhotoController;
 import com.example.healthtracker.R;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.util.Objects;
 
@@ -29,8 +30,10 @@ public class TakePhotoActivity extends AppCompatActivity {
     private TextView textTargetUri;
     private ImageView imageView;
     private String addPath = "";
+    String pathLoaded;
     String problemTitle;
     String path = "/storage/self/primary/Download/";
+    Bitmap rotatedBitmap;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,13 +73,12 @@ public class TakePhotoActivity extends AppCompatActivity {
                 matrix.postRotate(90);
                 assert image != null;
                 Bitmap scaledBitmap = Bitmap.createScaledBitmap(image, 300, 300, true);
-                Bitmap rotatedBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
+                rotatedBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
                 addPath= PhotoController.imageToString(rotatedBitmap);
                 imageView.setImageBitmap(PhotoController.stringToImage(addPath));
 
 
-                ContextWrapper cw = new ContextWrapper(getApplicationContext());
-                String pathLoaded = PhotoController.saveToInternalStorage(rotatedBitmap, cw);
+
                 //SlideShowActivity.add(addPath);
                // Bitmap test1 = PhotoController.loadImageFromStorage(pathLoaded,imageName);
                 //textTargetUri.setText(pathLoaded);
@@ -97,7 +99,7 @@ public class TakePhotoActivity extends AppCompatActivity {
                     Matrix matrix = new Matrix();
                     matrix.postRotate(90);
                     Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, 300, 300, true);
-                    Bitmap rotatedBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
+                    rotatedBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
                      /*pathLoaded=PhotoController.saveToInternalStorage(rotatedBitmap);
                     Bitmap test1 = PhotoController.loadImageFromStorage(pathLoaded,imageName);
                     textTargetUri.setText(pathLoaded);*/
@@ -120,11 +122,22 @@ public class TakePhotoActivity extends AppCompatActivity {
         if (addPath.equals("")){
             Toast.makeText(this, "No Photo Selected", Toast.LENGTH_SHORT).show();
         }
-        else if(SlideShowActivity.add(addPath,test)){
-            Toast.makeText(this, "Photo Recorded", Toast.LENGTH_SHORT).show();
+        else if (addPath.length() >= 65536) {
+            Toast.makeText(this, "Photo size exceeds the 65535 byte limit (is " + addPath.length() + "). Please try again", Toast.LENGTH_SHORT).show();
         }
-        else{
-            Toast.makeText(this, "Max Photo Limit Reached", Toast.LENGTH_SHORT).show();
+        else {
+
+            Toast.makeText(this, "Photo Recorded", Toast.LENGTH_SHORT).show();
+
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            rotatedBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            byte[] byteArray = stream.toByteArray();
+
+            Intent intent=new Intent();
+            intent.putExtra("image",byteArray);
+            setResult(50, intent);
+
+            finish();
         }
     }
 
