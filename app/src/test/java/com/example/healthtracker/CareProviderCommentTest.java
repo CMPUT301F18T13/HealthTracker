@@ -49,5 +49,18 @@ public class CareProviderCommentTest {
         assertEquals(careProviderComment.getTitle(),newTitle);
     }
 
+    @Test
+    public void ToString(){
+        assertEquals(careProviderComment.toString(),"Title: " + careProviderComment.getTitle() + "\n\nComment: " + careProviderComment.getComment());
+
+    }
+
+    @Test
+    public void equals(){
+        CareProviderComment careProviderComment_1 = new CareProviderComment("test", "test");
+        assertEquals(careProviderComment.equals(careProviderComment),true) ;
+        assertEquals(careProviderComment.equals(null),false);
+        assertEquals(careProviderComment.equals(careProviderComment_1),false) ;
+    }
 
 }
