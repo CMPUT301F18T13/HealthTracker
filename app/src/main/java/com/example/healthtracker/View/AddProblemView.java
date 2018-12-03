@@ -28,6 +28,13 @@ import com.example.healthtracker.R;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+/* Idea and code implementation knowledge for the date picker from the tutorial at,
+url: https://www.youtube.com/watch?v=-mJmScTAWyQ 
+Author: Atif Pervaiz 
+posted: 2018/01/05 
+viewed: 2018/11/29
+*/
+
 /*
  * AddProblemView enables a patient to add a new problem to their account. The patient must fill in
  * the title, description, and date started fields then click the save button to add the problem.
