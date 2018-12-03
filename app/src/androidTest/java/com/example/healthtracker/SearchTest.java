@@ -5,10 +5,9 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.widget.EditText;
 
-import com.example.healthtracker.Activities.EditProblem;
 import com.example.healthtracker.Activities.LoginActivity;
 import com.example.healthtracker.Activities.SearchActivity;
-import com.example.healthtracker.EntityObjects.search_results_problem;
+import com.example.healthtracker.SearchHelpers.search_results_problem;
 import com.example.healthtracker.View.SearchResultsView;
 import com.robotium.solo.Solo;
 
@@ -18,6 +17,8 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static junit.framework.TestCase.assertTrue;
 
 @RunWith(AndroidJUnit4.class)
 public class SearchTest {
@@ -61,6 +62,7 @@ public class SearchTest {
         solo.clickInList(0,0);
         solo.waitForActivity(search_results_problem.class, 2000);
         solo.assertCurrentActivity("Should be edit problem activity.", search_results_problem.class);
+        assertTrue("Patient info is not found!", solo.searchText("Rashes"));
     }
 
     @Test
@@ -85,14 +87,71 @@ public class SearchTest {
         Assert.assertTrue(result_2);
     }
 
-        // Test Searching Geo location
     @Test
-    public void testPatientCorrectGeoLocationSearchActivity() {
+    public void testPatientCorrectGeoSearchActivity() {
         // Login
         EditText name = (EditText) solo.getView("userID");
-        solo.enterText(name,"chenlinPatient2");
-        solo.clickOnButton("Login");
+        solo.enterText(name, "testingcode12");
+        solo.clickOnButton(solo.getString(R.string.login));
+
+        solo.clickOnButton(solo.getString(R.string.search));
+        boolean result_1 = solo.waitForActivity(SearchActivity.class, 2000);
+        Assert.assertTrue(result_1);
+
+        // Test Existing Search terms
+        EditText keyword = (EditText) solo.getView("search_terms");
+        solo.enterText(keyword, "Rashes");
+        solo.pressSpinnerItem(0, 1);
+        Boolean actual = solo.isSpinnerTextSelected(0, "Geo-location");
+        Assert.assertEquals("spinner item selected", true, actual);
+        solo.clickOnButton(solo.getString(R.string.search));
+        /*
+        boolean result_2 = solo.waitForActivity(SearchResultsView.class, 4000);
+        Assert.assertTrue(result_2);
+
+        solo.clickInList(0,0);
+        solo.waitForActivity(search_results_problem.class, 2000);
+        solo.assertCurrentActivity("Should be edit problem activity.", search_results_problem.class);
+
+        solo.clickInList(0,0);
+        solo.waitForActivity(search_results_problem.class, 2000);
+        solo.assertCurrentActivity("Should be edit problem activity.", search_results_problem.class);
+        assertTrue("Patient info is not found!", solo.searchText("Rashes"));*/
     }
+
+    @Test
+    public void testPatientCorrectBodySearchActivity() {
+        // Login
+        EditText name = (EditText) solo.getView("userID");
+        solo.enterText(name, "testingcode12");
+        solo.clickOnButton(solo.getString(R.string.login));
+
+        solo.clickOnButton(solo.getString(R.string.search));
+        boolean result_1 = solo.waitForActivity(SearchActivity.class, 2000);
+        Assert.assertTrue(result_1);
+
+        // Test Existing Search terms
+        EditText keyword = (EditText) solo.getView("search_terms");
+        solo.enterText(keyword, "Rashes");
+        solo.pressSpinnerItem(0, 2);
+        Boolean actual = solo.isSpinnerTextSelected(0, "Body-location");
+        Assert.assertEquals("spinner item selected", true, actual);
+        solo.clickOnButton(solo.getString(R.string.search));
+        /*
+        boolean result_2 = solo.waitForActivity(SearchResultsView.class, 4000);
+        Assert.assertTrue(result_2);
+
+        solo.clickInList(0,0);
+        solo.waitForActivity(search_results_problem.class, 2000);
+        solo.assertCurrentActivity("Should be edit problem activity.", search_results_problem.class);
+
+        solo.clickInList(0,0);
+        solo.waitForActivity(search_results_problem.class, 2000);
+        solo.assertCurrentActivity("Should be edit problem activity.", search_results_problem.class);
+        assertTrue("Patient info is not found!", solo.searchText("Rashes"));*/
+    }
+
+        // Test Searching Geo location
 
         // Test Searching Body Location
 
@@ -120,7 +179,7 @@ public class SearchTest {
 
         solo.clickInList(0,0);
         solo.waitForActivity(search_results_problem.class, 2000);
-        solo.assertCurrentActivity("Should be edit problem activity.", search_results_problem.class);
+        solo.assertCurrentActivity("Should be search results problem.", search_results_problem.class);
     }
 
     @Test
@@ -146,4 +205,69 @@ public class SearchTest {
         Assert.assertTrue(result_2);
     }
 
+    @Test
+    public void testCareProviderCorrectGeoSearchActivity() {
+        // Login
+        solo.clickOnCheckBox(0);
+        EditText name = (EditText) solo.getView("userID");
+        solo.enterText(name, "doctortyler");
+        solo.clickOnButton(solo.getString(R.string.login));
+
+        solo.clickOnButton(solo.getString(R.string.search));
+        boolean result_1 = solo.waitForActivity(SearchActivity.class, 2000);
+        Assert.assertTrue(result_1);
+
+        // Test Existing Search terms
+        EditText keyword = (EditText) solo.getView("search_terms");
+        solo.enterText(keyword, "Rashes");
+        solo.pressSpinnerItem(0, 1);
+        Boolean actual = solo.isSpinnerTextSelected(0, "Geo-location");
+        Assert.assertEquals("spinner item selected", true, actual);
+        solo.clickOnButton(solo.getString(R.string.search));
+        /*
+        boolean result_2 = solo.waitForActivity(SearchResultsView.class, 4000);
+        Assert.assertTrue(result_2);
+
+        solo.clickInList(0,0);
+        solo.waitForActivity(search_results_problem.class, 2000);
+        solo.assertCurrentActivity("Should be edit problem activity.", search_results_problem.class);
+
+        solo.clickInList(0,0);
+        solo.waitForActivity(search_results_problem.class, 2000);
+        solo.assertCurrentActivity("Should be edit problem activity.", search_results_problem.class);
+        assertTrue("Patient info is not found!", solo.searchText("Rashes"));*/
+    }
+
+    @Test
+    public void testCareProviderCorrectBodySearchActivity() {
+        // Login
+        solo.clickOnCheckBox(0);
+        EditText name = (EditText) solo.getView("userID");
+        solo.enterText(name, "doctortyler");
+        solo.clickOnButton(solo.getString(R.string.login));
+
+        solo.clickOnButton(solo.getString(R.string.search));
+        boolean result_1 = solo.waitForActivity(SearchActivity.class, 2000);
+        Assert.assertTrue(result_1);
+
+        // Test Existing Search terms
+        EditText keyword = (EditText) solo.getView("search_terms");
+        solo.enterText(keyword, "Rashes");
+        solo.pressSpinnerItem(0, 2);
+        Boolean actual = solo.isSpinnerTextSelected(0, "Body-location");
+        Assert.assertEquals("spinner item selected", true, actual);
+        solo.clickOnButton(solo.getString(R.string.search));
+        /*
+        boolean result_2 = solo.waitForActivity(SearchResultsView.class, 4000);
+        Assert.assertTrue(result_2);
+
+        solo.clickInList(0,0);
+        solo.waitForActivity(search_results_problem.class, 2000);
+        solo.assertCurrentActivity("Should be edit problem activity.", search_results_problem.class);
+
+        solo.clickInList(0,0);
+        solo.waitForActivity(search_results_problem.class, 2000);
+        solo.assertCurrentActivity("Should be edit problem activity.", search_results_problem.class);
+        assertTrue("Patient info is not found!", solo.searchText("Rashes"));*/
+    }
 }
