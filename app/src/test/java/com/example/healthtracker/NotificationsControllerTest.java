@@ -12,6 +12,14 @@ import java.sql.Time;
 import static org.junit.Assert.assertEquals;
 
 public class NotificationsControllerTest {
+
+
+    /*  This test was going to be used for the reminder system we were intending on implementing which would
+    * set an alarm to remind a user to take a photo of their medical issue.
+     */
+
+
+    /*
     private String repeatType;
     private Time time;
     private Date startDate;
@@ -96,6 +104,5 @@ public class NotificationsControllerTest {
         n.turnOff();
         assertEquals(false, n.notificationStatus());
     }
-
-
+    */
 }
