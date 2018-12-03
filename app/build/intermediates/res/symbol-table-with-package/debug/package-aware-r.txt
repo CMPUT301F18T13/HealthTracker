@@ -1123,7 +1123,6 @@ id add_comment_button
 id add_geolocation
 id add_patient
 id add_patient_button
-id add_pin
 id add_problem
 id add_problem_button
 id add_record_from_add_problem
@@ -1137,7 +1136,6 @@ id auto
 id barrier
 id beginning
 id blocking
-id bodyloc_text
 id bodylocation_button
 id bodylocphoto
 id bottom
@@ -1159,8 +1157,8 @@ id chains
 id changeB
 id checkLink
 id checkbox
-id choose_body_location
 id choose_front_back
+id choose_spinner
 id chronometer
 id clip_horizontal
 id clip_vertical
@@ -1207,6 +1205,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id final_save
 id fixed
 id forever
 id ghost_view

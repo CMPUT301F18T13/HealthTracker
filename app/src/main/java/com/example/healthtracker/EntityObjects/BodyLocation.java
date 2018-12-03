@@ -9,21 +9,21 @@ import java.util.ArrayList;
 
 public class BodyLocation implements Serializable {
     private String locationText;
-    private float pinX;
-    private float pinY;
+    //private float pinX;
+    //private float pinY;
     private Bitmap bodyGraphic;
 
-    public BodyLocation(String locationText, float x, float y, Bitmap bodyGraphic){
+    public BodyLocation(String locationText, Bitmap bodyGraphic){
         this.locationText = locationText;
-        this.pinX = x;
-        this.pinY = y;
+        //this.pinX = x;
+        //this.pinY = y;
         this.bodyGraphic = bodyGraphic;
     }
 
     public BodyLocation(){
         locationText = "";
-        pinX = 0;
-        pinY = 0;
+        //pinX = 0;
+        //pinY = 0;
         bodyGraphic = null;
     }
 
@@ -47,17 +47,6 @@ public class BodyLocation implements Serializable {
         return this.locationText;
     }
 
-    public void setPin(int x, int y){
-        pinX = x;
-        pinY = y;
-    }
-
-    public float getPinX(){
-        return pinX;
-    }
-    public float getPinY(){
-        return pinY;
-    }
 
 
 /*

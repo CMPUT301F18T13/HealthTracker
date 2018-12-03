@@ -3,6 +3,8 @@ package com.example.healthtracker.View;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Address;
 import android.location.Geocoder;
 import android.support.v7.app.AlertDialog;
@@ -48,11 +50,12 @@ public class AddorEditRecordView extends AppCompatActivity {
     private PatientRecord record;
     //private Button geoLocation;
     private TextView saved_geoLocation;
+    private TextView saved_bodyLocation;
     private Double Lat;
     private Double Lon;
 
-    private Spinner chooseLoc;
-    private String bodyLocText;
+    //private Spinner chooseLoc;
+    //private String bodyLocText;
     private BodyLocation bodyLoc;
 
     @Override
@@ -63,9 +66,10 @@ public class AddorEditRecordView extends AppCompatActivity {
         descriptionText = findViewById(R.id.description_edit_text);
         timestampText = findViewById(R.id.patient_record_timestamp);
         //geoLocation = findViewById(R.id.add_geolocation);
-        chooseLoc = findViewById(R.id.choose_body_location);
+        //chooseLoc = findViewById(R.id.choose_body_location);
 
         saved_geoLocation = findViewById(R.id.show_geo);
+        saved_geoLocation = findViewById(R.id.show_body);
         context = this;
         record = new PatientRecord();
 
@@ -80,27 +84,6 @@ public class AddorEditRecordView extends AppCompatActivity {
             record.setTimestamp();
             timestampText.setText(record.getTimestamp().toString());
         }
-
-        //Prompt user choose a body location
-        chooseLoc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                if(pos == 0){
-                    Toast.makeText(AddorEditRecordView.this, "Please choose a body location!",Toast.LENGTH_LONG).show();
-                }
-                else {
-                    String[] bodyLocs = getResources().getStringArray(R.array.body_location_options);
-                    Toast.makeText(AddorEditRecordView.this, "Your choice:" + bodyLocs[pos], Toast.LENGTH_LONG).show();
-                    bodyLocText = bodyLocs[pos];
-                }
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Toast.makeText(AddorEditRecordView.this, "Please choose a body location!",Toast.LENGTH_LONG).show();
-            }
-        });
-
-        bodyLoc.setLoc(bodyLocText);
 
 
     }
@@ -195,6 +178,7 @@ public class AddorEditRecordView extends AppCompatActivity {
         record.setComment(comment);
         record.setTitle(title);
         record.setGeoLocation(Lat,Lon);
+        record.setBodyLoc(bodyLoc);
 
         // TODO set photos, geomap, bodylocation once they are implemented
 
@@ -241,6 +225,18 @@ public class AddorEditRecordView extends AppCompatActivity {
         }
         else if(requestCode ==4){
             //Save Body Location
+            String bodyText;
+            Bitmap bodygraphic;
+            bodyLoc = new BodyLocation();
+            if (resultCode == RESULT_OK) {
+                byte[] byteArray = data.getByteArrayExtra("graphic");
+                bodygraphic = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+                bodyText = data.getStringExtra("text");
+                bodyLoc.setLoc(bodyText);
+                bodyLoc.addGraphic(bodygraphic);
+                saved_geoLocation.setText(bodyText);
+            }
+
 
         }
     }

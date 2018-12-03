@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
-INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
-INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
-INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
 MERGED from [com.android.support.test:rules:1.0.2] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\rules-1.0.2.aar\300190f134532627b64c484fbae7e15d\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support.test:runner:1.0.2] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\runner-1.0.2.aar\9cf2568fb51a0bfaaf630c88a5fe08ec\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\fd7eac015e7f1fd0de7583d735cfebab\AndroidManifest.xml:17:1-22:12
@@ -47,22 +47,22 @@ MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Phoeb\.gradle\cac
 MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\f56f5942921317352eb62911afaa3230\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:print:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\90e9ab87eacf7a0af16c0c004fd25dd4\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\29cec56c18a0726e0e55a855aa757f24\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
-INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
-INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
+INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
 	package
 		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:4:5-40
 		INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
 		INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-110:12
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:1-111:12
 		INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:2:11-69
@@ -101,49 +101,49 @@ ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\Androi
 	android:name
 		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:14:22-76
 uses-feature#android.hardware.location.gps
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:16:5-66
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:17:5-66
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:16:19-63
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:17:19-63
 uses-feature#android.hardware.camera
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:17:5-19:36
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:18:5-20:36
 	android:required
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:19:9-33
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:20:9-33
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:18:9-47
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:19:9-47
 uses-feature#0x00020000
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:20:5-22:35
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:21:5-23:35
 MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\7551063f39c31ec811aaf114a25bdc1b\AndroidManifest.xml:26:5-28:35
 MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\7551063f39c31ec811aaf114a25bdc1b\AndroidManifest.xml:26:5-28:35
 	android:glEsVersion
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:21:9-41
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:22:9-41
 	android:required
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:22:9-32
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:23:9-32
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:24:5-79
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:25:5-79
 MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\7551063f39c31ec811aaf114a25bdc1b\AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\7551063f39c31ec811aaf114a25bdc1b\AndroidManifest.xml:23:5-79
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:24:22-76
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:25:22-76
 uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:26:5-98
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:27:5-98
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:26:22-95
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:27:22-95
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:32:5-81
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:33:5-81
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:32:22-78
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:33:22-78
 uses-permission#com.example.healthtracker.permission.MAPS_RECEIVE
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:34:5-89
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:35:5-89
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:34:22-86
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:35:22-86
 permission#com.example.healthtracker.permission.MAPS_RECEIVE
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:36:5-38:47
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:37:5-39:47
 	android:protectionLevel
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:38:9-44
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:39:9-44
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:37:9-73
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:38:9-73
 application
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:40:5-108:19
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:41:5-109:19
 MERGED from [pub.devrel:easypermissions:0.3.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\easypermissions-0.3.0.aar\703dcef469099599df6e05df13e425c2\AndroidManifest.xml:11:5-17:19
 MERGED from [pub.devrel:easypermissions:0.3.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\easypermissions-0.3.0.aar\703dcef469099599df6e05df13e425c2\AndroidManifest.xml:11:5-17:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\9afd621c041af150c1ab55ab14feb97e\AndroidManifest.xml:22:5-20
@@ -171,169 +171,169 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Phoeb\.gra
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\56fb9a32f17bce0ab67595a405570585\AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:46:9-35
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:47:9-35
 	android:label
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:44:9-41
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:45:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:42:9-59
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:43:9-59
 	tools:ignore
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:48:9-48
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:49:9-48
 	android:roundIcon
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:45:9-54
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:46:9-54
 	android:icon
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:43:9-43
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:44:9-43
 	android:allowBackup
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:41:9-35
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:42:9-35
 	android:theme
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:47:9-40
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:48:9-40
 provider#android.support.v4.content.FileProvider
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:49:9-57:20
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:50:9-58:20
 	android:grantUriPermissions
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:53:13-47
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:54:13-47
 	android:authorities
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:52:13-67
+	android:exported
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:53:13-37
+	android:name
 		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:51:13-67
-	android:exported
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:52:13-37
-	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:50:13-67
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:54:13-56:54
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:55:13-57:54
 	android:resource
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:56:17-51
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:57:17-51
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:55:17-67
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:56:17-67
 activity#com.example.healthtracker.Activities.LoginActivity
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:59:9-68:20
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:60:9-69:20
 	android:label
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:62:13-45
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:63:13-45
 	android:exported
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:61:13-36
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:62:13-36
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:60:13-53
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:61:13-53
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:63:13-67:29
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:64:13-68:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:64:17-69
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:65:17-69
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:64:25-66
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:65:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:66:17-77
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:67:17-77
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:66:27-74
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:67:27-74
 activity#com.example.healthtracker.View.CareProviderHomeView
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:69:9-63
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:70:9-63
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:69:19-60
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:70:19-60
 activity#com.example.healthtracker.View.ViewPatients
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:70:9-55
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:71:9-55
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:70:19-52
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:71:19-52
 activity#com.example.healthtracker.Activities.SearchActivity
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:71:9-63
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:72:9-63
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:71:19-60
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:72:19-60
 activity#com.example.healthtracker.View.SearchResultsView
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:72:9-60
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:73:9-60
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:72:19-57
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:73:19-57
 activity#com.example.healthtracker.View.AddPatientView
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:73:9-57
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:74:9-57
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:73:19-54
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:74:19-54
 activity#com.example.healthtracker.Activities.CreateAccountActivity
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:74:9-70
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:75:9-70
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:74:19-67
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:75:19-67
 activity#com.example.healthtracker.Activities.UserSettingsActivity
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:75:9-69
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:76:9-69
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:75:19-66
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:76:19-66
 activity#com.example.healthtracker.View.ViewPatientsProblems
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:76:9-63
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:77:9-63
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:76:19-60
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:77:19-60
 activity#com.example.healthtracker.View.CareProviderProblemView
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:77:9-66
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:78:9-66
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:77:19-63
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:78:19-63
 activity#com.example.healthtracker.View.AddCareProviderCommentView
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:78:9-69
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:79:9-69
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:78:19-66
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:79:19-66
 activity#com.example.healthtracker.View.PatientHomeView
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:79:9-58
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:80:9-58
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:79:19-55
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:80:19-55
 activity#com.example.healthtracker.View.AddProblemView
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:80:9-82:55
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:81:9-83:55
 	android:windowSoftInputMode
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:82:13-52
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:83:13-52
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:81:13-48
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:82:13-48
 activity#com.example.healthtracker.View.ViewMyProblems
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:83:9-57
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:84:9-57
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:83:19-54
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:84:19-54
 activity#com.example.healthtracker.Activities.EditProblem
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:84:9-86:55
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:85:9-87:55
 	android:windowSoftInputMode
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:86:13-52
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:87:13-52
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:85:13-51
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:86:13-51
 activity#com.example.healthtracker.View.AddorEditRecordView
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:87:9-62
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:88:9-62
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:87:19-59
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:88:19-59
 activity#com.example.healthtracker.Activities.SlideShowActivity
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:88:9-66
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:89:9-66
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:88:19-63
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:89:19-63
 activity#com.example.healthtracker.View.MapView
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:89:9-50
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:90:9-50
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:89:19-47
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:90:19-47
 meta-data#com.google.android.gms.version
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:91:9-93:69
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:92:9-94:69
 MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\1c8d838fe98ecc6bc0252ae69b5bf005\AndroidManifest.xml:23:9-25:69
 MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Phoeb\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\1c8d838fe98ecc6bc0252ae69b5bf005\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:93:13-66
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:94:13-66
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:92:13-58
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:93:13-58
 meta-data#com.google.android.maps.v2.API_KEY
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:94:9-96:71
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:95:9-97:71
 	android:value
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:96:13-68
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:97:13-68
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:95:13-62
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:96:13-62
 activity#com.example.healthtracker.View.ViewCareProviderComments
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:98:9-100:82
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:99:9-101:82
 	android:label
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:100:13-79
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:101:13-79
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:99:13-58
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:100:13-58
 activity#com.example.healthtracker.View.CareProviderRecordView
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:101:9-103:80
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:102:9-104:80
 	android:label
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:103:13-77
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:104:13-77
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:102:13-56
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:103:13-56
 activity#com.example.healthtracker.Activities.TakePhotoActivity
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:104:9-75
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:105:9-75
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:104:19-63
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:105:19-63
 activity#com.example.healthtracker.Activities.AddGeoLocationActivity
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:105:9-80
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:106:9-80
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:105:19-68
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:106:19-68
 activity#com.example.healthtracker.Contollers.PhotoController
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:106:9-64
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:107:9-64
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:106:19-61
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:107:19-61
 activity#com.example.healthtracker.View.AddBodyLocationView
-ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:107:9-71
+ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:108:9-71
 	android:name
-		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:107:19-59
+		ADDED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml:108:19-59
 uses-sdk
 INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Phoeb\Documents\GitHub\301\HealthTracker\app\src\main\AndroidManifest.xml
