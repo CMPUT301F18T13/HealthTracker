@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Phoeb\\Documents\\GitHub\\301\\HealthTracker\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "C:\\Users\\mikey\\AndroidStudioProjects\\HealthTrackerNew\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Phoeb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ba62e3378fc6f2f4c7524460fb85cd7b\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\mikey\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\12237ca012bd756b7a7dbd142f7d67f1\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Phoeb\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\67058aba421dba7dd2f6114522de38de\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\mikey\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\7118f47a00b6bfbe65842adcaeba72da\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
