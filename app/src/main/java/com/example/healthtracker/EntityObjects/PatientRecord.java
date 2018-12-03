@@ -30,6 +30,7 @@ public class PatientRecord implements Serializable {
     private Double Lat;
     private ArrayList<Double> geoLocations = new ArrayList<>();
     private final ArrayList<Photo> photos;
+    private BodyLocation bodyLoc;
 
 
     /**
@@ -38,7 +39,7 @@ public class PatientRecord implements Serializable {
      * @param title A string for the title of the record
      * @param comment A string for description of the problem
      */
-    public PatientRecord(String title, String comment, Double Lon, Double Lat){
+    public PatientRecord(String title, String comment, Double Lon, Double Lat,BodyLocation bodyLocation){
         this.RecordTitle = title;
         this.comment = comment;
         this.timestamp = new Timestamp(System.currentTimeMillis());
@@ -47,6 +48,7 @@ public class PatientRecord implements Serializable {
         this.geoLocations.add(Lon);
         this.geoLocations.add(Lat);
         photos = new ArrayList<Photo> ();
+        this.bodyLoc = bodyLocation;
     }
 
     /**
@@ -59,6 +61,25 @@ public class PatientRecord implements Serializable {
         timestamp = new Timestamp(System.currentTimeMillis());
         geoLocations = new ArrayList<Double>();
         photos = new ArrayList<Photo> ();
+        bodyLoc = new BodyLocation();
+    }
+
+    /**
+     * Add a bodyLocation to the record
+     * @param newBodyLocation
+     */
+
+    public void setBodyLoc(BodyLocation newBodyLocation){
+        this.bodyLoc = newBodyLocation;
+    }
+
+    /**
+     * Get a bodyLocation of the record
+     * @return BodyLocation
+     */
+
+    public BodyLocation getBodyLoc(){
+        return this.bodyLoc;
     }
 
     /**

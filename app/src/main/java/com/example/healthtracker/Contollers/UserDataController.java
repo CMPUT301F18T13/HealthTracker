@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import org.elasticsearch.common.geo.GeoPoint;
 
+import com.example.healthtracker.EntityObjects.BodyLocation;
 import com.example.healthtracker.EntityObjects.CareProvider;
 import com.example.healthtracker.EntityObjects.CareProviderComment;
 import com.example.healthtracker.EntityObjects.Patient;
@@ -453,7 +454,7 @@ public class UserDataController<E> {
         // Search for problem
         hits[0] = new ArrayList<Problem>();
 
-        // Search for records: Initialize a String Array
+        // Search for records
         String searchInfo[] = new String[]{"Record",distance,latitude.toString(),longitude.toString(),identifier};
         ElasticsearchController.SearchByGeoLocations searchRecordsTask = new ElasticsearchController.SearchByGeoLocations();
         searchRecordsTask.execute(searchInfo);
@@ -471,6 +472,30 @@ public class UserDataController<E> {
         hits[2] = new ArrayList<CareProviderComment>();
 
         return hits;
+
+    }
+
+    public static Object[] searchForBodyLocations(String locationText,String identifier){
+
+        // Create an Object array which can hold 1 item
+        Object hits[] = new Object[1];
+
+        //Search for records
+        String searchInfo[] = new String[]{"Record",locationText,identifier};
+        ElasticsearchController.SearchByBodyLocations searchRecordTask = new ElasticsearchController.SearchByBodyLocations();
+        searchRecordTask.execute(searchInfo);
+
+        try{
+            hits[0] = searchRecordTask.get().getSourceAsObjectList(PatientRecord.class,false);
+
+        }catch (ExecutionException e){
+            e.printStackTrace();
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
+        return hits;
+
 
     }
 
