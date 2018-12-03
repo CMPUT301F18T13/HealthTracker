@@ -1,7 +1,7 @@
 package com.example.healthtracker.View;
 
 import android.content.Context;
-import android.content.ContextWrapper;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -20,25 +21,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.healthtracker.Activities.AddGeoLocationActivity;
-import com.example.healthtracker.Activities.SlideShowActivity;
-import com.example.healthtracker.Contollers.PhotoController;
 import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.EntityObjects.BodyLocation;
 import com.example.healthtracker.EntityObjects.Patient;
 import com.example.healthtracker.EntityObjects.PatientRecord;
 import com.example.healthtracker.R;
 import com.example.healthtracker.Activities.TakePhotoActivity;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
-import java.util.Objects;
-
-import static android.app.Activity.RESULT_OK;
 
 import static com.example.healthtracker.Contollers.PhotoController.imageToString;
 import static com.example.healthtracker.Contollers.PhotoController.stringToImage;
@@ -48,22 +42,18 @@ import static com.example.healthtracker.Contollers.PhotoController.stringToImage
  * existing record. This activity will finish with a positive result code if a record was successfully
  * saved. The current Record data will be displayed if a record is being edited. The new
  * or changed record can be saved by selecting the save button.
+ *
  */
 public class AddorEditRecordView extends AppCompatActivity {
 
     private EditText titleText, descriptionText;
-    private int index;
     private TextView timestampText;
+    private String title, comment;
     private Context context;
-
-    String problemTitle;
+    private Patient patient;
     File capturedImages;
-
-    private ArrayList<Bitmap> takenPhoto = new ArrayList<Bitmap>();
-    private ArrayList<String> timeStamps = new ArrayList<String>();
-    private String oldTitle = "";
-
     private PatientRecord record;
+    //private Button geoLocation;
     private TextView saved_geoLocation;
     private TextView saved_bodyLocation;
     private Double Lat;
@@ -73,6 +63,8 @@ public class AddorEditRecordView extends AppCompatActivity {
     //private String bodyLocText;
     private BodyLocation bodyLoc;
     private ImageView locGraph;
+    private Bitmap showPic;
+    //private ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,15 +78,17 @@ public class AddorEditRecordView extends AppCompatActivity {
 
         saved_geoLocation = findViewById(R.id.show_geo);
         saved_bodyLocation = findViewById(R.id.show_body);
+        saved_bodyLocation.setText("No BodyLocation.");
+        saved_bodyLocation.setClickable(true);
         locGraph = findViewById(R.id.show_graph);
+        showPic = BitmapFactory.decodeResource(getResources(), R.drawable.bodylocationfront);
 
         context = this;
         record = new PatientRecord();
-        getExtraString();
 
         // if editing a record show its current details
         Intent intent = getIntent();
-        index = intent.getIntExtra("Index", -1);
+        int index = intent.getIntExtra("Index", -1);
         if (index != -1) {
             String recordString = intent.getStringExtra("Record");
             record = UserDataController.unSerializeRecord(this, recordString);
@@ -103,6 +97,39 @@ public class AddorEditRecordView extends AppCompatActivity {
             record.setTimestamp();
             timestampText.setText(record.getTimestamp().toString());
         }
+
+
+        saved_bodyLocation.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+
+            public void onClick(View view) {
+                if(record.getBodyLoc() != null) {
+                    AlertDialog.Builder ab = new AlertDialog.Builder(AddorEditRecordView.this);
+                    ab.setMessage("Do you want to delete this bodyLocation?");
+                    ab.setCancelable(true);
+                    // Set a button to return to the Home screen and don't save changes
+                    ab.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            record.setBodyLoc(null);
+                            saved_bodyLocation.setText("No BodyLocation.");
+                            locGraph.setImageBitmap(showPic);
+                        }
+                    });
+                    ab.setNegativeButton("Cancle", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+
+                    ab.show();
+                }
+
+            }
+
+        });
+
 
 
     }
@@ -118,23 +145,30 @@ public class AddorEditRecordView extends AppCompatActivity {
         ab.setMessage("Warning. You are about to go back without saving the record.");
         ab.setCancelable(true);
         // Set a button to return to the Home screen and don't save changes
-        ab.setNeutralButton("Exit And Lose Record", (dialog, which) -> {
-            Intent intent = getIntent();
-            setResult(RESULT_CANCELED, intent);
-            ContextWrapper cw = new ContextWrapper(getApplicationContext());
-            PhotoController.removePhotosFromTemporaryStorage(cw);
-            finish();
+        ab.setNeutralButton("Exit And Lose Record", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = getIntent();
+                setResult(RESULT_CANCELED, intent);
+                finish();
+            }
         });
 
         // set a button which will close the alert dialog
-        ab.setNegativeButton("Return to Record", (dialog, which) -> {
+        ab.setNegativeButton("Return to Record", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
 
+            }
         });
         // show the alert dialog on the screen
         ab.show();
     }
 
-    // When clicked,  save button will save or update the record as long as the record at least has a title.
+    /*
+     * When clicked the save button will save or update the record as long as the record at least
+     * has a title.
+     */
     public void saveButton(View view) {
         if (titleText.getText().toString().equals("")) {
             Toast.makeText(this, "Error, a title is required.", Toast.LENGTH_LONG).show();
@@ -143,46 +177,32 @@ public class AddorEditRecordView extends AppCompatActivity {
         }
     }
 
-    // If a record is being edited this method is called to display its current data.
+    /*
+     * If a record is being edited this method is called to display its current data.
+     */
     private void showRecord(){
 
         titleText.setText(record.getTitle());
         descriptionText.setText(record.getComment());
         timestampText.setText(record.getTimestamp().toString());
-        oldTitle = record.getTitle();
-
-        if(record.getGeoLocation().size()<2){
-            return;
+        //saved_geoLocation.setText(geo_location);
+        List<Address> addressList = null;
+        String CurrentLocation;
+        Lat = record.getGeoLocation().get(0);
+        Lon = record.getGeoLocation().get(1);
+        Geocoder geocoder = new Geocoder(this);
+        try {
+            addressList = geocoder.getFromLocation(Lat, Lon, 1);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        if(record.getGeoLocation().size()>1 && record.getGeoLocation().get(0) != null && record.getGeoLocation().get(1) != null){
-            List<Address> addressList = null;
-            String CurrentLocation;
-            Lon = record.getGeoLocation().get(0);
-            Lat = record.getGeoLocation().get(1);
-            Geocoder geocoder = new Geocoder(this);
-            try {
-                addressList = geocoder.getFromLocation(Lat, Lon, 1);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            Address address = addressList.get(0);
-            String city = address.getLocality();
-            String state = address.getAdminArea();
-            String country = address.getCountryName();
-            String postalCode = address.getPostalCode();
-            CurrentLocation = city + " " + state + " " + country + " " + postalCode;
-            saved_geoLocation.setText(CurrentLocation);
-        }
-
-        ContextWrapper cw = new ContextWrapper(getApplicationContext());
-        takenPhoto = PhotoController.loadImagesByRecord(cw, this.getExtraString(), oldTitle);
-        timeStamps = PhotoController.getTimestampsByRecord(cw, this.getExtraString(), oldTitle);
-        for (int i = 0; i < takenPhoto.size(); i++) {
-            System.out.println("Adding back to temp photos!!!");
-            Bitmap photo = takenPhoto.get(i);
-            PhotoController.saveToTemporaryStorage(photo, cw, timeStamps.get(i));
-        }
+        Address address = addressList.get(0);
+        String city = address.getLocality();
+        String state = address.getAdminArea();
+        String country = address.getCountryName();
+        String postalCode = address.getPostalCode();
+        CurrentLocation = city + " " + state + " " + country + " " + postalCode;
+        saved_geoLocation.setText(CurrentLocation);
 
         if (record.getBodyLoc() != null) {
             //show bodyLoc
@@ -195,6 +215,12 @@ public class AddorEditRecordView extends AppCompatActivity {
             saved_bodyLocation.setText(bodyText);
             locGraph.setImageBitmap(bodygraphic);
         }
+        else{
+            saved_bodyLocation.setText("No BodyLocation.");
+            locGraph.setImageBitmap(showPic);
+        }
+
+
     }
 
     /*
@@ -203,39 +229,20 @@ public class AddorEditRecordView extends AppCompatActivity {
      */
     private void saveRecord(){
         // get Record info
-        String title = titleText.getText().toString();
-        String comment = descriptionText.getText().toString();
+        title = titleText.getText().toString();
+        comment = descriptionText.getText().toString();
+        //geo_location = saved_geoLocation.getText().toString();
 
         // fetch user data
-        Patient patient = UserDataController.loadPatientData(context);
+        patient = UserDataController.loadPatientData(context);
 
         // add record
         record.setComment(comment);
         record.setTitle(title);
-
-        if(index == -1){
-            record.addGeoLocation(Lon, Lat);
-        } else{
-            record.setGeoLocation(Lon,Lat);
-        }
-
+        record.setGeoLocation(Lat,Lon);
         record.setBodyLoc(bodyLoc);
 
-        ContextWrapper cw = new ContextWrapper(getApplicationContext());
-        for (int i = 0; i < takenPhoto.size(); i++) {
-            Bitmap photo = takenPhoto.get(i);
-            String pathLoaded= PhotoController.saveToInternalStorage(photo,cw, this.getExtraString(), title, timeStamps.get(i));
-        }
-        PhotoController.removePhotosFromTemporaryStorage(cw);
-        System.out.println(this.getExtraString());
-        record.setPhotos(takenPhoto, timeStamps);
-
-        // Remove photos if title has changed...
-        System.out.println("Old title is... " + oldTitle + '\n' + "New title is... " + title);
-        if (!oldTitle.equals(title)) {
-            System.out.println("Removing old photos...");
-            PhotoController.removePhotosFromInternalStorage(cw, this.getExtraString(), oldTitle);
-        }
+        // TODO set photos, geomap, bodylocation once they are implemented
 
         // return to add problem with record result
         Intent intent = getIntent();
@@ -245,76 +252,40 @@ public class AddorEditRecordView extends AppCompatActivity {
         finish();
     }
 
-    // Intent initiated to add a photo to a record
     public void addPhoto(View view) {
-        if (takenPhoto.size() >= 10) {
-            Toast.makeText(this, "Error, number of photos cannot exceed 10.", Toast.LENGTH_LONG).show();
-        }
-        else {
-
-            Intent intent = new Intent(AddorEditRecordView.this, TakePhotoActivity.class);
-            intent.putExtra("ProblemTitle",getExtraString());
-            if (takenPhoto.size() != 0) {
-                intent.putExtra("OldPhoto", PhotoController.imageToString(takenPhoto.get(takenPhoto.size() - 1)));
-            }
-            else {
-                intent.putExtra("OldPhoto", "");
-            }
-
-            startActivityForResult(intent, 50);
-        }
-    }
-
-    // Get the string put into the intent from the previous activity
-    private String getExtraString(){
-        Intent intent = getIntent();
-        return intent.getStringExtra("ProblemTitle");
-    }
-
-    public void viewPhotos(View view) {
-        // Create an intent object containing the bridge to between the two activities
-        Intent intent = new Intent(AddorEditRecordView.this, SlideShowActivity.class);
-        intent.putExtra("ProblemTitle", this.getExtraString());
-        intent.putExtra("isProblem", "Record");
-        // Launch the browse emotions activity
+        Intent intent = new Intent(AddorEditRecordView.this, TakePhotoActivity.class);
         startActivity(intent);
     }
-
-    // Add a geo-location to a record
     public void addGeoLocation(View view) {
         Intent intent = new Intent(AddorEditRecordView.this, AddGeoLocationActivity.class);
         startActivityForResult(intent,1);
     }
 
+   // @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        List<Address> addressList = null;
-        String CurrentLocation;
-        if(resultCode==1) {
-            Lat = Objects.requireNonNull(data.getExtras()).getDouble("Lat");
-            Lon = data.getExtras().getDouble("Lon");
-            Geocoder geocoder = new Geocoder(this);
-            try {
-                addressList = geocoder.getFromLocation(Lat, Lon, 1);
-            } catch (IOException e) {
-                e.printStackTrace();
+        if(requestCode == 1) {
+            List<Address> addressList = null;
+            String CurrentLocation;
+            if (resultCode == RESULT_OK) {
+                Lat = data.getExtras().getDouble("Lat");
+                Lon = data.getExtras().getDouble("Lon");
+                Geocoder geocoder = new Geocoder(this);
+                try {
+                    addressList = geocoder.getFromLocation(Lat, Lon, 1);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Address address = addressList.get(0);
+                String city = address.getLocality();
+                String state = address.getAdminArea();
+                String country = address.getCountryName();
+                String postalCode = address.getPostalCode();
+                CurrentLocation = city + " " + state + " " + country + " " + postalCode;
+                saved_geoLocation.setText(CurrentLocation);
             }
-            assert addressList != null;
-            Address address = addressList.get(0);
-            String city = address.getLocality();
-            String state = address.getAdminArea();
-            String country = address.getCountryName();
-            String postalCode = address.getPostalCode();
-            CurrentLocation = city + " " + state + " " + country + " " + postalCode;
-            saved_geoLocation.setText(CurrentLocation);
+            //saved_geoLocation.setText(geo_location);
         }
-        if (resultCode == 50) {
-            byte[] byteArray = data.getByteArrayExtra("image");
-            takenPhoto.add(BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length));
-            ContextWrapper cw = new ContextWrapper(getApplicationContext());
-            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",Locale.CANADA).format(new Date());
-            PhotoController.saveToTemporaryStorage(BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length), cw, timeStamp);
-            timeStamps.add(timeStamp);
-        } else if(requestCode ==4){
+        else if(requestCode ==4){
             //Save Body Location
             String bodyText;
             Bitmap bodygraphic;
@@ -337,5 +308,7 @@ public class AddorEditRecordView extends AppCompatActivity {
     public void addBodyLocation(View view) {
         Intent intent = new Intent(AddorEditRecordView.this, AddBodyLocationView.class);
         startActivityForResult(intent,4);
+
     }
+
 }
