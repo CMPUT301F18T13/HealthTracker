@@ -28,9 +28,9 @@ public class CareProviderRecordView extends Activity {
         titleText = findViewById(R.id.care_record_title);
         desText = findViewById(R.id.care_record_comment);
         timestampText = findViewById(R.id.care_record_timestamp);
-        ActionBar bar = getActionBar();
-        assert bar != null;
-        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+        //ActionBar bar = getActionBar();
+        //assert bar != null;
+        //bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
 
 
         Bundle bd = getIntent().getExtras();

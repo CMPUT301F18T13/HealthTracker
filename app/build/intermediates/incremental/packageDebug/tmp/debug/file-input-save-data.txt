@@ -1,19 +1,19 @@
 #Internal package file, do not edit.
-#Mon Dec 03 14:44:01 MST 2018
-1.base=C\:\\Users\\mikey\\AndroidStudioProjects\\HealthTrackerNew\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
+#Mon Dec 03 18:36:32 MST 2018
+1.base=/Users/caochenlin/Desktop/CMPUT301_intro_to_software_engineering/HealthTracker/app/build/intermediates/transforms/dexMerger/debug/1
 2.path=classes3.dex
 0.baseType=DIRECTORY
 3.baseType=DIRECTORY
-2.base=C\:\\Users\\mikey\\AndroidStudioProjects\\HealthTrackerNew\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
+2.base=/Users/caochenlin/Desktop/CMPUT301_intro_to_software_engineering/HealthTracker/app/build/intermediates/transforms/dexMerger/debug/1
 3.set=DEX
 2.set=DEX
 1.baseType=DIRECTORY
-3.path=classes.dex
+3.path=classes2.dex
 count=4
 1.set=DEX
-0.path=classes2.dex
-3.base=C\:\\Users\\mikey\\AndroidStudioProjects\\HealthTrackerNew\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+0.path=classes.dex
+3.base=/Users/caochenlin/Desktop/CMPUT301_intro_to_software_engineering/HealthTracker/app/build/intermediates/transforms/dexMerger/debug/1
 0.set=DEX
-0.base=C\:\\Users\\mikey\\AndroidStudioProjects\\HealthTrackerNew\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
+0.base=/Users/caochenlin/Desktop/CMPUT301_intro_to_software_engineering/HealthTracker/app/build/intermediates/transforms/dexMerger/debug/0
 2.baseType=DIRECTORY
 1.path=classes.dex

@@ -177,16 +177,17 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
             e.printStackTrace();
         }
 
+        if(addressList_1 != null) {
+            Address address = addressList_1.get(0);
+            String city = address.getLocality();
+            String state = address.getAdminArea();
+            String country = address.getCountryName();
+            String postalCode = address.getPostalCode();
+            CurrentLocation = city + " " + state + " " + country + " " + postalCode;
+            Toast.makeText(getApplicationContext(), CurrentLocation, Toast.LENGTH_SHORT).show();
 
-        Address address = addressList_1.get(0);
-        String city = address.getLocality();
-        String state = address.getAdminArea();
-        String country = address.getCountryName();
-        String postalCode = address.getPostalCode();
-        CurrentLocation = city+ " " + state + " " + country + " " + postalCode;
-        Toast.makeText(getApplicationContext(),CurrentLocation,Toast.LENGTH_SHORT).show();
-
-        goToLocation(address.getLatitude(), address.getLongitude(),0);
+            goToLocation(address.getLatitude(), address.getLongitude(), 15);
+        }
 
         /*
         // Add a marker in Sydney and move the camera
