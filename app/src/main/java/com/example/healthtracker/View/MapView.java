@@ -82,51 +82,6 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
 
     }
 
-    /*
-     * Search for a location by address.
-     */
-    /*public void onMapSearch(View view) {
-        EditText locationSearch = findViewById(R.id.editText);
-        String location = locationSearch.getText().toString();
-        List<Address> addressList = null;
-
-<<<<<<< HEAD
-        Geocoder geocoder = new Geocoder(this);
-        try {
-            addressList = geocoder.getFromLocationName(location, 1);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-=======
-        if (location != null || !location.equals("")) {
-            try {
-                Geocoder geocoder = new Geocoder(this);
-                addressList = geocoder.getFromLocationName(location, 1);
-                //Log.d("array",addressList.toString());
-                if  (!addressList.isEmpty()){
-                Address address = addressList.get(0);
-                String Locality = address.getLocality();
-                Toast.makeText(getApplicationContext(),Locality,Toast.LENGTH_SHORT).show();
-                //LatLng LatLng = new LatLng(address.getLatitude(), address.getLongitude());
-                goToLocation(address.getLatitude(), address.getLongitude(),15);}
-                else{
-                    String no_address = "No address found";
-                    Toast.makeText(getApplicationContext(),no_address,Toast.LENGTH_SHORT).show();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            //mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
->>>>>>> chenlin
-        }
-        assert addressList != null;
-        Address address = addressList.get(0);
-        LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
-        mMap.addMarker(new MarkerOptions().position(latLng).title("Marker"));
-        mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-    }
-    */
 
     @Override
     /*
@@ -177,29 +132,17 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
             e.printStackTrace();
         }
 
+        if(addressList_1 != null) {
+            Address address = addressList_1.get(0);
+            String city = address.getLocality();
+            String state = address.getAdminArea();
+            String country = address.getCountryName();
+            String postalCode = address.getPostalCode();
+            CurrentLocation = city + " " + state + " " + country + " " + postalCode;
+            Toast.makeText(getApplicationContext(), CurrentLocation, Toast.LENGTH_SHORT).show();
 
-        Address address = addressList_1.get(0);
-        String city = address.getLocality();
-        String state = address.getAdminArea();
-        String country = address.getCountryName();
-        String postalCode = address.getPostalCode();
-        CurrentLocation = city+ " " + state + " " + country + " " + postalCode;
-        Toast.makeText(getApplicationContext(),CurrentLocation,Toast.LENGTH_SHORT).show();
-
-        goToLocation(address.getLatitude(), address.getLongitude(),0);
-
-        /*
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(27.700769, 85.300140);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marke"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-            return;
+            goToLocation(address.getLatitude(), address.getLongitude(), 15);
         }
-        mMap.setMyLocationEnabled(true);*/
-
-        //goToLocation(27.700769, 85.300140, 0);
     }
 
     private void goToLocation(double latitude, double longitude, int zoom){

@@ -96,7 +96,11 @@ public class SlideShowActivity extends Activity {
 
     public Boolean isProblem() {
         Intent intent = getIntent();
-        if (intent.getExtras().getString("isProblem").equals("Problem")) {
+        String isProblem = intent.getStringExtra("isProblem");
+        if(isProblem == null){
+            return false;
+        }
+        if (intent.getStringExtra("isProblem").equals("Problem")) {
             return true;
         }
         return false;
