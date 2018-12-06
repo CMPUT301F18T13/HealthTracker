@@ -31,8 +31,6 @@ import static com.example.healthtracker.Contollers.PhotoController.stringToImage
  */
 public class search_results_record extends Activity {
     private PatientRecord record;
-
-    private PatientRecord record;
     private BodyLocation bodyLoc;
     private ImageView locGraph;
     private TextView saved_bodyLocation;
