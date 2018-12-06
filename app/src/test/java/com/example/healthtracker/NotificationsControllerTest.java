@@ -1,6 +1,4 @@
 package com.example.healthtracker;
-
-import com.example.healthtracker.Contollers.NotificationsController;
 import com.example.healthtracker.EntityObjects.Problem;
 
 import org.junit.Before;

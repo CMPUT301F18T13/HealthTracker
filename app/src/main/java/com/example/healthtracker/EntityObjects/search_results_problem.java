@@ -10,8 +10,11 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.healthtracker.Activities.EditProblem;
+import com.example.healthtracker.Activities.SlideShowActivity;
 import com.example.healthtracker.Contollers.UserDataController;
 import com.example.healthtracker.R;
+import com.example.healthtracker.View.CareProviderProblemView;
 
 import java.util.ArrayList;
 
@@ -27,6 +30,7 @@ public class search_results_problem extends Activity {
 
     private Object[] hits;
     private int index;
+    private Bundle bd;
 
     /**
      * On creation or launch the Problem object is populated with the appropriate data to display
@@ -36,6 +40,10 @@ public class search_results_problem extends Activity {
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent intent2 = getIntent();
+        bd = intent2.getExtras();
+
+        assert bd != null;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_results_problem);
 
@@ -83,5 +91,15 @@ public class search_results_problem extends Activity {
             intent.putExtra("problemIndex", index);
             startActivity(intent);
         });
+    }
+
+    public void viewPhoto(View view) {
+        // Create an intent object containing the bridge to between the two activities
+        Intent intent = new Intent(search_results_problem.this, SlideShowActivity.class);
+        TextView problemTitle = findViewById(R.id.titleView);
+        String problem = problemTitle.getText().toString();
+        intent.putExtra("ProblemTitle",problem);
+        intent.putExtra("isProblem", "Problem");
+        startActivity(intent);
     }
 }
