@@ -1394,7 +1394,6 @@ id useLogo
 id userID
 id viewDate
 id viewPhotos
-id viewTitle
 id view_comments
 id view_offset_helper
 id view_problems
