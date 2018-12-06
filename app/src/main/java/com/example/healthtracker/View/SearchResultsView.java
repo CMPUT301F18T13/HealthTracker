@@ -96,6 +96,10 @@ public class SearchResultsView extends AppCompatActivity {
             }
         }
 
+        hits[0] = problemsToShow;
+        hits[1] = recordsToShow;
+        hits[2] = commentsToShow;
+
         if(commentsToShow.isEmpty() && recordsToShow.isEmpty() && problemsToShow.isEmpty()){
             AlertDialog.Builder ab = new AlertDialog.Builder(this);
             ab.setMessage("No search results found.");

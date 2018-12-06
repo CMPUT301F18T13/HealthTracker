@@ -310,7 +310,7 @@ public class AddBodyLocationView extends AppCompatActivity  implements EasyPermi
                 Toast.makeText(this, "Failed! Saved photo first!", Toast.LENGTH_SHORT).show();
             } else {
                 Bitmap bitmap = BitmapFactory.decodeFile(storePath + "/" + name)
-                        .copy(Bitmap.Config.ARGB_8888, true);//从文件得到一个位图对象。要调用copy函数重新生成位图，不然会报错
+                        .copy(Bitmap.Config.ARGB_8888, true);
 
                 float bitmapWidth = bitmap.getWidth();
                 float bitmapHeight = bitmap.getHeight();

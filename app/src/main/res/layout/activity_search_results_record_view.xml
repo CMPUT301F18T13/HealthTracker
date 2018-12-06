@@ -29,14 +29,14 @@
 
         <TextView
             android:id="@+id/care_record_comment"
-            android:layout_width="312dp"
-            android:layout_height="200dp"
+            android:layout_width="310dp"
+            android:layout_height="98dp"
             android:layout_below="@+id/care_record_timestamp"
             android:layout_alignLeft="@id/care_record_title"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="45dp"
-            android:singleLine="false"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="15dp"
             android:inputType="textMultiLine"
+            android:singleLine="false"
             android:text="TextView"
             android:textSize="24sp" />
 
@@ -47,8 +47,39 @@
             android:layout_below="@+id/care_record_title"
             android:layout_alignParentStart="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="38dp"
+            android:layout_marginTop="13dp"
             android:text="TextView"
             android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/body_text"
+            android:layout_width="182dp"
+            android:layout_height="43dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="204dp"
+            android:text="TextView"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/body_pic"
+            android:layout_width="106dp"
+            android:layout_height="172dp"
+            android:layout_alignBottom="@+id/body_text"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="-132dp"
+            android:src="@drawable/bodylocationfront" />
+
+        <TextView
+            android:id="@+id/geo_text"
+            android:layout_width="340dp"
+            android:layout_height="31dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="15dp"
+            android:text="TextView"
+            android:textSize="14sp" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

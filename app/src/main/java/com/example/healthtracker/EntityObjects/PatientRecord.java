@@ -59,6 +59,11 @@ public class PatientRecord implements Serializable {
         timestamp = new Timestamp(System.currentTimeMillis());
         photos = new ArrayList<String> ();
         geoLocations = new ArrayList<Double>();
+        Lon = new Double(-200);
+        Lat = new Double(-200);
+        geoLocations.add(Lon);
+        geoLocations.add(Lat);
+
         bodyLoc = new BodyLocation();
     }
 

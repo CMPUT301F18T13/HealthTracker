@@ -151,11 +151,7 @@ public class AddorEditRecordView extends AppCompatActivity {
         timestampText.setText(record.getTimestamp().toString());
         oldTitle = record.getTitle();
 
-        if(record.getGeoLocation().size()<2){
-            return;
-        }
-
-        if(record.getGeoLocation().size()>1 && record.getGeoLocation().get(0) != null && record.getGeoLocation().get(1) != null){
+        if(record.getGeoLocation().size()>1 &&  -180 <= record.getGeoLocation().get(0)  && -90 <= record.getGeoLocation().get(1)){
             List<Address> addressList = null;
             String CurrentLocation;
             Lon = record.getGeoLocation().get(0);
@@ -213,10 +209,8 @@ public class AddorEditRecordView extends AppCompatActivity {
         record.setComment(comment);
         record.setTitle(title);
 
-        if(index == -1){
-            record.addGeoLocation(Lon, Lat);
-        } else{
-            record.setGeoLocation(Lon,Lat);
+        if(Lon != null && Lat != null){
+            record.setGeoLocation(Lon, Lat);
         }
 
         record.setBodyLoc(bodyLoc);
