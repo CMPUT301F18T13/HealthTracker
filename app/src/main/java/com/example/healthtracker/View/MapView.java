@@ -102,6 +102,9 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
                 if(Lat == null || Lon == null){
                     continue;
                 }
+                if(Lat <= -90 || Lon <= -180){
+                    continue;
+                }
                 LatLng LatLng = new LatLng(Lat, Lon);
                 Geocoder geocoder = new Geocoder(this);
                 try {
