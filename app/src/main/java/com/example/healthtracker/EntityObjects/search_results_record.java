@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.healthtracker.Contollers.UserDataController;
 
@@ -29,7 +30,6 @@ import static com.example.healthtracker.Contollers.PhotoController.stringToImage
  * @since 2018-11-29
  */
 public class search_results_record extends Activity {
-
     private PatientRecord record;
     private BodyLocation bodyLoc;
     private ImageView locGraph;

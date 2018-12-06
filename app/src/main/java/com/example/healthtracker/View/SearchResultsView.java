@@ -58,7 +58,7 @@ public class SearchResultsView extends AppCompatActivity {
                 userRecords.addAll(problem.getRecords());
                 userComments.addAll(problem.getcaregiverRecords());
             }
-        } else if(profileType.equals("Patient")){
+        } else {
             Patient patient = UserDataController.loadPatientData(this);
             userProblems = patient.getProblemList();
             for(Problem problem: userProblems){
@@ -130,6 +130,9 @@ public class SearchResultsView extends AppCompatActivity {
         problemList.setOnItemClickListener((parent, view, position, id) -> {
             Intent intent1 = new Intent(SearchResultsView.this, search_results_problem.class);
             intent1.putExtra("problemIndex", position);
+            hits[0] = problemsToShow;
+            hits[1] = recordsToShow;
+            hits[2] = problemsToShow;
             intent1.putExtra("hits", UserDataController.serializeObjectArray(SearchResultsView.this, hits));
             startActivity(intent1);
         });

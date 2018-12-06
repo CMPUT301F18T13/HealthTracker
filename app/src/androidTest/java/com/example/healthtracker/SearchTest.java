@@ -7,7 +7,7 @@ import android.widget.EditText;
 
 import com.example.healthtracker.Activities.LoginActivity;
 import com.example.healthtracker.Activities.SearchActivity;
-import com.example.healthtracker.SearchHelpers.search_results_problem;
+import com.example.healthtracker.EntityObjects.search_results_problem;
 import com.example.healthtracker.View.SearchResultsView;
 import com.robotium.solo.Solo;
 

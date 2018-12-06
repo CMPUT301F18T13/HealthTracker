@@ -1,5 +1,6 @@
 -- Merging decision tree log ---
 manifest
+<<<<<<< HEAD
 ADDED from C:\Users\mikey\AndroidStudioProjects\HealthTrackerNew\app\src\main\AndroidManifest.xml:2:1-115:12
 INJECTED from C:\Users\mikey\AndroidStudioProjects\HealthTrackerNew\app\src\main\AndroidManifest.xml:2:1-115:12
 INJECTED from C:\Users\mikey\AndroidStudioProjects\HealthTrackerNew\app\src\main\AndroidManifest.xml:2:1-115:12
@@ -488,3 +489,493 @@ MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\mikey\.gr
 		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\mikey\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\90459e192c96d91b8904aad9284fdb1a\AndroidManifest.xml:28:13-35
 	android:name
 		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\mikey\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\90459e192c96d91b8904aad9284fdb1a\AndroidManifest.xml:27:13-51
+=======
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:2:1-115:12
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:2:1-115:12
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:2:1-115:12
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:2:1-115:12
+MERGED from [com.android.support.test:rules:1.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\rules-1.0.1.aar\d8c8f2f0e08b6ced079a47c481e17fcd\AndroidManifest.xml:17:1-21:12
+MERGED from [com.android.support.test:runner:1.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\runner-1.0.1.aar\be46b00b05aee6d3987d4f45cdad27b5\AndroidManifest.xml:17:1-21:12
+MERGED from [pub.devrel:easypermissions:0.3.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\easypermissions-0.3.0.aar\320fb37db71a2d71b7bab64f59372680\AndroidManifest.xml:2:1-19:12
+MERGED from [com.android.support:design:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\d8aa778db67327851be6d1ae1dab44f1\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\c3d8e9bcb521f41c855cf722fa94624b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\adadbed0c92a9206f030552b0a1e8f55\AndroidManifest.xml:2:1-11:12
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\c9a22c51255e0eab7483a2c0b9699a6a\AndroidManifest.xml:17:1-30:12
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\cd102c4dcf512303a6b0363f56f81d6f\AndroidManifest.xml:17:1-32:12
+MERGED from [com.android.support:transition:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\82d4dcd05758777aecabd7e969154637\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\c850b2172e7553aa0ee38ffe32e8ddcb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\c070d70e36f243727d9a142dd9305b16\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\1f0a47ab211ea599c1ebe6bf05c045ef\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\1a3935a9cd4ed9a95a002708bdf575d6\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\21b979d065533451bda711487044e2bc\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\50114b112f034f3a9cfa88cb5d0eac4a\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\30ddcea69d1596834cb137ed779dd08d\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\e8f4e46e22fed5a0ff0f2ed2242f33c0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\e2e402ac91204821b13ccd6d827ce5bf\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\3f334e6adc10be73a87a83ba5c800b76\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\374f76426ea9934273aa54c6498206c0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\fe5277205d4e0b27e57ca46933764749\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\86f32e2e995929638d61dc8d0b85d155\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\f2bf0b266abda67367e4ea6ab5a483fa\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\7c5da9b4251a0f354339a053e3a8b7f3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\32aa2e95270237e7aa083bb2e5355c3e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\4139ad7d9d09114bf680837c44098bde\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\00e42340a0567ea6033f4edde1913e4a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\faf2566b9c29a0c2c02aa42df0ab2fb4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\71a680852f392edd4c09fe5666485bb7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\283fddc378375f852a1aec0d52327e3c\AndroidManifest.xml:17:1-24:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\d2bdc5ceca8f3275fb45475fd4ec65ad\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\01b3d005ef92f8acf1f8c581dfb07a63\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\d8d89f0a207da2776f81e839c5353104\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\2ca3a65caa01142bb9775afeeabebd7a\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\cdd93796bb4b1ca6bb89b8380fc860ab\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\fc299f76e126ca537dca35eec2d703e2\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\b0f6d351d646e55b338680a58e8d7f90\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\134c018407bdf355f2f9e4ab71e74ea7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\830e006328a6b4aacee4b0f20fd52c3f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\d452a8c2f8a60649951d5730ab2b6f44\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\70bc1a6a06874b86902e4c79b9e738c3\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:2:1-115:12
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:2:1-115:12
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:2:1-115:12
+	package
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:4:5-40
+		INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:2:1-115:12
+		INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:2:1-115:12
+		INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:7:5-71
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:7:22-68
+uses-permission#android.permission.READ_PROFILE
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:8:5-71
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:8:22-68
+uses-permission#android.permission.READ_CONTACTS
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:9:5-72
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:9:22-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:10:5-67
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\cd102c4dcf512303a6b0363f56f81d6f\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\cd102c4dcf512303a6b0363f56f81d6f\AndroidManifest.xml:24:5-67
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:10:22-64
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:11:5-75
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:11:22-72
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:12:5-80
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:12:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:13:5-81
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:13:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:14:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:15:5-81
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:15:22-78
+uses-feature#android.hardware.location.gps
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:17:5-66
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:17:19-63
+uses-feature#android.hardware.camera
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:18:5-20:36
+	android:required
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:20:9-33
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:19:9-47
+uses-feature#0x00020000
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:21:5-23:35
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\cd102c4dcf512303a6b0363f56f81d6f\AndroidManifest.xml:26:5-28:35
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\cd102c4dcf512303a6b0363f56f81d6f\AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:22:9-41
+	android:required
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:23:9-32
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\cd102c4dcf512303a6b0363f56f81d6f\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\cd102c4dcf512303a6b0363f56f81d6f\AndroidManifest.xml:23:5-79
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:25:22-76
+uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:26:5-98
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:26:22-95
+uses-permission#com.example.healthtracker.permission.MAPS_RECEIVE
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:32:5-89
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:32:22-86
+permission#com.example.healthtracker.permission.MAPS_RECEIVE
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:34:5-36:47
+	android:protectionLevel
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:36:9-44
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:35:9-73
+application
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:38:5-113:19
+MERGED from [pub.devrel:easypermissions:0.3.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\easypermissions-0.3.0.aar\320fb37db71a2d71b7bab64f59372680\AndroidManifest.xml:11:5-17:19
+MERGED from [pub.devrel:easypermissions:0.3.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\easypermissions-0.3.0.aar\320fb37db71a2d71b7bab64f59372680\AndroidManifest.xml:11:5-17:19
+MERGED from [com.android.support:design:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\d8aa778db67327851be6d1ae1dab44f1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\d8aa778db67327851be6d1ae1dab44f1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\adadbed0c92a9206f030552b0a1e8f55\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\adadbed0c92a9206f030552b0a1e8f55\AndroidManifest.xml:9:5-20
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\c9a22c51255e0eab7483a2c0b9699a6a\AndroidManifest.xml:22:5-28:19
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\c9a22c51255e0eab7483a2c0b9699a6a\AndroidManifest.xml:22:5-28:19
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\cd102c4dcf512303a6b0363f56f81d6f\AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\cd102c4dcf512303a6b0363f56f81d6f\AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\1f0a47ab211ea599c1ebe6bf05c045ef\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\1f0a47ab211ea599c1ebe6bf05c045ef\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\1a3935a9cd4ed9a95a002708bdf575d6\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\1a3935a9cd4ed9a95a002708bdf575d6\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\21b979d065533451bda711487044e2bc\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\21b979d065533451bda711487044e2bc\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\50114b112f034f3a9cfa88cb5d0eac4a\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\50114b112f034f3a9cfa88cb5d0eac4a\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\30ddcea69d1596834cb137ed779dd08d\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\30ddcea69d1596834cb137ed779dd08d\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\283fddc378375f852a1aec0d52327e3c\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\283fddc378375f852a1aec0d52327e3c\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\fc299f76e126ca537dca35eec2d703e2\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\fc299f76e126ca537dca35eec2d703e2\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\283fddc378375f852a1aec0d52327e3c\AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:44:9-35
+	android:label
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:42:9-41
+	android:fullBackupContent
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:40:9-59
+	tools:ignore
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:46:9-48
+	android:roundIcon
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:43:9-54
+	android:icon
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:41:9-43
+	android:allowBackup
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:39:9-35
+	android:theme
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:45:9-40
+uses-library#org.apache.http.legacy
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:47:9-48:39
+	android:required
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:48:13-37
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:47:23-60
+provider#android.support.v4.content.FileProvider
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:49:9-57:20
+	android:grantUriPermissions
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:53:13-47
+	android:authorities
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:51:13-67
+	android:exported
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:52:13-37
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:50:13-67
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:54:13-56:54
+	android:resource
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:56:17-51
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:55:17-67
+activity#com.example.healthtracker.Activities.LoginActivity
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:59:9-68:20
+	android:label
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:62:13-45
+	android:exported
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:61:13-36
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:60:13-53
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:63:13-67:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:64:17-69
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:64:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:66:17-77
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:66:27-74
+activity#com.example.healthtracker.View.CareProviderHomeView
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:69:9-71:61
+	android:label
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:70:13-45
+	android:icon
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:71:13-58
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:69:19-60
+activity#com.example.healthtracker.View.ViewPatients
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:72:9-55
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:72:19-52
+activity#com.example.healthtracker.Activities.SearchActivity
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:73:9-63
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:73:19-60
+activity#com.example.healthtracker.View.SearchResultsView
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:74:9-60
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:74:19-57
+activity#com.example.healthtracker.View.AddPatientView
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:75:9-57
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:75:19-54
+activity#com.example.healthtracker.Activities.CreateAccountActivity
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:76:9-70
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:76:19-67
+activity#com.example.healthtracker.Activities.UserSettingsActivity
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:77:9-69
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:77:19-66
+activity#com.example.healthtracker.View.ViewPatientsProblems
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:78:9-63
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:78:19-60
+activity#com.example.healthtracker.View.CareProviderProblemView
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:79:9-66
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:79:19-63
+activity#com.example.healthtracker.View.AddCareProviderCommentView
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:80:9-69
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:80:19-66
+activity#com.example.healthtracker.View.PatientHomeView
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:81:9-58
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:81:19-55
+activity#com.example.healthtracker.View.AddProblemView
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:82:9-84:55
+	android:windowSoftInputMode
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:84:13-52
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:83:13-48
+activity#com.example.healthtracker.View.ViewMyProblems
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:85:9-57
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:85:19-54
+activity#com.example.healthtracker.Activities.EditProblem
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:86:9-88:55
+	android:windowSoftInputMode
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:88:13-52
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:87:13-51
+activity#com.example.healthtracker.View.AddorEditRecordView
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:89:9-62
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:89:19-59
+activity#com.example.healthtracker.Activities.SlideShowActivity
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:90:9-66
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:90:19-63
+activity#com.example.healthtracker.View.MapView
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:91:9-50
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:91:19-47
+meta-data#com.google.android.gms.version
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:93:9-95:69
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\21b979d065533451bda711487044e2bc\AndroidManifest.xml:23:9-25:69
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\21b979d065533451bda711487044e2bc\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:95:13-66
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:94:13-58
+meta-data#com.google.android.maps.v2.API_KEY
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:96:9-98:71
+	android:value
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:98:13-68
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:97:13-62
+activity#com.example.healthtracker.View.ViewCareProviderComments
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:100:9-102:82
+	android:label
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:102:13-79
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:101:13-58
+activity#com.example.healthtracker.View.CareProviderRecordView
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:103:9-105:80
+	android:label
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:105:13-77
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:104:13-56
+activity#com.example.healthtracker.Activities.TakePhotoActivity
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:106:9-75
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:106:19-63
+activity#com.example.healthtracker.Activities.AddGeoLocationActivity
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:107:9-80
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:107:19-68
+activity#com.example.healthtracker.Contollers.PhotoController
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:108:9-64
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:108:19-61
+activity#com.example.healthtracker.EntityObjects.search_results_comments
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:109:9-75
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:109:19-72
+activity#com.example.healthtracker.EntityObjects.search_results_problem
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:110:9-74
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:110:19-71
+activity#com.example.healthtracker.EntityObjects.search_results_record
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:111:9-73
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:111:19-70
+activity#com.example.healthtracker.View.AddBodyLocationView
+ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:112:9-71
+	android:name
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml:112:19-59
+uses-sdk
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support.test:rules:1.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\rules-1.0.1.aar\d8c8f2f0e08b6ced079a47c481e17fcd\AndroidManifest.xml:19:5-72
+MERGED from [com.android.support.test:rules:1.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\rules-1.0.1.aar\d8c8f2f0e08b6ced079a47c481e17fcd\AndroidManifest.xml:19:5-72
+MERGED from [com.android.support.test:runner:1.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\runner-1.0.1.aar\be46b00b05aee6d3987d4f45cdad27b5\AndroidManifest.xml:19:5-72
+MERGED from [com.android.support.test:runner:1.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\runner-1.0.1.aar\be46b00b05aee6d3987d4f45cdad27b5\AndroidManifest.xml:19:5-72
+MERGED from [pub.devrel:easypermissions:0.3.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\easypermissions-0.3.0.aar\320fb37db71a2d71b7bab64f59372680\AndroidManifest.xml:7:5-9:41
+MERGED from [pub.devrel:easypermissions:0.3.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\easypermissions-0.3.0.aar\320fb37db71a2d71b7bab64f59372680\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\d8aa778db67327851be6d1ae1dab44f1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\d8aa778db67327851be6d1ae1dab44f1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\c3d8e9bcb521f41c855cf722fa94624b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\c3d8e9bcb521f41c855cf722fa94624b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\adadbed0c92a9206f030552b0a1e8f55\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\adadbed0c92a9206f030552b0a1e8f55\AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\c9a22c51255e0eab7483a2c0b9699a6a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\c9a22c51255e0eab7483a2c0b9699a6a\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\cd102c4dcf512303a6b0363f56f81d6f\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\cd102c4dcf512303a6b0363f56f81d6f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\82d4dcd05758777aecabd7e969154637\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\82d4dcd05758777aecabd7e969154637\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\c850b2172e7553aa0ee38ffe32e8ddcb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\c850b2172e7553aa0ee38ffe32e8ddcb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\c070d70e36f243727d9a142dd9305b16\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\c070d70e36f243727d9a142dd9305b16\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\1f0a47ab211ea599c1ebe6bf05c045ef\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\1f0a47ab211ea599c1ebe6bf05c045ef\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\1a3935a9cd4ed9a95a002708bdf575d6\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\1a3935a9cd4ed9a95a002708bdf575d6\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\21b979d065533451bda711487044e2bc\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\21b979d065533451bda711487044e2bc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\50114b112f034f3a9cfa88cb5d0eac4a\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\50114b112f034f3a9cfa88cb5d0eac4a\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\30ddcea69d1596834cb137ed779dd08d\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\30ddcea69d1596834cb137ed779dd08d\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\e8f4e46e22fed5a0ff0f2ed2242f33c0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\e8f4e46e22fed5a0ff0f2ed2242f33c0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\e2e402ac91204821b13ccd6d827ce5bf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\e2e402ac91204821b13ccd6d827ce5bf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\3f334e6adc10be73a87a83ba5c800b76\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\3f334e6adc10be73a87a83ba5c800b76\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\374f76426ea9934273aa54c6498206c0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\374f76426ea9934273aa54c6498206c0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\fe5277205d4e0b27e57ca46933764749\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\fe5277205d4e0b27e57ca46933764749\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\86f32e2e995929638d61dc8d0b85d155\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\86f32e2e995929638d61dc8d0b85d155\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\f2bf0b266abda67367e4ea6ab5a483fa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\f2bf0b266abda67367e4ea6ab5a483fa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\7c5da9b4251a0f354339a053e3a8b7f3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\7c5da9b4251a0f354339a053e3a8b7f3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\32aa2e95270237e7aa083bb2e5355c3e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\32aa2e95270237e7aa083bb2e5355c3e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\4139ad7d9d09114bf680837c44098bde\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\4139ad7d9d09114bf680837c44098bde\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\00e42340a0567ea6033f4edde1913e4a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\00e42340a0567ea6033f4edde1913e4a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\faf2566b9c29a0c2c02aa42df0ab2fb4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\faf2566b9c29a0c2c02aa42df0ab2fb4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\71a680852f392edd4c09fe5666485bb7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\71a680852f392edd4c09fe5666485bb7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\283fddc378375f852a1aec0d52327e3c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\283fddc378375f852a1aec0d52327e3c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\d2bdc5ceca8f3275fb45475fd4ec65ad\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\d2bdc5ceca8f3275fb45475fd4ec65ad\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\01b3d005ef92f8acf1f8c581dfb07a63\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\01b3d005ef92f8acf1f8c581dfb07a63\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\d8d89f0a207da2776f81e839c5353104\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\d8d89f0a207da2776f81e839c5353104\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\2ca3a65caa01142bb9775afeeabebd7a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\2ca3a65caa01142bb9775afeeabebd7a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\cdd93796bb4b1ca6bb89b8380fc860ab\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\cdd93796bb4b1ca6bb89b8380fc860ab\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\fc299f76e126ca537dca35eec2d703e2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\fc299f76e126ca537dca35eec2d703e2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\b0f6d351d646e55b338680a58e8d7f90\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\b0f6d351d646e55b338680a58e8d7f90\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\134c018407bdf355f2f9e4ab71e74ea7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\134c018407bdf355f2f9e4ab71e74ea7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\830e006328a6b4aacee4b0f20fd52c3f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\830e006328a6b4aacee4b0f20fd52c3f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\d452a8c2f8a60649951d5730ab2b6f44\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\d452a8c2f8a60649951d5730ab2b6f44\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\70bc1a6a06874b86902e4c79b9e738c3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\70bc1a6a06874b86902e4c79b9e738c3\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\50114b112f034f3a9cfa88cb5d0eac4a\AndroidManifest.xml:23:9-51
+	android:targetSdkVersion
+		INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\tyler\AndroidStudioProjects\HealthTracker3\app\src\main\AndroidManifest.xml
+activity#pub.devrel.easypermissions.AppSettingsDialogHolderActivity
+ADDED from [pub.devrel:easypermissions:0.3.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\easypermissions-0.3.0.aar\320fb37db71a2d71b7bab64f59372680\AndroidManifest.xml:12:9-16:66
+	android:label
+		ADDED from [pub.devrel:easypermissions:0.3.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\easypermissions-0.3.0.aar\320fb37db71a2d71b7bab64f59372680\AndroidManifest.xml:15:13-29
+	android:exported
+		ADDED from [pub.devrel:easypermissions:0.3.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\easypermissions-0.3.0.aar\320fb37db71a2d71b7bab64f59372680\AndroidManifest.xml:14:13-37
+	android:theme
+		ADDED from [pub.devrel:easypermissions:0.3.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\easypermissions-0.3.0.aar\320fb37db71a2d71b7bab64f59372680\AndroidManifest.xml:16:13-63
+	android:name
+		ADDED from [pub.devrel:easypermissions:0.3.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\easypermissions-0.3.0.aar\320fb37db71a2d71b7bab64f59372680\AndroidManifest.xml:13:13-86
+provider#android.arch.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\c9a22c51255e0eab7483a2c0b9699a6a\AndroidManifest.xml:23:9-27:43
+	android:authorities
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\c9a22c51255e0eab7483a2c0b9699a6a\AndroidManifest.xml:25:13-68
+	android:multiprocess
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\c9a22c51255e0eab7483a2c0b9699a6a\AndroidManifest.xml:27:13-40
+	android:exported
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\c9a22c51255e0eab7483a2c0b9699a6a\AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\c9a22c51255e0eab7483a2c0b9699a6a\AndroidManifest.xml:24:13-83
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\1f0a47ab211ea599c1ebe6bf05c045ef\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\1f0a47ab211ea599c1ebe6bf05c045ef\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\1f0a47ab211ea599c1ebe6bf05c045ef\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\1f0a47ab211ea599c1ebe6bf05c045ef\AndroidManifest.xml:24:13-79
+meta-data#android.support.VERSION
+ADDED from [com.android.support:support-v4:26.1.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\50114b112f034f3a9cfa88cb5d0eac4a\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\30ddcea69d1596834cb137ed779dd08d\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\30ddcea69d1596834cb137ed779dd08d\AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\50114b112f034f3a9cfa88cb5d0eac4a\AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\tyler\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\50114b112f034f3a9cfa88cb5d0eac4a\AndroidManifest.xml:27:13-51
+>>>>>>> b9587dae83721c77761d361214bd84a0c3fff3ea
