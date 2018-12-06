@@ -52,7 +52,8 @@ public class EditProblem extends AppCompatActivity {
     private Patient user;
     private Problem problem;
     private String initialTitle;
-    private int index;
+    private int probIndex;
+    private int recordIndex;
     private ArrayList<PatientRecord> recordList;
     private ArrayAdapter<PatientRecord> adapter;
     private TextView pickedDate;
@@ -72,9 +73,9 @@ public class EditProblem extends AppCompatActivity {
         // get current problem data
         user = UserDataController.loadPatientData(this);
         Intent intent = getIntent();
-        index = intent.getIntExtra("Index", -1);
-        assert index >= 0;
-        problem = user.getProblem(index);
+        probIndex = intent.getIntExtra("Index", -1);
+        assert probIndex >= 0;
+        problem = user.getProblem(probIndex);
         recordList = problem.getRecords();
         Button datePickButton = findViewById(R.id.pickDateButton);
         pickedDate = findViewById(R.id.pickedDate);
@@ -136,11 +137,11 @@ public class EditProblem extends AppCompatActivity {
                 Intent intent = new Intent(EditProblem.this, AddorEditRecordView.class);
 
                 // store record index
-                index = position;
+                recordIndex = position;
                 PatientRecord selectedRecord = recordList.get(position);
                 intent.putExtra("Record", UserDataController
                         .serializeRecord(EditProblem.this, selectedRecord));
-                intent.putExtra("Index", position);
+                intent.putExtra("Index", recordIndex);
                 intent.putExtra("ProblemTitle",problem.getTitle());
 
                 // Launch the edit record activity
@@ -209,10 +210,10 @@ public class EditProblem extends AppCompatActivity {
 
             // save changes
             user = UserDataController.loadPatientData(this);
-            problem = user.getProblem(index);
+            problem = user.getProblem(probIndex);
             problem.update(titleString, date, descriptionString);
             problem.setRecords(recordList);
-            user.setProblem(problem, index);
+            user.setProblem(problem, probIndex);
             UserDataController.savePatientData(this, user);
 
             // done
@@ -237,12 +238,12 @@ public class EditProblem extends AppCompatActivity {
     * user's Care Providers.
      */
     public void viewCareProviderComments(View view){
-        if(user.getProblem(index).getcaregiverRecords().size()>0){
+        if(user.getProblem(probIndex).getcaregiverRecords().size()>0){
             // Create an intent object containing the bridge to between the two activities
             Intent intent = new Intent(EditProblem.this, ViewCareProviderComments.class);
 
             Bundle bd = new Bundle();
-            bd.putInt("problemNum", index);
+            bd.putInt("problemNum", probIndex);
             bd.putString("profileType", "Patient");
             intent.putExtras(bd);
 
@@ -274,7 +275,7 @@ public class EditProblem extends AppCompatActivity {
                 recordList.add(record);
             } else if(requestCode == 2){
                 // Edit Record Request
-                recordList.set(index, record);
+                recordList.set(recordIndex, record);
             }
         }
     }

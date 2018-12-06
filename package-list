@@ -1,1 +1,5 @@
 com.example.healthtracker
+com.example.healthtracker.Activities
+com.example.healthtracker.Contollers
+com.example.healthtracker.EntityObjects
+com.example.healthtracker.View

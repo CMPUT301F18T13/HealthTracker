@@ -20,6 +20,7 @@ import com.searchly.jestdroid.DroidClientConfig;
 import com.searchly.jestdroid.JestClientFactory;
 import com.searchly.jestdroid.JestDroidClient;
 
+import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 
@@ -75,7 +76,7 @@ public class ElasticsearchController {
     private static void verifySettings() {
         if (client == null) {
             // if the client is not yet created, build the client factory, establish connection to the DB, and finally set the client and its factory
-            String server = "http://es2.softwareprocess.ca:8080/";
+            String server = "http://cmput301.softwareprocess.es:8080/";
             DroidClientConfig.Builder builder = new DroidClientConfig.Builder(server);
             DroidClientConfig config = builder.build();
             JestClientFactory factory = new JestClientFactory();
@@ -418,7 +419,18 @@ public class ElasticsearchController {
             String keyword = params[1];
 
             SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-            searchSourceBuilder.query(QueryBuilders.queryString(keyword).defaultOperator(AND));
+            if(searchType.equals("Problem")){
+                searchSourceBuilder
+                        .query(QueryBuilders
+                                .multiMatchQuery(keyword, "ProblemTitle", "description")
+                                .operator(MatchQueryBuilder.Operator.AND));
+            } else{
+                searchSourceBuilder
+                        .query(QueryBuilders
+                                .queryString(keyword)
+                                .defaultOperator(AND));
+            }
+
             Search search = new Search.Builder(searchSourceBuilder.toString())
                     .addIndex(Index)
                     .addType(searchType)

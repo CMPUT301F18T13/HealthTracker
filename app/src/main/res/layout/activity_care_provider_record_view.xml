@@ -15,8 +15,10 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/care_record_title"
@@ -29,14 +31,14 @@
 
         <TextView
             android:id="@+id/care_record_comment"
-            android:layout_width="312dp"
-            android:layout_height="200dp"
+            android:layout_width="308dp"
+            android:layout_height="130dp"
             android:layout_below="@+id/care_record_timestamp"
             android:layout_alignLeft="@id/care_record_title"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="45dp"
-            android:singleLine="false"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="15dp"
             android:inputType="textMultiLine"
+            android:singleLine="false"
             android:text="TextView"
             android:textSize="24sp" />
 
@@ -47,8 +49,42 @@
             android:layout_below="@+id/care_record_title"
             android:layout_alignParentStart="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="38dp"
+            android:layout_marginTop="22dp"
             android:text="TextView"
             android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/Bodyloc_text"
+            android:layout_width="149dp"
+            android:layout_height="49dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="21dp"
+            android:layout_marginBottom="180dp"
+            android:text="TextView"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/Bodyloc_image"
+            android:layout_width="83dp"
+            android:layout_height="161dp"
+            android:layout_alignTop="@+id/Bodyloc_text"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="68dp"
+            android:src="@drawable/bodylocationfront" />
+
+        <TextView
+            android:id="@+id/Geo_text"
+            android:layout_width="336dp"
+            android:layout_height="37dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="21dp"
+            android:layout_marginBottom="20dp"
+            android:text="TextView"
+            android:textSize="14sp" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
