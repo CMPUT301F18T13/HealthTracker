@@ -1,17 +1,10 @@
 {
     "logs": [
         {
-<<<<<<< HEAD
             "outputFile": "C:\\Users\\mikey\\AndroidStudioProjects\\HealthTrackerNew\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mikey\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e9473cb60a63be2e1ca45d11c3451254\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
-=======
-            "outputFile": "C:\\Users\\tyler\\AndroidStudioProjects\\HealthTracker3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\d8aa778db67327851be6d1ae1dab44f1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
->>>>>>> b9587dae83721c77761d361214bd84a0c3fff3ea
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -30,11 +23,7 @@
                     }
                 },
                 {
-<<<<<<< HEAD
                     "source": "C:\\Users\\mikey\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\12237ca012bd756b7a7dbd142f7d67f1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
-=======
-                    "source": "C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c3d8e9bcb521f41c855cf722fa94624b\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
->>>>>>> b9587dae83721c77761d361214bd84a0c3fff3ea
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

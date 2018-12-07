@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-#Thu Dec 06 14:46:23 MST 2018
-=======
-#Thu Dec 06 12:07:21 MST 2018
->>>>>>> b9587dae83721c77761d361214bd84a0c3fff3ea
+#Thu Dec 06 15:00:48 MST 2018
 path.3=classes3.dex
 path.2=classes2.dex
 path.1=classes.dex
@@ -11,14 +7,7 @@ renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-<<<<<<< HEAD
 base.3=C\:\\Users\\mikey\\AndroidStudioProjects\\HealthTrackerNew\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
 base.2=C\:\\Users\\mikey\\AndroidStudioProjects\\HealthTrackerNew\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
 base.1=C\:\\Users\\mikey\\AndroidStudioProjects\\HealthTrackerNew\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
 base.0=C\:\\Users\\mikey\\AndroidStudioProjects\\HealthTrackerNew\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-=======
-base.3=C\:\\Users\\tyler\\AndroidStudioProjects\\HealthTracker3\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
-base.2=C\:\\Users\\tyler\\AndroidStudioProjects\\HealthTracker3\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
-base.1=C\:\\Users\\tyler\\AndroidStudioProjects\\HealthTracker3\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
-base.0=C\:\\Users\\tyler\\AndroidStudioProjects\\HealthTracker3\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
->>>>>>> b9587dae83721c77761d361214bd84a0c3fff3ea
